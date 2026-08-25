@@ -1,0 +1,84 @@
+Active RF plugins: libsrsran_rf_zmq.so
+Inactive RF plugins: 
+Reading configuration file /mnt/d/CodeBase-708a/061-working-paper/R260401-profilingai-trans/simulation/cross_backend_validation/configs/srsue_zmq.conf...
+2026-07-15T00:28:59.331164 [UE     ] [I] Using binary /usr/local/bin/srsue with arguments: /mnt/d/CodeBase-708a/061-working-paper/R260401-profilingai-trans/simulation/cross_backend_validation/configs/srsue_zmq.conf 
+
+2026-07-15T00:28:59.544601 [UE     ] [W] Number of cpu is greater than supported. CPU metrics will be disabled.
+Built in Release mode using commit 6bcbd9e on branch master.
+
+2026-07-15T00:28:59.545837 [UE     ] [I] Built in Release mode using commit 6bcbd9e on branch master.
+Opening 1 channels in RF device=zmq with args=tx_port=tcp://*:2001,rx_port=tcp://localhost:2000,id=ue,base_srate=23.04e6
+Supported RF device list: zmq file
+CHx base_srate=23.04e6
+2026-07-15T00:28:59.694842 [RF     ] [I] Configuring physical DL channel 0 with band-pass filter (0.0, 0.0)
+2026-07-15T00:28:59.694844 [RF     ] [I] Configuring physical UL channel 0 with band-pass filter (0.0, 0.0)
+CHx id=ue
+Current sample rate is 1.92 MHz with a base rate of 23.04 MHz (x12 decimation)
+CH0 rx_port=tcp://localhost:2000
+CH0 tx_port=tcp://*:2001
+
+Warning: TX gain was not set. Using open-loop power control (not working properly)
+
+Current sample rate is 23.04 MHz with a base rate of 23.04 MHz (x1 decimation)
+Current sample rate is 23.04 MHz with a base rate of 23.04 MHz (x1 decimation)
+2026-07-15T00:28:59.934625 [MAC    ] [I] [    0] Resetting MAC
+2026-07-15T00:28:59.934632 [MAC    ] [I] [    0] Logical Channel Setup: LCID=0, LCG=0, priority=0, PBR=-1, BSD=50ms, bucket_size=0
+2026-07-15T00:28:59.934635 [MAC    ] [I] [    0] Logical Channel Setup: LCID=1, LCG=0, priority=1, PBR=-1, BSD=50ms, bucket_size=0
+2026-07-15T00:28:59.934650 [MAC    ] [I] [    0] Setting configuration
+2026-07-15T00:28:59.934651 [MAC    ] [I] [    0] BSR:   Configured timer reTX 2560 ms
+2026-07-15T00:28:59.934660 [RLC    ] [I] Added LTE radio bearer with LCID 0 in Transparent Mode
+2026-07-15T00:28:59.934673 [USIM   ] [I] Read Home PLMN Id=99970
+2026-07-15T00:28:59.957631 [RLC-NR ] [I] Added LTE radio bearer with LCID 0 in Transparent Mode
+2026-07-15T00:28:59.957640 [MAC-NR ] [I] [    0] Logical Channel Setup: LCID=0, LCG=0, priority=0, PBR=0, BSD=0ms, bucket_size=0
+2026-07-15T00:28:59.957648 [RRC    ] [I] using srand seed of 957648
+Waiting PHY to initialize ... 2026-07-15T00:29:01.278742 [MAC    ] [I] [    0] BSR:   triggered_bsr_type=none, LCID QUEUE status: 0: 0 1: 0 
+2026-07-15T00:29:01.308838 [STCK   ] [I] tti_tprof: {mean, max, min} = {0.01, 0, 0} msec
+done!
+Attaching UE...
+2026-07-15T00:29:01.318012 [STCK   ] [I] Triggering NAS switch on
+2026-07-15T00:29:01.318125 [NAS5G  ] [I] Switching on
+Closing stdin thread.
+2026-07-15T00:29:01.318609 [USIM   ] [I] Read Home PLMN Id=99970
+2026-07-15T00:29:01.318610 [NAS5G  ] [I] Requesting IMSI attach (IMSI=999700000000001)
+2026-07-15T00:29:01.318617 [NAS5G  ] [I] Sending Registration Request
+2026-07-15T00:29:01.318619 [RRC-NR ] [I] Proc "Setup Request" - Initiation of Setup request procedure
+2026-07-15T00:29:01.318620 [RRC-NR ] [I] Proc "Cell Selection" - Starting...
+2026-07-15T00:29:01.318659 [PHY-SA ] [I] [    0] Cell Search: Going to IDLE
+2026-07-15T00:29:01.318660 [PHY-SA ] [I] [    0] Tuning Rx channel 0 to 3489.42 MHz
+2026-07-15T00:29:01.318870 [RF     ] [I] Mapping RF channel 0 (device=0, channel=0) to logical carrier 0 on f_rx=3489.4 MHz
+2026-07-15T00:29:01.318884 [PHY-SA ] [I] [    0] Cell search: Setting SSB configuration srate=23.04 MHz; c-freq=3489.420 MHz; ss-freq=3483.840 MHz; scs=30kHz; pattern=A; duplex=tdd;
+2026-07-15T00:29:01.520104 [PHY-SA ] [I] [    0] Cell Search: Running Cell search state
+2026-07-15T00:29:01.527113 [RRC-NR ] [E] Proc "Cell Selection" - Unsupported SCS 30kHz
+2026-07-15T00:29:01.527114 [RRC-NR ] [I] Proc "Cell Selection" - Completed with failure.
+2026-07-15T00:29:01.527117 [RRC-NR ] [W] Could not finish setup request. Deallocating dedicatedInfoNAS PDU
+2026-07-15T00:29:02.509951 [MAC    ] [I] [    0] BSR:   triggered_bsr_type=none, LCID QUEUE status: 0: 0 1: 0 
+2026-07-15T00:29:02.584894 [STCK   ] [I] tti_tprof: {mean, max, min} = {0.01, 0, 0} msec
+2026-07-15T00:29:03.788457 [MAC    ] [I] [    0] BSR:   triggered_bsr_type=none, LCID QUEUE status: 0: 0 1: 0 
+2026-07-15T00:29:03.883247 [STCK   ] [I] tti_tprof: {mean, max, min} = {0.01, 0, 0} msec
+2026-07-15T00:29:05.072977 [MAC    ] [I] [    0] BSR:   triggered_bsr_type=none, LCID QUEUE status: 0: 0 1: 0 
+2026-07-15T00:29:05.197875 [STCK   ] [I] tti_tprof: {mean, max, min} = {0.01, 0, 0} msec
+2026-07-15T00:29:06.351363 [MAC    ] [I] [    0] BSR:   triggered_bsr_type=none, LCID QUEUE status: 0: 0 1: 0 
+2026-07-15T00:29:06.508878 [STCK   ] [I] tti_tprof: {mean, max, min} = {0.01, 0, 0} msec
+2026-07-15T00:29:07.651571 [MAC    ] [I] [    0] BSR:   triggered_bsr_type=none, LCID QUEUE status: 0: 0 1: 0 
+2026-07-15T00:29:07.846192 [STCK   ] [I] tti_tprof: {mean, max, min} = {0.01, 0, 0} msec
+2026-07-15T00:29:08.958578 [MAC    ] [I] [    0] BSR:   triggered_bsr_type=none, LCID QUEUE status: 0: 0 1: 0 
+2026-07-15T00:29:09.183523 [STCK   ] [I] tti_tprof: {mean, max, min} = {0.01, 0, 0} msec
+2026-07-15T00:29:10.245901 [MAC    ] [I] [    0] BSR:   triggered_bsr_type=none, LCID QUEUE status: 0: 0 1: 0 
+2026-07-15T00:29:10.503248 [STCK   ] [I] tti_tprof: {mean, max, min} = {0.01, 0, 0} msec
+2026-07-15T00:29:11.519295 [MAC    ] [I] [    0] BSR:   triggered_bsr_type=none, LCID QUEUE status: 0: 0 1: 0 
+2026-07-15T00:29:11.790629 [STCK   ] [I] tti_tprof: {mean, max, min} = {0.01, 0, 0} msec
+2026-07-15T00:29:12.770834 [MAC    ] [I] [    0] BSR:   triggered_bsr_type=none, LCID QUEUE status: 0: 0 1: 0 
+2026-07-15T00:29:13.083699 [STCK   ] [I] tti_tprof: {mean, max, min} = {0.01, 0, 0} msec
+2026-07-15T00:29:13.961781 [MAC    ] [I] [    0] BSR:   triggered_bsr_type=none, LCID QUEUE status: 0: 0 1: 0 
+2026-07-15T00:29:14.283613 [STCK   ] [I] tti_tprof: {mean, max, min} = {0.01, 0, 0} msec
+2026-07-15T00:29:15.159033 [MAC    ] [I] [    0] BSR:   triggered_bsr_type=none, LCID QUEUE status: 0: 0 1: 0 
+2026-07-15T00:29:15.525889 [STCK   ] [I] tti_tprof: {mean, max, min} = {0.01, 0, 0} msec
+2026-07-15T00:29:16.394541 [MAC    ] [I] [    0] BSR:   triggered_bsr_type=none, LCID QUEUE status: 0: 0 1: 0 
+2026-07-15T00:29:16.794276 [STCK   ] [I] tti_tprof: {mean, max, min} = {0.01, 0, 0} msec
+2026-07-15T00:29:17.618276 [MAC    ] [I] [    0] BSR:   triggered_bsr_type=none, LCID QUEUE status: 0: 0 1: 0 
+2026-07-15T00:29:18.033978 [STCK   ] [I] tti_tprof: {mean, max, min} = {0.01, 0, 0} msec
+2026-07-15T00:29:18.831682 [MAC    ] [I] [    0] BSR:   triggered_bsr_type=none, LCID QUEUE status: 0: 0 1: 0 
+2026-07-15T00:29:19.296618 [STCK   ] [I] tti_tprof: {mean, max, min} = {0.01, 0, 0} msec
+Stopping ..
+2026-07-15T00:29:19.300482 [NAS    ] [I] Switching off
+---  exiting  ---

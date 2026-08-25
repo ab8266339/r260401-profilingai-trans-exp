@@ -1,0 +1,29 @@
+{
+  "truth_label": "Sionna implementation reproducibility microbenchmark; not a radio-performance claim",
+  "configuration": {
+    "mcs_index": 13,
+    "snr_db_per_re": 9.0,
+    "seed": 1,
+    "transport_blocks": 1000,
+    "transport_block_bits": 14088
+  },
+  "cpu": {
+    "device": "CPU",
+    "block_errors": 126,
+    "bit_errors": 25301,
+    "runtime_seconds": 15.1896580659959
+  },
+  "gpu": {
+    "device": "NVIDIA GeForce RTX 5090 D",
+    "block_errors": 126,
+    "bit_errors": 25302,
+    "runtime_seconds": 4.981954074006353
+  },
+  "comparison": {
+    "block_error_counts_identical": true,
+    "absolute_bit_error_count_difference": 1,
+    "absolute_ber_difference": 7.09823963657013e-08,
+    "gpu_speedup_over_cpu": 3.048935787113908
+  },
+  "boundary": "GPU uses PTX JIT because TensorFlow 2.21 has no native sm_120 kernel image; small cold runs are slower than CPU, while this 1000-TB batch is faster."
+}

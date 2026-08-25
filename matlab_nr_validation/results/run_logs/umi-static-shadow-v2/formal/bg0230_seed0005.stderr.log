@@ -1,0 +1,20 @@
+{错误使用 nrPathLossConfig
+与运行 MATLAB 所需的服务通信时出现意外错误(错误 5006)。
+
+
+For help with this issue, see this support article:
+https://www.mathworks.com/support/lme/5006
+
+
+
+出错 generate_umi_link_state (第 28 行)
+pathLossConfig = nrPathLossConfig(Scenario="UMi");
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+出错 run_nr_validation>run_case (第 112 行)
+linkState = generate_umi_link_state(positions, seed, cfg);
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+出错 run_nr_validation (第 80 行)
+        caseSummary = run_case(stagingRoot, caseCfg, ...
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+} 
+ERROR: MATLAB error Exit Status: 0x00000001

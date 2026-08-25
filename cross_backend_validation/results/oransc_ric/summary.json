@@ -1,0 +1,45 @@
+{
+  "truth_type": "protocol-level virtual-RF interoperability",
+  "over_the_air": false,
+  "minimal_oran_sc_ric": {
+    "srsran_e2_setup_success": true,
+    "ran_functions": [
+      {
+        "id": 2,
+        "oid": "1.3.6.1.4.1.53148.1.2.2.2"
+      },
+      {
+        "id": 3,
+        "oid": "1.3.6.1.4.1.53148.1.1.2.3"
+      }
+    ],
+    "kpm_subscription_success": true,
+    "kpm_indication_count": 30,
+    "kpm_metric_values": [
+      "DRB.UEThpDl=[0.0]",
+      "DRB.UEThpUl=[0.0]"
+    ],
+    "kpm_nonzero_value_seen": false,
+    "ue_rrc_connected": true,
+    "ue_authentication_success": true,
+    "ue_pdu_session_success": true,
+    "rc_requests_decoded": 4,
+    "rc_acknowledgements_at_gnb": 4,
+    "rc_acknowledgements_at_xapp": 3,
+    "rc_max_prb_ratios": [
+      30,
+      50,
+      70,
+      100
+    ],
+    "rc_run_ue_pdu_session_success": true
+  },
+  "official_ns_o_ran_against_i_release_ric": {
+    "sctp_connections": 5,
+    "e2_setup_requests_sent": 5,
+    "e2_setup_response_seen": false,
+    "ric_decode_errors": 5,
+    "interpretation": "The official M-release simulator opened SCTP associations and sent E2 setup requests, but the I-release RIC could not decode them.  This is a release-interoperability boundary, not a radio failure."
+  },
+  "claim_boundary": "The run supports E2 setup, KPM subscription and indication delivery, and E2SM-RC request/acknowledgement behavior over virtual RF.  It does not support an over-the-air, control-performance, or stability claim."
+}

@@ -1,0 +1,347 @@
+
+--== srsRAN gNB (commit d2f4b70) ==--
+
+2026-07-15T00:28:54.347029 [GNB     ] [I] Built in Release mode using commit d2f4b70 on branch HEAD
+2026-07-15T00:28:54.347457 [CONFIG  ] [I] Input configuration (only non-default values): 
+log:
+  filename: stdout
+  all_level: info
+cu_cp:
+  amf:
+    addr: 127.0.0.5
+    port: 38412
+    bind_addr: 127.0.0.1
+    supported_tracking_areas: "tac: 1\nplmn_list:\n  - plmn: 99970\n    tai_slice_support_list:\n      - sst: 1"
+pcap:
+  ngap_enable: false
+  mac_enable: false
+cell_cfg:
+  pci: 1
+  dl_arfcn: 632628
+  band: 78
+  common_scs: 30
+  channel_bandwidth_MHz: 20
+  plmn: 99970
+  tac: 1
+ru_sdr:
+  srate: 23.04
+  device_driver: zmq
+  device_args: tx_port=tcp://*:2000,rx_port=tcp://localhost:2001,base_srate=23.04e6
+  tx_gain: 0
+  rx_gain: 0
+2026-07-15T00:28:56.690055 [GNB     ] [W] Could not check scaling governor. filename=/sys/devices/system/cpu/cpu0/cpufreq/scaling_governor error=No such file or directory
+2026-07-15T00:28:56.690084 [GNB     ] [W] DRM KMS polling is enabled, which may hinder performance. You can disable it using the "srsran_performance" script
+2026-07-15T00:28:56.693402 [CONFIG  ] [I] Worker pool "main_pool" instantiated with #workers=5, task_queue_size=2048, backoff_period=50us and priority=96.
+Lower PHY in executor sequential baseband mode.
+2026-07-15T00:28:56.761499 [GTPU    ] [I] GTP-U demux. queue_size=2046 batch_size=256 warn_on_drop=false test_mode=false
+2026-07-15T00:28:56.761973 [GTPU    ] [I] Tunnel added. teid=0x000000
+2026-07-15T00:28:56.967830 [DU-MNG  ] [I] The upper-bound on the number of UEs supported by cell {pci=1, du_cell_index=0} is 96 (the actual number might be lower than that). This is determined by the lowest of the following limits: SR (96), CSI (96) and SRS (n/a).
+Available radio types: zmq.
+2026-07-15T00:28:56.968245 [DU      ] [I] DU created successfully
+2026-07-15T00:28:56.968272 [DU      ] [I] O-DU created successfully
+2026-07-15T00:28:57.035264 [zmq:tx:0:0] [I] Binding to address tcp://*:2000.
+2026-07-15T00:28:57.086306 [zmq:rx:0:0] [I] Connecting to address tcp://localhost:2001.
+Cell pci=1, bw=20 MHz, 1T1R, dl_arfcn=632628 (n78), dl_freq=3489.42 MHz, dl_ssb_arfcn=632256, ul_freq=3489.42 MHz
+
+2026-07-15T00:28:58.279465 [GNB     ] [I] SSB derived parameters for cell: 1, band: 78, dl_arfcn:632628, nof_crbs: 51 scs:30kHz, ssb_scs:30kHz:
+	 - SSB offset pointA:0 
+	 - k_SSB:0 
+	 - SSB arfcn:632256 
+	 - Coreset index:0 
+	 - Searchspace index:0
+2026-07-15T00:28:58.279565 [IO-EPOLL] [E] fd=0: Failed to register file descriptor. Cause: epoll_ctl failed with "Operation not permitted"
+2026-07-15T00:28:58.279624 [APP     ] [E] Couldn't register stdin handler
+N2: Connection to AMF on 127.0.0.5:38412 completed
+2026-07-15T00:28:58.279627 [GNB     ] [I] Starting CU-CP...
+2026-07-15T00:28:58.280028 [CU-CP   ] [I] N2: Connection to AMF on 127.0.0.5:38412 was established
+2026-07-15T00:28:58.280652 [NGAP    ] [I] Tx PDU: NGSetupRequest
+2026-07-15T00:28:58.295164 [NGAP    ] [I] Rx PDU: NGSetupResponse
+2026-07-15T00:28:58.295208 [CU-CP   ] [I] Connected to AMF. Supported PLMNs: 99970
+2026-07-15T00:28:58.295281 [GNB     ] [I] CU-CP started successfully
+2026-07-15T00:28:58.295292 [CU-UP   ] [I] CU-UP starting...
+2026-07-15T00:28:58.295347 [CU-CP   ] [I] Added TNL connection to CU-UP 0
+2026-07-15T00:28:58.295378 [CU-UP-E1] [I] Sending E1SetupRequest
+2026-07-15T00:28:58.295387 [CU-UP-E1] [I] Tx PDU tid=0: GNB-CU-UP-E1SetupRequest
+2026-07-15T00:28:58.295396 [CU-CP-E1] [I] Rx PDU tid=0: GNB-CU-UP-E1SetupRequest
+2026-07-15T00:28:58.295412 [CU-CP-E1] [I] Tx PDU tid=0: GNB-CU-UP-E1SetupResponse
+2026-07-15T00:28:58.295418 [CU-UP-E1] [I] Rx PDU tid=0: GNB-CU-UP-E1SetupResponse
+2026-07-15T00:28:58.295419 [CU-UP-E1] [I] "E1AP CU-UP Setup Procedure" finalized
+2026-07-15T00:28:58.295475 [CU-UP   ] [I] CU-UP started successfully
+2026-07-15T00:28:58.295482 [DU      ] [I] Starting DU...
+2026-07-15T00:28:58.295484 [DU      ] [I] Starting DU-High...
+2026-07-15T00:28:58.295486 [DU-MNG  ] [I] DU manager starting...
+2026-07-15T00:28:58.295586 [CU-CP   ] [I] Added TNL connection to DU 0
+2026-07-15T00:28:58.338286 [DU-MNG  ] [I] SIB1 cell=0: {
+  "cellSelectionInfo": {
+    "q-RxLevMin": -70,
+    "q-QualMin": -20
+  },
+  "cellAccessRelatedInfo": {
+    "plmn-IdentityInfoList": [
+      {
+        "plmn-IdentityList": [
+          {
+            "mcc": [
+              9,
+              9,
+              9
+            ],
+            "mnc": [
+              7,
+              0
+            ]
+          }
+        ],
+        "trackingAreaCode": "000000000000000000000001",
+        "cellIdentity": "000000000000011001101100000000000000",
+        "cellReservedForOperatorUse": "notReserved"
+      }
+    ]
+  },
+  "connEstFailureControl": {
+    "connEstFailCount": "n1",
+    "connEstFailOffsetValidity": "s30",
+    "connEstFailOffset": 1
+  },
+  "servingCellConfigCommon": {
+    "downlinkConfigCommon": {
+      "frequencyInfoDL": {
+        "frequencyBandList": [
+          {
+            "freqBandIndicatorNR": 78
+          }
+        ],
+        "offsetToPointA": 0,
+        "scs-SpecificCarrierList": [
+          {
+            "offsetToCarrier": 0,
+            "subcarrierSpacing": "kHz30",
+            "carrierBandwidth": 51,
+            "txDirectCurrentLocation": 306
+          }
+        ]
+      },
+      "initialDownlinkBWP": {
+        "genericParameters": {
+          "locationAndBandwidth": 13750,
+          "subcarrierSpacing": "kHz30"
+        },
+        "pdcch-ConfigCommon": {
+          {
+            "commonSearchSpaceList": [
+              {
+                "searchSpaceId": 1,
+                "controlResourceSetId": 0,
+                "monitoringSlotPeriodicityAndOffset": {
+                },
+                "monitoringSymbolsWithinSlot": "10000000000000",
+                "nrofCandidates": {
+                  "aggregationLevel1": "n0",
+                  "aggregationLevel2": "n0",
+                  "aggregationLevel4": "n1",
+                  "aggregationLevel8": "n0",
+                  "aggregationLevel16": "n0"
+                },
+                "searchSpaceType": {
+                  "common": {
+                    "dci-Format0-0-AndFormat1-0": {
+                    }
+                  }
+                }
+              }
+            ],
+            "searchSpaceSIB1": 0,
+            "pagingSearchSpace": 1,
+            "ra-SearchSpace": 1
+          }
+        },
+        "pdsch-ConfigCommon": {
+          {
+            "pdsch-TimeDomainAllocationList": [
+              {
+                "mappingType": "typeA",
+                "startSymbolAndLength": 53
+              },
+              {
+                "mappingType": "typeA",
+                "startSymbolAndLength": 72
+              }
+            ]
+          }
+        }
+      },
+      "bcch-Config": {
+        "modificationPeriodCoeff": "n4"
+      },
+      "pcch-Config": {
+        "defaultPagingCycle": "rf128",
+        "nAndPagingFrameOffset": {
+        },
+        "ns": "one"
+      }
+    },
+    "uplinkConfigCommon": {
+      "frequencyInfoUL": {
+        "frequencyBandList": [
+          {
+            "freqBandIndicatorNR": 78
+          }
+        ],
+        "absoluteFrequencyPointA": 632016,
+        "scs-SpecificCarrierList": [
+          {
+            "offsetToCarrier": 0,
+            "subcarrierSpacing": "kHz30",
+            "carrierBandwidth": 51
+          }
+        ]
+      },
+      "initialUplinkBWP": {
+        "genericParameters": {
+          "locationAndBandwidth": 13750,
+          "subcarrierSpacing": "kHz30"
+        },
+        "rach-ConfigCommon": {
+          {
+            "rach-ConfigGeneric": {
+              "prach-ConfigurationIndex": 159,
+              "msg1-FDM": "one",
+              "msg1-FrequencyStart": 11,
+              "zeroCorrelationZoneConfig": 0,
+              "preambleReceivedTargetPower": -100,
+              "preambleTransMax": "n7",
+              "powerRampingStep": "dB4",
+              "ra-ResponseWindow": "sl20"
+            },
+            "ssb-perRACH-OccasionAndCB-PreamblesPerSSB": {
+              "one": "n64"
+            },
+            "ra-ContentionResolutionTimer": "sf64",
+            "prach-RootSequenceIndex": {
+              "l139": 1
+            },
+            "msg1-SubcarrierSpacing": "kHz30",
+            "restrictedSetConfig": "unrestrictedSet"
+          }
+        },
+        "pusch-ConfigCommon": {
+          {
+            "pusch-TimeDomainAllocationList": [
+              {
+                "k2": 4,
+                "mappingType": "typeA",
+                "startSymbolAndLength": 27
+              },
+              {
+                "k2": 5,
+                "mappingType": "typeA",
+                "startSymbolAndLength": 27
+              },
+              {
+                "k2": 6,
+                "mappingType": "typeA",
+                "startSymbolAndLength": 27
+              },
+              {
+                "k2": 7,
+                "mappingType": "typeA",
+                "startSymbolAndLength": 27
+              },
+              {
+                "k2": 11,
+                "mappingType": "typeA",
+                "startSymbolAndLength": 27
+              }
+            ],
+            "msg3-DeltaPreamble": 6,
+            "p0-NominalWithGrant": -76
+          }
+        },
+        "pucch-ConfigCommon": {
+          {
+            "pucch-ResourceCommon": 11,
+            "pucch-GroupHopping": "neither",
+            "p0-nominal": -90
+          }
+        }
+      },
+      "timeAlignmentTimerCommon": "infinity"
+    },
+    "n-TimingAdvanceOffset": "n25600",
+    "ssb-PositionsInBurst": {
+      "inOneGroup": "10000000"
+    },
+    "ssb-PeriodicityServingCell": "ms10",
+    "tdd-UL-DL-ConfigurationCommon": {
+      "referenceSubcarrierSpacing": "kHz30",
+      "pattern1": {
+        "dl-UL-TransmissionPeriodicity": "ms5",
+        "nrofDownlinkSlots": 6,
+        "nrofDownlinkSymbols": 8,
+        "nrofUplinkSlots": 3,
+        "nrofUplinkSymbols": 0
+      }
+    },
+    "ss-PBCH-BlockPower": -16
+  },
+  "ue-TimersAndConstants": {
+    "t300": "ms1000",
+    "t301": "ms1000",
+    "t310": "ms1000",
+    "n310": "n1",
+    "t311": "ms3000",
+    "n311": "n1",
+    "t319": "ms1000"
+  }
+}
+2026-07-15T00:28:58.338392 [DU-F1   ] [I] F1 Setup: Sending F1 Setup Request to CU-CP...
+2026-07-15T00:28:58.338395 [DU-F1   ] [I] Tx PDU du=0 tid=0: F1SetupRequest
+2026-07-15T00:28:58.338450 [CU-CP-F1] [I] Rx PDU du=0 tid=0: F1SetupRequest
+2026-07-15T00:28:58.338535 [CU-CP-F1] [I] Tx PDU du=0 tid=0: F1SetupResponse
+2026-07-15T00:28:58.338541 [DU-F1   ] [I] Rx PDU du=0 tid=0: F1SetupResponse
+2026-07-15T00:28:58.338552 [DU-F1   ] [I] F1 Setup: Procedure completed successfully.
+2026-07-15T00:28:58.338563 [SCHED   ] [I] [     0.0] cell=0: Cell scheduling was activated.
+2026-07-15T00:28:58.338578 [MAC     ] [I] [     0.0] cell=0: Cell was activated
+2026-07-15T00:28:58.338673 [DU-MNG  ] [I] DU manager started successfully.
+2026-07-15T00:28:58.338676 [DU      ] [I] DU-High started successfully
+==== gNB started ===
+Type <h> to view help
+2026-07-15T00:28:58.338684 [DU      ] [I] DU started successfully
+2026-07-15T00:28:59.338721 [zmq:tx:0:0] [I] Waiting for request.
+2026-07-15T00:28:59.338779 [zmq:rx:0:0] [I] Waiting for data.
+2026-07-15T00:28:59.338847 [zmq:rx:0:0] [I] Waiting for reading samples. Completed 0 of 11520 samples.
+2026-07-15T00:28:59.925481 [SCHED   ] [I] [    10.7] Processed slot events pci=1: Cell creation idx=0 pci=1
+2026-07-15T00:29:20.317692 [zmq:rx:0:0] [I] Waiting for data.
+2026-07-15T00:29:20.318046 [zmq:rx:0:0] [I] Waiting for reading samples. Completed 0 of 11520 samples.
+2026-07-15T00:29:20.318816 [zmq:tx:0:0] [I] Waiting for data.
+2026-07-15T00:29:21.317693 [zmq:rx:0:0] [I] Waiting for data.
+2026-07-15T00:29:21.318110 [zmq:rx:0:0] [I] Waiting for reading samples. Completed 0 of 11520 samples.
+2026-07-15T00:29:21.318817 [zmq:tx:0:0] [I] Waiting for data.
+2026-07-15T00:29:22.317694 [zmq:rx:0:0] [I] Waiting for data.
+2026-07-15T00:29:22.318120 [zmq:rx:0:0] [I] Waiting for reading samples. Completed 0 of 11520 samples.
+2026-07-15T00:29:22.318817 [zmq:tx:0:0] [I] Waiting for data.
+Stopping...
+2026-07-15T00:29:23.443543 [DU      ] [I] Stopping DU...
+2026-07-15T00:29:23.443546 [DU      ] [I] Stopping DU-High...
+2026-07-15T00:29:23.443670 [SCHED   ] [I] [   526.5] cell=0: Cell scheduling was deactivated.
+2026-07-15T00:29:23.443816 [MAC     ] [I] [   526.5] cell=0: Cell was stopped.
+2026-07-15T00:29:23.443861 [DU-F1   ] [I] Tx PDU du=0 tid=1: F1RemovalRequest
+2026-07-15T00:29:23.443904 [CU-CP-F1] [I] Rx PDU du=0 tid=1: F1RemovalRequest
+2026-07-15T00:29:23.443939 [CU-CP-F1] [I] Tx PDU du=0 tid=1: F1RemovalResponse
+2026-07-15T00:29:23.443967 [DU-F1   ] [I] Rx PDU du=0 tid=1: F1RemovalResponse
+2026-07-15T00:29:23.444004 [CU-CP   ] [I] Removed DU 0
+2026-07-15T00:29:23.444010 [DU-F1   ] [I] F1 Removal: F1 TNL association shut down
+2026-07-15T00:29:23.444091 [DU      ] [I] DU-High stopped successfully
+2026-07-15T00:29:23.444093 [DU      ] [I] DU stopped successfully
+2026-07-15T00:29:23.444147 [CU-UP-E1] [I] Tx PDU tid=1: E1ReleaseRequest
+2026-07-15T00:29:23.444155 [CU-CP-E1] [I] Rx PDU tid=1: E1ReleaseRequest
+2026-07-15T00:29:23.444162 [CU-CP-E1] [I] Tx PDU tid=1: E1ReleaseResponse
+2026-07-15T00:29:23.444166 [CU-CP-E1] [I] "E1 Release Procedure" finished successfully
+2026-07-15T00:29:23.444169 [CU-UP-E1] [I] Rx PDU tid=1: E1ReleaseResponse
+2026-07-15T00:29:23.444179 [CU-CP   ] [I] Removed CU-UP 0
+2026-07-15T00:29:23.444181 [CU-UP-E1] [I] E1AP CU-UP Release Procedure: E1 TNL association shut down
+2026-07-15T00:29:23.444639 [CU-UP   ] [I] CU-UP stopped successfully
+2026-07-15T00:29:23.444644 [CU-CP   ] [I] Stopping CU-CP...
+2026-07-15T00:29:23.445078 [CU-CP   ] [I] CU-CP stopped successfully.
+2026-07-15T00:29:23.490569 [GNB     ] [I] Closing PCAP files...
+2026-07-15T00:29:23.490574 [GNB     ] [I] PCAP files successfully closed.

@@ -1,0 +1,21 @@
+{
+  "truth_type": "in-process abstract Near-RT RIC simulation",
+  "over_the_air": false,
+  "backend": "NIST ns3-oran with ns-3.42",
+  "source_tree": "/home/hxu/ran-sims/nist-ns-3",
+  "commands": [
+    "./ns3 run oran-data-repository-example --no-build",
+    "./ns3 run oran-keep-alive-example --no-build"
+  ],
+  "observed": {
+    "commands_exit_zero": 2,
+    "commands_run": 2,
+    "node_1_registered_then_deregistered": true,
+    "node_3_location_at_10_s": [10.0, 10.0, 1.5],
+    "lte_ue_node_id": 3,
+    "lte_ue_rnti": 1,
+    "lte_ue_cell_id": 1
+  },
+  "interpretation": "The NIST O-RAN module built and its data-repository and keep-alive examples executed successfully, validating its abstract node lifecycle and repository path.",
+  "claim_boundary": "This module uses an in-process abstract RIC/E2 terminator. It does not exercise SCTP, ASN.1 E2AP, KPM/RC interoperability, 5G NR scheduling, a 5GC, or over-the-air radio."
+}

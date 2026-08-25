@@ -1,0 +1,141 @@
+-- E2SM-AIC: E2 Service Model for AI Computing
+-- Custom service model extending E2SM-KPM with per-agent inference metrics
+-- Reference: O-RAN.WG3.E2SM-KPM-v03.00
+
+E2SM-AIC-IEs {
+    iso(1) identified-organization(3) dod(6) internet(1)
+    private(4) enterprise(1) oran(53148)
+    e2(1) version1(1) e2sm(2) e2sm-aic(100)
+}
+
+DEFINITIONS AUTOMATIC TAGS ::= BEGIN
+
+IMPORTS
+    UEID
+FROM E2SM-COMMON-IEs;
+
+-- ════════════════════════════════════════════════════════
+-- Indication Message (O-DU → Near-RT RIC xApp)
+-- Carries per-agent inference metrics for 4D demand monitoring
+-- ════════════════════════════════════════════════════════
+
+E2SM-AIC-IndicationMessage ::= SEQUENCE {
+    indicationHeader    E2SM-AIC-IndicationHeader,
+    indicationBody      SEQUENCE (SIZE(1..maxAgents)) OF AgentMetricReport
+}
+
+E2SM-AIC-IndicationHeader ::= SEQUENCE {
+    timestamp           INTEGER (0..4294967295),    -- Unix timestamp ms
+    cellGlobalID        OCTET STRING (SIZE(4..8)),
+    reportPeriodMs      INTEGER (10..10000)
+}
+
+AgentMetricReport ::= SEQUENCE {
+    agentID             AgentIdentifier,
+    tokenVariance       TokenVarianceReport,
+    bufferOccupancyUL   INTEGER (0..1073741823),    -- bytes
+    pipelineState       PipelineStateReport,
+    ulDlFlowCount       ULDLFlowCount,
+    demandVector4D      DemandVector4D              -- Explicit 4D demand
+}
+
+AgentIdentifier ::= SEQUENCE {
+    ueID                UEID,
+    agentIndex          INTEGER (0..1023),
+    agentTypeName       PrintableString (SIZE(1..64)),
+    modelTier           ENUMERATED {
+        tier-7B(0), tier-33B(1), tier-70B(2), tier-custom(3)
+    }
+}
+
+TokenVarianceReport ::= SEQUENCE {
+    estimatedVariance   INTEGER (0..1073741823),     -- Scaled ×1000
+    sampleCount         INTEGER (1..65535),
+    windowMs            INTEGER (100..60000)
+}
+
+PipelineStateReport ::= SEQUENCE {
+    currentStage        INTEGER (0..15),
+    totalStages         INTEGER (1..16),
+    accumulatedContext   INTEGER (0..1073741823),     -- accumulated tokens
+    retentionRate       INTEGER (0..1000)             -- sigma × 1000
+}
+
+ULDLFlowCount ::= SEQUENCE {
+    activeULFlows       INTEGER (0..1023),
+    activeDLFlows       INTEGER (0..1023)
+}
+
+DemandVector4D ::= SEQUENCE {
+    -- 4D demand vector: v_i = (b_UL, b_DL, g, c)
+    uplinkPayloadBytes      INTEGER (0..1073741823),
+    downlinkPayloadBytes    INTEGER (0..1073741823),
+    computeDemandMFLOPs     INTEGER (0..1073741823),    -- MFLOPs (×10^6)
+    kvCacheMemoryKB         INTEGER (0..1073741823)      -- KiloBytes
+}
+
+-- ════════════════════════════════════════════════════════
+-- Control Message (Near-RT RIC xApp → O-DU)
+-- Delivers radio scheduling decisions
+-- ════════════════════════════════════════════════════════
+
+E2SM-AIC-ControlMessage ::= SEQUENCE {
+    controlHeader       E2SM-AIC-ControlHeader,
+    controlBody         E2SM-AIC-ControlBody
+}
+
+E2SM-AIC-ControlHeader ::= SEQUENCE {
+    timestamp           INTEGER (0..4294967295),
+    controlRequestID    INTEGER (0..65535)
+}
+
+E2SM-AIC-ControlBody ::= SEQUENCE {
+    prbAllocations      SEQUENCE (SIZE(0..maxAgents)) OF PRBAllocation  OPTIONAL,
+    tddULRatio          TDDULRatio                                      OPTIONAL,
+    admissionDecisions  SEQUENCE (SIZE(0..maxAgents)) OF AdmissionDecision OPTIONAL
+}
+
+PRBAllocation ::= SEQUENCE {
+    ueID                UEID,
+    agentIndex          INTEGER (0..1023),
+    prbFraction         INTEGER (0..1000)   -- allocation fraction × 1000
+}
+
+TDDULRatio ::= SEQUENCE {
+    targetRatio         INTEGER (100..700),  -- ratio × 1000 (e.g., 200 = 0.20)
+    transitionSlots     INTEGER (0..40)      -- slots for gradual transition
+}
+
+AdmissionDecision ::= SEQUENCE {
+    ueID                UEID,
+    agentIndex          INTEGER (0..1023),
+    admitted            BOOLEAN,
+    priorityWeight      INTEGER (0..1000)   -- priority × 1000
+}
+
+-- ════════════════════════════════════════════════════════
+-- MEC Control (xApp → MEC GPU via REST, outside E2 path)
+-- Modeled here for completeness; actual transport is HTTP/REST
+-- ════════════════════════════════════════════════════════
+
+MEC-GPU-ControlParams ::= SEQUENCE {
+    gpuPriorityWeights  SEQUENCE (SIZE(1..4)) OF TierPriority,
+    pipelineBudgets     SEQUENCE (SIZE(0..maxAgents)) OF PipelineBudget
+}
+
+TierPriority ::= SEQUENCE {
+    modelTier           ENUMERATED {
+        tier-7B(0), tier-33B(1), tier-70B(2), tier-custom(3)
+    },
+    priorityWeight      INTEGER (0..1000)
+}
+
+PipelineBudget ::= SEQUENCE {
+    agentIndex          INTEGER (0..1023),
+    gpuTimeBudgetMs     INTEGER (0..60000),
+    stageWeights        SEQUENCE (SIZE(1..16)) OF INTEGER (0..1000)
+}
+
+maxAgents                   INTEGER ::= 1024
+
+END

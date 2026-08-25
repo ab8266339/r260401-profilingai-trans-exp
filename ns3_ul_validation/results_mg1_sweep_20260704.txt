@@ -1,0 +1,51 @@
+# ns-3.35 sweep — 2026-07-04 (review fix: random per-flow payloads)
+# Environment: WSL2 Ubuntu-22.04, g++ 11.4.0, ns-3.35 pkg-config
+# Command: bash run_mg1_sweep.sh
+#   MD1 block: default fixed payload S=26828 B, seed 1 (bit-regression vs published table: EXACT MATCH)
+#   MG1 block: --randomPayload=1, per-UE S = U(0,50 KB) + 4*min(LN(5,1.5),2048), seeds 1..5
+#   theory_ms = M/G/1 P-K with the realized payload moments E[S], E[S^2]
+=== regression MD1 (must match published Table) ===
+RESULT N=10 mode=MD1 sim_ms=22.30 theory_ms=21.94 rho=0.0429 ES_bytes=26828 nflows=10 pkts=213
+RESULT N=30 mode=MD1 sim_ms=23.57 theory_ms=23.05 rho=0.1288 ES_bytes=26828 nflows=30 pkts=669
+RESULT N=50 mode=MD1 sim_ms=25.00 theory_ms=24.39 rho=0.2146 ES_bytes=26828 nflows=50 pkts=1088
+RESULT N=100 mode=MD1 sim_ms=29.69 theory_ms=29.53 rho=0.4292 ES_bytes=26828 nflows=100 pkts=2264
+RESULT N=150 mode=MD1 sim_ms=40.27 theory_ms=40.86 rho=0.6439 ES_bytes=26828 nflows=150 pkts=3400
+RESULT N=175 mode=MD1 sim_ms=53.09 theory_ms=53.86 rho=0.7512 ES_bytes=26828 nflows=175 pkts=3951
+RESULT N=200 mode=MD1 sim_ms=74.97 theory_ms=86.57 rho=0.8585 ES_bytes=26828 nflows=200 pkts=4446
+=== random payload MG1 (model mixture, seeds 1-5) ===
+RESULT N=10 mode=MG1 sim_ms=22.19 theory_ms=22.11 rho=0.0430 ES_bytes=26858 nflows=10 pkts=213
+RESULT N=10 mode=MG1 sim_ms=26.58 theory_ms=25.11 rho=0.0487 ES_bytes=30436 nflows=10 pkts=232
+RESULT N=10 mode=MG1 sim_ms=22.68 theory_ms=22.04 rho=0.0428 ES_bytes=26744 nflows=10 pkts=231
+RESULT N=10 mode=MG1 sim_ms=29.32 theory_ms=28.15 rho=0.0544 ES_bytes=34019 nflows=10 pkts=252
+RESULT N=10 mode=MG1 sim_ms=22.24 theory_ms=21.45 rho=0.0418 ES_bytes=26130 nflows=10 pkts=203
+RESULT N=30 mode=MG1 sim_ms=22.05 theory_ms=20.95 rho=0.1159 ES_bytes=24141 nflows=30 pkts=710
+RESULT N=30 mode=MG1 sim_ms=27.49 theory_ms=26.25 rho=0.1431 ES_bytes=29805 nflows=30 pkts=699
+RESULT N=30 mode=MG1 sim_ms=27.65 theory_ms=26.42 rho=0.1432 ES_bytes=29834 nflows=30 pkts=691
+RESULT N=30 mode=MG1 sim_ms=26.79 theory_ms=25.86 rho=0.1408 ES_bytes=29341 nflows=30 pkts=712
+RESULT N=30 mode=MG1 sim_ms=24.90 theory_ms=23.17 rho=0.1280 ES_bytes=26677 nflows=30 pkts=694
+RESULT N=50 mode=MG1 sim_ms=24.59 theory_ms=23.59 rho=0.2021 ES_bytes=25261 nflows=50 pkts=1169
+RESULT N=50 mode=MG1 sim_ms=27.77 theory_ms=27.39 rho=0.2310 ES_bytes=28878 nflows=50 pkts=1155
+RESULT N=50 mode=MG1 sim_ms=30.53 theory_ms=29.72 rho=0.2474 ES_bytes=30929 nflows=50 pkts=1171
+RESULT N=50 mode=MG1 sim_ms=24.80 theory_ms=25.53 rho=0.2172 ES_bytes=27148 nflows=50 pkts=1098
+RESULT N=50 mode=MG1 sim_ms=23.04 theory_ms=22.39 rho=0.1946 ES_bytes=24327 nflows=50 pkts=1137
+RESULT N=100 mode=MG1 sim_ms=34.28 theory_ms=32.09 rho=0.4311 ES_bytes=26941 nflows=100 pkts=2253
+RESULT N=100 mode=MG1 sim_ms=33.91 theory_ms=31.60 rho=0.4264 ES_bytes=26647 nflows=100 pkts=2342
+RESULT N=100 mode=MG1 sim_ms=34.21 theory_ms=34.15 rho=0.4498 ES_bytes=28110 nflows=100 pkts=2299
+RESULT N=100 mode=MG1 sim_ms=36.24 theory_ms=33.61 rho=0.4461 ES_bytes=27882 nflows=100 pkts=2317
+RESULT N=100 mode=MG1 sim_ms=28.29 theory_ms=27.99 rho=0.3944 ES_bytes=24653 nflows=100 pkts=2274
+RESULT N=150 mode=MG1 sim_ms=44.86 theory_ms=43.93 rho=0.6267 ES_bytes=26114 nflows=150 pkts=3493
+RESULT N=150 mode=MG1 sim_ms=46.03 theory_ms=51.41 rho=0.6703 ES_bytes=27927 nflows=150 pkts=3374
+RESULT N=150 mode=MG1 sim_ms=58.84 theory_ms=50.00 rho=0.6634 ES_bytes=27644 nflows=150 pkts=3474
+RESULT N=150 mode=MG1 sim_ms=47.69 theory_ms=50.03 rho=0.6676 ES_bytes=27817 nflows=150 pkts=3433
+RESULT N=150 mode=MG1 sim_ms=41.72 theory_ms=42.74 rho=0.6233 ES_bytes=25970 nflows=150 pkts=3398
+RESULT N=175 mode=MG1 sim_ms=61.77 theory_ms=55.66 rho=0.7198 ES_bytes=25707 nflows=175 pkts=4009
+RESULT N=175 mode=MG1 sim_ms=72.98 theory_ms=73.12 rho=0.7800 ES_bytes=27859 nflows=175 pkts=3911
+RESULT N=175 mode=MG1 sim_ms=74.89 theory_ms=70.11 rho=0.7731 ES_bytes=27609 nflows=175 pkts=4039
+RESULT N=175 mode=MG1 sim_ms=70.89 theory_ms=75.61 rho=0.7901 ES_bytes=28220 nflows=175 pkts=3987
+RESULT N=175 mode=MG1 sim_ms=55.52 theory_ms=56.46 rho=0.7275 ES_bytes=25981 nflows=175 pkts=3957
+RESULT N=200 mode=MG1 sim_ms=78.35 theory_ms=86.63 rho=0.8290 ES_bytes=25906 nflows=200 pkts=4490
+RESULT N=200 mode=MG1 sim_ms=149.91 theory_ms=136.97 rho=0.8899 ES_bytes=27809 nflows=200 pkts=4562
+RESULT N=200 mode=MG1 sim_ms=115.37 theory_ms=120.12 rho=0.8750 ES_bytes=27344 nflows=200 pkts=4547
+RESULT N=200 mode=MG1 sim_ms=121.73 theory_ms=146.87 rho=0.8985 ES_bytes=28077 nflows=200 pkts=4551
+RESULT N=200 mode=MG1 sim_ms=80.31 theory_ms=84.20 rho=0.8254 ES_bytes=25794 nflows=200 pkts=4501
+DONE

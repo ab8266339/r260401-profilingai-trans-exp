@@ -1,0 +1,51 @@
+# srsUE-compatible FDD configuration derived from the upstream
+# gnb_rf_b210_fdd_srsUE.yml example. No SDR or over-the-air RF.
+cu_cp:
+  amf:
+    addr: 127.0.0.5
+    port: 38412
+    bind_addr: 127.0.0.1
+    supported_tracking_areas:
+      - tac: 1
+        plmn_list:
+          - plmn: "99970"
+            tai_slice_support_list:
+              - sst: 1
+
+ru_sdr:
+  device_driver: zmq
+  device_args: tx_port=tcp://*:2000,rx_port=tcp://localhost:2001,base_srate=23.04e6
+  srate: 23.04
+  tx_gain: 0
+  rx_gain: 0
+
+cell_cfg:
+  dl_arfcn: 368500
+  band: 3
+  channel_bandwidth_MHz: 20
+  common_scs: 15
+  plmn: "99970"
+  tac: 1
+  pci: 1
+  pdcch:
+    dedicated:
+      ss2_type: common
+      dci_format_0_1_and_1_1: false
+    common:
+      ss0_index: 0
+      coreset0_index: 12
+  prach:
+    prach_config_index: 1
+  pdsch:
+    mcs_table: qam64
+  pusch:
+    mcs_table: qam64
+
+log:
+  filename: stdout
+  all_level: info
+
+pcap:
+  mac_enable: false
+  ngap_enable: false
+

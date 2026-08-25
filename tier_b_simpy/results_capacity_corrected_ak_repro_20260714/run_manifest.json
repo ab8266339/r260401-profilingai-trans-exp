@@ -1,0 +1,140 @@
+{
+  "schema_version": 1,
+  "run_id": "capacity_corrected_ak_repro_20260714",
+  "truth_type": "simulated discrete-event negative control",
+  "complete": true,
+  "started_utc": "2026-07-14T16:06:14.1488622Z",
+  "ended_utc": "2026-07-14T16:07:28.6039404Z",
+  "started_asia_shanghai": "2026-07-15T00:06:14.1488622+08:00",
+  "ended_asia_shanghai": "2026-07-15T00:07:28.6039404+08:00",
+  "elapsed_wall_seconds": 74.4550782,
+  "working_directory": "D:/CodeBase-708a/061-working-paper/R260401-profilingai-trans",
+  "command": "python -u simulation/tier_b_simpy/oran_mmas_sim.py --agents 200 --seeds 50 --duration 60 --warmup 10 --ablation --outdir simulation/tier_b_simpy/results_capacity_corrected_ak_repro_20260714",
+  "source": {
+    "path": "simulation/tier_b_simpy/oran_mmas_sim.py",
+    "sha256": "c89a5ba76f67fe330bbea8cfef0d7c764091246398b0143d2789a08aa231dd06",
+    "modified_during_reproduction": false
+  },
+  "environment": {
+    "platform": "Windows-11-10.0.26100-SP0",
+    "python": {
+      "version": "3.13.3",
+      "executable": "C:/Python313/python.exe"
+    },
+    "dependencies": {
+      "numpy": "2.3.4",
+      "simpy": "4.1.1"
+    }
+  },
+  "cli_configuration": {
+    "agents": [200],
+    "seed_count": 50,
+    "seed_range_inclusive": [0, 49],
+    "duration_seconds": 60.0,
+    "warmup_seconds": 10.0,
+    "ablation": true,
+    "arms_in_execution_order": [
+      "baseline",
+      "tdd",
+      "tdd_joint",
+      "full"
+    ]
+  },
+  "fixed_model_configuration": {
+    "network": {
+      "cell_ul_mbps": 50.0,
+      "cell_dl_mbps": 200.0,
+      "baseline_tdd_ul_ratio": 0.20,
+      "backhaul_rtt_ms": 2.0,
+      "core_rtt_ms": 5.0,
+      "cloud_rtt_ms": 40.0,
+      "scheduler_overhead_ms": 4.0
+    },
+    "gpu_cluster": {
+      "gpu_model_assumption": "A100 FP16 peak",
+      "num_gpus": 4,
+      "tflops_per_gpu": 312.0,
+      "service_slots_per_gpu": 1,
+      "aggregate_service_slots": 4,
+      "capacity_semantics": "Each active request owns one per-GPU service resource and is divided by per-GPU throughput; aggregate work service therefore does not exceed four times 312 TFLOP/s.",
+      "standalone_compatible_prefix_hit_rate": 0.70,
+      "pipeline_compatible_prefix_hit_rate": 0.95
+    },
+    "control_semantics": {
+      "baseline": "No control loop and no MEC context persistence.",
+      "tdd": "UL-triggered dynamic TDD without the GPU gate.",
+      "tdd_joint": "Joint radio-compute TDD gate; admission decisions are advisory and are not enforced on the data path.",
+      "full": "Joint gate plus AFS-C MEC context persistence for pipeline agents; admission remains advisory."
+    },
+    "randomness": "Each arm uses NumPy RandomState with the same top-level seeds 0 through 49; matched seed IDs define paired contrasts."
+  },
+  "output": {
+    "path": "simulation/tier_b_simpy/results_capacity_corrected_ak_repro_20260714/ablation_results.json",
+    "sha256": "189d6094bede3ede4130abd42426244abeb38884c2187d42919ffd8df14a8b96",
+    "bytes": 118482,
+    "rows": 200,
+    "rows_per_arm": 50,
+    "legacy_corrected_comparison": {
+      "path": "simulation/tier_b_simpy/results_capacity_corrected_20260714/ablation_results.json",
+      "sha256": "189d6094bede3ede4130abd42426244abeb38884c2187d42919ffd8df14a8b96",
+      "bitwise_identical": true
+    }
+  },
+  "statistical_definition": {
+    "sampling_unit": "one seed-level endpoint",
+    "arm_mean_interval": "mean +/- 1.96 * population_standard_deviation(ddof=0) / sqrt(50)",
+    "paired_interval": "For each seed, subtract the baseline endpoint from the matched-arm endpoint; report mean paired difference +/- 1.96 * population_standard_deviation(ddof=0) / sqrt(50).",
+    "interpretation": "Two-sided nominal 95% normal-approximation intervals, preserving the manuscript-compatible definition; these are not Student-t intervals.",
+    "console_note": "The simulator's console plus/minus values are population standard deviations across seeds, not confidence intervals."
+  },
+  "arm_summary": {
+    "baseline": {
+      "mean_total_ms": 3518.4472851772643,
+      "total_ci95_halfwidth_ms": 110.6264115862704,
+      "mean_ul_ms": 58.011995177894775,
+      "mean_gpu_queue_ms": 3259.6823784186836,
+      "gpu_queue_fraction_of_mean_total": 0.9264548007160085,
+      "mean_gpu_compute_ms": 193.9819302661778,
+      "mean_seed_p95_ms": 10004.874333575106,
+      "mean_final_tdd_ul_ratio": 0.19999999999999996,
+      "mean_sla_rate": 0.1717271335186891
+    },
+    "tdd": {
+      "mean_total_ms": 3517.5762626544874,
+      "total_ci95_halfwidth_ms": 110.10091006086323,
+      "mean_ul_ms": 24.7204727733686,
+      "mean_gpu_queue_ms": 3292.0071550320586,
+      "mean_gpu_compute_ms": 194.04566030932259,
+      "mean_seed_p95_ms": 9986.94771345392,
+      "mean_final_tdd_ul_ratio": 0.363,
+      "mean_sla_rate": 0.171391265784954,
+      "paired_total_delta_vs_baseline_ms": -0.871022522776775,
+      "paired_delta_ci95_halfwidth_ms": 3.196932426732528
+    },
+    "tdd_joint": {
+      "mean_total_ms": 3516.3366496862745,
+      "total_ci95_halfwidth_ms": 110.52106352529326,
+      "mean_ul_ms": 51.492962058268695,
+      "mean_gpu_queue_ms": 3264.1490872492686,
+      "mean_gpu_compute_ms": 193.9218756556678,
+      "mean_seed_p95_ms": 9990.495058767874,
+      "mean_final_tdd_ul_ratio": 0.21799999999999997,
+      "mean_sla_rate": 0.17202546025550572,
+      "paired_total_delta_vs_baseline_ms": -2.1106354909897163,
+      "paired_delta_ci95_halfwidth_ms": 2.9413187026688177
+    },
+    "full": {
+      "mean_total_ms": 3572.2498030664456,
+      "total_ci95_halfwidth_ms": 107.41170066677255,
+      "mean_ul_ms": 47.91839026899774,
+      "mean_gpu_queue_ms": 3322.773054762137,
+      "mean_gpu_compute_ms": 194.7771399250509,
+      "mean_seed_p95_ms": 10240.368422441163,
+      "mean_final_tdd_ul_ratio": 0.21999999999999992,
+      "mean_sla_rate": 0.1671400669146668,
+      "paired_total_delta_vs_baseline_ms": 53.80251788918129,
+      "paired_delta_ci95_halfwidth_ms": 86.47931841169292
+    }
+  },
+  "claim_boundary": "This is a capacity-conserving four-GPU discrete-event negative control, not a measured GPU result. It supports the absence of a material radio-only latency gain in the simulated GPU-bound regime. Admission decisions are logged but not enforced, and no admission-control latency credit is claimed."
+}

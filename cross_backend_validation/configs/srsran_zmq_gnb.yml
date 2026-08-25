@@ -1,0 +1,37 @@
+# Local protocol-in-loop smoke configuration. No SDR or over-the-air RF.
+cu_cp:
+  amf:
+    addr: 127.0.0.5
+    port: 38412
+    bind_addr: 127.0.0.1
+    supported_tracking_areas:
+      - tac: 1
+        plmn_list:
+          - plmn: "99970"
+            tai_slice_support_list:
+              - sst: 1
+
+ru_sdr:
+  device_driver: zmq
+  device_args: tx_port=tcp://*:2000,rx_port=tcp://localhost:2001,base_srate=23.04e6
+  srate: 23.04
+  tx_gain: 0
+  rx_gain: 0
+
+cell_cfg:
+  dl_arfcn: 632628
+  band: 78
+  channel_bandwidth_MHz: 20
+  common_scs: 30
+  plmn: "99970"
+  tac: 1
+  pci: 1
+
+log:
+  filename: stdout
+  all_level: info
+
+pcap:
+  mac_enable: false
+  ngap_enable: false
+

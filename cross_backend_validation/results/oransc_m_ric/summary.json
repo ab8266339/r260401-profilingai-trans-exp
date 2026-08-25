@@ -1,0 +1,55 @@
+{
+  "generated_local_date": "2026-07-18",
+  "truth_type": "protocol-level O-RAN SC platform interoperability",
+  "over_the_air": false,
+  "platform": {
+    "oran_sc_release": "M integration recipe",
+    "integration_commit": "0ce5f68bafe78470b1331284c47918c513173ad2",
+    "kubernetes": "kind v1.21.14 cluster oran-m",
+    "ready_components": [
+      "AppMgr",
+      "SubMgr",
+      "E2Mgr",
+      "RTMgr",
+      "E2Term"
+    ],
+    "e2term_image": "o-ran-sc/ric-plt-e2:5.0.8",
+    "e2mgr_image": "o-ran-sc/ric-plt-e2mgr:5.4.19",
+    "rtmgr_image": "o-ran-sc/ric-plt-rtmgr:0.6.3",
+    "e2_sctp_endpoint": "172.19.0.2:32222"
+  },
+  "simulator": {
+    "name": "official ns-O-RAN scenario-zero",
+    "binary": "/home/hxu/ran-sims/ns-o-ran-ns-3/build/scratch/ns3.38.rc1-scenario-zero",
+    "nodes": 5,
+    "sim_time_s": 2,
+    "e2_function_ids": [200, 300]
+  },
+  "observed": {
+    "sctp_connections_established": 5,
+    "e2_setup_requests_sent": 5,
+    "e2_setup_requests_received": 5,
+    "e2_setup_requests_decoded": 5,
+    "e2_setup_decode_errors": 0,
+    "e2_setup_responses_seen_by_simulator": 5,
+    "setup_response_success_decoded_by_simulator": 5,
+    "process_exit_status": 0,
+    "contract_e_level": "setup pass"
+  },
+  "compatibility_repairs": [
+    {
+      "file": "configs/oransc_m_rtmgr_service_correction.json",
+      "reason": "the deployed RTMgr REST process listens on 3800 while the unmodified service targeted 8080"
+    },
+    {
+      "file": "configs/oransc_m_e2term_setup_route_patch.json",
+      "reason": "the release-M E2Term static RMR table omitted E2 Setup message type 12001 to E2Mgr"
+    }
+  ],
+  "discarded_attempts": [
+    "pre-readiness association attempts",
+    "a 2026-07-18 ns3 wrapper invocation that swallowed the command-line overrides and used the default 10.0.2.10:36422 endpoint"
+  ],
+  "interpretation": "After two explicit deployment compatibility corrections, all five official ns-O-RAN nodes established SCTP, sent E2 Setup, and decoded successful E2 Setup responses from the O-RAN SC M platform.",
+  "claim_boundary": "This is a compatibility-patched E2 Setup interoperability pass. It does not establish KPM subscription, RC control, user-plane gain, stability, or over-the-air behavior; those stages are tested separately with FlexRIC and srsRAN."
+}

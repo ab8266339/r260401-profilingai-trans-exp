@@ -1,0 +1,14 @@
+# O-RAN SC Near-RT RIC overlay for the local Docker bridge.
+# The radio path remains ZMQ-only; this is not an over-the-air setup.
+e2:
+  enable_du_e2: true
+  addr: 10.0.2.10
+  port: 36421
+  bind_addr: 10.0.2.1
+  e2sm_kpm_enabled: true
+  e2sm_rc_enabled: true
+  e2sm_ccc_enabled: false
+
+pcap:
+  e2ap_enable: true
+  e2ap_du_filename: /tmp/srsran_osc_du_e2ap.pcap

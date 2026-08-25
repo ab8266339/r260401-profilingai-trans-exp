@@ -1,0 +1,122 @@
+{
+  "schema_version": 1,
+  "generated_utc": "2026-07-14T18:48:37.949567+00:00",
+  "truth_type": "synthetic Monte Carlo path model",
+  "experiment": {
+    "truth_type": "synthetic Monte Carlo path model",
+    "scope": "serialized application-layer uplink payload only",
+    "exclusions": [
+      "latency",
+      "radio channel",
+      "protocol headers",
+      "retransmissions",
+      "compute service",
+      "measured or operational traffic"
+    ],
+    "random_stream": {
+      "generator": "numpy.random.RandomState",
+      "seed": 42,
+      "ordering": "one stream reused sequentially across ascending depths"
+    },
+    "depths": [
+      2,
+      3,
+      4,
+      5,
+      6,
+      8,
+      10
+    ],
+    "paths_per_depth": 10000,
+    "bytes_per_token": 4.0,
+    "initial_and_stage_output_tokens": {
+      "distribution": "capped lognormal",
+      "log_mean": 5.0,
+      "log_standard_deviation": 1.5,
+      "cap_tokens": 2048.0
+    },
+    "conservative_replay_baseline": "each stage sends the initial prompt plus accumulated outputs; later instruction bytes are omitted",
+    "afs_c_incremental": {
+      "stage_1": "send the initial input",
+      "later_stages": "send an independent uniform token increment",
+      "increment_tokens_low": 25.0,
+      "increment_tokens_high": 75.0
+    },
+    "comparison_metric": "ratio of the two sample means at each depth"
+  },
+  "acceptance_check_depth_8": {
+    "full_history_mean_kib": 49.922982424543854,
+    "afs_c_incremental_mean_kib": 2.7350396936507515,
+    "reduction_percent_ratio_of_means": 94.52148176887343,
+    "expected_rounded_values": {
+      "full_history_mean_kib": 49.9,
+      "afs_c_incremental_mean_kib": 2.7,
+      "reduction_percent_ratio_of_means": 94.5
+    }
+  },
+  "lineage": {
+    "design_reference": {
+      "path": "paper/gen_supplementary.py",
+      "sha256": "7f3f7f0b6e281162fad9860adedf0e9da860e83fbc532353423389c96a7f13aa",
+      "function": "fig_afs_comparison"
+    },
+    "generator": {
+      "path": "simulation/afs_path_validation/generate_afs_path_result.py",
+      "sha256": "c4566fed9b75f8368934257e7748f5aab6f53da12e995fb616b0c21cbcc3fc5c"
+    }
+  },
+  "software": {
+    "python": "3.13.3",
+    "numpy": "2.3.4",
+    "matplotlib": "3.10.7",
+    "platform": "Windows-11-10.0.26100-SP0"
+  },
+  "raw_sample_digests": {
+    "2": {
+      "full_history_float64_sha256": "d12e5c2c3c8ccf98a19b08ea3806322bc95996303947c6a4878ac48a884d00dd",
+      "afs_c_incremental_float64_sha256": "da0c04ae58148e58b6124f6f53b21b8a9fe282cd2d3652e358dc77a0f6adbe2d"
+    },
+    "3": {
+      "full_history_float64_sha256": "2dc31e54b6d62a11833f41c8e6dcf55cb14a8dd9e2b8d334111d89b006adb71a",
+      "afs_c_incremental_float64_sha256": "11078fbd0649ca34f6e27971e83a5aef08b9991052df2a2f8f440d301023217d"
+    },
+    "4": {
+      "full_history_float64_sha256": "58890bba18ae3a363a9fbc5a3e33ef78df6f4c13d09e767fe4195a60c0995efc",
+      "afs_c_incremental_float64_sha256": "6b9fb7be9fb17635bd06e4f129a6dbf762e70f3b1499edf6a948e87be0fc9fca"
+    },
+    "5": {
+      "full_history_float64_sha256": "acc9a539af3c917095e6cb23ab4e590aa71e5a84a9bbc20015c9a76f154c0ce9",
+      "afs_c_incremental_float64_sha256": "918d9ede03249092a644259274f0ddd09faaa06fdbbb66201f6905ae9e6c6e8d"
+    },
+    "6": {
+      "full_history_float64_sha256": "b5d231e476ef7eb810128915fc0d43d84fe607687329fc95342f2d9d7dd0280a",
+      "afs_c_incremental_float64_sha256": "c58f1599046e7212d9a6a01ba320238ef88190501655b15881c96ff7e50547fa"
+    },
+    "8": {
+      "full_history_float64_sha256": "1a9d77980741e9cf3daa9b21757c1e38759603a8f80fa097624485f96ebbad4f",
+      "afs_c_incremental_float64_sha256": "e5ce191b73d24e1684a2dca530f3243bde8cc7ba6c82d318021af44503206820"
+    },
+    "10": {
+      "full_history_float64_sha256": "f86e4e81927be54ec2ff0f9f505cfd90bc37961d6dd74445cc464be261831630",
+      "afs_c_incremental_float64_sha256": "881151ba9719ac90c24b8cfd1e97a51b706e7e53eefe4f9e2d302882878a6b38"
+    }
+  },
+  "artifacts": {
+    "simulation/afs_path_validation/afs_path_aggregate.csv": {
+      "bytes": 2891,
+      "sha256": "3e4215dd15b6fb8813cfa2f40f4cbe055912ced9621b464ae22316ed159ea485"
+    },
+    "simulation/afs_path_validation/afs_path_aggregate.json": {
+      "bytes": 8594,
+      "sha256": "707bce7586b8f34632ab5a442d26245b7998aefe204ebeed0388a0471be9b7cb"
+    },
+    "paper/figures/fig_afs_traffic.pdf": {
+      "bytes": 19386,
+      "sha256": "3e9fd7a50e4244bde47e8d6e38bcedc17efa3f0a56492b6ec64dcbd342201d0f"
+    },
+    "paper/figures/fig_afs_traffic.png": {
+      "bytes": 165163,
+      "sha256": "87056f15acc3e063cdbb60d6e590f55a104a3232e628276524a519428794e460"
+    }
+  }
+}

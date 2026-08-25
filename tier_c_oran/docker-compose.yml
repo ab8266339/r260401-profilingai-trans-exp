@@ -1,0 +1,150 @@
+# Docker Compose for Tier C: O-RAN End-to-End Emulation
+# Components: Open5GS 5G Core + FlexRIC + MEC GPU Emulator
+#
+# Network topology:
+#   ns-3 (host) <--TUN/TAP--> Open5GS <--N6--> MEC Emulator
+#                    |
+#              FlexRIC (E2AP)
+#                    |
+#              AJS-xApp (Python)
+
+version: '3.8'
+
+networks:
+  oran-net:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 10.45.0.0/16
+
+services:
+  # ═══════════════════════════════════════════════
+  # MongoDB (Open5GS subscriber DB)
+  # ═══════════════════════════════════════════════
+  mongodb:
+    image: mongo:6.0
+    container_name: oran-mongodb
+    volumes:
+      - mongodb_data:/data/db
+    networks:
+      oran-net:
+        ipv4_address: 10.45.0.2
+
+  # ═══════════════════════════════════════════════
+  # Open5GS 5G Core Network Functions
+  # ═══════════════════════════════════════════════
+  open5gs-nrf:
+    image: gradiant/open5gs:2.6.4
+    container_name: oran-nrf
+    command: open5gs-nrfd
+    volumes:
+      - ./open5gs_configs/nrf.yaml:/etc/open5gs/nrf.yaml
+    networks:
+      oran-net:
+        ipv4_address: 10.45.0.10
+    depends_on:
+      - mongodb
+
+  open5gs-amf:
+    image: gradiant/open5gs:2.6.4
+    container_name: oran-amf
+    command: open5gs-amfd
+    volumes:
+      - ./open5gs_configs/amf.yaml:/etc/open5gs/amf.yaml
+    networks:
+      oran-net:
+        ipv4_address: 10.45.0.11
+    depends_on:
+      - open5gs-nrf
+
+  open5gs-smf:
+    image: gradiant/open5gs:2.6.4
+    container_name: oran-smf
+    command: open5gs-smfd
+    volumes:
+      - ./open5gs_configs/smf.yaml:/etc/open5gs/smf.yaml
+    networks:
+      oran-net:
+        ipv4_address: 10.45.0.12
+    depends_on:
+      - open5gs-nrf
+
+  open5gs-upf:
+    image: gradiant/open5gs:2.6.4
+    container_name: oran-upf
+    command: open5gs-upfd
+    volumes:
+      - ./open5gs_configs/upf.yaml:/etc/open5gs/upf.yaml
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun
+    networks:
+      oran-net:
+        ipv4_address: 10.45.0.13
+    depends_on:
+      - open5gs-smf
+
+  # ═══════════════════════════════════════════════
+  # FlexRIC (Near-RT RIC with E2AP)
+  # ═══════════════════════════════════════════════
+  flexric:
+    image: flexric:latest
+    build:
+      context: ./flexric
+      dockerfile: Dockerfile
+    container_name: oran-flexric
+    volumes:
+      - ./flexric/e2sm_aic:/opt/flexric/e2sm_aic
+      - ./xapp:/opt/flexric/xapp
+    ports:
+      - "36421:36421"   # E2AP SCTP
+      - "9090:9090"     # xApp REST API
+    networks:
+      oran-net:
+        ipv4_address: 10.45.0.20
+
+  # ═══════════════════════════════════════════════
+  # AJS-xApp (Dimensionality-Reduction Scheduler)
+  # ═══════════════════════════════════════════════
+  xapp-ajs:
+    image: python:3.11-slim
+    container_name: oran-xapp-ajs
+    working_dir: /opt/xapp
+    command: python ajs_xapp.py
+    volumes:
+      - ./xapp:/opt/xapp
+    environment:
+      - FLEXRIC_HOST=10.45.0.20
+      - FLEXRIC_PORT=36421
+      - MEC_HOST=10.45.0.30
+      - MEC_PORT=8080
+      - CONTROL_INTERVAL_MS=100
+    networks:
+      oran-net:
+        ipv4_address: 10.45.0.21
+    depends_on:
+      - flexric
+
+  # ═══════════════════════════════════════════════
+  # MEC GPU Emulator (Edge Inference Server)
+  # ═══════════════════════════════════════════════
+  mec-gpu:
+    image: python:3.11-slim
+    container_name: oran-mec-gpu
+    working_dir: /opt/mec
+    command: python mec_gpu_emulator.py
+    volumes:
+      - ./mec:/opt/mec
+    ports:
+      - "8080:8080"
+    environment:
+      - NUM_GPUS=4
+      - TFLOPS_PER_GPU=312
+      - MAX_CONCURRENT=64
+    networks:
+      oran-net:
+        ipv4_address: 10.45.0.30
+
+volumes:
+  mongodb_data:

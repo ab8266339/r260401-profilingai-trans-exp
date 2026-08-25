@@ -1,0 +1,122 @@
+{
+  "generated_utc": "2026-07-17T22:19:32.392019+00:00",
+  "contract_source": "CROSS_STACK_CONTRACT_20260718.md",
+  "all_required_checks_pass": true,
+  "required_checks": {
+    "srsran_contract_s": true,
+    "srsran_flexric_contract_e": true,
+    "ueransim_contract_s": true,
+    "oai_contract_s": true,
+    "oransc_m_setup": true
+  },
+  "backends": {
+    "srsran_flexric": {
+      "software": "srsRAN Project 25.10 + srsUE + Open5GS 2.8.0 + FlexRIC",
+      "truth_label": "protocol implementation over ZMQ virtual RF; not OTA",
+      "ue_ip": "10.45.0.14",
+      "contract_s": {
+        "stages": {
+          "ng_setup": true,
+          "cell_acquisition": true,
+          "rrc_connection": true,
+          "authentication_and_registration_accept": true,
+          "pdu_session": true,
+          "assigned_ue_address": true,
+          "uplink_user_plane": true,
+          "downlink_user_plane": true
+        },
+        "passed_stage_count": 8,
+        "required_stage_count": 8,
+        "full_pass": true
+      },
+      "contract_e": {
+        "stages": {
+          "sctp_and_e2_setup": true,
+          "kpm_subscription_response": true,
+          "decoded_kpm_indication": true,
+          "nonzero_load_visible_in_kpm": true,
+          "rc_request_at_xapp": true,
+          "rc_request_at_ran": true,
+          "rc_ack_at_ran": true,
+          "rc_ack_at_xapp": true
+        },
+        "passed_stage_count": 8,
+        "required_stage_count": 8,
+        "full_pass": true
+      },
+      "observations": {
+        "kpm_indication_count": 6,
+        "maximum_rru_prb_tot_ul_percent": 97,
+        "iperf3_uplink_sender_mbps": 65.5,
+        "rc_style": 2,
+        "rc_action": 6
+      },
+      "compatibility_repairs": [
+        "FlexRIC KPM sample guards unsupported/no-value records",
+        "FlexRIC RC decoder ignores an advertised optional call-process-ID capability that its model does not consume"
+      ],
+      "boundary": "RRU/PRB KPM reflects load; the exposed DRB throughput fields remained unavailable/zero and are not used as zero-throughput evidence."
+    },
+    "ueransim": {
+      "software": "UERANSIM 3.3.0 + Open5GS 2.8.0",
+      "truth_label": "abstract 5G RAN/UE protocol emulator; not an NR PHY and not OTA",
+      "ue_ip": "10.45.0.11",
+      "contract_s": {
+        "stages": {
+          "ng_setup": true,
+          "cell_acquisition": true,
+          "rrc_connection": true,
+          "authentication_and_registration_accept": true,
+          "pdu_session": true,
+          "assigned_ue_address": true,
+          "uplink_user_plane": true,
+          "downlink_user_plane": true
+        },
+        "passed_stage_count": 8,
+        "required_stage_count": 8,
+        "full_pass": true
+      },
+      "strength": "fastest reproducible SA control/user-plane smoke test with a native per-session namespace",
+      "boundary": "does not validate waveform, coding, scheduler, K2, beamforming, or radio propagation"
+    },
+    "oai": {
+      "software": "OpenAirInterface develop 70508eb + Open5GS 2.8.0",
+      "truth_label": "protocol/PHY implementation over RFsimulator; not OTA",
+      "ue_ip": "10.45.0.12",
+      "contract_s": {
+        "stages": {
+          "ng_setup": true,
+          "cell_acquisition": true,
+          "rrc_connection": true,
+          "authentication_and_registration_accept": true,
+          "pdu_session": true,
+          "assigned_ue_address": true,
+          "uplink_user_plane": true,
+          "downlink_user_plane": true
+        },
+        "passed_stage_count": 8,
+        "required_stage_count": 8,
+        "full_pass": true
+      },
+      "strength": "deepest RRC/NAS/PDCP/RLC/MAC/PHY visibility among the three SA backends",
+      "boundary": "highest startup/resource cost and a software channel rather than measured RF"
+    },
+    "oransc_m": {
+      "software": "O-RAN SC M near-RT RIC platform + official ns-O-RAN scenario-zero",
+      "truth_label": "protocol-level O-RAN SC platform interoperability; not OTA",
+      "contract_e_level": "setup pass",
+      "setup_pass": true,
+      "compatibility_repairs": [
+        {
+          "file": "configs/oransc_m_rtmgr_service_correction.json",
+          "reason": "the deployed RTMgr REST process listens on 3800 while the unmodified service targeted 8080"
+        },
+        {
+          "file": "configs/oransc_m_e2term_setup_route_patch.json",
+          "reason": "the release-M E2Term static RMR table omitted E2 Setup message type 12001 to E2Mgr"
+        }
+      ],
+      "boundary": "This is a compatibility-patched E2 Setup interoperability pass. It does not establish KPM subscription, RC control, user-plane gain, stability, or over-the-air behavior; those stages are tested separately with FlexRIC and srsRAN."
+    }
+  }
+}

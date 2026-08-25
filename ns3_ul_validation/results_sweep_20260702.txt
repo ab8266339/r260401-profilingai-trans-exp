@@ -1,0 +1,15 @@
+# ns-3.35 UL validation sweep — rerun 2026-07-02
+# Environment: WSL2 Ubuntu-22.04 (kernel 6.6.87.2-microsoft-standard-WSL2),
+#   g++ 11.4.0, ns-3.35 via pkg-config (libns3.35-* system packages)
+# Command: bash run_sweep.sh  (build.sh + ./mmas-ul-validation --nUes=N --simTime=120 --seed=1)
+# All seven rows published in paper Table VII match this output exactly.
+RESULT N=10 sim_ms=22.30 theory_ms=21.94 rho=0.0429 nflows=10 pkts=213
+RESULT N=20 sim_ms=22.75 theory_ms=22.47 rho=0.0858 nflows=20 pkts=410
+RESULT N=30 sim_ms=23.57 theory_ms=23.05 rho=0.1288 nflows=30 pkts=669
+RESULT N=50 sim_ms=25.00 theory_ms=24.39 rho=0.2146 nflows=50 pkts=1088
+RESULT N=75 sim_ms=27.25 theory_ms=26.56 rho=0.3219 nflows=75 pkts=1700
+RESULT N=100 sim_ms=29.69 theory_ms=29.53 rho=0.4292 nflows=100 pkts=2264
+RESULT N=125 sim_ms=34.86 theory_ms=33.89 rho=0.5366 nflows=125 pkts=2834
+RESULT N=150 sim_ms=40.27 theory_ms=40.86 rho=0.6439 nflows=150 pkts=3400
+RESULT N=175 sim_ms=53.09 theory_ms=53.86 rho=0.7512 nflows=175 pkts=3951
+RESULT N=200 sim_ms=74.97 theory_ms=86.57 rho=0.8585 nflows=200 pkts=4446

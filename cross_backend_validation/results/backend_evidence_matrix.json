@@ -1,0 +1,101 @@
+[
+  {
+    "layer": "system",
+    "backend": "MATLAB R2026a",
+    "status": "validated within the frozen abstract model",
+    "result": "208 and 238 UEs: completion delta 0.357--0.426; mean reduction 91.9--95.5%; p95 reduction 94.1--96.9%",
+    "paper_use": "main paired mMAS result",
+    "boundary": "static UMi large-scale channel and abstract PHY; no explicit K2/DCI feasibility",
+    "source": "results/cross_backend_effects.csv"
+  },
+  {
+    "layer": "system",
+    "backend": "5G-LENA nr v5.0",
+    "status": "delivery/mean direction replicated; tail not resolved",
+    "result": "5 paired seeds: delivery delta 0.295; mean/p95 reductions 44.8%/12.3%",
+    "paper_use": "independent NR timing robustness anchor",
+    "boundary": "6 CBR flows in 3 sectors; p95 CI crosses zero; complete TDD/K2 pattern matters",
+    "source": "results/5glena/paired_summary.json"
+  },
+  {
+    "layer": "system",
+    "backend": "SimPy all-integer control",
+    "status": "compute-bottleneck boundary",
+    "result": "180--260 devices by one; median full-minus-baseline mean/p95 changes +180.5/+523.8 ms; median baseline GPU-queue share 94.0%",
+    "paper_use": "main bottleneck-boundary result",
+    "boundary": "abstract discrete-event model; no NR/E2 execution or measured accelerator",
+    "source": "../tier_b_simpy/results_integer_180_260/summary.json"
+  },
+  {
+    "layer": "link",
+    "backend": "Sionna 1.2.2",
+    "status": "configuration/trend cross-check; absolute SNR disagrees",
+    "result": "MCS13/14088-bit TB: BLER 0.105 at 9 dB versus MATLAB 0.135 at 15 dB; the exact MATLAB 12--17 dB grid produced 0/1200 Sionna TB errors; CPU/GPU block errors both 126 and 1000-TB GPU speedup 3.05x",
+    "paper_use": "receiver/noise-model sensitivity only",
+    "boundary": "normalized frequency-domain TDL-C with LS/LMMSE and no HARQ; do not merge SNR axes",
+    "source": "results/sionna/mcs_13*/summary.csv"
+  },
+  {
+    "layer": "SA protocol + O-RAN control",
+    "backend": "srsRAN+srsUE+Open5GS+FlexRIC",
+    "status": "Contract S and Contract E full pass",
+    "result": "UE 10.45.0.14; bidirectional user plane; iperf3 UL 65.5 Mbit/s; 6 KPM indications with UL PRB 97%; RC Style 2/Action 6 ACK",
+    "paper_use": "main protocol/E2 feasibility evidence",
+    "boundary": "compatibility-patched FlexRIC, ZMQ virtual RF, one UE; DRB throughput KPM unavailable",
+    "source": "results/protocol_contract_summary.json"
+  },
+  {
+    "layer": "SA protocol",
+    "backend": "UERANSIM 3.3.0 + Open5GS",
+    "status": "Contract S full pass",
+    "result": "UE 10.45.0.11; NG/RRC/registration/PDU session and bidirectional user plane passed",
+    "paper_use": "fast independent 5GC/session replication",
+    "boundary": "abstract RAN/UE protocol emulator; no NR waveform or scheduler",
+    "source": "results/protocol_contract_summary.json"
+  },
+  {
+    "layer": "SA RAN protocol/PHY",
+    "backend": "OpenAirInterface RFsimulator + Open5GS",
+    "status": "Contract S full pass",
+    "result": "UE 10.45.0.12; n78/30 kHz RFsim NG/RRC/registration/PDU session and bidirectional user plane passed",
+    "paper_use": "deep independent SA protocol/PHY replication",
+    "boundary": "RFsim software channel, one UE, highest startup/resource cost; not OTA",
+    "source": "results/protocol_contract_summary.json"
+  },
+  {
+    "layer": "O-RAN platform",
+    "backend": "official ns-O-RAN + O-RAN SC M",
+    "status": "compatibility-patched E2 Setup pass",
+    "result": "5/5 SCTP associations and 5/5 successful Setup responses",
+    "paper_use": "near-RT RIC platform-assembly evidence",
+    "boundary": "two explicit service/RMR routing repairs; Setup only, no KPM/control/user plane",
+    "source": "results/oransc_m_ric/summary.json"
+  },
+  {
+    "layer": "RAN compatibility",
+    "backend": "srsRAN+srsUE n78 TDD",
+    "status": "negative compatibility control",
+    "result": "gNB/AMF NG setup passed; installed srsUE rejected 30 kHz SCS during cell selection",
+    "paper_use": "documents why OAI/5G-LENA carry the n78 TDD role",
+    "boundary": "configuration-specific gNB cell cap 96 UEs",
+    "source": "results/srsran_e2e/summary.json"
+  },
+  {
+    "layer": "O-RAN control",
+    "backend": "NORI ns-3.42 + O-RAN SC M",
+    "status": "compatibility-patched E2 Setup pass",
+    "result": "SCTP and successful E2 Setup response passed; RAN function IDs 200/300 accepted",
+    "paper_use": "secondary compatibility control",
+    "boundary": "This is compatibility, executable-lifecycle, and user-plane smoke evidence. The two 10-second diagnostics are single runs on a repaired example, so no KPM subscription, indication, RC action, comparative scheduler gain, repeated stability result, or over-the-air path is claimed.",
+    "source": "results/nori_ns3_oransc_m/summary.json"
+  },
+  {
+    "layer": "O-RAN control model",
+    "backend": "NIST ns3-oran on ns-3.42",
+    "status": "abstract RIC examples passed",
+    "result": "2/2 repository/keep-alive examples exited zero",
+    "paper_use": "model-semantics control",
+    "boundary": "in-process abstract RIC; no SCTP/ASN.1 E2AP, NR, 5GC, or OTA",
+    "source": "results/nist_ns3_oran/summary.json"
+  }
+]

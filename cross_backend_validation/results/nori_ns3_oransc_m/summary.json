@@ -1,0 +1,85 @@
+{
+  "generated_local_date": "2026-07-18",
+  "truth_type": "compatibility-patched NORI ns-3 to O-RAN SC M Setup plus bounded user-plane smoke",
+  "over_the_air": false,
+  "backend": {
+    "simulator": "NORI on ns-3.42",
+    "source_tree": "/home/hxu/ran-sims/nori-ns-3",
+    "program": "nori-sample",
+    "ric": "O-RAN SC M E2Term/E2Mgr",
+    "endpoint": "172.19.0.2:32222"
+  },
+  "observed": {
+    "nori_build_status": 0,
+    "sctp_connection_established": true,
+    "e2_setup_request_sent": true,
+    "e2_setup_response_received": true,
+    "e2_setup_response_decoded": true,
+    "accepted_ran_function_ids": [200, 300],
+    "kpm_subscription_exercised": false,
+    "control_exercised": false,
+    "user_plane_smoke_exercised": true,
+    "user_plane_performance_counted": false
+  },
+  "nori_simple_rl_short_smoke": {
+    "sim_time_seconds": 10,
+    "gnb_count": 1,
+    "ue_count": 4,
+    "build_status": 0,
+    "process_exit_status": 0,
+    "sctp_connection_established": true,
+    "e2_setup_response_decoded": true,
+    "unbounded_scheduler_debug_output_present": false,
+    "traffic_profile": "saturation",
+    "transmitted_udp_packets": 35200,
+    "received_udp_packets": 35184,
+    "packet_delivery_fraction": 0.9995454545454545,
+    "mean_per_flow_throughput_mbps": 24.212989,
+    "mean_per_flow_delay_ms": 4.062527,
+    "performance_result_counted": false
+  },
+  "nori_simple_rl_medium_load_diagnostic": {
+    "sim_time_seconds": 10,
+    "process_exit_status": 0,
+    "e2_setup_response_decoded": true,
+    "transmitted_udp_packets": 17600,
+    "received_udp_packets": 17594,
+    "packet_delivery_fraction": 0.9996590909090909,
+    "mean_per_flow_throughput_mbps": 8.612665,
+    "mean_per_flow_delay_ms": 3.061841,
+    "performance_result_counted": false
+  },
+  "oransc_runtime_recovery": {
+    "action": "ordered E2Term then E2Mgr rollout refresh after repeated compatibility tests",
+    "all_platform_pods_ready_after_refresh": true
+  },
+  "compatibility_repairs": [
+    {
+      "file": "/home/hxu/ran-sims/nori-ns-3/contrib/nori/CMakeLists.txt",
+      "repair": "bind NORI to the ns-O-RAN E2Sim archive already validated against release M instead of the newer local NORI E2Sim archive"
+    },
+    {
+      "file": "/home/hxu/ran-sims/nori-ns-3/contrib/nori/helper/E2-term-helper.cc",
+      "repair": "use the same three-byte PLMN compatibility profile as the official ns-O-RAN examples"
+    },
+    {
+      "file": "/home/hxu/ran-sims/nori-ns-3/contrib/nori/model/nr-rl-mac-scheduler-ofdma.cc",
+      "repair": "demote an unconditional per-scheduling-iteration diagnostic to debug level so the example has bounded console output"
+    },
+    {
+      "file": "/home/hxu/ran-sims/nori-ns-3/contrib/nori/examples/nori-simple-rl-sched.cc",
+      "repair": "restore Simulator::Stop(simTime) so the requested experiment window terminates cleanly"
+    },
+    {
+      "file": "/home/hxu/ran-sims/nori-ns-3/contrib/nori/examples/nori-simple-rl-sched.cc",
+      "repair": "schedule the built-in NoriSlicingHelper slice-to-RNTI map before traffic starts; without it the RL scheduler has zero schedulable slices"
+    }
+  ],
+  "discarded_attempts": [
+    "the default endpoint 10.244.0.246:36422 did not target the current kind NodePort",
+    "the newer /usr/local/lib/libe2sim.a established SCTP and sent a 446-byte Setup Request, but O-RAN SC M did not construct a RAN inventory name or return Setup Response",
+    "the first bounded RL smoke transmitted packets but received none because the example never installed the slice-to-RNTI map required by NrRLMacSchedulerOfdma"
+  ],
+  "interpretation": "After two simulator-side compatibility repairs and three example-operability repairs, NORI established SCTP, decoded a successful O-RAN SC M response accepting KPM function 200 and RC function 300, and completed bounded medium-load and saturation RL user-plane smokes with exit status 0 and nonzero delivery.",
+  "claim_boundary": "This is compatibility, executable-lifecycle, and user-plane smoke evidence. The two 10-second diagnostics are single runs on a repaired example, so no KPM subscription, indication, RC action, comparative scheduler gain, repeated stability result, or over-the-air path is claimed."
+}

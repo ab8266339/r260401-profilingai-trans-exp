@@ -1,0 +1,91 @@
+{
+ "ticks": 91,
+ "kpm_indications": 94,
+ "controls_sent": 2,
+ "controls_acked": 2,
+ "control_events": [
+  {
+   "phase": "P2",
+   "decision": "raise",
+   "quota": [
+    "10",
+    "90",
+    "80"
+   ],
+   "acked": true,
+   "ack_latency_s": 3.06
+  },
+  {
+   "phase": "P3",
+   "decision": "release",
+   "quota": [
+    "10",
+    "50",
+    "40"
+   ],
+   "acked": true,
+   "ack_latency_s": 3.06
+  }
+ ],
+ "phases": {
+  "P1": {
+   "ticks": 35,
+   "fresh_telemetry_ticks": 31,
+   "decisions": {
+    "telemetry-missing": 1,
+    "no-pressure": 2,
+    "decline": 32
+   },
+   "scored_ticks": 29,
+   "scored_matching_ground_truth": 29,
+   "gpu_util_range": [
+    0.5,
+    0.999
+   ],
+   "prb_range": [
+    0.0,
+    97.0
+   ],
+   "decide_ms_median": 11.9
+  },
+  "P2": {
+   "ticks": 33,
+   "fresh_telemetry_ticks": 30,
+   "decisions": {
+    "decline": 1,
+    "raise": 1,
+    "at-target": 31
+   },
+   "scored_ticks": 30,
+   "scored_matching_ground_truth": 29,
+   "gpu_util_range": [
+    0.0,
+    0.996
+   ],
+   "prb_range": [
+    72.0,
+    97.0
+   ],
+   "decide_ms_median": 10.7
+  },
+  "P3": {
+   "ticks": 23,
+   "fresh_telemetry_ticks": 21,
+   "decisions": {
+    "release": 1,
+    "no-pressure": 22
+   },
+   "scored_ticks": 1,
+   "scored_matching_ground_truth": 1,
+   "gpu_util_range": [
+    0.0,
+    0.0
+   ],
+   "prb_range": [
+    0.0,
+    0.0
+   ],
+   "decide_ms_median": 10.6
+  }
+ }
+}
