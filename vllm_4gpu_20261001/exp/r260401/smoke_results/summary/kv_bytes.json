@@ -1,0 +1,115 @@
+{
+ "kv_per_config": {
+  "qwen3_0p6b_SMOKE/auto_smoke": {
+   "machine": "host",
+   "vllm": "0.30.0",
+   "torch": "2.13.0",
+   "kv_dtype": "auto",
+   "tp": 1,
+   "theoretical_bytes_per_token": 114688,
+   "theoretical_MB_per_token": 0.114688,
+   "arch": {
+    "layers": 28,
+    "kv_heads": 8,
+    "head_dim": 128,
+    "elem_bytes": 2,
+    "bytes_per_token": 114688,
+    "torch_dtype": "bfloat16",
+    "quantization_config": null
+   },
+   "kv_cache_tokens": 20080,
+   "kv_cache_gib_per_gpu": 2.15,
+   "alloc_bytes_per_token": 114967.37657370517,
+   "alloc_vs_theory": 1.002435970404098,
+   "api_probe": {
+    "token_ids_returned": true,
+    "completion_tokens": 16,
+    "cached_same_salt": 240,
+    "cached_other_salt": 0,
+    "cached_field_present": true,
+    "salt_isolates": true
+   },
+   "offload_probe": null
+  }
+ },
+ "session_state": [
+  {
+   "cfg": "qwen3_0p6b_SMOKE/auto_smoke",
+   "tau0": 300,
+   "conc": 1,
+   "depth": 1,
+   "n_sessions": 2,
+   "context_tokens": 366.0,
+   "kv_bytes_theory": 41975808.0,
+   "app_context_utf8_bytes": 2631.0,
+   "app_bytes_per_token": 7.188524590163935,
+   "kv_to_app_ratio": 15954.316989737743,
+   "holding_time_s": 0.33019805799995083
+  },
+  {
+   "cfg": "qwen3_0p6b_SMOKE/auto_smoke",
+   "tau0": 300,
+   "conc": 1,
+   "depth": 2,
+   "n_sessions": 2,
+   "context_tokens": 432.0,
+   "kv_bytes_theory": 49545216.0,
+   "app_context_utf8_bytes": 3074.0,
+   "app_bytes_per_token": 7.1157407407407405,
+   "kv_to_app_ratio": 16117.506831489916,
+   "holding_time_s": 0.6223010430003342
+  },
+  {
+   "cfg": "qwen3_0p6b_SMOKE/auto_smoke",
+   "tau0": 300,
+   "conc": 1,
+   "depth": 4,
+   "n_sessions": 2,
+   "context_tokens": 564.0,
+   "kv_bytes_theory": 64684032.0,
+   "app_context_utf8_bytes": 3916.0,
+   "app_bytes_per_token": 6.943262411347518,
+   "kv_to_app_ratio": 16517.8835546476,
+   "holding_time_s": 1.1972227100013697
+  },
+  {
+   "cfg": "qwen3_0p6b_SMOKE/auto_smoke",
+   "tau0": 300,
+   "conc": 2,
+   "depth": 1,
+   "n_sessions": 4,
+   "context_tokens": 366.0,
+   "kv_bytes_theory": 41975808.0,
+   "app_context_utf8_bytes": 2619.75,
+   "app_bytes_per_token": 7.157786885245901,
+   "kv_to_app_ratio": 16022.829659318637,
+   "holding_time_s": 0.33866834599939466
+  },
+  {
+   "cfg": "qwen3_0p6b_SMOKE/auto_smoke",
+   "tau0": 300,
+   "conc": 2,
+   "depth": 2,
+   "n_sessions": 4,
+   "context_tokens": 432.0,
+   "kv_bytes_theory": 49545216.0,
+   "app_context_utf8_bytes": 3054.5,
+   "app_bytes_per_token": 7.070601851851852,
+   "kv_to_app_ratio": 16220.401375020461,
+   "holding_time_s": 0.6399848324999766
+  },
+  {
+   "cfg": "qwen3_0p6b_SMOKE/auto_smoke",
+   "tau0": 300,
+   "conc": 2,
+   "depth": 3,
+   "n_sessions": 4,
+   "context_tokens": 498.0,
+   "kv_bytes_theory": 57114624.0,
+   "app_context_utf8_bytes": 3489.75,
+   "app_bytes_per_token": 7.007530120481928,
+   "kv_to_app_ratio": 16366.394154309048,
+   "holding_time_s": 0.9397359457498169
+  }
+ ]
+}

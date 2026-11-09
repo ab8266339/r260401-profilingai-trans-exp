@@ -1,0 +1,76 @@
+{
+  "project_id": "R260401",
+  "time": "2026-10-03T08:35:36.641245+08:00",
+  "state": "waiting_for_R260306_complete",
+  "controller_pid": 194660,
+  "guard": {
+    "schema_version": 1,
+    "queue_id": "r260401_brjd_20261003",
+    "unix_time": 1790987727.074654,
+    "status": "blocked",
+    "active_job": "r260401_brjd_20261003_preflight",
+    "machine": "DESKTOP-BRJD313",
+    "proxy_url": null,
+    "foreign_processes": [
+      {
+        "pid": 132336,
+        "kind": "model_server",
+        "name": "llama-server.exe"
+      },
+      {
+        "pid": 203092,
+        "kind": "model_server",
+        "name": "llama-server.exe"
+      },
+      {
+        "pid": 79084,
+        "kind": "python_job",
+        "command": "C:\\Python313\\python.exe R260309-fsb/experiments/revision_20261003/finality_campaign.py resume C:/Users/admin/AppData/Local/Temp/fsb-finality-campaign-s8f2l4v_"
+      },
+      {
+        "pid": 180088,
+        "kind": "python_job",
+        "command": "C:\\Python313\\python.exe D:\\CodeBase-708a\\061-working-paper\\R260309-fsb\\experiments\\revision_20261003\\run_isolated_model.py D:\\CodeBase-708a\\061-working-paper\\R260309-fsb\\experiments\\revision_20261003\\finality_campaign.py model"
+      },
+      {
+        "pid": 200016,
+        "kind": "python_job",
+        "command": "C:\\Python313\\python.exe D:\\CodeBase-708a\\061-working-paper\\R260309-fsb\\experiments\\revision_20261003\\finality_campaign.py model"
+      },
+      {
+        "pid": 65656,
+        "kind": "python_job",
+        "command": "C:\\Python313\\python.exe D:\\CodeBase-708a\\061-working-paper\\R260309-fsb\\experiments\\revision_20261003\\run_finality_experiment.py D:\\CodeBase-708a\\061-working-paper\\R260309-fsb\\experiments\\revision_20261003\\memory_pipeline.py --queries 100 --out C:\\Users\\admin\\AppData\\Local\\Temp\\fsb-finality-campaign-s8f2l4v_\\memory_finality"
+      },
+      {
+        "pid": 209020,
+        "kind": "model_server",
+        "name": "llama-server.exe"
+      }
+    ],
+    "background_python_checks": [
+      {
+        "pid": 174456,
+        "kind": "existing_non_gpu_proxy_relay",
+        "command": "C:\\Users\\admin\\.workbuddy\\binaries\\python\\versions\\3.13.12\\python.exe proxy_relay_7891.py"
+      }
+    ],
+    "process_count": 656,
+    "python_candidates": 6,
+    "gpu_total_mib": 32607.0,
+    "gpu_used_mib": 23978.0,
+    "gpu_utilization_percent": 0.0,
+    "cpu_percent": 11.8,
+    "available_ram_bytes": 296767414272
+  },
+  "predecessor": {
+    "state": "stopped_by_request",
+    "utc": "2026-10-03T00:15:29Z"
+  },
+  "predecessor_pause_reason": "Pause at authorization boundary: external Qwen3-1.7B workers own needed GPU memory; no permission to stop them.\n",
+  "predecessor_owner_thread": "01a0fe90-4e13-7320-aea0-9d75e2c2b51a",
+  "owner_wait_cursor": "cfbcad82-26bf-47d4-923c-c578102e916b:1",
+  "history_exists": false,
+  "action": "Wait for predecessor to be resumed/completed by its owner. Do not stop model services or resume predecessor from this monitor.",
+  "notification": "Notify this explicit pause once; keep quiet while this reason and waiting state remain unchanged."
+}

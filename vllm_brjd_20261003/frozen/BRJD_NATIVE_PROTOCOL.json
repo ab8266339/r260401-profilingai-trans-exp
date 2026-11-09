@@ -1,0 +1,36 @@
+{
+  "project": "R260401-profilingai-trans",
+  "machine": "DESKTOP-BRJD313 / WSL2 / RTX 5090 D",
+  "root": "/home/hxu/exp/r260401_brjd_20261003",
+  "venv": "/home/hxu/venvs/r260401_brjd_20261003",
+  "model_path": "/mnt/e/CodeBase-708a/061-working-paper/R260306-fractal-moe/.runtime-qwen-scale/8B",
+  "gpus": "0",
+  "tp": 1,
+  "source_frozen_sha256": {
+    "rplus_95d81299.py": "95d812990a140f078a6edcb8185a2b359301c7fe9864ccd844948fdae1e85b66",
+    "kvbench.py": "45745354a655134fd98f396cdfe163f913fea2fc59f68cbb27d07f0cdf096688"
+  },
+  "queue_order": "after R260306, single-card serial",
+  "repetitions": 10,
+  "workload_seed": 20261001,
+  "block_size": 16,
+  "r2": "untimed local capacity/API calibration -> freeze local capacity -> per-rep rotated fixed128/naturalEOS configs -> same-host paired report",
+  "r3": "same TRITON backend; local observed bf16 capacity then identical FP8 blocks; token paths audited",
+  "r4": "calibrate default and uncapped local capacities then freeze minimum common feasible pool for all four local arms; rotated config order",
+  "r4_scope": "matched-capacity supplemental comparison; low pressure may yield no admission difference",
+  "old_host_parallel_reference": "forbidden by CLI and absent from adapted code",
+  "cross_machine_absolute_timing_comparison": false,
+  "physical_gpu_pin": "unmeasured; native P-admit is APC plus logical preadmission",
+  "gpu_validation": "one GPU inventory, GPU0 TP1, Linux own process descendants only; required Windows guard schema1/queue_id/20-second fresh heartbeat/no foreign processes",
+  "WSL_NVML_limit": "Windows resident CUDA services may be absent from WSL inventory; Windows guard is required and its records accompany GPU samples. System GUI background remains recorded, not interpreted as a second experimental workload.",
+  "windows_guard_path": "/mnt/e/r260401-brjd-20261003/control/windows_guard.json",
+  "owned_server_cleanup": "launch_server stores its new-session pgid; stop_server clears that own group even when API parent already exited",
+  "preparation_validation": "syntax and CPU-only synthetic paired-report checks; no GPU launched and no environment installation",
+  "adapted_files_sha256": {
+    "kvbench.py": "b97d57903229e5602f7a4e4bae367a5c0c9937144608cd7bc3e8cebce9194448",
+    "rplus_brjd.py": "6cef46f487768a0f9ddec351d9fe70beba9d289e1d7045611e77ecfb4ef5be4d",
+    "run_r2_brjd.sh": "1df07563358f86f25a542912541d45d59284166c5522e7f8560d48f402f57187",
+    "run_r3_brjd.sh": "4f5eac32ced48ada7c1ffb5f0e69db8db071751008e95c9beb3d3b3a7bd5fa7d",
+    "run_r4_brjd.sh": "2c145b4b79e56ea3d1c8bd48d2241b95244acf7c655071b024b61f8c71300e58"
+  }
+}

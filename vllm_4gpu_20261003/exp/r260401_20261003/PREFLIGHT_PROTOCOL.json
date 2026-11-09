@@ -1,0 +1,22 @@
+{
+  "experiment": "R260401 RD-R+ / RD-M2 execution preflight",
+  "created_before_execution": true,
+  "date_beijing": "2026-10-03",
+  "scope": "allocator capacity and required API checks only; no publication timing endpoint",
+  "model": "Qwen3-8B cached on host",
+  "backend": "existing ~/venvs/vllm; never modified",
+  "required_api": [
+    "prompt token IDs",
+    "generated token IDs",
+    "cached_tokens field",
+    "same salt cache hit",
+    "different salt zero hit",
+    "prefix-cache reset"
+  ],
+  "legacy_workload_seed": 20261001,
+  "safety": "owned server group only; existing model cache shared read-only; separate experiment root",
+  "code_sha256": {
+    "kvbench.py": "45745354a655134fd98f396cdfe163f913fea2fc59f68cbb27d07f0cdf096688",
+    "preflight.sh": "cabf529319c99414c8d170ec6f37ab092100867610b8cd4e21b596fe71ca2eb3"
+  }
+}

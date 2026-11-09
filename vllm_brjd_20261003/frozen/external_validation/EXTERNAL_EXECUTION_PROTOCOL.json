@@ -1,0 +1,51 @@
+{
+  "task": "r260401_brjd_20261003_external",
+  "machine": "DESKTOP-BRJD313",
+  "schedule": "BRJD single-GPU queue after R260306 fullsweep completion and GPU-free guard; installations also wait",
+  "engines": {
+    "lmcache": "0.5.5 +vllm0.30.0 +torch2.13.0",
+    "sglang": "0.5.20 +torch2.13.0"
+  },
+  "environment_policy": "separate task-specific envs; unchanged shared vllm env/models",
+  "workflow": "install binary wheels fixed versions, import check, actual API/cache semantics/128ID gate,10paired repetitions per2grids",
+  "LMCache_arm": "LocalCPUBackend pin-versus-LRU after equal fixed churn; no GPU pin claim",
+  "SGLang_arm": "radix-versus-own stage-barrier zero-hit replay; independent stack",
+  "statistics": "unadjusted exploratory marginal paired-t intervals; no automatic reviewer gate or author claim decision",
+  "failure_policy": "UNMEASURED preserves installer/runtime/raw logs; task termination is not performance success",
+  "dependencies": {
+    "scripts/external_setup.sh": "416044b52e0e6342162832db7f566341ae5e154acdf8d45bf96bf80bc6bc4dae",
+    "scripts/external_probe.py": "21aea23ecdc9d8fe5afa63e6927501d68c5e6f5bd25b104535dfe68790f8128b",
+    "scripts/external_rplus.py": "0e090b2078e9266ef5f9a7df99070c7ad38810f57735b26bd5ffb2f0daeab140",
+    "scripts/external_run.sh": "96cad5b8c4eef981bc0f3d80f6197128e21d81e9c15055a2968280dc39fa1724"
+  },
+  "task_root": "/home/hxu/exp/r260401_brjd_20261003",
+  "model_path": "/mnt/e/CodeBase-708a/061-working-paper/R260306-fractal-moe/.runtime-qwen-scale/8B",
+  "base_python": "/home/hxu/venvs/r260401_brjd_20261003/bin/python",
+  "environments": {
+    "lmcache": "/home/hxu/venvs/r260401_lmcache_brjd_20261003",
+    "sglang": "/home/hxu/venvs/r260401_sglang_brjd_20261003"
+  },
+  "preflight_policy": "Fresh BRJD installation/import/API/CPU-pin-or-radix semantics gate required; no archived host gate accepted",
+  "shared_dependency": {
+    "path": "scripts/kvbench.py",
+    "policy": "Migration bundle owner supplies adapted frozen legacy; actual hash binds to each run manifest",
+    "source_archived_hash": "45745354a655134fd98f396cdfe163f913fea2fc59f68cbb27d07f0cdf096688"
+  },
+  "migration_source": {
+    "protocol_sha256": "3d350eeb398d32aee142137b8f225bf885c7e83eb50dd7c92f209954818d7fbc",
+    "source_machine": "host (4GPU)",
+    "script_sha256": {
+      "external_setup.sh": "58ba64d598e520f61071c80ee7bd3287f50354e3fed77f7dbf8fe0618f15d914",
+      "external_probe.py": "9af133fe43b2447b13095ddfa4269fbe42e285bc1f7ae2f40c087da1a00adc46",
+      "external_rplus.py": "2e4bab2785cddff33d9c94bbda3f166111f68e1b80fdeeebc39fa543f07eadc9",
+      "external_run.sh": "c276fd51ccb9e27243d78c78a252d6d0295141e045cab6b6ddf0cd8250c1b7d5"
+    }
+  },
+  "measurement_control": {
+    "outer_wrapper": "/home/hxu/exp/r260401_brjd_20261003/scripts/common_guard.py",
+    "windows_guard_heartbeat": "/mnt/e/r260401-brjd-20261003/control/windows_guard.json",
+    "required_policy": "Outer common_guard wraps setup/gates/measurement; fresh Windows-side heartbeat enforces no foreign python/llama resident process",
+    "limitations": "WSL NVML compute inventory does not expose all Windows resident services. GUI/system background GPU activity may remain; do not claim absolute absence of all OS activity.",
+    "script_scope": "These four external scripts retain their original cache semantics and do not themselves assert absolute GPU/host exclusivity."
+  }
+}

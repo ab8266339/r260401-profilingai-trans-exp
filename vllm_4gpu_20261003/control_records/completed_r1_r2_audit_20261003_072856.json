@@ -1,0 +1,126 @@
+{
+  "project_id": "R260401",
+  "checked_epoch": 1790983753.2527177,
+  "source_machine": "host / four GPU server",
+  "archive_path": "W:\\ML\\ml-work\\R260401-profilingai-trans\\vllm_4gpu_20261003\\results\\completed_r1_r2_20261003_072856",
+  "file_count": 60,
+  "total_bytes": 5034005,
+  "all_SHA256_verified": true,
+  "R3_downloaded": false,
+  "tasks": {
+    "r1": {
+      "measurement_gate_pass": true,
+      "errors": [],
+      "cells": 20,
+      "stages": 640,
+      "capacity_tokens": 71840,
+      "all_paired_generated_paths_identical": false,
+      "invalid_attempt_count": 0,
+      "output_tokens": {
+        "min": 128,
+        "max": 128,
+        "mean": 128.0
+      },
+      "stop_fraction": 0.0,
+      "timing_reuse_tolerance_gate_pass": true,
+      "timing_reuse": {
+        "status": "descriptive_parallel_comparison",
+        "comparisons": {
+          "A0": {
+            "n": 10,
+            "mean": -0.0017975544139091075,
+            "ci95": [
+              -0.004572568659760094,
+              0.0009774598319418789
+            ],
+            "status": "unresolved",
+            "wilcoxon_two_sided_p": 0.275390625,
+            "claim_limit": "A CI containing zero is unresolved, not proof of equivalence or mechanism identity.",
+            "paired_relative_ci90": [
+              -0.004046255161097467,
+              0.000451146333279252
+            ],
+            "timing_tolerance_2pct_supported": true,
+            "tolerance_scope": "predeclared timing reuse tolerance, not mechanism equivalence"
+          },
+          "R": {
+            "n": 10,
+            "mean": -0.007500786576964759,
+            "ci95": [
+              -0.009585908264183499,
+              -0.005415664889746018
+            ],
+            "status": "resolved_difference",
+            "wilcoxon_two_sided_p": 0.001953125,
+            "claim_limit": "A CI containing zero is unresolved, not proof of equivalence or mechanism identity.",
+            "paired_relative_ci90": [
+              -0.009190440856411372,
+              -0.005811132297518146
+            ],
+            "timing_tolerance_2pct_supported": true,
+            "tolerance_scope": "predeclared timing reuse tolerance, not mechanism equivalence"
+          }
+        },
+        "reference_sha256": "fb701dbe2e7f5066f6ce51d04707e2015c237556c66e5d6fcd32075983e7c607",
+        "reference_description": "RD-R0 archived same host measured first eight stages of 32-stage trace; for R+1 interference check and planning only",
+        "context": "same-host archived first-eight-stage trace; no raw-cache equivalence claim"
+      }
+    },
+    "r2": {
+      "measurement_gate_pass": true,
+      "errors": [],
+      "cells": 20,
+      "stages": 640,
+      "capacity_tokens": 71840,
+      "all_paired_generated_paths_identical": false,
+      "invalid_attempt_count": 0,
+      "output_tokens": {
+        "min": 128,
+        "max": 128,
+        "mean": 128.0
+      },
+      "stop_fraction": 0.0,
+      "EOS_stopping_exercised": false,
+      "natural_generation_report": {
+        "status": "natural_EOS_observed",
+        "A0_minus_R_seconds": {
+          "n": 10,
+          "mean": -8.48565493179849,
+          "ci95": [
+            -8.49926764685339,
+            -8.472042216743588
+          ],
+          "status": "resolved_difference",
+          "wilcoxon_two_sided_p": 0.001953125,
+          "claim_limit": "A CI containing zero is unresolved, not proof of equivalence or mechanism identity."
+        },
+        "actual_output_tokens": {
+          "n": 640,
+          "min": 128,
+          "max": 128,
+          "mean": 128.0
+        },
+        "finish_reasons": {
+          "length": 640
+        },
+        "EOS_or_other_stop_observed": false,
+        "shorter_than_max_output_fraction": 0.0,
+        "claim_limit": "Removing forced length does not establish EOS robustness when every request reaches max_tokens.",
+        "fixed_length_A0_minus_R_seconds": {
+          "n": 10,
+          "mean": -8.62866428954967,
+          "ci95": [
+            -8.69365602837306,
+            -8.563672550726281
+          ],
+          "status": "resolved_difference",
+          "wilcoxon_two_sided_p": 0.001953125,
+          "claim_limit": "A CI containing zero is unresolved, not proof of equivalence or mechanism identity."
+        },
+        "reference_sha256": "fb701dbe2e7f5066f6ce51d04707e2015c237556c66e5d6fcd32075983e7c607",
+        "mean_sign_reversed_vs_RD_R0": false,
+        "required_paper_limit": "no automatic broadening beyond tested natural-EOS workload"
+      }
+    }
+  }
+}

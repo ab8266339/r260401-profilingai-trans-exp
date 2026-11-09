@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "queue_id": "r260401_brjd_20261003",
+  "machine": "DESKTOP-BRJD313",
+  "created_beijing": "2026-10-03T07:05:59.839293+08:00",
+  "predecessor_project": "R260306",
+  "predecessor_status_file": "E:\\CodeBase-708a\\061-working-paper\\R260306-fractal-moe\\notes\\qwen_scale_20261003\\results\\queue_status.json",
+  "predecessor_required_state": "complete",
+  "idle_stability_s": 30,
+  "gpu_used_limit_mib": 2048,
+  "windows_cpu_experiment_policy": "no other Python experiment or llama-server process",
+  "gpu_policy": "one exclusive BRJD GPU, five formal jobs serial",
+  "jobs": [
+    {
+      "project_id": "R260401",
+      "tag": "r260401_brjd_20261003_preflight",
+      "script": "scripts/setup_brjd_v2.sh",
+      "timeout_s": 4200
+    },
+    {
+      "project_id": "R260401",
+      "tag": "r260401_brjd_20261003_r2",
+      "script": "scripts/run_r2_brjd.sh",
+      "timeout_s": 15000
+    },
+    {
+      "project_id": "R260401",
+      "tag": "r260401_brjd_20261003_r3",
+      "script": "scripts/run_r3_brjd.sh",
+      "timeout_s": 22000
+    },
+    {
+      "project_id": "R260401",
+      "tag": "r260401_brjd_20261003_r4",
+      "script": "scripts/run_r4_brjd.sh",
+      "timeout_s": 22000
+    },
+    {
+      "project_id": "R260401",
+      "tag": "r260401_brjd_20261003_external",
+      "script": "scripts/run_external_brjd.sh",
+      "timeout_s": 43200
+    },
+    {
+      "project_id": "R260401",
+      "tag": "r260401_brjd_20261003_m2_pipeline",
+      "script": "scripts/run_m2_brjd.sh",
+      "timeout_s": 172800
+    }
+  ],
+  "R1_machine": "host / four-GPU server; unchanged same-machine replication",
+  "results_root_linux": "/home/hxu/exp/r260401_brjd_20261003/results",
+  "nas_archive": "W:\\ML\\ml-work\\R260401-profilingai-trans\\vllm_brjd_20261003",
+  "control_version": 2
+}

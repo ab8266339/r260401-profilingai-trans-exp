@@ -1,0 +1,42 @@
+# R260401 四卡机排队执行（2026-10-03）
+
+本轮控制机为 DESKTOP-BRJD313，经既有 jason.conf / wireproxy 转发连接四卡机 `host`（192.168.5.11）。用户指示“直接用这个四卡机开始排任务”，本轮已上传冻结执行包并实际追加 paperq 队列。以下时刻均为北京时间；最后实查 **2026-10-03T06:13:37.039479+08:00**。
+
+## 当前状态
+
+预检已于 **05:48:03 START → 05:52:04 END rc=0** 完成。Qwen3-8B / vLLM 0.30.0 / torch 2.13.0，实际自动后端 KV 池 **87,152 tokens / 11.97 GiB**；token-ID API可用，固定128输出，同盐命中240、异盐命中0。
+
+截至最后实查，下面**六项均真实在 jobs.txt 中，尚未 START**，failed.txt为空。全部为X整机独占，按表顺序追加；原在跑的 `r260818rt_B15_r34_L35-39`（PID603735，GPU2）仍未退出。06:08:44日志继续推进到layout38 / v10 / r4 / 500/601。GPU瞬时0%不能当作退出证据。调度器会在前序任务及所有GPU计算进程退出后自行启动X任务。本轮没有终止前序任务或调整其他任务顺序。
+
+| 序 | 队列标签 | 可执行内容 | 状态 | 超时保护上限 |
+|---|---|---|---|---|
+| 1 | r260401_20261003_r1 | 8B、3400×4×8、A0/R、10配对rep；旧同机并行记录对整机独占复测；固定旧容量71840 tokens | 待独占窗口 | 2h |
+| 2 | r260401_20261003_r2 | 同一网格和容量；取消强制EOS延长，记录实际输出/上下文轨迹，10rep | 已排在R1后 | 2h |
+| 3 | r260401_20261003_r3 | 8B、900×4×32；共同TRITON_ATTN，先读bf16实际容量，再给FP8同block数，10rep | 已排在R2后 | 6h |
+| 4 | r260401_20261003_r4 | 原生R / A0 / A-uncap / P-admit；3400×4×8与900×16×8；10rep，配置顺序轮换 | 已排在R3后 | 6h |
+| 5 | r260401_20261003_external | 独立LMCache/SGLang环境：安装→真实语义/128-ID门→各栈内10rep对照 | 已排在R4后 | 12h |
+| 6 | r260401_20261003_m2_pipeline | 实际校准→3rep pilot→预声明精度/工时冻结→10–20个独立正式rep的同时区间估计 | 已排在external后 | 48h |
+
+超时上限是故障保护，**不是预计用时**。M2单格30s预热+120s观测+69s drain=219s；六点三臂三rep的54格pilot最少3.285h，另加启动/清理。正式10–20rep同网格最少10.95–21.9h，另加30–60次启动。主实验会按实测pilot写POWER_WORKTIME，不把整机四张卡简单当作四倍计时加速。
+
+## 已核验与解释边界
+
+- 远端执行脚本py_compile、shell bash -n均通过；远端EngineArgs API-server配置读取通过，实测默认max_num_seqs=256，未留下自己的CUDA计算进程。M2接纳边界、可复现外生到达/保持和blocked/unfinished分母检查通过。
+- 冻结后文件不覆盖；若代码变更用新文件和新结果根。R1/R2在尚未START时只更新了自己的待跑命令，原FIFO位置保留；旧版本作为审计材料留存。启动前逐项核SHA。
+- 原vLLM环境缺SciPy；首项X任务在独立runner环境补齐固定SciPy1.16.2，通过本环境.pth读取原vLLM包，不修改共享环境。官方元数据和1MiB wheel来源预检通过（HTTP206，约1.57MB/s）；后续仍以真实安装门为准。
+- R1旧并行容量71840、本轮自然预检87152不同，复测用旧容量；其差异只作同机时序复用判断，不宣称干扰因果或缓存机制等价。R2/R3保存实际token路径，路径漂移时不能声称同一实际工作负载。
+- R4当前两个网格为低压基准，默认scheduler不绑定时A0/A-uncap可以相同；没有承诺接纳率差异。P-admit是APC上的逻辑峰值预接纳，不调用physical GPU pin。
+- LMCache的pin保护LocalCPUBackend CPU块，不保证GPU KV驻留；用实际反淘汰及external cached-token命中作门。SGLang只与自己的清缓存零命中臂配对，跨栈绝对时延不混表。外部多个95%区间是未经多重校正的探索性边际区间，依赖重复差近似正态；缺统计依赖时明确CI unavailable。安装/兼容/计量失败写UNMEASURED，不能把wrapper退出当作测量成功。
+- M2明确是**matched-capacity补充实验**：先量自然A0/uncap池，再冻结共同可行整块容量；闭环披露1s思考，主方向为预生成独立开环到达/保持。pilot仅用方差/工时，按事前规则选10–20rep；精度不足记underpowered。保留逐级token轨迹审计，漂移/缺级单独标记。原v2无思考M1/M2、独立第四坐标、GPU pin及作者贡献裁决不因这次排队而通过，主稿/回复信未改。
+
+## 文件与接手入口
+
+远端实验根：`/home/host/exp/r260401_20261003`（四卡机）；队列 `/home/host/paperq/jobs.txt`，逐任务日志 `/home/host/paperq/logs/<标签>.log`。
+
+完整冻结源码、协议和已完成预检原始证据存于 `W:\ML\ml-work\R260401-profilingai-trans\vllm_4gpu_20261003`（NAS，通过DESKTOP-BRJD313访问；NAS内部 `/volume3/Warehouse/ML/ml-work/R260401-profilingai-trans/vllm_4gpu_20261003`）。镜像 `exp/r260401_20261003` 有43个已校验文件，FILE_MANIFEST.json记录逐文件SHA。`control_records/queue_snapshot_final.json`、`remaining_enqueue.json`、`native_enqueue_v2.json`保存追加与最终状态证据。本轮只归档已完成预检；后续正式结果尚未产生，未清理远端运行树。
+
+- 原生R1–R4冻结源码SHA：`95d812990a140f078a6edcb8185a2b359301c7fe9864ccd844948fdae1e85b66`。
+- M2当前入队源码SHA：`c034f74b9c9eca4de8defb45c3ad1a99820861afb125cce923d61d52642dfce8`。
+- EXECUTION_PROTOCOL_v2、EXTERNAL_EXECUTION_PROTOCOL、M2_EXECUTION_PROTOCOL_v3分别记录对应依赖、命令及科学解释边界。旧M2_67bf/旧R12包保留审计，当前队列不执行它们。
+
+本页更新“是否排队”的操作状态；[COMMENTS_UPDATE_20261003.md](COMMENTS_UPDATE_20261003.md)仍负责03:20活动稿的逐条comments核对。删除旧段、提交任务、测量完成和审稿关闭是四种不同状态。

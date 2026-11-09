@@ -1,0 +1,35 @@
+{
+  "batch": "R12",
+  "machine": "host (4GPU RTX 5090)",
+  "prior_machine": "host (same 4GPU)",
+  "workload": {
+    "tau0": 3400,
+    "first_prompt": 3450,
+    "depth": 8,
+    "concurrency": 4,
+    "reps": 10,
+    "output_max": 128,
+    "seed": 20261001
+  },
+  "tasks": [
+    {
+      "tag": "r260401_20261003_r1",
+      "kind": "X",
+      "task": "r1",
+      "token_capacity": 71840,
+      "interpretation": "same-host archived parallel versus whole-host-exclusive timing reuse; descriptive, not causal proof"
+    },
+    {
+      "tag": "r260401_20261003_r2",
+      "kind": "X",
+      "task": "r2",
+      "token_capacity": 71840,
+      "interpretation": "natural EOS; actual token trajectories logged, no identical workload claim if divergent"
+    }
+  ],
+  "dependencies": {
+    "scripts/kvbench.py": "45745354a655134fd98f396cdfe163f913fea2fc59f68cbb27d07f0cdf096688",
+    "scripts/rplus_r12_14a3fccf.py": "14a3fccf6a0972dda5e12a542936de8e13e250dc3309bf5a48a6f3986dc05d34",
+    "rd_r0_baseline.json": "fb701dbe2e7f5066f6ce51d04707e2015c237556c66e5d6fcd32075983e7c607"
+  }
+}

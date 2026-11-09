@@ -1,0 +1,93 @@
+{
+  "schema_version": 1,
+  "project_id": "R260401",
+  "queue_id": "r260401_brjd_20261003",
+  "task": "M2",
+  "protocol_scope": "BRJD local independent matched-capacity additional experiment",
+  "root": "/home/hxu/exp/r260401_brjd_20261003",
+  "python": "/home/hxu/venvs/r260401_brjd_20261003/bin/python",
+  "model": "/mnt/e/CodeBase-708a/061-working-paper/R260306-fractal-moe/.runtime-qwen-scale/8B",
+  "m2_file": "scripts/m2_brjd_2f4cce85.py",
+  "m2_sha256": "2f4cce85279842f1136aa03ba0a444aacec188c2329d7afbf147e2894b940b06",
+  "original_four_gpu_source_sha256": "c034f74b9c9eca4de8defb45c3ad1a99820861afb125cce923d61d52642dfce8",
+  "wrapper_file": "scripts/run_m2_brjd.sh",
+  "wrapper_sha256": "9296bc85de2f987905cedceaa13cc5790d7b53fc17a38134989d8fb4e0b27538",
+  "legacy_file": "scripts/kvbench.py",
+  "legacy_hash_rule": "runtime SHA recorded into calibration, local baseline freeze, pre-pilot plan and all manifests; parent freezes the common kvbench adaptation separately",
+  "after_project": "R260306",
+  "gpu_policy": "one BRJD GPU exclusive to R260401; all arms run on same GPU serially; no other timed GPU experiment",
+  "windows_guard": {
+    "path": "/mnt/e/r260401-brjd-20261003/control/windows_guard.json",
+    "owner": "root common_guard.py",
+    "schema_version": 1,
+    "stale_limit_s": 20,
+    "blocked_or_foreign": "terminate only owned process group"
+  },
+  "calibration": {
+    "repetitions": 3,
+    "warmup_s": 30,
+    "single_flow": "A0 complete eight-stage, reset between repeats",
+    "baseline": "median of all three BRJD local observed latencies",
+    "four_gpu_11_40360071050236_reuse": false,
+    "freeze": "results/m2_pipeline/calibration/local_baseline_before_pilot.json",
+    "post_pilot_recalibration": false
+  },
+  "capacity": {
+    "natural_preflight_arms": [
+      "A0",
+      "A-uncap"
+    ],
+    "common_blocks": "minimum feasible natural integer block count, frozen before pilot",
+    "all_timed_arms": "exact same actual allocator token count",
+    "natural_pool_claim": false
+  },
+  "timing": {
+    "deadline_factors": [
+      1.5,
+      2,
+      3
+    ],
+    "holding_factors": [
+      1,
+      3,
+      6
+    ],
+    "absolute_deadlines": "multiply frozen local baseline once before pilot",
+    "drain_s": "ceil(6*local_baseline)",
+    "cross_host_absolute_timing_pooling": false
+  },
+  "workload": {
+    "tau0": 3400,
+    "first_prompt_tokens": 3450,
+    "stages": 8,
+    "instruction_each_stage": 50,
+    "output_each_stage": 128,
+    "final_context_tokens": 4824,
+    "ignore_eos": true,
+    "temperature": 0,
+    "warmup_s": 30,
+    "observation_s": 120
+  },
+  "load_axes": {
+    "closed": "round([0.7,1,1.3]*floor(.95*C_tokens/4824)), unique1..128; one-second think; descriptive only",
+    "open": "Poisson rate .95*C_tokens / local calibrated expected-token-seconds *[.7,1,1.3]; independent holding factors1/3/6; all arrivals pre-generated before arm timing",
+    "sampling_plan": "freeze tau/tokens, capacity-derived N and rates, actual deadlines, actual holding targets and repetition rule before pilot endpoints"
+  },
+  "pilot_reps": 3,
+  "formal_reps_min": 10,
+  "formal_reps_cap": 20,
+  "formal_selection": "max paired SD from open-loop P-admit minus A-uncap; smallest10..20 Bonferroni paired-t forecast simultaneous half-width<=.05; otherwise20 and underpowered",
+  "primary_family": "three open-loop rates x three deadlines, P-admit-A-uncap; nine members",
+  "formal_seed_start": 10000,
+  "pilot_in_formal": false,
+  "inference": "interval_estimation_only, approximate normal independent repeat differences",
+  "author_M1_M2_pass": "NOT_ASSIGNED",
+  "P-pin": "NOT_MEASURED",
+  "denominator": "every generated cohort session in [30,150); blocked and unfinished at drain count as misses; execution errors invalidate cell and stop",
+  "token_trace": "unchanged prompt/output SHA per stage; common admitted cohort SID paired audit; drift or partial evidence cannot support identical realized workload claim",
+  "pipeline_fixes": [
+    "remove undefined pre-pilot audit_path/drift reads; audit metadata belongs to post-experiment summary",
+    "restore startup-time evidence from persisted server JSON on resume",
+    "validate local baseline/hardware/model/calibration source hashes before pilot/main"
+  ]
+}

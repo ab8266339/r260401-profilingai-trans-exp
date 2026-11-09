@@ -1,0 +1,3564 @@
+{
+  "schema": "r260401-brjd-native-v1",
+  "status": "complete",
+  "task": "r4",
+  "model_key": "8B",
+  "kv_dtype": "auto",
+  "cell": "t3400_c4_d8_R_r03",
+  "arm": "R",
+  "rep": 3,
+  "arm_position": 1,
+  "full_arm_rotation_order": [
+    "A0",
+    "R"
+  ],
+  "tau0": 3400,
+  "concurrency": 4,
+  "depth": 8,
+  "workload_seed": 20261001,
+  "instr_tok": 50,
+  "out_tok_max": 128,
+  "natural_eos": false,
+  "run_protocol_sha256": "f9057ee6691f5f60e7c58dc05a6061678083014db61791b5b49386f4fd9f1987",
+  "host": "DESKTOP-BRJD313",
+  "utc_start": "2026-10-03T17:44:22.711+00:00",
+  "utc_end": "2026-10-03T17:44:47.993+00:00",
+  "cache_reset_tries": 1,
+  "admission_budget_tokens": 41161.6,
+  "peak_tokens_conservative_upper_bound": 4824,
+  "admitted_fraction": 1.0,
+  "pipeline_mean_seconds": 25.08595277324997,
+  "ttft_mean_seconds": 0.6859754165937275,
+  "decode_mean_seconds": 2.448249079374989,
+  "sessions": [
+    {
+      "sess": 0,
+      "admitted": true,
+      "pipeline_seconds": 25.042654420999952,
+      "stages": [
+        {
+          "t_start": 1913.108471544,
+          "t_end": 1915.977215198,
+          "ttft": 0.34961109999994733,
+          "e2e": 2.868743654000127,
+          "decode_seconds": 2.51913255400018,
+          "prompt_tokens": 3450,
+          "completion_tokens": 128,
+          "cached_tokens": 0,
+          "finish_reason": "length",
+          "n_chunks": 128,
+          "natural_eos": false,
+          "timing_scope": "client TTFT includes queue/network; decode = completion minus TTFT",
+          "stage": 1,
+          "sent_prompt_len": 3450,
+          "prompt_sha256": "3f768abdabbf76a2a3ee5ff443f5796e77f75032ded73bb5818453b7a3571794",
+          "out_sha256": "7bd790088e7fe46ba987d90a63e5114be51c2a05cfd3d23fdf39d24b59eeb2b8",
+          "cache_salt": "R|rplus|8B|r4-default|3400|3|0|0",
+          "application_context_tokens": 3578,
+          "application_text_utf8_bytes": 25376,
+          "application_metadata_utf8_bytes": 48,
+          "application_total_utf8_bytes": 25424,
+          "kv_context_bytes_allocator_derived": 528482304,
+          "kv_byte_basis": "allocator-derived block estimate, not per-session measured allocation",
+          "application_context_hold_seconds_to_release": 22.173910766999825,
+          "kv_minimum_hold_seconds_until_session_completion": 22.173910766999825,
+          "kv_release_observed": false,
+          "kv_lifecycle_limit": "APC may retain blocks after session completion until reset/eviction; no pin or per-session release is asserted",
+          "interval_until_next_context_update_seconds": 2.9292136009999012
+        },
+        {
+          "t_start": 1915.97885544,
+          "t_end": 1918.906428799,
+          "ttft": 0.33358391399997345,
+          "e2e": 2.9275733590000073,
+          "decode_seconds": 2.593989445000034,
+          "prompt_tokens": 3628,
+          "completion_tokens": 128,
+          "cached_tokens": 0,
+          "finish_reason": "length",
+          "n_chunks": 128,
+          "natural_eos": false,
+          "timing_scope": "client TTFT includes queue/network; decode = completion minus TTFT",
+          "stage": 2,
+          "sent_prompt_len": 3628,
+          "prompt_sha256": "68d33ff67b38ffb6d744111e4571c4b1e9111337667598a8b25eb0ff0a331f44",
+          "out_sha256": "85978bb9f342b18f0fe8627e4a3e8aa706edfef38d91e51351d8a207ac39fe0c",
+          "cache_salt": "R|rplus|8B|r4-default|3400|3|0|1",
+          "application_context_tokens": 3756,
+          "application_text_utf8_bytes": 26136,
+          "application_metadata_utf8_bytes": 48,
+          "application_total_utf8_bytes": 26184,
+          "kv_context_bytes_allocator_derived": 554434560,
+          "kv_byte_basis": "allocator-derived block estimate, not per-session measured allocation",
+          "application_context_hold_seconds_to_release": 19.244697165999924,
+          "kv_minimum_hold_seconds_until_session_completion": 19.244697165999924,
+          "kv_release_observed": false,
+          "kv_lifecycle_limit": "APC may retain blocks after session completion until reset/eviction; no pin or per-session release is asserted",
+          "interval_until_next_context_update_seconds": 2.9878179689999342
+        },
+        {
+          "t_start": 1918.908090954,
+          "t_end": 1921.894246768,
+          "ttft": 0.3453022209998835,
+          "e2e": 2.986155813999858,
+          "decode_seconds": 2.6408535929999744,
+          "prompt_tokens": 3806,
+          "completion_tokens": 128,
+          "cached_tokens": 0,
+          "finish_reason": "length",
+          "n_chunks": 128,
+          "natural_eos": false,
+          "timing_scope": "client TTFT includes queue/network; decode = completion minus TTFT",
+          "stage": 3,
+          "sent_prompt_len": 3806,
+          "prompt_sha256": "0fe13f9bd0a7de0eca297782fa00b9e9080c6b29e4dc232b752efc2d14a023a6",
+          "out_sha256": "7bd790088e7fe46ba987d90a63e5114be51c2a05cfd3d23fdf39d24b59eeb2b8",
+          "cache_salt": "R|rplus|8B|r4-default|3400|3|0|2",
+          "application_context_tokens": 3934,
+          "application_text_utf8_bytes": 26911,
+          "application_metadata_utf8_bytes": 48,
+          "application_total_utf8_bytes": 26959,
+          "kv_context_bytes_allocator_derived": 580386816,
+          "kv_byte_basis": "allocator-derived block estimate, not per-session measured allocation",
+          "application_context_hold_seconds_to_release": 16.25687919699999,
+          "kv_minimum_hold_seconds_until_session_completion": 16.25687919699999,
+          "kv_release_observed": false,
+          "kv_lifecycle_limit": "APC may retain blocks after session completion until reset/eviction; no pin or per-session release is asserted",
+          "interval_until_next_context_update_seconds": 3.15541721600016
+        },
+        {
+          "t_start": 1921.896023484,
+          "t_end": 1925.049663984,
+          "ttft": 0.3696999640001195,
+          "e2e": 3.153640500000165,
+          "decode_seconds": 2.7839405360000455,
+          "prompt_tokens": 3984,
+          "completion_tokens": 128,
+          "cached_tokens": 0,
+          "finish_reason": "length",
+          "n_chunks": 128,
+          "natural_eos": false,
+          "timing_scope": "client TTFT includes queue/network; decode = completion minus TTFT",
+          "stage": 4,
+          "sent_prompt_len": 3984,
+          "prompt_sha256": "b3d930d47e52d77138aff27a59bb3b20c10a49ac59b140df11778a8ce1236bab",
+          "out_sha256": "f646663cb2a77288c3a37ffd749609c7446ba045f152a850a4472176e5d98cd7",
+          "cache_salt": "R|rplus|8B|r4-default|3400|3|0|3",
+          "application_context_tokens": 4112,
+          "application_text_utf8_bytes": 27681,
+          "application_metadata_utf8_bytes": 48,
+          "application_total_utf8_bytes": 27729,
+          "kv_context_bytes_allocator_derived": 606339072,
+          "kv_byte_basis": "allocator-derived block estimate, not per-session measured allocation",
+          "application_context_hold_seconds_to_release": 13.10146198099983,
+          "kv_minimum_hold_seconds_until_session_completion": 13.10146198099983,
+          "kv_release_observed": false,
+          "kv_lifecycle_limit": "APC may retain blocks after session completion until reset/eviction; no pin or per-session release is asserted",
+          "interval_until_next_context_update_seconds": 3.267938592999826
+        },
+        {
+          "t_start": 1925.051388451,
+          "t_end": 1928.317602577,
+          "ttft": 0.5676825559999088,
+          "e2e": 3.266214125999795,
+          "decode_seconds": 2.6985315699998864,
+          "prompt_tokens": 4162,
+          "completion_tokens": 128,
+          "cached_tokens": 0,
+          "finish_reason": "length",
+          "n_chunks": 128,
+          "natural_eos": false,
+          "timing_scope": "client TTFT includes queue/network; decode = completion minus TTFT",
+          "stage": 5,
+          "sent_prompt_len": 4162,
+          "prompt_sha256": "7994a03b95bcf4c03f47b7d8bb001f3c4a0e1ccf1efde921b755a7c98420c3f7",
+          "out_sha256": "405c1a5a4311d94ff3f1646cd20e5a9ac1ff6f02d86671c4db126859977b07f1",
+          "cache_salt": "R|rplus|8B|r4-default|3400|3|0|4",
+          "application_context_tokens": 4290,
+          "application_text_utf8_bytes": 28512,
+          "application_metadata_utf8_bytes": 48,
+          "application_total_utf8_bytes": 28560,
+          "kv_context_bytes_allocator_derived": 634650624,
+          "kv_byte_basis": "allocator-derived block estimate, not per-session measured allocation",
+          "application_context_hold_seconds_to_release": 9.833523388000003,
+          "kv_minimum_hold_seconds_until_session_completion": 9.833523388000003,
+          "kv_release_observed": false,
+          "kv_lifecycle_limit": "APC may retain blocks after session completion until reset/eviction; no pin or per-session release is asserted",
+          "interval_until_next_context_update_seconds": 3.2353466080001
+        },
+        {
+          "t_start": 1928.319285263,
+          "t_end": 1931.552949185,
+          "ttft": 0.545068954000044,
+          "e2e": 3.233663922000005,
+          "decode_seconds": 2.6885949679999612,
+          "prompt_tokens": 4340,
+          "completion_tokens": 128,
+          "cached_tokens": 0,
+          "finish_reason": "length",
+          "n_chunks": 128,
+          "natural_eos": false,
+          "timing_scope": "client TTFT includes queue/network; decode = completion minus TTFT",
+          "stage": 6,
+          "sent_prompt_len": 4340,
+          "prompt_sha256": "5f07948502f8d3ac9957133d3da1d803f997d86026388a2155541175b6890420",
+          "out_sha256": "405c1a5a4311d94ff3f1646cd20e5a9ac1ff6f02d86671c4db126859977b07f1",
+          "cache_salt": "R|rplus|8B|r4-default|3400|3|0|5",
+          "application_context_tokens": 4468,
+          "application_text_utf8_bytes": 29291,
+          "application_metadata_utf8_bytes": 48,
+          "application_total_utf8_bytes": 29339,
+          "kv_context_bytes_allocator_derived": 660602880,
+          "kv_byte_basis": "allocator-derived block estimate, not per-session measured allocation",
+          "application_context_hold_seconds_to_release": 6.598176779999903,
+          "kv_minimum_hold_seconds_until_session_completion": 6.598176779999903,
+          "kv_release_observed": false,
+          "kv_lifecycle_limit": "APC may retain blocks after session completion until reset/eviction; no pin or per-session release is asserted",
+          "interval_until_next_context_update_seconds": 3.300984463000077
+        },
+        {
+          "t_start": 1931.55475899,
+          "t_end": 1934.853933648,
+          "ttft": 0.5373906039999383,
+          "e2e": 3.2991746580000836,
+          "decode_seconds": 2.7617840540001453,
+          "prompt_tokens": 4518,
+          "completion_tokens": 128,
+          "cached_tokens": 0,
+          "finish_reason": "length",
+          "n_chunks": 128,
+          "natural_eos": false,
+          "timing_scope": "client TTFT includes queue/network; decode = completion minus TTFT",
+          "stage": 7,
+          "sent_prompt_len": 4518,
+          "prompt_sha256": "617c2e6374527e0f26a12db2449eeb18ddbeae41e1750f81d365a53f90fcf8b8",
+          "out_sha256": "405c1a5a4311d94ff3f1646cd20e5a9ac1ff6f02d86671c4db126859977b07f1",
+          "cache_salt": "R|rplus|8B|r4-default|3400|3|0|6",
+          "application_context_tokens": 4646,
+          "application_text_utf8_bytes": 30084,
+          "application_metadata_utf8_bytes": 48,
+          "application_total_utf8_bytes": 30132,
+          "kv_context_bytes_allocator_derived": 686555136,
+          "kv_byte_basis": "allocator-derived block estimate, not per-session measured allocation",
+          "application_context_hold_seconds_to_release": 3.2971923169998263,
+          "kv_minimum_hold_seconds_until_session_completion": 3.2971923169998263,
+          "kv_release_observed": false,
+          "kv_lifecycle_limit": "APC may retain blocks after session completion until reset/eviction; no pin or per-session release is asserted",
+          "interval_until_next_context_update_seconds": 3.2971923169998263
+        },
+        {
+          "t_start": 1934.855734509,
+          "t_end": 1938.151125965,
+          "ttft": 0.5411003829999572,
+          "e2e": 3.295391455999834,
+          "decode_seconds": 2.7542910729998766,
+          "prompt_tokens": 4696,
+          "completion_tokens": 128,
+          "cached_tokens": 0,
+          "finish_reason": "length",
+          "n_chunks": 128,
+          "natural_eos": false,
+          "timing_scope": "client TTFT includes queue/network; decode = completion minus TTFT",
+          "stage": 8,
+          "sent_prompt_len": 4696,
+          "prompt_sha256": "e52bb31230fecd936d0ac0f4dd61df9c8bae388719314a7423f56f171802e8e3",
+          "out_sha256": "405c1a5a4311d94ff3f1646cd20e5a9ac1ff6f02d86671c4db126859977b07f1",
+          "cache_salt": "R|rplus|8B|r4-default|3400|3|0|7",
+          "application_context_tokens": 4824,
+          "application_text_utf8_bytes": 30889,
+          "application_metadata_utf8_bytes": 48,
+          "application_total_utf8_bytes": 30937,
+          "kv_context_bytes_allocator_derived": 712507392,
+          "kv_byte_basis": "allocator-derived block estimate, not per-session measured allocation",
+          "application_context_hold_seconds_to_release": 0,
+          "kv_minimum_hold_seconds_until_session_completion": 0,
+          "kv_release_observed": false,
+          "kv_lifecycle_limit": "APC may retain blocks after session completion until reset/eviction; no pin or per-session release is asserted",
+          "interval_until_next_context_update_seconds": 0
+        }
+      ],
+      "state_released_at": 1938.151125965,
+      "pinning_guaranteed": false,
+      "session_salt_mechanism": "forced miss"
+    },
+    {
+      "sess": 1,
+      "admitted": true,
+      "pipeline_seconds": 25.071038386000055,
+      "stages": [
+        {
+          "t_start": 1913.108916296,
+          "t_end": 1916.018925688,
+          "ttft": 0.671174770000107,
+          "e2e": 2.91000939200012,
+          "decode_seconds": 2.238834622000013,
+          "prompt_tokens": 3450,
+          "completion_tokens": 128,
+          "cached_tokens": 0,
+          "finish_reason": "length",
+          "n_chunks": 128,
+          "natural_eos": false,
+          "timing_scope": "client TTFT includes queue/network; decode = completion minus TTFT",
+          "stage": 1,
+          "sent_prompt_len": 3450,
+          "prompt_sha256": "9df28dbf34e6aeec5190f4c3199af1486ee339faa00d845edba54a3aca8125df",
+          "out_sha256": "040e8bbd7afa55e3a13398a1e03fc4b0b6793baf79094079ad850a445de425ce",
+          "cache_salt": "R|rplus|8B|r4-default|3400|3|1|0",
+          "application_context_tokens": 3578,
+          "application_text_utf8_bytes": 25678,
+          "application_metadata_utf8_bytes": 48,
+          "application_total_utf8_bytes": 25726,
+          "kv_context_bytes_allocator_derived": 528482304,
+          "kv_byte_basis": "allocator-derived block estimate, not per-session measured allocation",
+          "application_context_hold_seconds_to_release": 22.161028993999935,
+          "kv_minimum_hold_seconds_until_session_completion": 22.161028993999935,
+          "kv_release_observed": false,
+          "kv_lifecycle_limit": "APC may retain blocks after session completion until reset/eviction; no pin or per-session release is asserted",
+          "interval_until_next_context_update_seconds": 2.9298605589999624
+        },
+        {
+          "t_start": 1916.020534464,
+          "t_end": 1918.948786247,
+          "ttft": 0.5828656209998826,
+          "e2e": 2.9282517829999506,
+          "decode_seconds": 2.345386162000068,
+          "prompt_tokens": 3628,
+          "completion_tokens": 128,
+          "cached_tokens": 0,
+          "finish_reason": "length",
+          "n_chunks": 128,
+          "natural_eos": false,
+          "timing_scope": "client TTFT includes queue/network; decode = completion minus TTFT",
+          "stage": 2,
+          "sent_prompt_len": 3628,
+          "prompt_sha256": "09d0e76951520257206c94338f327313cea947b24856cf55d337ae954a3cd973",
+          "out_sha256": "f4c36d25dbb6ef9cb087a144384f99a94d555f42ea13b8a7a3c51a3ddea6a34a",
+          "cache_salt": "R|rplus|8B|r4-default|3400|3|1|1",
+          "application_context_tokens": 3756,
+          "application_text_utf8_bytes": 26671,
+          "application_metadata_utf8_bytes": 48,
+          "application_total_utf8_bytes": 26719,
+          "kv_context_bytes_allocator_derived": 554434560,
+          "kv_byte_basis": "allocator-derived block estimate, not per-session measured allocation",
+          "application_context_hold_seconds_to_release": 19.231168434999972,
+          "kv_minimum_hold_seconds_until_session_completion": 19.231168434999972,
+          "kv_release_observed": false,
+          "kv_lifecycle_limit": "APC may retain blocks after session completion until reset/eviction; no pin or per-session release is asserted",
+          "interval_until_next_context_update_seconds": 2.9899615069998617
+        },
+        {
+          "t_start": 1918.950373841,
+          "t_end": 1921.938747754,
+          "ttft": 0.6025496939998902,
+          "e2e": 2.988373912999805,
+          "decode_seconds": 2.3858242189999146,
+          "prompt_tokens": 3806,
+          "completion_tokens": 128,
+          "cached_tokens": 0,
+          "finish_reason": "length",
+          "n_chunks": 128,
+          "natural_eos": false,
+          "timing_scope": "client TTFT includes queue/network; decode = completion minus TTFT",
+          "stage": 3,
+          "sent_prompt_len": 3806,
+          "prompt_sha256": "d004776f9c7df8ea228ff16edaae4a1b0cc95df1dba9cd5b1b907ec97b6234d7",
+          "out_sha256": "4ad405b063efae7f4a1acb6f0eae4d177b995ead7e4b2be2bd2fd1e9a5d55a46",
+          "cache_salt": "R|rplus|8B|r4-default|3400|3|1|2",
+          "application_context_tokens": 3934,
+          "application_text_utf8_bytes": 27676,
+          "application_metadata_utf8_bytes": 48,
+          "application_total_utf8_bytes": 27724,
+          "kv_context_bytes_allocator_derived": 580386816,
+          "kv_byte_basis": "allocator-derived block estimate, not per-session measured allocation",
+          "application_context_hold_seconds_to_release": 16.24120692800011,
+          "kv_minimum_hold_seconds_until_session_completion": 16.24120692800011,
+          "kv_release_observed": false,
+          "kv_lifecycle_limit": "APC may retain blocks after session completion until reset/eviction; no pin or per-session release is asserted",
+          "interval_until_next_context_update_seconds": 3.1561872130000665
+        },
+        {
+          "t_start": 1921.940499442,
+          "t_end": 1925.094934967,
+          "ttft": 0.6450245630001064,
+          "e2e": 3.1544355250000535,
+          "decode_seconds": 2.509410961999947,
+          "prompt_tokens": 3984,
+          "completion_tokens": 128,
+          "cached_tokens": 0,
+          "finish_reason": "length",
+          "n_chunks": 128,
+          "natural_eos": false,
+          "timing_scope": "client TTFT includes queue/network; decode = completion minus TTFT",
+          "stage": 4,
+          "sent_prompt_len": 3984,
+          "prompt_sha256": "e8ab4f2be64076de0c3b25cbcfd347deec2b9bfedb7dd66fffcf61b71e8ea19b",
+          "out_sha256": "040e8bbd7afa55e3a13398a1e03fc4b0b6793baf79094079ad850a445de425ce",
+          "cache_salt": "R|rplus|8B|r4-default|3400|3|1|3",
+          "application_context_tokens": 4112,
+          "application_text_utf8_bytes": 28692,
+          "application_metadata_utf8_bytes": 48,
+          "application_total_utf8_bytes": 28740,
+          "kv_context_bytes_allocator_derived": 606339072,
+          "kv_byte_basis": "allocator-derived block estimate, not per-session measured allocation",
+          "application_context_hold_seconds_to_release": 13.085019715000044,
+          "kv_minimum_hold_seconds_until_session_completion": 13.085019715000044,
+          "kv_release_observed": false,
+          "kv_lifecycle_limit": "APC may retain blocks after session completion until reset/eviction; no pin or per-session release is asserted",
+          "interval_until_next_context_update_seconds": 3.271480282000084
+        },
+        {
+          "t_start": 1925.096753294,
+          "t_end": 1928.366415249,
+          "ttft": 0.8758768909999617,
+          "e2e": 3.269661954999947,
+          "decode_seconds": 2.393785063999985,
+          "prompt_tokens": 4162,
+          "completion_tokens": 128,
+          "cached_tokens": 0,
+          "finish_reason": "length",
+          "n_chunks": 128,
+          "natural_eos": false,
+          "timing_scope": "client TTFT includes queue/network; decode = completion minus TTFT",
+          "stage": 5,
+          "sent_prompt_len": 4162,
+          "prompt_sha256": "8e5116143eb9331a6526e14b4cc87e2d96364a37488ecd5e381b07ae5055699c",
+          "out_sha256": "040e8bbd7afa55e3a13398a1e03fc4b0b6793baf79094079ad850a445de425ce",
+          "cache_salt": "R|rplus|8B|r4-default|3400|3|1|4",
+          "application_context_tokens": 4290,
+          "application_text_utf8_bytes": 29723,
+          "application_metadata_utf8_bytes": 48,
+          "application_total_utf8_bytes": 29771,
+          "kv_context_bytes_allocator_derived": 634650624,
+          "kv_byte_basis": "allocator-derived block estimate, not per-session measured allocation",
+          "application_context_hold_seconds_to_release": 9.81353943299996,
+          "kv_minimum_hold_seconds_until_session_completion": 9.81353943299996,
+          "kv_release_observed": false,
+          "kv_lifecycle_limit": "APC may retain blocks after session completion until reset/eviction; no pin or per-session release is asserted",
+          "interval_until_next_context_update_seconds": 3.2298231939998914
+        },
+        {
+          "t_start": 1928.368204664,
+          "t_end": 1931.596238443,
+          "ttft": 0.8449134210000011,
+          "e2e": 3.228033779000043,
+          "decode_seconds": 2.383120358000042,
+          "prompt_tokens": 4340,
+          "completion_tokens": 128,
+          "cached_tokens": 0,
+          "finish_reason": "length",
+          "n_chunks": 128,
+          "natural_eos": false,
+          "timing_scope": "client TTFT includes queue/network; decode = completion minus TTFT",
+          "stage": 6,
+          "sent_prompt_len": 4340,
+          "prompt_sha256": "f65f4f61e7be706b666ce3d70c00dbf8bb709ca2413f1cbc4b451cfce52d7d52",
+          "out_sha256": "040e8bbd7afa55e3a13398a1e03fc4b0b6793baf79094079ad850a445de425ce",
+          "cache_salt": "R|rplus|8B|r4-default|3400|3|1|5",
+          "application_context_tokens": 4468,
+          "application_text_utf8_bytes": 30695,
+          "application_metadata_utf8_bytes": 48,
+          "application_total_utf8_bytes": 30743,
+          "kv_context_bytes_allocator_derived": 660602880,
+          "kv_byte_basis": "allocator-derived block estimate, not per-session measured allocation",
+          "application_context_hold_seconds_to_release": 6.5837162390000685,
+          "kv_minimum_hold_seconds_until_session_completion": 6.5837162390000685,
+          "kv_release_observed": false,
+          "kv_lifecycle_limit": "APC may retain blocks after session completion until reset/eviction; no pin or per-session release is asserted",
+          "interval_until_next_context_update_seconds": 3.3068572610000047
+        },
+        {
+          "t_start": 1931.597952605,
+          "t_end": 1934.903095704,
+          "ttft": 0.8307243140000082,
+          "e2e": 3.305143098999906,
+          "decode_seconds": 2.474418784999898,
+          "prompt_tokens": 4518,
+          "completion_tokens": 128,
+          "cached_tokens": 0,
+          "finish_reason": "length",
+          "n_chunks": 128,
+          "natural_eos": false,
+          "timing_scope": "client TTFT includes queue/network; decode = completion minus TTFT",
+          "stage": 7,
+          "sent_prompt_len": 4518,
+          "prompt_sha256": "037876506c3bf77d12292cb9323a691ac95dabd1f0e6d85d827a4eb27c31ca5c",
+          "out_sha256": "040e8bbd7afa55e3a13398a1e03fc4b0b6793baf79094079ad850a445de425ce",
+          "cache_salt": "R|rplus|8B|r4-default|3400|3|1|6",
+          "application_context_tokens": 4646,
+          "application_text_utf8_bytes": 31649,
+          "application_metadata_utf8_bytes": 48,
+          "application_total_utf8_bytes": 31697,
+          "kv_context_bytes_allocator_derived": 686555136,
+          "kv_byte_basis": "allocator-derived block estimate, not per-session measured allocation",
+          "application_context_hold_seconds_to_release": 3.276858978000064,
+          "kv_minimum_hold_seconds_until_session_completion": 3.276858978000064,
+          "kv_release_observed": false,
+          "kv_lifecycle_limit": "APC may retain blocks after session completion until reset/eviction; no pin or per-session release is asserted",
+          "interval_until_next_context_update_seconds": 3.276858978000064
+        },
+        {
+          "t_start": 1934.904913651,
+          "t_end": 1938.179954682,
+          "ttft": 0.8236692049999874,
+          "e2e": 3.2750410310000007,
+          "decode_seconds": 2.4513718260000132,
+          "prompt_tokens": 4696,
+          "completion_tokens": 128,
+          "cached_tokens": 0,
+          "finish_reason": "length",
+          "n_chunks": 128,
+          "natural_eos": false,
+          "timing_scope": "client TTFT includes queue/network; decode = completion minus TTFT",
+          "stage": 8,
+          "sent_prompt_len": 4696,
+          "prompt_sha256": "afa32701a6dc0bfbbc81402c801948676c16ce05438617720d39e0707f530284",
+          "out_sha256": "65684ff9f5288c3b5ac1ddb2d89897ee660ba7c6f4c9a6f0ce3b573d5257b099",
+          "cache_salt": "R|rplus|8B|r4-default|3400|3|1|7",
+          "application_context_tokens": 4824,
+          "application_text_utf8_bytes": 32670,
+          "application_metadata_utf8_bytes": 48,
+          "application_total_utf8_bytes": 32718,
+          "kv_context_bytes_allocator_derived": 712507392,
+          "kv_byte_basis": "allocator-derived block estimate, not per-session measured allocation",
+          "application_context_hold_seconds_to_release": 0,
+          "kv_minimum_hold_seconds_until_session_completion": 0,
+          "kv_release_observed": false,
+          "kv_lifecycle_limit": "APC may retain blocks after session completion until reset/eviction; no pin or per-session release is asserted",
+          "interval_until_next_context_update_seconds": 0
+        }
+      ],
+      "state_released_at": 1938.179954682,
+      "pinning_guaranteed": false,
+      "session_salt_mechanism": "forced miss"
+    },
+    {
+      "sess": 2,
+      "admitted": true,
+      "pipeline_seconds": 25.097553358999903,
+      "stages": [
+        {
+          "t_start": 1913.109292366,
+          "t_end": 1916.310239469,
+          "ttft": 0.9980006969999522,
+          "e2e": 3.200947102999862,
+          "decode_seconds": 2.20294640599991,
+          "prompt_tokens": 3450,
+          "completion_tokens": 128,
+          "cached_tokens": 0,
+          "finish_reason": "length",
+          "n_chunks": 128,
+          "natural_eos": false,
+          "timing_scope": "client TTFT includes queue/network; decode = completion minus TTFT",
+          "stage": 1,
+          "sent_prompt_len": 3450,
+          "prompt_sha256": "cf4e9c2c4bc98c830b5a3ea4c0a100e9bcaac6c0472ff2c703753de198796a6e",
+          "out_sha256": "4acd91970c2456fff84724512e35c323d4ef1a8217796f5a71defd24af7b0940",
+          "cache_salt": "R|rplus|8B|r4-default|3400|3|2|0",
+          "application_context_tokens": 3578,
+          "application_text_utf8_bytes": 25254,
+          "application_metadata_utf8_bytes": 48,
+          "application_total_utf8_bytes": 25302,
+          "kv_context_bytes_allocator_derived": 528482304,
+          "kv_byte_basis": "allocator-derived block estimate, not per-session measured allocation",
+          "application_context_hold_seconds_to_release": 21.89660625600004,
+          "kv_minimum_hold_seconds_until_session_completion": 21.89660625600004,
+          "kv_release_observed": false,
+          "kv_lifecycle_limit": "APC may retain blocks after session completion until reset/eviction; no pin or per-session release is asserted",
+          "interval_until_next_context_update_seconds": 2.940908333000152
+        },
+        {
+          "t_start": 1916.311804479,
+          "t_end": 1919.251147802,
+          "ttft": 0.6151752579999084,
+          "e2e": 2.939343323000003,
+          "decode_seconds": 2.3241680650000944,
+          "prompt_tokens": 3628,
+          "completion_tokens": 128,
+          "cached_tokens": 0,
+          "finish_reason": "length",
+          "n_chunks": 128,
+          "natural_eos": false,
+          "timing_scope": "client TTFT includes queue/network; decode = completion minus TTFT",
+          "stage": 2,
+          "sent_prompt_len": 3628,
+          "prompt_sha256": "8d3a02d492df2a46b0f4d4bf5a1fc4aa4cef332bc6ece99abcefa62d85ce0c5d",
+          "out_sha256": "5d35df4b9ad05666a5cee6f4da4d83668a93e904cc9f7bb8c07578fab9ccccb6",
+          "cache_salt": "R|rplus|8B|r4-default|3400|3|2|1",
+          "application_context_tokens": 3756,
+          "application_text_utf8_bytes": 25991,
+          "application_metadata_utf8_bytes": 48,
+          "application_total_utf8_bytes": 26039,
+          "kv_context_bytes_allocator_derived": 554434560,
+          "kv_byte_basis": "allocator-derived block estimate, not per-session measured allocation",
+          "application_context_hold_seconds_to_release": 18.95569792299989,
+          "kv_minimum_hold_seconds_until_session_completion": 18.95569792299989,
+          "kv_release_observed": false,
+          "kv_lifecycle_limit": "APC may retain blocks after session completion until reset/eviction; no pin or per-session release is asserted",
+          "interval_until_next_context_update_seconds": 3.0121242159998474
+        },
+        {
+          "t_start": 1919.252777539,
+          "t_end": 1922.263272018,
+          "ttft": 0.5996986900001957,
+          "e2e": 3.0104944790000445,
+          "decode_seconds": 2.410795788999849,
+          "prompt_tokens": 3806,
+          "completion_tokens": 128,
+          "cached_tokens": 0,
+          "finish_reason": "length",
+          "n_chunks": 128,
+          "natural_eos": false,
+          "timing_scope": "client TTFT includes queue/network; decode = completion minus TTFT",
+          "stage": 3,
+          "sent_prompt_len": 3806,
+          "prompt_sha256": "11c01eee198f933cb6518072a158c8e7d1aa6a870e37e9692789c2ba0c80392d",
+          "out_sha256": "5d35df4b9ad05666a5cee6f4da4d83668a93e904cc9f7bb8c07578fab9ccccb6",
+          "cache_salt": "R|rplus|8B|r4-default|3400|3|2|2",
+          "application_context_tokens": 3934,
+          "application_text_utf8_bytes": 26740,
+          "application_metadata_utf8_bytes": 48,
+          "application_total_utf8_bytes": 26788,
+          "kv_context_bytes_allocator_derived": 580386816,
+          "kv_byte_basis": "allocator-derived block estimate, not per-session measured allocation",
+          "application_context_hold_seconds_to_release": 15.943573707000041,
+          "kv_minimum_hold_seconds_until_session_completion": 15.943573707000041,
+          "kv_release_observed": false,
+          "kv_lifecycle_limit": "APC may retain blocks after session completion until reset/eviction; no pin or per-session release is asserted",
+          "interval_until_next_context_update_seconds": 3.185990555999979
+        },
+        {
+          "t_start": 1922.264969536,
+          "t_end": 1925.449262574,
+          "ttft": 0.6381012169999849,
+          "e2e": 3.1842930379998506,
+          "decode_seconds": 2.5461918209998657,
+          "prompt_tokens": 3984,
+          "completion_tokens": 128,
+          "cached_tokens": 0,
+          "finish_reason": "length",
+          "n_chunks": 128,
+          "natural_eos": false,
+          "timing_scope": "client TTFT includes queue/network; decode = completion minus TTFT",
+          "stage": 4,
+          "sent_prompt_len": 3984,
+          "prompt_sha256": "e015f77f396052983174d4d734a588d7598d07d9093939df57c6e41574e6c69e",
+          "out_sha256": "5d35df4b9ad05666a5cee6f4da4d83668a93e904cc9f7bb8c07578fab9ccccb6",
+          "cache_salt": "R|rplus|8B|r4-default|3400|3|2|3",
+          "application_context_tokens": 4112,
+          "application_text_utf8_bytes": 27497,
+          "application_metadata_utf8_bytes": 48,
+          "application_total_utf8_bytes": 27545,
+          "kv_context_bytes_allocator_derived": 606339072,
+          "kv_byte_basis": "allocator-derived block estimate, not per-session measured allocation",
+          "application_context_hold_seconds_to_release": 12.757583151000063,
+          "kv_minimum_hold_seconds_until_session_completion": 12.757583151000063,
+          "kv_release_observed": false,
+          "kv_lifecycle_limit": "APC may retain blocks after session completion until reset/eviction; no pin or per-session release is asserted",
+          "interval_until_next_context_update_seconds": 3.2547930000000633
+        },
+        {
+          "t_start": 1925.451023396,
+          "t_end": 1928.704055574,
+          "ttft": 0.8750573950001126,
+          "e2e": 3.253032178000012,
+          "decode_seconds": 2.3779747829998996,
+          "prompt_tokens": 4162,
+          "completion_tokens": 128,
+          "cached_tokens": 0,
+          "finish_reason": "length",
+          "n_chunks": 128,
+          "natural_eos": false,
+          "timing_scope": "client TTFT includes queue/network; decode = completion minus TTFT",
+          "stage": 5,
+          "sent_prompt_len": 4162,
+          "prompt_sha256": "d2dd2e5bb2914bc0dc093319745ddfc28dd1934e3468c22a9b14a1064648dc93",
+          "out_sha256": "5d35df4b9ad05666a5cee6f4da4d83668a93e904cc9f7bb8c07578fab9ccccb6",
+          "cache_salt": "R|rplus|8B|r4-default|3400|3|2|4",
+          "application_context_tokens": 4290,
+          "application_text_utf8_bytes": 28250,
+          "application_metadata_utf8_bytes": 48,
+          "application_total_utf8_bytes": 28298,
+          "kv_context_bytes_allocator_derived": 634650624,
+          "kv_byte_basis": "allocator-derived block estimate, not per-session measured allocation",
+          "application_context_hold_seconds_to_release": 9.502790151,
+          "kv_minimum_hold_seconds_until_session_completion": 9.502790151,
+          "kv_release_observed": false,
+          "kv_lifecycle_limit": "APC may retain blocks after session completion until reset/eviction; no pin or per-session release is asserted",
+          "interval_until_next_context_update_seconds": 3.2233050209999874
+        },
+        {
+          "t_start": 1928.705798099,
+          "t_end": 1931.927360595,
+          "ttft": 0.8559855270000298,
+          "e2e": 3.221562495999933,
+          "decode_seconds": 2.3655769689999033,
+          "prompt_tokens": 4340,
+          "completion_tokens": 128,
+          "cached_tokens": 0,
+          "finish_reason": "length",
+          "n_chunks": 128,
+          "natural_eos": false,
+          "timing_scope": "client TTFT includes queue/network; decode = completion minus TTFT",
+          "stage": 6,
+          "sent_prompt_len": 4340,
+          "prompt_sha256": "6461f3396ef4314c22553f7bf4c3e0e7eebe11f41d4d948b649113d4dc5c5f47",
+          "out_sha256": "5d35df4b9ad05666a5cee6f4da4d83668a93e904cc9f7bb8c07578fab9ccccb6",
+          "cache_salt": "R|rplus|8B|r4-default|3400|3|2|5",
+          "application_context_tokens": 4468,
+          "application_text_utf8_bytes": 28985,
+          "application_metadata_utf8_bytes": 48,
+          "application_total_utf8_bytes": 29033,
+          "kv_context_bytes_allocator_derived": 660602880,
+          "kv_byte_basis": "allocator-derived block estimate, not per-session measured allocation",
+          "application_context_hold_seconds_to_release": 6.279485130000012,
+          "kv_minimum_hold_seconds_until_session_completion": 6.279485130000012,
+          "kv_release_observed": false,
+          "kv_lifecycle_limit": "APC may retain blocks after session completion until reset/eviction; no pin or per-session release is asserted",
+          "interval_until_next_context_update_seconds": 3.301976900999989
+        },
+        {
+          "t_start": 1931.929142588,
+          "t_end": 1935.229337496,
+          "ttft": 0.8429166769999483,
+          "e2e": 3.3001949079998667,
+          "decode_seconds": 2.4572782309999184,
+          "prompt_tokens": 4518,
+          "completion_tokens": 128,
+          "cached_tokens": 0,
+          "finish_reason": "length",
+          "n_chunks": 128,
+          "natural_eos": false,
+          "timing_scope": "client TTFT includes queue/network; decode = completion minus TTFT",
+          "stage": 7,
+          "sent_prompt_len": 4518,
+          "prompt_sha256": "039f679c4b4d4b127649598b3ce15c22014f63559ad1829042911fd06741b369",
+          "out_sha256": "19e8675bf50c877c36f9cebf96bc3c0226c79dfd43082b6430e2fb1ea101aec8",
+          "cache_salt": "R|rplus|8B|r4-default|3400|3|2|6",
+          "application_context_tokens": 4646,
+          "application_text_utf8_bytes": 29746,
+          "application_metadata_utf8_bytes": 48,
+          "application_total_utf8_bytes": 29794,
+          "kv_context_bytes_allocator_derived": 686555136,
+          "kv_byte_basis": "allocator-derived block estimate, not per-session measured allocation",
+          "application_context_hold_seconds_to_release": 2.9775082290000228,
+          "kv_minimum_hold_seconds_until_session_completion": 2.9775082290000228,
+          "kv_release_observed": false,
+          "kv_lifecycle_limit": "APC may retain blocks after session completion until reset/eviction; no pin or per-session release is asserted",
+          "interval_until_next_context_update_seconds": 2.9775082290000228
+        },
+        {
+          "t_start": 1935.231125488,
+          "t_end": 1938.206845725,
+          "ttft": 0.8362743919999502,
+          "e2e": 2.975720236999905,
+          "decode_seconds": 2.1394458449999547,
+          "prompt_tokens": 4696,
+          "completion_tokens": 128,
+          "cached_tokens": 0,
+          "finish_reason": "length",
+          "n_chunks": 128,
+          "natural_eos": false,
+          "timing_scope": "client TTFT includes queue/network; decode = completion minus TTFT",
+          "stage": 8,
+          "sent_prompt_len": 4696,
+          "prompt_sha256": "fdf1d8ea8978afd663c66339b5e391ae92f236aa999424909e73cf3107e53ff7",
+          "out_sha256": "5d35df4b9ad05666a5cee6f4da4d83668a93e904cc9f7bb8c07578fab9ccccb6",
+          "cache_salt": "R|rplus|8B|r4-default|3400|3|2|7",
+          "application_context_tokens": 4824,
+          "application_text_utf8_bytes": 30517,
+          "application_metadata_utf8_bytes": 48,
+          "application_total_utf8_bytes": 30565,
+          "kv_context_bytes_allocator_derived": 712507392,
+          "kv_byte_basis": "allocator-derived block estimate, not per-session measured allocation",
+          "application_context_hold_seconds_to_release": 0,
+          "kv_minimum_hold_seconds_until_session_completion": 0,
+          "kv_release_observed": false,
+          "kv_lifecycle_limit": "APC may retain blocks after session completion until reset/eviction; no pin or per-session release is asserted",
+          "interval_until_next_context_update_seconds": 0
+        }
+      ],
+      "state_released_at": 1938.206845725,
+      "pinning_guaranteed": false,
+      "session_salt_mechanism": "forced miss"
+    },
+    {
+      "sess": 3,
+      "admitted": true,
+      "pipeline_seconds": 25.132564926999976,
+      "stages": [
+        {
+          "t_start": 1913.109683438,
+          "t_end": 1916.46808457,
+          "ttft": 1.110590436999928,
+          "e2e": 3.3584011319999263,
+          "decode_seconds": 2.2478106949999983,
+          "prompt_tokens": 3450,
+          "completion_tokens": 128,
+          "cached_tokens": 0,
+          "finish_reason": "length",
+          "n_chunks": 128,
+          "natural_eos": false,
+          "timing_scope": "client TTFT includes queue/network; decode = completion minus TTFT",
+          "stage": 1,
+          "sent_prompt_len": 3450,
+          "prompt_sha256": "491efeb977381f2751a527b32d2c9153fd39093884655740ec395d9bea11d7b5",
+          "out_sha256": "d07cfb31d8351c71a954cfd7ab6968c125b9fdd9a3d1d8eea3bb2c57b0b2de25",
+          "cache_salt": "R|rplus|8B|r4-default|3400|3|3|0",
+          "application_context_tokens": 3578,
+          "application_text_utf8_bytes": 25219,
+          "application_metadata_utf8_bytes": 48,
+          "application_total_utf8_bytes": 25267,
+          "kv_context_bytes_allocator_derived": 528482304,
+          "kv_byte_basis": "allocator-derived block estimate, not per-session measured allocation",
+          "application_context_hold_seconds_to_release": 21.77416379500005,
+          "kv_minimum_hold_seconds_until_session_completion": 21.77416379500005,
+          "kv_release_observed": false,
+          "kv_lifecycle_limit": "APC may retain blocks after session completion until reset/eviction; no pin or per-session release is asserted",
+          "interval_until_next_context_update_seconds": 3.0825453810000454
+        },
+        {
+          "t_start": 1916.469621859,
+          "t_end": 1919.550629951,
+          "ttft": 0.704833735999955,
+          "e2e": 3.0810080920000473,
+          "decode_seconds": 2.3761743560000923,
+          "prompt_tokens": 3628,
+          "completion_tokens": 128,
+          "cached_tokens": 0,
+          "finish_reason": "length",
+          "n_chunks": 128,
+          "natural_eos": false,
+          "timing_scope": "client TTFT includes queue/network; decode = completion minus TTFT",
+          "stage": 2,
+          "sent_prompt_len": 3628,
+          "prompt_sha256": "666b4cdcd05c4eb2e42ea68b855caa9cd79b0e4d51ea32f8c252c6ba7d15b4f9",
+          "out_sha256": "ca14c70790cb8707d3f55fe72205c8943c43deeb518ffbc5ca782cebdcea6ada",
+          "cache_salt": "R|rplus|8B|r4-default|3400|3|3|1",
+          "application_context_tokens": 3756,
+          "application_text_utf8_bytes": 26057,
+          "application_metadata_utf8_bytes": 48,
+          "application_total_utf8_bytes": 26105,
+          "kv_context_bytes_allocator_derived": 554434560,
+          "kv_byte_basis": "allocator-derived block estimate, not per-session measured allocation",
+          "application_context_hold_seconds_to_release": 18.691618414000004,
+          "kv_minimum_hold_seconds_until_session_completion": 18.691618414000004,
+          "kv_release_observed": false,
+          "kv_lifecycle_limit": "APC may retain blocks after session completion until reset/eviction; no pin or per-session release is asserted",
+          "interval_until_next_context_update_seconds": 3.0324107569999796
+        },
+        {
+          "t_start": 1919.552273428,
+          "t_end": 1922.583040708,
+          "ttft": 0.5921682809998856,
+          "e2e": 3.0307672799999636,
+          "decode_seconds": 2.438598999000078,
+          "prompt_tokens": 3806,
+          "completion_tokens": 128,
+          "cached_tokens": 0,
+          "finish_reason": "length",
+          "n_chunks": 128,
+          "natural_eos": false,
+          "timing_scope": "client TTFT includes queue/network; decode = completion minus TTFT",
+          "stage": 3,
+          "sent_prompt_len": 3806,
+          "prompt_sha256": "47768cc7234c5f9f1dfd015b38e17a9efe06b9c4de694a5f8315f816ea25b4b4",
+          "out_sha256": "d07cfb31d8351c71a954cfd7ab6968c125b9fdd9a3d1d8eea3bb2c57b0b2de25",
+          "cache_salt": "R|rplus|8B|r4-default|3400|3|3|2",
+          "application_context_tokens": 3934,
+          "application_text_utf8_bytes": 26666,
+          "application_metadata_utf8_bytes": 48,
+          "application_total_utf8_bytes": 26714,
+          "kv_context_bytes_allocator_derived": 580386816,
+          "kv_byte_basis": "allocator-derived block estimate, not per-session measured allocation",
+          "application_context_hold_seconds_to_release": 15.659207657000024,
+          "kv_minimum_hold_seconds_until_session_completion": 15.659207657000024,
+          "kv_release_observed": false,
+          "kv_lifecycle_limit": "APC may retain blocks after session completion until reset/eviction; no pin or per-session release is asserted",
+          "interval_until_next_context_update_seconds": 3.216611703999888
+        },
+        {
+          "t_start": 1922.584794098,
+          "t_end": 1925.799652412,
+          "ttft": 0.6303769740000007,
+          "e2e": 3.214858313999912,
+          "decode_seconds": 2.584481339999911,
+          "prompt_tokens": 3984,
+          "completion_tokens": 128,
+          "cached_tokens": 0,
+          "finish_reason": "length",
+          "n_chunks": 128,
+          "natural_eos": false,
+          "timing_scope": "client TTFT includes queue/network; decode = completion minus TTFT",
+          "stage": 4,
+          "sent_prompt_len": 3984,
+          "prompt_sha256": "5dd052b52766dae85564c38f6ec696f361667cb80714c88b97075e846fa26657",
+          "out_sha256": "d07cfb31d8351c71a954cfd7ab6968c125b9fdd9a3d1d8eea3bb2c57b0b2de25",
+          "cache_salt": "R|rplus|8B|r4-default|3400|3|3|3",
+          "application_context_tokens": 4112,
+          "application_text_utf8_bytes": 27319,
+          "application_metadata_utf8_bytes": 48,
+          "application_total_utf8_bytes": 27367,
+          "kv_context_bytes_allocator_derived": 606339072,
+          "kv_byte_basis": "allocator-derived block estimate, not per-session measured allocation",
+          "application_context_hold_seconds_to_release": 12.442595953000136,
+          "kv_minimum_hold_seconds_until_session_completion": 12.442595953000136,
+          "kv_release_observed": false,
+          "kv_lifecycle_limit": "APC may retain blocks after session completion until reset/eviction; no pin or per-session release is asserted",
+          "interval_until_next_context_update_seconds": 3.2409468440000637
+        },
+        {
+          "t_start": 1925.801391531,
+          "t_end": 1929.040599256,
+          "ttft": 0.7282512279998627,
+          "e2e": 3.2392077249999147,
+          "decode_seconds": 2.510956497000052,
+          "prompt_tokens": 4162,
+          "completion_tokens": 128,
+          "cached_tokens": 0,
+          "finish_reason": "length",
+          "n_chunks": 128,
+          "natural_eos": false,
+          "timing_scope": "client TTFT includes queue/network; decode = completion minus TTFT",
+          "stage": 5,
+          "sent_prompt_len": 4162,
+          "prompt_sha256": "684ea087ef14d04b253e31f9769999c1d80f13a7059bd7935e0b01c443b2a8f5",
+          "out_sha256": "d07cfb31d8351c71a954cfd7ab6968c125b9fdd9a3d1d8eea3bb2c57b0b2de25",
+          "cache_salt": "R|rplus|8B|r4-default|3400|3|3|4",
+          "application_context_tokens": 4290,
+          "application_text_utf8_bytes": 27929,
+          "application_metadata_utf8_bytes": 48,
+          "application_total_utf8_bytes": 27977,
+          "kv_context_bytes_allocator_derived": 634650624,
+          "kv_byte_basis": "allocator-derived block estimate, not per-session measured allocation",
+          "application_context_hold_seconds_to_release": 9.201649109000073,
+          "kv_minimum_hold_seconds_until_session_completion": 9.201649109000073,
+          "kv_release_observed": false,
+          "kv_lifecycle_limit": "APC may retain blocks after session completion until reset/eviction; no pin or per-session release is asserted",
+          "interval_until_next_context_update_seconds": 3.2199697730000025
+        },
+        {
+          "t_start": 1929.042525333,
+          "t_end": 1932.260569029,
+          "ttft": 0.7830422570000337,
+          "e2e": 3.218043695999995,
+          "decode_seconds": 2.4350014389999615,
+          "prompt_tokens": 4340,
+          "completion_tokens": 128,
+          "cached_tokens": 0,
+          "finish_reason": "length",
+          "n_chunks": 128,
+          "natural_eos": false,
+          "timing_scope": "client TTFT includes queue/network; decode = completion minus TTFT",
+          "stage": 6,
+          "sent_prompt_len": 4340,
+          "prompt_sha256": "a75fdcdd1bdcc68663f80e2013a1659350cdaf4f3dd4fa66e407ee61922b453d",
+          "out_sha256": "d07cfb31d8351c71a954cfd7ab6968c125b9fdd9a3d1d8eea3bb2c57b0b2de25",
+          "cache_salt": "R|rplus|8B|r4-default|3400|3|3|5",
+          "application_context_tokens": 4468,
+          "application_text_utf8_bytes": 28555,
+          "application_metadata_utf8_bytes": 48,
+          "application_total_utf8_bytes": 28603,
+          "kv_context_bytes_allocator_derived": 660602880,
+          "kv_byte_basis": "allocator-derived block estimate, not per-session measured allocation",
+          "application_context_hold_seconds_to_release": 5.98167933600007,
+          "kv_minimum_hold_seconds_until_session_completion": 5.98167933600007,
+          "kv_release_observed": false,
+          "kv_lifecycle_limit": "APC may retain blocks after session completion until reset/eviction; no pin or per-session release is asserted",
+          "interval_until_next_context_update_seconds": 3.2980910490000497
+        },
+        {
+          "t_start": 1932.262596036,
+          "t_end": 1935.558660078,
+          "ttft": 0.805524991999846,
+          "e2e": 3.296064041999898,
+          "decode_seconds": 2.490539050000052,
+          "prompt_tokens": 4518,
+          "completion_tokens": 128,
+          "cached_tokens": 0,
+          "finish_reason": "length",
+          "n_chunks": 128,
+          "natural_eos": false,
+          "timing_scope": "client TTFT includes queue/network; decode = completion minus TTFT",
+          "stage": 7,
+          "sent_prompt_len": 4518,
+          "prompt_sha256": "2cb567233038ee520c737786f96db018655c4de8d8dd1d3c47e88417caa96b25",
+          "out_sha256": "d07cfb31d8351c71a954cfd7ab6968c125b9fdd9a3d1d8eea3bb2c57b0b2de25",
+          "cache_salt": "R|rplus|8B|r4-default|3400|3|3|6",
+          "application_context_tokens": 4646,
+          "application_text_utf8_bytes": 29184,
+          "application_metadata_utf8_bytes": 48,
+          "application_total_utf8_bytes": 29232,
+          "kv_context_bytes_allocator_derived": 686555136,
+          "kv_byte_basis": "allocator-derived block estimate, not per-session measured allocation",
+          "application_context_hold_seconds_to_release": 2.6835882870000205,
+          "kv_minimum_hold_seconds_until_session_completion": 2.6835882870000205,
+          "kv_release_observed": false,
+          "kv_lifecycle_limit": "APC may retain blocks after session completion until reset/eviction; no pin or per-session release is asserted",
+          "interval_until_next_context_update_seconds": 2.6835882870000205
+        },
+        {
+          "t_start": 1935.560510503,
+          "t_end": 1938.242248365,
+          "ttft": 0.86897739799997,
+          "e2e": 2.681737862000091,
+          "decode_seconds": 1.812760464000121,
+          "prompt_tokens": 4696,
+          "completion_tokens": 128,
+          "cached_tokens": 0,
+          "finish_reason": "length",
+          "n_chunks": 128,
+          "natural_eos": false,
+          "timing_scope": "client TTFT includes queue/network; decode = completion minus TTFT",
+          "stage": 8,
+          "sent_prompt_len": 4696,
+          "prompt_sha256": "223f9287a76cf7a0c2f4d72239dc6d368ce97cf7570b1d8a67eb4165ad313715",
+          "out_sha256": "d07cfb31d8351c71a954cfd7ab6968c125b9fdd9a3d1d8eea3bb2c57b0b2de25",
+          "cache_salt": "R|rplus|8B|r4-default|3400|3|3|7",
+          "application_context_tokens": 4824,
+          "application_text_utf8_bytes": 29811,
+          "application_metadata_utf8_bytes": 48,
+          "application_total_utf8_bytes": 29859,
+          "kv_context_bytes_allocator_derived": 712507392,
+          "kv_byte_basis": "allocator-derived block estimate, not per-session measured allocation",
+          "application_context_hold_seconds_to_release": 0,
+          "kv_minimum_hold_seconds_until_session_completion": 0,
+          "kv_release_observed": false,
+          "kv_lifecycle_limit": "APC may retain blocks after session completion until reset/eviction; no pin or per-session release is asserted",
+          "interval_until_next_context_update_seconds": 0
+        }
+      ],
+      "state_released_at": 1938.242248365,
+      "pinning_guaranteed": false,
+      "session_salt_mechanism": "forced miss"
+    }
+  ],
+  "metric_samples": [
+    {
+      "t": 1913.10793178,
+      "metrics": {
+        "vllm:num_requests_running": 0.0,
+        "vllm:num_requests_waiting": 0.0,
+        "vllm:kv_cache_usage_perc": 0.0,
+        "vllm:prefix_cache_queries_total": 250304.0,
+        "vllm:prefix_cache_hits_total": 160048.0,
+        "vllm:external_prefix_cache_queries_total": 0.0,
+        "vllm:external_prefix_cache_hits_total": 0.0,
+        "vllm:num_preemptions_total": 0.0,
+        "vllm:prompt_tokens_total": 250304.0,
+        "vllm:prompt_tokens_cached_total": 160048.0,
+        "vllm:request_prefill_time_seconds_count": 68.0,
+        "vllm:request_prefill_time_seconds_sum": 13.158637340999803
+      }
+    },
+    {
+      "t": 1913.396530479,
+      "metrics": {
+        "vllm:num_requests_running": 2.0,
+        "vllm:num_requests_waiting": 2.0,
+        "vllm:kv_cache_usage_perc": 0.09493904691540456,
+        "vllm:prefix_cache_queries_total": 257204.0,
+        "vllm:prefix_cache_hits_total": 160048.0,
+        "vllm:external_prefix_cache_queries_total": 0.0,
+        "vllm:external_prefix_cache_hits_total": 0.0,
+        "vllm:num_preemptions_total": 0.0,
+        "vllm:prompt_tokens_total": 250304.0,
+        "vllm:prompt_tokens_cached_total": 160048.0,
+        "vllm:request_prefill_time_seconds_count": 68.0,
+        "vllm:request_prefill_time_seconds_sum": 13.158637340999803
+      }
+    },
+    {
+      "t": 1913.602340107,
+      "metrics": {
+        "vllm:num_requests_running": 2.0,
+        "vllm:num_requests_waiting": 2.0,
+        "vllm:kv_cache_usage_perc": 0.14222386405615073,
+        "vllm:prefix_cache_queries_total": 257204.0,
+        "vllm:prefix_cache_hits_total": 160048.0,
+        "vllm:external_prefix_cache_queries_total": 0.0,
+        "vllm:external_prefix_cache_hits_total": 0.0,
+        "vllm:num_preemptions_total": 0.0,
+        "vllm:prompt_tokens_total": 253754.0,
+        "vllm:prompt_tokens_cached_total": 160048.0,
+        "vllm:request_prefill_time_seconds_count": 68.0,
+        "vllm:request_prefill_time_seconds_sum": 13.158637340999803
+      }
+    },
+    {
+      "t": 1913.807275358,
+      "metrics": {
+        "vllm:num_requests_running": 3.0,
+        "vllm:num_requests_waiting": 1.0,
+        "vllm:kv_cache_usage_perc": 0.23679349833764318,
+        "vllm:prefix_cache_queries_total": 260654.0,
+        "vllm:prefix_cache_hits_total": 160048.0,
+        "vllm:external_prefix_cache_queries_total": 0.0,
+        "vllm:external_prefix_cache_hits_total": 0.0,
+        "vllm:num_preemptions_total": 0.0,
+        "vllm:prompt_tokens_total": 257204.0,
+        "vllm:prompt_tokens_cached_total": 160048.0,
+        "vllm:request_prefill_time_seconds_count": 68.0,
+        "vllm:request_prefill_time_seconds_sum": 13.158637340999803
+      }
+    },
+    {
+      "t": 1914.012894666,
+      "metrics": {
+        "vllm:num_requests_running": 4.0,
+        "vllm:num_requests_waiting": 0.0,
+        "vllm:kv_cache_usage_perc": 0.28407831547838935,
+        "vllm:prefix_cache_queries_total": 264104.0,
+        "vllm:prefix_cache_hits_total": 160048.0,
+        "vllm:external_prefix_cache_queries_total": 0.0,
+        "vllm:external_prefix_cache_hits_total": 0.0,
+        "vllm:num_preemptions_total": 0.0,
+        "vllm:prompt_tokens_total": 257204.0,
+        "vllm:prompt_tokens_cached_total": 160048.0,
+        "vllm:request_prefill_time_seconds_count": 68.0,
+        "vllm:request_prefill_time_seconds_sum": 13.158637340999803
+      }
+    },
+    {
+      "t": 1914.217524242,
+      "metrics": {
+        "vllm:num_requests_running": 4.0,
+        "vllm:num_requests_waiting": 0.0,
+        "vllm:kv_cache_usage_perc": 0.3191725157000369,
+        "vllm:prefix_cache_queries_total": 264104.0,
+        "vllm:prefix_cache_hits_total": 160048.0,
+        "vllm:external_prefix_cache_queries_total": 0.0,
+        "vllm:external_prefix_cache_hits_total": 0.0,
+        "vllm:num_preemptions_total": 0.0,
+        "vllm:prompt_tokens_total": 264104.0,
+        "vllm:prompt_tokens_cached_total": 160048.0,
+        "vllm:request_prefill_time_seconds_count": 68.0,
+        "vllm:request_prefill_time_seconds_sum": 13.158637340999803
+      }
+    },
+    {
+      "t": 1914.424077842,
+      "metrics": {
+        "vllm:num_requests_running": 4.0,
+        "vllm:num_requests_waiting": 0.0,
+        "vllm:kv_cache_usage_perc": 0.3206501662356852,
+        "vllm:prefix_cache_queries_total": 264104.0,
+        "vllm:prefix_cache_hits_total": 160048.0,
+        "vllm:external_prefix_cache_queries_total": 0.0,
+        "vllm:external_prefix_cache_hits_total": 0.0,
+        "vllm:num_preemptions_total": 0.0,
+        "vllm:prompt_tokens_total": 264104.0,
+        "vllm:prompt_tokens_cached_total": 160048.0,
+        "vllm:request_prefill_time_seconds_count": 68.0,
+        "vllm:request_prefill_time_seconds_sum": 13.158637340999803
+      }
+    },
+    {
+      "t": 1914.628147423,
+      "metrics": {
+        "vllm:num_requests_running": 4.0,
+        "vllm:num_requests_waiting": 0.0,
+        "vllm:kv_cache_usage_perc": 0.3221278167713336,
+        "vllm:prefix_cache_queries_total": 264104.0,
+        "vllm:prefix_cache_hits_total": 160048.0,
+        "vllm:external_prefix_cache_queries_total": 0.0,
+        "vllm:external_prefix_cache_hits_total": 0.0,
+        "vllm:num_preemptions_total": 0.0,
+        "vllm:prompt_tokens_total": 264104.0,
+        "vllm:prompt_tokens_cached_total": 160048.0,
+        "vllm:request_prefill_time_seconds_count": 68.0,
+        "vllm:request_prefill_time_seconds_sum": 13.158637340999803
+      }
+    },
+    {
+      "t": 1914.832541969,
+      "metrics": {
+        "vllm:num_requests_running": 4.0,
+        "vllm:num_requests_waiting": 0.0,
+        "vllm:kv_cache_usage_perc": 0.3236054673069819,
+        "vllm:prefix_cache_queries_total": 264104.0,
+        "vllm:prefix_cache_hits_total": 160048.0,
+        "vllm:external_prefix_cache_queries_total": 0.0,
+        "vllm:external_prefix_cache_hits_total": 0.0,
+        "vllm:num_preemptions_total": 0.0,
+        "vllm:prompt_tokens_total": 264104.0,
+        "vllm:prompt_tokens_cached_total": 160048.0,
+        "vllm:request_prefill_time_seconds_count": 68.0,
+        "vllm:request_prefill_time_seconds_sum": 13.158637340999803
+      }
+    },
+    {
+      "t": 1915.036884861,
+      "metrics": {
+        "vllm:num_requests_running": 4.0,
+        "vllm:num_requests_waiting": 0.0,
+        "vllm:kv_cache_usage_perc": 0.3250831178426302,
+        "vllm:prefix_cache_queries_total": 264104.0,
+        "vllm:prefix_cache_hits_total": 160048.0,
+        "vllm:external_prefix_cache_queries_total": 0.0,
+        "vllm:external_prefix_cache_hits_total": 0.0,
+        "vllm:num_preemptions_total": 0.0,
+        "vllm:prompt_tokens_total": 264104.0,
+        "vllm:prompt_tokens_cached_total": 160048.0,
+        "vllm:request_prefill_time_seconds_count": 68.0,
+        "vllm:request_prefill_time_seconds_sum": 13.158637340999803
+      }
+    },
+    {
+      "t": 1915.240963031,
+      "metrics": {
+        "vllm:num_requests_running": 4.0,
+        "vllm:num_requests_waiting": 0.0,
+        "vllm:kv_cache_usage_perc": 0.3265607683782785,
+        "vllm:prefix_cache_queries_total": 264104.0,
+        "vllm:prefix_cache_hits_total": 160048.0,
+        "vllm:external_prefix_cache_queries_total": 0.0,
+        "vllm:external_prefix_cache_hits_total": 0.0,
+        "vllm:num_preemptions_total": 0.0,
+        "vllm:prompt_tokens_total": 264104.0,
+        "vllm:prompt_tokens_cached_total": 160048.0,
+        "vllm:request_prefill_time_seconds_count": 68.0,
+        "vllm:request_prefill_time_seconds_sum": 13.158637340999803
+      }
+    },
+    {
+      "t": 1915.52173451,
+      "metrics": {
+        "vllm:num_requests_running": 4.0,
+        "vllm:num_requests_waiting": 0.0,
+        "vllm:kv_cache_usage_perc": 0.3280384189139268,
+        "vllm:prefix_cache_queries_total": 264104.0,
+        "vllm:prefix_cache_hits_total": 160048.0,
+        "vllm:external_prefix_cache_queries_total": 0.0,
+        "vllm:external_prefix_cache_hits_total": 0.0,
+        "vllm:num_preemptions_total": 0.0,
+        "vllm:prompt_tokens_total": 264104.0,
+        "vllm:prompt_tokens_cached_total": 160048.0,
+        "vllm:request_prefill_time_seconds_count": 68.0,
+        "vllm:request_prefill_time_seconds_sum": 13.158637340999803
+      }
+    },
+    {
+      "t": 1915.727852807,
+      "metrics": {
+        "vllm:num_requests_running": 4.0,
+        "vllm:num_requests_waiting": 0.0,
+        "vllm:kv_cache_usage_perc": 0.3295160694495751,
+        "vllm:prefix_cache_queries_total": 264104.0,
+        "vllm:prefix_cache_hits_total": 160048.0,
+        "vllm:external_prefix_cache_queries_total": 0.0,
+        "vllm:external_prefix_cache_hits_total": 0.0,
+        "vllm:num_preemptions_total": 0.0,
+        "vllm:prompt_tokens_total": 264104.0,
+        "vllm:prompt_tokens_cached_total": 160048.0,
+        "vllm:request_prefill_time_seconds_count": 68.0,
+        "vllm:request_prefill_time_seconds_sum": 13.158637340999803
+      }
+    },
+    {
+      "t": 1915.932922784,
+      "metrics": {
+        "vllm:num_requests_running": 4.0,
+        "vllm:num_requests_waiting": 0.0,
+        "vllm:kv_cache_usage_perc": 0.33099371998522353,
+        "vllm:prefix_cache_queries_total": 264104.0,
+        "vllm:prefix_cache_hits_total": 160048.0,
+        "vllm:external_prefix_cache_queries_total": 0.0,
+        "vllm:external_prefix_cache_hits_total": 0.0,
+        "vllm:num_preemptions_total": 0.0,
+        "vllm:prompt_tokens_total": 264104.0,
+        "vllm:prompt_tokens_cached_total": 160048.0,
+        "vllm:request_prefill_time_seconds_count": 68.0,
+        "vllm:request_prefill_time_seconds_sum": 13.158637340999803
+      }
+    },
+    {
+      "t": 1916.137388461,
+      "metrics": {
+        "vllm:num_requests_running": 3.0,
+        "vllm:num_requests_waiting": 0.0,
+        "vllm:kv_cache_usage_perc": 0.21278167713335794,
+        "vllm:prefix_cache_queries_total": 267732.0,
+        "vllm:prefix_cache_hits_total": 160048.0,
+        "vllm:external_prefix_cache_queries_total": 0.0,
+        "vllm:external_prefix_cache_hits_total": 0.0,
+        "vllm:num_preemptions_total": 0.0,
+        "vllm:prompt_tokens_total": 264104.0,
+        "vllm:prompt_tokens_cached_total": 160048.0,
+        "vllm:request_prefill_time_seconds_count": 70.0,
+        "vllm:request_prefill_time_seconds_sum": 14.138337005999801
+      }
+    },
+    {
+      "t": 1916.34263182,
+      "metrics": {
+        "vllm:num_requests_running": 3.0,
+        "vllm:num_requests_waiting": 0.0,
+        "vllm:kv_cache_usage_perc": 0.21388991503509425,
+        "vllm:prefix_cache_queries_total": 271360.0,
+        "vllm:prefix_cache_hits_total": 160048.0,
+        "vllm:external_prefix_cache_queries_total": 0.0,
+        "vllm:external_prefix_cache_hits_total": 0.0,
+        "vllm:num_preemptions_total": 0.0,
+        "vllm:prompt_tokens_total": 267732.0,
+        "vllm:prompt_tokens_cached_total": 160048.0,
+        "vllm:request_prefill_time_seconds_count": 71.0,
+        "vllm:request_prefill_time_seconds_sum": 14.787730086999773
+      }
+    },
+    {
+      "t": 1916.547488203,
+      "metrics": {
+        "vllm:num_requests_running": 2.0,
+        "vllm:num_requests_waiting": 0.0,
+        "vllm:kv_cache_usage_perc": 0.16771333579608427,
+        "vllm:prefix_cache_queries_total": 271360.0,
+        "vllm:prefix_cache_hits_total": 160048.0,
+        "vllm:external_prefix_cache_queries_total": 0.0,
+        "vllm:external_prefix_cache_hits_total": 0.0,
+        "vllm:num_preemptions_total": 0.0,
+        "vllm:prompt_tokens_total": 267732.0,
+        "vllm:prompt_tokens_cached_total": 160048.0,
+        "vllm:request_prefill_time_seconds_count": 72.0,
+        "vllm:request_prefill_time_seconds_sum": 15.228245798999751
+      }
+    },
+    {
+      "t": 1916.75267563,
+      "metrics": {
+        "vllm:num_requests_running": 3.0,
+        "vllm:num_requests_waiting": 0.0,
+        "vllm:kv_cache_usage_perc": 0.21499815293683044,
+        "vllm:prefix_cache_queries_total": 274988.0,
+        "vllm:prefix_cache_hits_total": 160048.0,
+        "vllm:external_prefix_cache_queries_total": 0.0,
+        "vllm:external_prefix_cache_hits_total": 0.0,
+        "vllm:num_preemptions_total": 0.0,
+        "vllm:prompt_tokens_total": 271360.0,
+        "vllm:prompt_tokens_cached_total": 160048.0,
+        "vllm:request_prefill_time_seconds_count": 72.0,
+        "vllm:request_prefill_time_seconds_sum": 15.228245798999751
+      }
+    },
+    {
+      "t": 1916.957173574,
+      "metrics": {
+        "vllm:num_requests_running": 4.0,
+        "vllm:num_requests_waiting": 0.0,
+        "vllm:kv_cache_usage_perc": 0.309937199852235,
+        "vllm:prefix_cache_queries_total": 278616.0,
+        "vllm:prefix_cache_hits_total": 160048.0,
+        "vllm:external_prefix_cache_queries_total": 0.0,
+        "vllm:external_prefix_cache_hits_total": 0.0,
+        "vllm:num_preemptions_total": 0.0,
+        "vllm:prompt_tokens_total": 274988.0,
+        "vllm:prompt_tokens_cached_total": 160048.0,
+        "vllm:request_prefill_time_seconds_count": 72.0,
+        "vllm:request_prefill_time_seconds_sum": 15.228245798999751
+      }
+    },
+    {
+      "t": 1917.162311237,
+      "metrics": {
+        "vllm:num_requests_running": 4.0,
+        "vllm:num_requests_waiting": 0.0,
+        "vllm:kv_cache_usage_perc": 0.33579608422608054,
+        "vllm:prefix_cache_queries_total": 278616.0,
+        "vllm:prefix_cache_hits_total": 160048.0,
+        "vllm:external_prefix_cache_queries_total": 0.0,
+        "vllm:external_prefix_cache_hits_total": 0.0,
+        "vllm:num_preemptions_total": 0.0,
+        "vllm:prompt_tokens_total": 274988.0,
+        "vllm:prompt_tokens_cached_total": 160048.0,
+        "vllm:request_prefill_time_seconds_count": 72.0,
+        "vllm:request_prefill_time_seconds_sum": 15.228245798999751
+      }
+    },
+    {
+      "t": 1917.367706493,
+      "metrics": {
+        "vllm:num_requests_running": 4.0,
+        "vllm:num_requests_waiting": 0.0,
+        "vllm:kv_cache_usage_perc": 0.33690432212781674,
+        "vllm:prefix_cache_queries_total": 278616.0,
+        "vllm:prefix_cache_hits_total": 160048.0,
+        "vllm:external_prefix_cache_queries_total": 0.0,
+        "vllm:external_prefix_cache_hits_total": 0.0,
+        "vllm:num_preemptions_total": 0.0,
+        "vllm:prompt_tokens_total": 278616.0,
+        "vllm:prompt_tokens_cached_total": 160048.0,
+        "vllm:request_prefill_time_seconds_count": 72.0,
+        "vllm:request_prefill_time_seconds_sum": 15.228245798999751
+      }
+    },
+    {
+      "t": 1917.64564951,
+      "metrics": {
+        "vllm:num_requests_running": 4.0,
+        "vllm:num_requests_waiting": 0.0,
+        "vllm:kv_cache_usage_perc": 0.33912079793128924,
+        "vllm:prefix_cache_queries_total": 278616.0,
+        "vllm:prefix_cache_hits_total": 160048.0,
+        "vllm:external_prefix_cache_queries_total": 0.0,
+        "vllm:external_prefix_cache_hits_total": 0.0,
+        "vllm:num_preemptions_total": 0.0,
+        "vllm:prompt_tokens_total": 278616.0,
+        "vllm:prompt_tokens_cached_total": 160048.0,
+        "vllm:request_prefill_time_seconds_count": 72.0,
+        "vllm:request_prefill_time_seconds_sum": 15.228245798999751
+      }
+    },
+    {
+      "t": 1917.8502681,
+      "metrics": {
+        "vllm:num_requests_running": 4.0,
+        "vllm:num_requests_waiting": 0.0,
+        "vllm:kv_cache_usage_perc": 0.34022903583302544,
+        "vllm:prefix_cache_queries_total": 278616.0,
+        "vllm:prefix_cache_hits_total": 160048.0,
+        "vllm:external_prefix_cache_queries_total": 0.0,
+        "vllm:external_prefix_cache_hits_total": 0.0,
+        "vllm:num_preemptions_total": 0.0,
+        "vllm:prompt_tokens_total": 278616.0,
+        "vllm:prompt_tokens_cached_total": 160048.0,
+        "vllm:request_prefill_time_seconds_count": 72.0,
+        "vllm:request_prefill_time_seconds_sum": 15.228245798999751
+      }
+    },
+    {
+      "t": 1918.055412447,
+      "metrics": {
+        "vllm:num_requests_running": 4.0,
+        "vllm:num_requests_waiting": 0.0,
+        "vllm:kv_cache_usage_perc": 0.34133727373476175,
+        "vllm:prefix_cache_queries_total": 278616.0,
+        "vllm:prefix_cache_hits_total": 160048.0,
+        "vllm:external_prefix_cache_queries_total": 0.0,
+        "vllm:external_prefix_cache_hits_total": 0.0,
+        "vllm:num_preemptions_total": 0.0,
+        "vllm:prompt_tokens_total": 278616.0,
+        "vllm:prompt_tokens_cached_total": 160048.0,
+        "vllm:request_prefill_time_seconds_count": 72.0,
+        "vllm:request_prefill_time_seconds_sum": 15.228245798999751
+      }
+    },
+    {
+      "t": 1918.260091567,
+      "metrics": {
+        "vllm:num_requests_running": 4.0,
+        "vllm:num_requests_waiting": 0.0,
+        "vllm:kv_cache_usage_perc": 0.34281492427041005,
+        "vllm:prefix_cache_queries_total": 278616.0,
+        "vllm:prefix_cache_hits_total": 160048.0,
+        "vllm:external_prefix_cache_queries_total": 0.0,
+        "vllm:external_prefix_cache_hits_total": 0.0,
+        "vllm:num_preemptions_total": 0.0,
+        "vllm:prompt_tokens_total": 278616.0,
+        "vllm:prompt_tokens_cached_total": 160048.0,
+        "vllm:request_prefill_time_seconds_count": 72.0,
+        "vllm:request_prefill_time_seconds_sum": 15.228245798999751
+      }
+    },
+    {
+      "t": 1918.465032416,
+      "metrics": {
+        "vllm:num_requests_running": 4.0,
+        "vllm:num_requests_waiting": 0.0,
+        "vllm:kv_cache_usage_perc": 0.34429257480605835,
+        "vllm:prefix_cache_queries_total": 278616.0,
+        "vllm:prefix_cache_hits_total": 160048.0,
+        "vllm:external_prefix_cache_queries_total": 0.0,
+        "vllm:external_prefix_cache_hits_total": 0.0,
+        "vllm:num_preemptions_total": 0.0,
+        "vllm:prompt_tokens_total": 278616.0,
+        "vllm:prompt_tokens_cached_total": 160048.0,
+        "vllm:request_prefill_time_seconds_count": 72.0,
+        "vllm:request_prefill_time_seconds_sum": 15.228245798999751
+      }
+    },
+    {
+      "t": 1918.669830833,
+      "metrics": {
+        "vllm:num_requests_running": 4.0,
+        "vllm:num_requests_waiting": 0.0,
+        "vllm:kv_cache_usage_perc": 0.34577022534170665,
+        "vllm:prefix_cache_queries_total": 278616.0,
+        "vllm:prefix_cache_hits_total": 160048.0,
+        "vllm:external_prefix_cache_queries_total": 0.0,
+        "vllm:external_prefix_cache_hits_total": 0.0,
+        "vllm:num_preemptions_total": 0.0,
+        "vllm:prompt_tokens_total": 278616.0,
+        "vllm:prompt_tokens_cached_total": 160048.0,
+        "vllm:request_prefill_time_seconds_count": 72.0,
+        "vllm:request_prefill_time_seconds_sum": 15.228245798999751
+      }
+    },
+    {
+      "t": 1918.874374381,
+      "metrics": {
+        "vllm:num_requests_running": 4.0,
+        "vllm:num_requests_waiting": 0.0,
+        "vllm:kv_cache_usage_perc": 0.34724787587735495,
+        "vllm:prefix_cache_queries_total": 278616.0,
+        "vllm:prefix_cache_hits_total": 160048.0,
+        "vllm:external_prefix_cache_queries_total": 0.0,
+        "vllm:external_prefix_cache_hits_total": 0.0,
+        "vllm:num_preemptions_total": 0.0,
+        "vllm:prompt_tokens_total": 278616.0,
+        "vllm:prompt_tokens_cached_total": 160048.0,
+        "vllm:request_prefill_time_seconds_count": 72.0,
+        "vllm:request_prefill_time_seconds_sum": 15.228245798999751
+      }
+    },
+    {
+      "t": 1919.079251571,
+      "metrics": {
+        "vllm:num_requests_running": 3.0,
+        "vllm:num_requests_waiting": 0.0,
+        "vllm:kv_cache_usage_perc": 0.22090875507942376,
+        "vllm:prefix_cache_queries_total": 282422.0,
+        "vllm:prefix_cache_hits_total": 160048.0,
+        "vllm:external_prefix_cache_queries_total": 0.0,
+        "vllm:external_prefix_cache_hits_total": 0.0,
+        "vllm:num_preemptions_total": 0.0,
+        "vllm:prompt_tokens_total": 278616.0,
+        "vllm:prompt_tokens_cached_total": 160048.0,
+        "vllm:request_prefill_time_seconds_count": 74.0,
+        "vllm:request_prefill_time_seconds_sum": 15.971015866999778
+      }
+    },
+    {
+      "t": 1919.283629907,
+      "metrics": {
+        "vllm:num_requests_running": 3.0,
+        "vllm:num_requests_waiting": 0.0,
+        "vllm:kv_cache_usage_perc": 0.22201699298115996,
+        "vllm:prefix_cache_queries_total": 286228.0,
+        "vllm:prefix_cache_hits_total": 160048.0,
+        "vllm:external_prefix_cache_queries_total": 0.0,
+        "vllm:external_prefix_cache_hits_total": 0.0,
+        "vllm:num_preemptions_total": 0.0,
+        "vllm:prompt_tokens_total": 282422.0,
+        "vllm:prompt_tokens_cached_total": 160048.0,
+        "vllm:request_prefill_time_seconds_count": 75.0,
+        "vllm:request_prefill_time_seconds_sum": 16.42807280299985
+      }
+    },
+    {
+      "t": 1919.488736994,
+      "metrics": {
+        "vllm:num_requests_running": 3.0,
+        "vllm:num_requests_waiting": 0.0,
+        "vllm:kv_cache_usage_perc": 0.2626523827114887,
+        "vllm:prefix_cache_queries_total": 286228.0,
+        "vllm:prefix_cache_hits_total": 160048.0,
+        "vllm:external_prefix_cache_queries_total": 0.0,
+        "vllm:external_prefix_cache_hits_total": 0.0,
+        "vllm:num_preemptions_total": 0.0,
+        "vllm:prompt_tokens_total": 282422.0,
+        "vllm:prompt_tokens_cached_total": 160048.0,
+        "vllm:request_prefill_time_seconds_count": 75.0,
+        "vllm:request_prefill_time_seconds_sum": 16.42807280299985
+      }
+    },
+    {
+      "t": 1919.762133255,
+      "metrics": {
+        "vllm:num_requests_running": 3.0,
+        "vllm:num_requests_waiting": 0.0,
+        "vllm:kv_cache_usage_perc": 0.264130033247137,
+        "vllm:prefix_cache_queries_total": 290034.0,
+        "vllm:prefix_cache_hits_total": 160048.0,
+        "vllm:external_prefix_cache_queries_total": 0.0,
+        "vllm:external_prefix_cache_hits_total": 0.0,
+        "vllm:num_preemptions_total": 0.0,
+        "vllm:prompt_tokens_total": 286228.0,
+        "vllm:prompt_tokens_cached_total": 160048.0,
+        "vllm:request_prefill_time_seconds_count": 76.0,
+        "vllm:request_prefill_time_seconds_sum": 16.999380097999847
+      }
+    },
+    {
+      "t": 1919.966737939,
+      "metrics": {
+        "vllm:num_requests_running": 4.0,
+        "vllm:num_requests_waiting": 0.0,
+        "vllm:kv_cache_usage_perc": 0.3117842630217953,
+        "vllm:prefix_cache_queries_total": 293840.0,
+        "vllm:prefix_cache_hits_total": 160048.0,
+        "vllm:external_prefix_cache_queries_total": 0.0,
+        "vllm:external_prefix_cache_hits_total": 0.0,
+        "vllm:num_preemptions_total": 0.0,
+        "vllm:prompt_tokens_total": 290034.0,
+        "vllm:prompt_tokens_cached_total": 160048.0,
+        "vllm:request_prefill_time_seconds_count": 76.0,
+        "vllm:request_prefill_time_seconds_sum": 16.999380097999847
+      }
+    },
+    {
+      "t": 1920.171149245,
+      "metrics": {
+        "vllm:num_requests_running": 4.0,
+        "vllm:num_requests_waiting": 0.0,
+        "vllm:kv_cache_usage_perc": 0.35315847801994826,
+        "vllm:prefix_cache_queries_total": 293840.0,
+        "vllm:prefix_cache_hits_total": 160048.0,
+        "vllm:external_prefix_cache_queries_total": 0.0,
+        "vllm:external_prefix_cache_hits_total": 0.0,
+        "vllm:num_preemptions_total": 0.0,
+        "vllm:prompt_tokens_total": 293840.0,
+        "vllm:prompt_tokens_cached_total": 160048.0,
+        "vllm:request_prefill_time_seconds_count": 76.0,
+        "vllm:request_prefill_time_seconds_sum": 16.999380097999847
+      }
+    },
+    {
+      "t": 1920.377251629,
+      "metrics": {
+        "vllm:num_requests_running": 4.0,
+        "vllm:num_requests_waiting": 0.0,
+        "vllm:kv_cache_usage_perc": 0.35426671592168457,
+        "vllm:prefix_cache_queries_total": 293840.0,
+        "vllm:prefix_cache_hits_total": 160048.0,
+        "vllm:external_prefix_cache_queries_total": 0.0,
+        "vllm:external_prefix_cache_hits_total": 0.0,
+        "vllm:num_preemptions_total": 0.0,
+        "vllm:prompt_tokens_total": 293840.0,
+        "vllm:prompt_tokens_cached_total": 160048.0,
+        "vllm:request_prefill_time_seconds_count": 76.0,
+        "vllm:request_prefill_time_seconds_sum": 16.999380097999847
+      }
+    },
+    {
+      "t": 1920.581994509,
+      "metrics": {
+        "vllm:num_requests_running": 4.0,
+        "vllm:num_requests_waiting": 0.0,
+        "vllm:kv_cache_usage_perc": 0.35500554118950867,
+        "vllm:prefix_cache_queries_total": 293840.0,
+        "vllm:prefix_cache_hits_total": 160048.0,
+        "vllm:external_prefix_cache_queries_total": 0.0,
+        "vllm:external_prefix_cache_hits_total": 0.0,
+        "vllm:num_preemptions_total": 0.0,
+        "vllm:prompt_tokens_total": 293840.0,
+        "vllm:prompt_tokens_cached_total": 160048.0,
+        "vllm:request_prefill_time_seconds_count": 76.0,
+        "vllm:request_prefill_time_seconds_sum": 16.999380097999847
+      }
+    },
+    {
+      "t": 1920.787456524,
+      "metrics": {
+        "vllm:num_requests_running": 4.0,
+        "vllm:num_requests_waiting": 0.0,
+        "vllm:kv_cache_usage_perc": 0.356113779091245,
+        "vllm:prefix_cache_queries_total": 293840.0,
+        "vllm:prefix_cache_hits_total": 160048.0,
+        "vllm:external_prefix_cache_queries_total": 0.0,
+        "vllm:external_prefix_cache_hits_total": 0.0,
+        "vllm:num_preemptions_total": 0.0,
+        "vllm:prompt_tokens_total": 293840.0,
+        "vllm:prompt_tokens_cached_total": 160048.0,
+        "vllm:request_prefill_time_seconds_count": 76.0,
+        "vllm:request_prefill_time_seconds_sum": 16.999380097999847
+      }
+    },
+    {
+      "t": 1920.992558689,
+      "metrics": {
+        "vllm:num_requests_running": 4.0,
+        "vllm:num_requests_waiting": 0.0,
+        "vllm:kv_cache_usage_perc": 0.3575914296268933,
+        "vllm:prefix_cache_queries_total": 293840.0,
+        "vllm:prefix_cache_hits_total": 160048.0,
+        "vllm:external_prefix_cache_queries_total": 0.0,
+        "vllm:external_prefix_cache_hits_total": 0.0,
+        "vllm:num_preemptions_total": 0.0,
+        "vllm:prompt_tokens_total": 293840.0,
+        "vllm:prompt_tokens_cached_total": 160048.0,
+        "vllm:request_prefill_time_seconds_count": 76.0,
+        "vllm:request_prefill_time_seconds_sum": 16.999380097999847
+      }
+    },
+    {
+      "t": 1921.197306616,
+      "metrics": {
+        "vllm:num_requests_running": 4.0,
+        "vllm:num_requests_waiting": 0.0,
+        "vllm:kv_cache_usage_perc": 0.3590690801625416,
+        "vllm:prefix_cache_queries_total": 293840.0,
+        "vllm:prefix_cache_hits_total": 160048.0,
+        "vllm:external_prefix_cache_queries_total": 0.0,
+        "vllm:external_prefix_cache_hits_total": 0.0,
+        "vllm:num_preemptions_total": 0.0,
+        "vllm:prompt_tokens_total": 293840.0,
+        "vllm:prompt_tokens_cached_total": 160048.0,
+        "vllm:request_prefill_time_seconds_count": 76.0,
+        "vllm:request_prefill_time_seconds_sum": 16.999380097999847
+      }
+    },
+    {
+      "t": 1921.403460867,
+      "metrics": {
+        "vllm:num_requests_running": 4.0,
+        "vllm:num_requests_waiting": 0.0,
+        "vllm:kv_cache_usage_perc": 0.3605467306981899,
+        "vllm:prefix_cache_queries_total": 293840.0,
+        "vllm:prefix_cache_hits_total": 160048.0,
+        "vllm:external_prefix_cache_queries_total": 0.0,
+        "vllm:external_prefix_cache_hits_total": 0.0,
+        "vllm:num_preemptions_total": 0.0,
+        "vllm:prompt_tokens_total": 293840.0,
+        "vllm:prompt_tokens_cached_total": 160048.0,
+        "vllm:request_prefill_time_seconds_count": 76.0,
+        "vllm:request_prefill_time_seconds_sum": 16.999380097999847
+      }
+    },
+    {
+      "t": 1921.607696001,
+      "metrics": {
+        "vllm:num_requests_running": 4.0,
+        "vllm:num_requests_waiting": 0.0,
+        "vllm:kv_cache_usage_perc": 0.3620243812338382,
+        "vllm:prefix_cache_queries_total": 293840.0,
+        "vllm:prefix_cache_hits_total": 160048.0,
+        "vllm:external_prefix_cache_queries_total": 0.0,
+        "vllm:external_prefix_cache_hits_total": 0.0,
+        "vllm:num_preemptions_total": 0.0,
+        "vllm:prompt_tokens_total": 293840.0,
+        "vllm:prompt_tokens_cached_total": 160048.0,
+        "vllm:request_prefill_time_seconds_count": 76.0,
+        "vllm:request_prefill_time_seconds_sum": 16.999380097999847
+      }
+    },
+    {
+      "t": 1921.889464068,
+      "metrics": {
+        "vllm:num_requests_running": 4.0,
+        "vllm:num_requests_waiting": 0.0,
+        "vllm:kv_cache_usage_perc": 0.3635020317694865,
+        "vllm:prefix_cache_queries_total": 293840.0,
+        "vllm:prefix_cache_hits_total": 160048.0,
+        "vllm:external_prefix_cache_queries_total": 0.0,
+        "vllm:external_prefix_cache_hits_total": 0.0,
+        "vllm:num_preemptions_total": 0.0,
+        "vllm:prompt_tokens_total": 293840.0,
+        "vllm:prompt_tokens_cached_total": 160048.0,
+        "vllm:request_prefill_time_seconds_count": 76.0,
+        "vllm:request_prefill_time_seconds_sum": 16.999380097999847
+      }
+    },
+    {
+      "t": 1922.094254428,
+      "metrics": {
+        "vllm:num_requests_running": 3.0,
+        "vllm:num_requests_waiting": 0.0,
+        "vllm:kv_cache_usage_perc": 0.22903583302548947,
+        "vllm:prefix_cache_queries_total": 297824.0,
+        "vllm:prefix_cache_hits_total": 160048.0,
+        "vllm:external_prefix_cache_queries_total": 0.0,
+        "vllm:external_prefix_cache_hits_total": 0.0,
+        "vllm:num_preemptions_total": 0.0,
+        "vllm:prompt_tokens_total": 293840.0,
+        "vllm:prompt_tokens_cached_total": 160048.0,
+        "vllm:request_prefill_time_seconds_count": 78.0,
+        "vllm:request_prefill_time_seconds_sum": 17.771217436999677
+      }
+    },
+    {
+      "t": 1922.299763533,
+      "metrics": {
+        "vllm:num_requests_running": 3.0,
+        "vllm:num_requests_waiting": 0.0,
+        "vllm:kv_cache_usage_perc": 0.23051348356113777,
+        "vllm:prefix_cache_queries_total": 301808.0,
+        "vllm:prefix_cache_hits_total": 160048.0,
+        "vllm:external_prefix_cache_queries_total": 0.0,
+        "vllm:external_prefix_cache_hits_total": 0.0,
+        "vllm:num_preemptions_total": 0.0,
+        "vllm:prompt_tokens_total": 297824.0,
+        "vllm:prompt_tokens_cached_total": 160048.0,
+        "vllm:request_prefill_time_seconds_count": 79.0,
+        "vllm:request_prefill_time_seconds_sum": 18.214913844999728
+      }
+    },
+    {
+      "t": 1922.504788443,
+      "metrics": {
+        "vllm:num_requests_running": 3.0,
+        "vllm:num_requests_waiting": 0.0,
+        "vllm:kv_cache_usage_perc": 0.27521241226449944,
+        "vllm:prefix_cache_queries_total": 301808.0,
+        "vllm:prefix_cache_hits_total": 160048.0,
+        "vllm:external_prefix_cache_queries_total": 0.0,
+        "vllm:external_prefix_cache_hits_total": 0.0,
+        "vllm:num_preemptions_total": 0.0,
+        "vllm:prompt_tokens_total": 297824.0,
+        "vllm:prompt_tokens_cached_total": 160048.0,
+        "vllm:request_prefill_time_seconds_count": 79.0,
+        "vllm:request_prefill_time_seconds_sum": 18.214913844999728
+      }
+    },
+    {
+      "t": 1922.709803752,
+      "metrics": {
+        "vllm:num_requests_running": 3.0,
+        "vllm:num_requests_waiting": 0.0,
+        "vllm:kv_cache_usage_perc": 0.23199113409678607,
+        "vllm:prefix_cache_queries_total": 305792.0,
+        "vllm:prefix_cache_hits_total": 160048.0,
+        "vllm:external_prefix_cache_queries_total": 0.0,
+        "vllm:external_prefix_cache_hits_total": 0.0,
+        "vllm:num_preemptions_total": 0.0,
+        "vllm:prompt_tokens_total": 301808.0,
+        "vllm:prompt_tokens_cached_total": 160048.0,
+        "vllm:request_prefill_time_seconds_count": 80.0,
+        "vllm:request_prefill_time_seconds_sum": 18.651184455999783
+      }
+    },
+    {
+      "t": 1922.914272351,
+      "metrics": {
+        "vllm:num_requests_running": 4.0,
+        "vllm:num_requests_waiting": 0.0,
+        "vllm:kv_cache_usage_perc": 0.324344292574806,
+        "vllm:prefix_cache_queries_total": 309776.0,
+        "vllm:prefix_cache_hits_total": 160048.0,
+        "vllm:external_prefix_cache_queries_total": 0.0,
+        "vllm:external_prefix_cache_hits_total": 0.0,
+        "vllm:num_preemptions_total": 0.0,
+        "vllm:prompt_tokens_total": 305792.0,
+        "vllm:prompt_tokens_cached_total": 160048.0,
+        "vllm:request_prefill_time_seconds_count": 80.0,
+        "vllm:request_prefill_time_seconds_sum": 18.651184455999783
+      }
+    },
+    {
+      "t": 1923.118710001,
+      "metrics": {
+        "vllm:num_requests_running": 4.0,
+        "vllm:num_requests_waiting": 0.0,
+        "vllm:kv_cache_usage_perc": 0.3690432212781677,
+        "vllm:prefix_cache_queries_total": 309776.0,
+        "vllm:prefix_cache_hits_total": 160048.0,
+        "vllm:external_prefix_cache_queries_total": 0.0,
+        "vllm:external_prefix_cache_hits_total": 0.0,
+        "vllm:num_preemptions_total": 0.0,
+        "vllm:prompt_tokens_total": 305792.0,
+        "vllm:prompt_tokens_cached_total": 160048.0,
+        "vllm:request_prefill_time_seconds_count": 80.0,
+        "vllm:request_prefill_time_seconds_sum": 18.651184455999783
+      }
+    },
+    {
+      "t": 1923.323725279,
+      "metrics": {
+        "vllm:num_requests_running": 4.0,
+        "vllm:num_requests_waiting": 0.0,
+        "vllm:kv_cache_usage_perc": 0.3694126339120798,
+        "vllm:prefix_cache_queries_total": 309776.0,
+        "vllm:prefix_cache_hits_total": 160048.0,
+        "vllm:external_prefix_cache_queries_total": 0.0,
+        "vllm:external_prefix_cache_hits_total": 0.0,
+        "vllm:num_preemptions_total": 0.0,
+        "vllm:prompt_tokens_total": 309776.0,
+        "vllm:prompt_tokens_cached_total": 160048.0,
+        "vllm:request_prefill_time_seconds_count": 80.0,
+        "vllm:request_prefill_time_seconds_sum": 18.651184455999783
+      }
+    },
+    {
+      "t": 1923.528645815,
+      "metrics": {
+        "vllm:num_requests_running": 4.0,
+        "vllm:num_requests_waiting": 0.0,
+        "vllm:kv_cache_usage_perc": 0.3708902844477281,
+        "vllm:prefix_cache_queries_total": 309776.0,
+        "vllm:prefix_cache_hits_total": 160048.0,
+        "vllm:external_prefix_cache_queries_total": 0.0,
+        "vllm:external_prefix_cache_hits_total": 0.0,
+        "vllm:num_preemptions_total": 0.0,
+        "vllm:prompt_tokens_total": 309776.0,
+        "vllm:prompt_tokens_cached_total": 160048.0,
+        "vllm:request_prefill_time_seconds_count": 80.0,
+        "vllm:request_prefill_time_seconds_sum": 18.651184455999783
+      }
+    },
+    {
+      "t": 1923.735852369,
+      "metrics": {
+        "vllm:num_requests_running": 4.0,
+        "vllm:num_requests_waiting": 0.0,
+        "vllm:kv_cache_usage_perc": 0.3723679349833764,
+        "vllm:prefix_cache_queries_total": 309776.0,
+        "vllm:prefix_cache_hits_total": 160048.0,
+        "vllm:external_prefix_cache_queries_total": 0.0,
+        "vllm:external_prefix_cache_hits_total": 0.0,
+        "vllm:num_preemptions_total": 0.0,
+        "vllm:prompt_tokens_total": 309776.0,
+        "vllm:prompt_tokens_cached_total": 160048.0,
+        "vllm:request_prefill_time_seconds_count": 80.0,
+        "vllm:request_prefill_time_seconds_sum": 18.651184455999783
+      }
+    },
+    {
+      "t": 1924.021479907,
+      "metrics": {
+        "vllm:num_requests_running": 4.0,
+        "vllm:num_requests_waiting": 0.0,
+        "vllm:kv_cache_usage_perc": 0.3738455855190248,
+        "vllm:prefix_cache_queries_total": 309776.0,
+        "vllm:prefix_cache_hits_total": 160048.0,
+        "vllm:external_prefix_cache_queries_total": 0.0,
+        "vllm:external_prefix_cache_hits_total": 0.0,
+        "vllm:num_preemptions_total": 0.0,
+        "vllm:prompt_tokens_total": 309776.0,
+        "vllm:prompt_tokens_cached_total": 160048.0,
+        "vllm:request_prefill_time_seconds_count": 80.0,
+        "vllm:request_prefill_time_seconds_sum": 18.651184455999783
+      }
+    },
+    {
+      "t": 1924.225880533,
+      "metrics": {
+        "vllm:num_requests_running": 4.0,
+        "vllm:num_requests_waiting": 0.0,
+        "vllm:kv_cache_usage_perc": 0.3753232360546731,
+        "vllm:prefix_cache_queries_total": 309776.0,
+        "vllm:prefix_cache_hits_total": 160048.0,
+        "vllm:external_prefix_cache_queries_total": 0.0,
+        "vllm:external_prefix_cache_hits_total": 0.0,
+        "vllm:num_preemptions_total": 0.0,
+        "vllm:prompt_tokens_total": 309776.0,
+        "vllm:prompt_tokens_cached_total": 160048.0,
+        "vllm:request_prefill_time_seconds_count": 80.0,
+        "vllm:request_prefill_time_seconds_sum": 18.651184455999783
+      }
+    },
+    {
+      "t": 1924.430342141,
+      "metrics": {
+        "vllm:num_requests_running": 4.0,
+        "vllm:num_requests_waiting": 0.0,
+        "vllm:kv_cache_usage_perc": 0.3768008865903214,
+        "vllm:prefix_cache_queries_total": 309776.0,
+        "vllm:prefix_cache_hits_total": 160048.0,
+        "vllm:external_prefix_cache_queries_total": 0.0,
+        "vllm:external_prefix_cache_hits_total": 0.0,
+        "vllm:num_preemptions_total": 0.0,
+        "vllm:prompt_tokens_total": 309776.0,
+        "vllm:prompt_tokens_cached_total": 160048.0,
+        "vllm:request_prefill_time_seconds_count": 80.0,
+        "vllm:request_prefill_time_seconds_sum": 18.651184455999783
+      }
+    },
+    {
+      "t": 1924.635536669,
+      "metrics": {
+        "vllm:num_requests_running": 4.0,
+        "vllm:num_requests_waiting": 0.0,
+        "vllm:kv_cache_usage_perc": 0.3779091244920576,
+        "vllm:prefix_cache_queries_total": 309776.0,
+        "vllm:prefix_cache_hits_total": 160048.0,
+        "vllm:external_prefix_cache_queries_total": 0.0,
+        "vllm:external_prefix_cache_hits_total": 0.0,
+        "vllm:num_preemptions_total": 0.0,
+        "vllm:prompt_tokens_total": 309776.0,
+        "vllm:prompt_tokens_cached_total": 160048.0,
+        "vllm:request_prefill_time_seconds_count": 80.0,
+        "vllm:request_prefill_time_seconds_sum": 18.651184455999783
+      }
+    },
+    {
+      "t": 1924.839639327,
+      "metrics": {
+        "vllm:num_requests_running": 4.0,
+        "vllm:num_requests_waiting": 0.0,
+        "vllm:kv_cache_usage_perc": 0.3786479497598818,
+        "vllm:prefix_cache_queries_total": 309776.0,
+        "vllm:prefix_cache_hits_total": 160048.0,
+        "vllm:external_prefix_cache_queries_total": 0.0,
+        "vllm:external_prefix_cache_hits_total": 0.0,
+        "vllm:num_preemptions_total": 0.0,
+        "vllm:prompt_tokens_total": 309776.0,
+        "vllm:prompt_tokens_cached_total": 160048.0,
+        "vllm:request_prefill_time_seconds_count": 80.0,
+        "vllm:request_prefill_time_seconds_sum": 18.651184455999783
+      }
+    },
+    {
+      "t": 1925.044149723,
+      "metrics": {
+        "vllm:num_requests_running": 4.0,
+        "vllm:num_requests_waiting": 0.0,
+        "vllm:kv_cache_usage_perc": 0.379756187661618,
+        "vllm:prefix_cache_queries_total": 309776.0,
+        "vllm:prefix_cache_hits_total": 160048.0,
+        "vllm:external_prefix_cache_queries_total": 0.0,
+        "vllm:external_prefix_cache_hits_total": 0.0,
+        "vllm:num_preemptions_total": 0.0,
+        "vllm:prompt_tokens_total": 309776.0,
+        "vllm:prompt_tokens_cached_total": 160048.0,
+        "vllm:request_prefill_time_seconds_count": 80.0,
+        "vllm:request_prefill_time_seconds_sum": 18.651184455999783
+      }
+    },
+    {
+      "t": 1925.250328646,
+      "metrics": {
+        "vllm:num_requests_running": 3.0,
+        "vllm:num_requests_waiting": 0.0,
+        "vllm:kv_cache_usage_perc": 0.23716291097155517,
+        "vllm:prefix_cache_queries_total": 313938.0,
+        "vllm:prefix_cache_hits_total": 160048.0,
+        "vllm:external_prefix_cache_queries_total": 0.0,
+        "vllm:external_prefix_cache_hits_total": 0.0,
+        "vllm:num_preemptions_total": 0.0,
+        "vllm:prompt_tokens_total": 309776.0,
+        "vllm:prompt_tokens_cached_total": 160048.0,
+        "vllm:request_prefill_time_seconds_count": 82.0,
+        "vllm:request_prefill_time_seconds_sum": 19.48650541899974
+      }
+    },
+    {
+      "t": 1925.455459531,
+      "metrics": {
+        "vllm:num_requests_running": 3.0,
+        "vllm:num_requests_waiting": 0.0,
+        "vllm:kv_cache_usage_perc": 0.23716291097155517,
+        "vllm:prefix_cache_queries_total": 318100.0,
+        "vllm:prefix_cache_hits_total": 160048.0,
+        "vllm:external_prefix_cache_queries_total": 0.0,
+        "vllm:external_prefix_cache_hits_total": 0.0,
+        "vllm:num_preemptions_total": 0.0,
+        "vllm:prompt_tokens_total": 309776.0,
+        "vllm:prompt_tokens_cached_total": 160048.0,
+        "vllm:request_prefill_time_seconds_count": 83.0,
+        "vllm:request_prefill_time_seconds_sum": 19.96764167599963
+      }
+    },
+    {
+      "t": 1925.660317382,
+      "metrics": {
+        "vllm:num_requests_running": 3.0,
+        "vllm:num_requests_waiting": 0.0,
+        "vllm:kv_cache_usage_perc": 0.28444772811230146,
+        "vllm:prefix_cache_queries_total": 318100.0,
+        "vllm:prefix_cache_hits_total": 160048.0,
+        "vllm:external_prefix_cache_queries_total": 0.0,
+        "vllm:external_prefix_cache_hits_total": 0.0,
+        "vllm:num_preemptions_total": 0.0,
+        "vllm:prompt_tokens_total": 313938.0,
+        "vllm:prompt_tokens_cached_total": 160048.0,
+        "vllm:request_prefill_time_seconds_count": 83.0,
+        "vllm:request_prefill_time_seconds_sum": 19.96764167599963
+      }
+    },
+    {
+      "t": 1925.864724009,
+      "metrics": {
+        "vllm:num_requests_running": 3.0,
+        "vllm:num_requests_waiting": 0.0,
+        "vllm:kv_cache_usage_perc": 0.23716291097155517,
+        "vllm:prefix_cache_queries_total": 322262.0,
+        "vllm:prefix_cache_hits_total": 160048.0,
+        "vllm:external_prefix_cache_queries_total": 0.0,
+        "vllm:external_prefix_cache_hits_total": 0.0,
+        "vllm:num_preemptions_total": 0.0,
+        "vllm:prompt_tokens_total": 313938.0,
+        "vllm:prompt_tokens_cached_total": 160048.0,
+        "vllm:request_prefill_time_seconds_count": 84.0,
+        "vllm:request_prefill_time_seconds_sum": 20.44092374199954
+      }
+    },
+    {
+      "t": 1926.144946187,
+      "metrics": {
+        "vllm:num_requests_running": 3.0,
+        "vllm:num_requests_waiting": 0.0,
+        "vllm:kv_cache_usage_perc": 0.28444772811230146,
+        "vllm:prefix_cache_queries_total": 322262.0,
+        "vllm:prefix_cache_hits_total": 160048.0,
+        "vllm:external_prefix_cache_queries_total": 0.0,
+        "vllm:external_prefix_cache_hits_total": 0.0,
+        "vllm:num_preemptions_total": 0.0,
+        "vllm:prompt_tokens_total": 318100.0,
+        "vllm:prompt_tokens_cached_total": 160048.0,
+        "vllm:request_prefill_time_seconds_count": 84.0,
+        "vllm:request_prefill_time_seconds_sum": 20.44092374199954
+      }
+    },
+    {
+      "t": 1926.350262497,
+      "metrics": {
+        "vllm:num_requests_running": 4.0,
+        "vllm:num_requests_waiting": 0.0,
+        "vllm:kv_cache_usage_perc": 0.3790173623937939,
+        "vllm:prefix_cache_queries_total": 326424.0,
+        "vllm:prefix_cache_hits_total": 160048.0,
+        "vllm:external_prefix_cache_queries_total": 0.0,
+        "vllm:external_prefix_cache_hits_total": 0.0,
+        "vllm:num_preemptions_total": 0.0,
+        "vllm:prompt_tokens_total": 322262.0,
+        "vllm:prompt_tokens_cached_total": 160048.0,
+        "vllm:request_prefill_time_seconds_count": 84.0,
+        "vllm:request_prefill_time_seconds_sum": 20.44092374199954
+      }
+    },
+    {
+      "t": 1926.556316105,
+      "metrics": {
+        "vllm:num_requests_running": 4.0,
+        "vllm:num_requests_waiting": 0.0,
+        "vllm:kv_cache_usage_perc": 0.3856667898042113,
+        "vllm:prefix_cache_queries_total": 326424.0,
+        "vllm:prefix_cache_hits_total": 160048.0,
+        "vllm:external_prefix_cache_queries_total": 0.0,
+        "vllm:external_prefix_cache_hits_total": 0.0,
+        "vllm:num_preemptions_total": 0.0,
+        "vllm:prompt_tokens_total": 326424.0,
+        "vllm:prompt_tokens_cached_total": 160048.0,
+        "vllm:request_prefill_time_seconds_count": 84.0,
+        "vllm:request_prefill_time_seconds_sum": 20.44092374199954
+      }
+    },
+    {
+      "t": 1926.760860316,
+      "metrics": {
+        "vllm:num_requests_running": 4.0,
+        "vllm:num_requests_waiting": 0.0,
+        "vllm:kv_cache_usage_perc": 0.3871444403398596,
+        "vllm:prefix_cache_queries_total": 326424.0,
+        "vllm:prefix_cache_hits_total": 160048.0,
+        "vllm:external_prefix_cache_queries_total": 0.0,
+        "vllm:external_prefix_cache_hits_total": 0.0,
+        "vllm:num_preemptions_total": 0.0,
+        "vllm:prompt_tokens_total": 326424.0,
+        "vllm:prompt_tokens_cached_total": 160048.0,
+        "vllm:request_prefill_time_seconds_count": 84.0,
+        "vllm:request_prefill_time_seconds_sum": 20.44092374199954
+      }
+    },
+    {
+      "t": 1926.965111325,
+      "metrics": {
+        "vllm:num_requests_running": 4.0,
+        "vllm:num_requests_waiting": 0.0,
+        "vllm:kv_cache_usage_perc": 0.3882526782415958,
+        "vllm:prefix_cache_queries_total": 326424.0,
+        "vllm:prefix_cache_hits_total": 160048.0,
+        "vllm:external_prefix_cache_queries_total": 0.0,
+        "vllm:external_prefix_cache_hits_total": 0.0,
+        "vllm:num_preemptions_total": 0.0,
+        "vllm:prompt_tokens_total": 326424.0,
+        "vllm:prompt_tokens_cached_total": 160048.0,
+        "vllm:request_prefill_time_seconds_count": 84.0,
+        "vllm:request_prefill_time_seconds_sum": 20.44092374199954
+      }
+    },
+    {
+      "t": 1927.16996418,
+      "metrics": {
+        "vllm:num_requests_running": 4.0,
+        "vllm:num_requests_waiting": 0.0,
+        "vllm:kv_cache_usage_perc": 0.38973032877724423,
+        "vllm:prefix_cache_queries_total": 326424.0,
+        "vllm:prefix_cache_hits_total": 160048.0,
+        "vllm:external_prefix_cache_queries_total": 0.0,
+        "vllm:external_prefix_cache_hits_total": 0.0,
+        "vllm:num_preemptions_total": 0.0,
+        "vllm:prompt_tokens_total": 326424.0,
+        "vllm:prompt_tokens_cached_total": 160048.0,
+        "vllm:request_prefill_time_seconds_count": 84.0,
+        "vllm:request_prefill_time_seconds_sum": 20.44092374199954
+      }
+    },
+    {
+      "t": 1927.374037244,
+      "metrics": {
+        "vllm:num_requests_running": 4.0,
+        "vllm:num_requests_waiting": 0.0,
+        "vllm:kv_cache_usage_perc": 0.3908385666789804,
+        "vllm:prefix_cache_queries_total": 326424.0,
+        "vllm:prefix_cache_hits_total": 160048.0,
+        "vllm:external_prefix_cache_queries_total": 0.0,
+        "vllm:external_prefix_cache_hits_total": 0.0,
+        "vllm:num_preemptions_total": 0.0,
+        "vllm:prompt_tokens_total": 326424.0,
+        "vllm:prompt_tokens_cached_total": 160048.0,
+        "vllm:request_prefill_time_seconds_count": 84.0,
+        "vllm:request_prefill_time_seconds_sum": 20.44092374199954
+      }
+    },
+    {
+      "t": 1927.578650266,
+      "metrics": {
+        "vllm:num_requests_running": 4.0,
+        "vllm:num_requests_waiting": 0.0,
+        "vllm:kv_cache_usage_perc": 0.3919468045807166,
+        "vllm:prefix_cache_queries_total": 326424.0,
+        "vllm:prefix_cache_hits_total": 160048.0,
+        "vllm:external_prefix_cache_queries_total": 0.0,
+        "vllm:external_prefix_cache_hits_total": 0.0,
+        "vllm:num_preemptions_total": 0.0,
+        "vllm:prompt_tokens_total": 326424.0,
+        "vllm:prompt_tokens_cached_total": 160048.0,
+        "vllm:request_prefill_time_seconds_count": 84.0,
+        "vllm:request_prefill_time_seconds_sum": 20.44092374199954
+      }
+    },
+    {
+      "t": 1927.782520904,
+      "metrics": {
+        "vllm:num_requests_running": 4.0,
+        "vllm:num_requests_waiting": 0.0,
+        "vllm:kv_cache_usage_perc": 0.39305504248245293,
+        "vllm:prefix_cache_queries_total": 326424.0,
+        "vllm:prefix_cache_hits_total": 160048.0,
+        "vllm:external_prefix_cache_queries_total": 0.0,
+        "vllm:external_prefix_cache_hits_total": 0.0,
+        "vllm:num_preemptions_total": 0.0,
+        "vllm:prompt_tokens_total": 326424.0,
+        "vllm:prompt_tokens_cached_total": 160048.0,
+        "vllm:request_prefill_time_seconds_count": 84.0,
+        "vllm:request_prefill_time_seconds_sum": 20.44092374199954
+      }
+    },
+    {
+      "t": 1927.987454929,
+      "metrics": {
+        "vllm:num_requests_running": 4.0,
+        "vllm:num_requests_waiting": 0.0,
+        "vllm:kv_cache_usage_perc": 0.39453269301810123,
+        "vllm:prefix_cache_queries_total": 326424.0,
+        "vllm:prefix_cache_hits_total": 160048.0,
+        "vllm:external_prefix_cache_queries_total": 0.0,
+        "vllm:external_prefix_cache_hits_total": 0.0,
+        "vllm:num_preemptions_total": 0.0,
+        "vllm:prompt_tokens_total": 326424.0,
+        "vllm:prompt_tokens_cached_total": 160048.0,
+        "vllm:request_prefill_time_seconds_count": 84.0,
+        "vllm:request_prefill_time_seconds_sum": 20.44092374199954
+      }
+    },
+    {
+      "t": 1928.264631799,
+      "metrics": {
+        "vllm:num_requests_running": 4.0,
+        "vllm:num_requests_waiting": 0.0,
+        "vllm:kv_cache_usage_perc": 0.39601034355374953,
+        "vllm:prefix_cache_queries_total": 326424.0,
+        "vllm:prefix_cache_hits_total": 160048.0,
+        "vllm:external_prefix_cache_queries_total": 0.0,
+        "vllm:external_prefix_cache_hits_total": 0.0,
+        "vllm:num_preemptions_total": 0.0,
+        "vllm:prompt_tokens_total": 326424.0,
+        "vllm:prompt_tokens_cached_total": 160048.0,
+        "vllm:request_prefill_time_seconds_count": 84.0,
+        "vllm:request_prefill_time_seconds_sum": 20.44092374199954
+      }
+    },
+    {
+      "t": 1928.469144712,
+      "metrics": {
+        "vllm:num_requests_running": 3.0,
+        "vllm:num_requests_waiting": 0.0,
+        "vllm:kv_cache_usage_perc": 0.245289988917621,
+        "vllm:prefix_cache_queries_total": 330764.0,
+        "vllm:prefix_cache_hits_total": 160048.0,
+        "vllm:external_prefix_cache_queries_total": 0.0,
+        "vllm:external_prefix_cache_hits_total": 0.0,
+        "vllm:num_preemptions_total": 0.0,
+        "vllm:prompt_tokens_total": 326424.0,
+        "vllm:prompt_tokens_cached_total": 160048.0,
+        "vllm:request_prefill_time_seconds_count": 86.0,
+        "vllm:request_prefill_time_seconds_sum": 21.701592805999553
+      }
+    },
+    {
+      "t": 1928.675215707,
+      "metrics": {
+        "vllm:num_requests_running": 3.0,
+        "vllm:num_requests_waiting": 0.0,
+        "vllm:kv_cache_usage_perc": 0.29294421869227927,
+        "vllm:prefix_cache_queries_total": 330764.0,
+        "vllm:prefix_cache_hits_total": 160048.0,
+        "vllm:external_prefix_cache_queries_total": 0.0,
+        "vllm:external_prefix_cache_hits_total": 0.0,
+        "vllm:num_preemptions_total": 0.0,
+        "vllm:prompt_tokens_total": 326424.0,
+        "vllm:prompt_tokens_cached_total": 160048.0,
+        "vllm:request_prefill_time_seconds_count": 86.0,
+        "vllm:request_prefill_time_seconds_sum": 21.701592805999553
+      }
+    },
+    {
+      "t": 1928.879498708,
+      "metrics": {
+        "vllm:num_requests_running": 3.0,
+        "vllm:num_requests_waiting": 0.0,
+        "vllm:kv_cache_usage_perc": 0.28888067971924636,
+        "vllm:prefix_cache_queries_total": 335104.0,
+        "vllm:prefix_cache_hits_total": 160048.0,
+        "vllm:external_prefix_cache_queries_total": 0.0,
+        "vllm:external_prefix_cache_hits_total": 0.0,
+        "vllm:num_preemptions_total": 0.0,
+        "vllm:prompt_tokens_total": 330764.0,
+        "vllm:prompt_tokens_cached_total": 160048.0,
+        "vllm:request_prefill_time_seconds_count": 87.0,
+        "vllm:request_prefill_time_seconds_sum": 22.40877241799967
+      }
+    },
+    {
+      "t": 1929.084224954,
+      "metrics": {
+        "vllm:num_requests_running": 3.0,
+        "vllm:num_requests_waiting": 0.0,
+        "vllm:kv_cache_usage_perc": 0.23679349833764318,
+        "vllm:prefix_cache_queries_total": 339444.0,
+        "vllm:prefix_cache_hits_total": 160048.0,
+        "vllm:external_prefix_cache_queries_total": 0.0,
+        "vllm:external_prefix_cache_hits_total": 0.0,
+        "vllm:num_preemptions_total": 0.0,
+        "vllm:prompt_tokens_total": 330764.0,
+        "vllm:prompt_tokens_cached_total": 160048.0,
+        "vllm:request_prefill_time_seconds_count": 88.0,
+        "vllm:request_prefill_time_seconds_sum": 22.96601648099977
+      }
+    },
+    {
+      "t": 1929.289326134,
+      "metrics": {
+        "vllm:num_requests_running": 3.0,
+        "vllm:num_requests_waiting": 0.0,
+        "vllm:kv_cache_usage_perc": 0.28407831547838935,
+        "vllm:prefix_cache_queries_total": 339444.0,
+        "vllm:prefix_cache_hits_total": 160048.0,
+        "vllm:external_prefix_cache_queries_total": 0.0,
+        "vllm:external_prefix_cache_hits_total": 0.0,
+        "vllm:num_preemptions_total": 0.0,
+        "vllm:prompt_tokens_total": 335104.0,
+        "vllm:prompt_tokens_cached_total": 160048.0,
+        "vllm:request_prefill_time_seconds_count": 88.0,
+        "vllm:request_prefill_time_seconds_sum": 22.96601648099977
+      }
+    },
+    {
+      "t": 1929.494176209,
+      "metrics": {
+        "vllm:num_requests_running": 4.0,
+        "vllm:num_requests_waiting": 0.0,
+        "vllm:kv_cache_usage_perc": 0.33173254525304763,
+        "vllm:prefix_cache_queries_total": 343784.0,
+        "vllm:prefix_cache_hits_total": 160048.0,
+        "vllm:external_prefix_cache_queries_total": 0.0,
+        "vllm:external_prefix_cache_hits_total": 0.0,
+        "vllm:num_preemptions_total": 0.0,
+        "vllm:prompt_tokens_total": 335104.0,
+        "vllm:prompt_tokens_cached_total": 160048.0,
+        "vllm:request_prefill_time_seconds_count": 88.0,
+        "vllm:request_prefill_time_seconds_sum": 22.96601648099977
+      }
+    },
+    {
+      "t": 1929.699052921,
+      "metrics": {
+        "vllm:num_requests_running": 4.0,
+        "vllm:num_requests_waiting": 0.0,
+        "vllm:kv_cache_usage_perc": 0.3790173623937939,
+        "vllm:prefix_cache_queries_total": 343784.0,
+        "vllm:prefix_cache_hits_total": 160048.0,
+        "vllm:external_prefix_cache_queries_total": 0.0,
+        "vllm:external_prefix_cache_hits_total": 0.0,
+        "vllm:num_preemptions_total": 0.0,
+        "vllm:prompt_tokens_total": 339444.0,
+        "vllm:prompt_tokens_cached_total": 160048.0,
+        "vllm:request_prefill_time_seconds_count": 88.0,
+        "vllm:request_prefill_time_seconds_sum": 22.96601648099977
+      }
+    },
+    {
+      "t": 1929.905204178,
+      "metrics": {
+        "vllm:num_requests_running": 4.0,
+        "vllm:num_requests_waiting": 0.0,
+        "vllm:kv_cache_usage_perc": 0.40192094569634285,
+        "vllm:prefix_cache_queries_total": 343784.0,
+        "vllm:prefix_cache_hits_total": 160048.0,
+        "vllm:external_prefix_cache_queries_total": 0.0,
+        "vllm:external_prefix_cache_hits_total": 0.0,
+        "vllm:num_preemptions_total": 0.0,
+        "vllm:prompt_tokens_total": 343784.0,
+        "vllm:prompt_tokens_cached_total": 160048.0,
+        "vllm:request_prefill_time_seconds_count": 88.0,
+        "vllm:request_prefill_time_seconds_sum": 22.96601648099977
+      }
+    },
+    {
+      "t": 1930.110123613,
+      "metrics": {
+        "vllm:num_requests_running": 4.0,
+        "vllm:num_requests_waiting": 0.0,
+        "vllm:kv_cache_usage_perc": 0.40339859623199115,
+        "vllm:prefix_cache_queries_total": 343784.0,
+        "vllm:prefix_cache_hits_total": 160048.0,
+        "vllm:external_prefix_cache_queries_total": 0.0,
+        "vllm:external_prefix_cache_hits_total": 0.0,
+        "vllm:num_preemptions_total": 0.0,
+        "vllm:prompt_tokens_total": 343784.0,
+        "vllm:prompt_tokens_cached_total": 160048.0,
+        "vllm:request_prefill_time_seconds_count": 88.0,
+        "vllm:request_prefill_time_seconds_sum": 22.96601648099977
+      }
+    },
+    {
+      "t": 1930.39376349,
+      "metrics": {
+        "vllm:num_requests_running": 4.0,
+        "vllm:num_requests_waiting": 0.0,
+        "vllm:kv_cache_usage_perc": 0.40561507203546365,
+        "vllm:prefix_cache_queries_total": 343784.0,
+        "vllm:prefix_cache_hits_total": 160048.0,
+        "vllm:external_prefix_cache_queries_total": 0.0,
+        "vllm:external_prefix_cache_hits_total": 0.0,
+        "vllm:num_preemptions_total": 0.0,
+        "vllm:prompt_tokens_total": 343784.0,
+        "vllm:prompt_tokens_cached_total": 160048.0,
+        "vllm:request_prefill_time_seconds_count": 88.0,
+        "vllm:request_prefill_time_seconds_sum": 22.96601648099977
+      }
+    },
+    {
+      "t": 1930.598297621,
+      "metrics": {
+        "vllm:num_requests_running": 4.0,
+        "vllm:num_requests_waiting": 0.0,
+        "vllm:kv_cache_usage_perc": 0.40672330993719985,
+        "vllm:prefix_cache_queries_total": 343784.0,
+        "vllm:prefix_cache_hits_total": 160048.0,
+        "vllm:external_prefix_cache_queries_total": 0.0,
+        "vllm:external_prefix_cache_hits_total": 0.0,
+        "vllm:num_preemptions_total": 0.0,
+        "vllm:prompt_tokens_total": 343784.0,
+        "vllm:prompt_tokens_cached_total": 160048.0,
+        "vllm:request_prefill_time_seconds_count": 88.0,
+        "vllm:request_prefill_time_seconds_sum": 22.96601648099977
+      }
+    },
+    {
+      "t": 1930.802254025,
+      "metrics": {
+        "vllm:num_requests_running": 4.0,
+        "vllm:num_requests_waiting": 0.0,
+        "vllm:kv_cache_usage_perc": 0.40783154783893605,
+        "vllm:prefix_cache_queries_total": 343784.0,
+        "vllm:prefix_cache_hits_total": 160048.0,
+        "vllm:external_prefix_cache_queries_total": 0.0,
+        "vllm:external_prefix_cache_hits_total": 0.0,
+        "vllm:num_preemptions_total": 0.0,
+        "vllm:prompt_tokens_total": 343784.0,
+        "vllm:prompt_tokens_cached_total": 160048.0,
+        "vllm:request_prefill_time_seconds_count": 88.0,
+        "vllm:request_prefill_time_seconds_sum": 22.96601648099977
+      }
+    },
+    {
+      "t": 1931.007197764,
+      "metrics": {
+        "vllm:num_requests_running": 4.0,
+        "vllm:num_requests_waiting": 0.0,
+        "vllm:kv_cache_usage_perc": 0.40930919837458446,
+        "vllm:prefix_cache_queries_total": 343784.0,
+        "vllm:prefix_cache_hits_total": 160048.0,
+        "vllm:external_prefix_cache_queries_total": 0.0,
+        "vllm:external_prefix_cache_hits_total": 0.0,
+        "vllm:num_preemptions_total": 0.0,
+        "vllm:prompt_tokens_total": 343784.0,
+        "vllm:prompt_tokens_cached_total": 160048.0,
+        "vllm:request_prefill_time_seconds_count": 88.0,
+        "vllm:request_prefill_time_seconds_sum": 22.96601648099977
+      }
+    },
+    {
+      "t": 1931.211776534,
+      "metrics": {
+        "vllm:num_requests_running": 4.0,
+        "vllm:num_requests_waiting": 0.0,
+        "vllm:kv_cache_usage_perc": 0.41078684891023276,
+        "vllm:prefix_cache_queries_total": 343784.0,
+        "vllm:prefix_cache_hits_total": 160048.0,
+        "vllm:external_prefix_cache_queries_total": 0.0,
+        "vllm:external_prefix_cache_hits_total": 0.0,
+        "vllm:num_preemptions_total": 0.0,
+        "vllm:prompt_tokens_total": 343784.0,
+        "vllm:prompt_tokens_cached_total": 160048.0,
+        "vllm:request_prefill_time_seconds_count": 88.0,
+        "vllm:request_prefill_time_seconds_sum": 22.96601648099977
+      }
+    },
+    {
+      "t": 1931.415551528,
+      "metrics": {
+        "vllm:num_requests_running": 4.0,
+        "vllm:num_requests_waiting": 0.0,
+        "vllm:kv_cache_usage_perc": 0.41226449944588106,
+        "vllm:prefix_cache_queries_total": 343784.0,
+        "vllm:prefix_cache_hits_total": 160048.0,
+        "vllm:external_prefix_cache_queries_total": 0.0,
+        "vllm:external_prefix_cache_hits_total": 0.0,
+        "vllm:num_preemptions_total": 0.0,
+        "vllm:prompt_tokens_total": 343784.0,
+        "vllm:prompt_tokens_cached_total": 160048.0,
+        "vllm:request_prefill_time_seconds_count": 88.0,
+        "vllm:request_prefill_time_seconds_sum": 22.96601648099977
+      }
+    },
+    {
+      "t": 1931.619361585,
+      "metrics": {
+        "vllm:num_requests_running": 3.0,
+        "vllm:num_requests_waiting": 0.0,
+        "vllm:kv_cache_usage_perc": 0.2537864794975988,
+        "vllm:prefix_cache_queries_total": 348302.0,
+        "vllm:prefix_cache_hits_total": 160048.0,
+        "vllm:external_prefix_cache_queries_total": 0.0,
+        "vllm:external_prefix_cache_hits_total": 0.0,
+        "vllm:num_preemptions_total": 0.0,
+        "vllm:prompt_tokens_total": 343784.0,
+        "vllm:prompt_tokens_cached_total": 160048.0,
+        "vllm:request_prefill_time_seconds_count": 90.0,
+        "vllm:request_prefill_time_seconds_sum": 24.174818249999817
+      }
+    },
+    {
+      "t": 1931.823763543,
+      "metrics": {
+        "vllm:num_requests_running": 3.0,
+        "vllm:num_requests_waiting": 0.0,
+        "vllm:kv_cache_usage_perc": 0.3014407092722571,
+        "vllm:prefix_cache_queries_total": 348302.0,
+        "vllm:prefix_cache_hits_total": 160048.0,
+        "vllm:external_prefix_cache_queries_total": 0.0,
+        "vllm:external_prefix_cache_hits_total": 0.0,
+        "vllm:num_preemptions_total": 0.0,
+        "vllm:prompt_tokens_total": 343784.0,
+        "vllm:prompt_tokens_cached_total": 160048.0,
+        "vllm:request_prefill_time_seconds_count": 90.0,
+        "vllm:request_prefill_time_seconds_sum": 24.174818249999817
+      }
+    },
+    {
+      "t": 1932.028573528,
+      "metrics": {
+        "vllm:num_requests_running": 3.0,
+        "vllm:num_requests_waiting": 0.0,
+        "vllm:kv_cache_usage_perc": 0.2456594015515331,
+        "vllm:prefix_cache_queries_total": 352820.0,
+        "vllm:prefix_cache_hits_total": 160048.0,
+        "vllm:external_prefix_cache_queries_total": 0.0,
+        "vllm:external_prefix_cache_hits_total": 0.0,
+        "vllm:num_preemptions_total": 0.0,
+        "vllm:prompt_tokens_total": 343784.0,
+        "vllm:prompt_tokens_cached_total": 160048.0,
+        "vllm:request_prefill_time_seconds_count": 91.0,
+        "vllm:request_prefill_time_seconds_sum": 24.87230667699987
+      }
+    },
+    {
+      "t": 1932.233421499,
+      "metrics": {
+        "vllm:num_requests_running": 3.0,
+        "vllm:num_requests_waiting": 0.0,
+        "vllm:kv_cache_usage_perc": 0.29294421869227927,
+        "vllm:prefix_cache_queries_total": 352820.0,
+        "vllm:prefix_cache_hits_total": 160048.0,
+        "vllm:external_prefix_cache_queries_total": 0.0,
+        "vllm:external_prefix_cache_hits_total": 0.0,
+        "vllm:num_preemptions_total": 0.0,
+        "vllm:prompt_tokens_total": 348302.0,
+        "vllm:prompt_tokens_cached_total": 160048.0,
+        "vllm:request_prefill_time_seconds_count": 91.0,
+        "vllm:request_prefill_time_seconds_sum": 24.87230667699987
+      }
+    },
+    {
+      "t": 1932.512963796,
+      "metrics": {
+        "vllm:num_requests_running": 3.0,
+        "vllm:num_requests_waiting": 0.0,
+        "vllm:kv_cache_usage_perc": 0.28407831547838935,
+        "vllm:prefix_cache_queries_total": 357338.0,
+        "vllm:prefix_cache_hits_total": 160048.0,
+        "vllm:external_prefix_cache_queries_total": 0.0,
+        "vllm:external_prefix_cache_hits_total": 0.0,
+        "vllm:num_preemptions_total": 0.0,
+        "vllm:prompt_tokens_total": 352820.0,
+        "vllm:prompt_tokens_cached_total": 160048.0,
+        "vllm:request_prefill_time_seconds_count": 92.0,
+        "vllm:request_prefill_time_seconds_sum": 25.48540748099981
+      }
+    },
+    {
+      "t": 1932.717584735,
+      "metrics": {
+        "vllm:num_requests_running": 4.0,
+        "vllm:num_requests_waiting": 0.0,
+        "vllm:kv_cache_usage_perc": 0.33173254525304763,
+        "vllm:prefix_cache_queries_total": 361856.0,
+        "vllm:prefix_cache_hits_total": 160048.0,
+        "vllm:external_prefix_cache_queries_total": 0.0,
+        "vllm:external_prefix_cache_hits_total": 0.0,
+        "vllm:num_preemptions_total": 0.0,
+        "vllm:prompt_tokens_total": 352820.0,
+        "vllm:prompt_tokens_cached_total": 160048.0,
+        "vllm:request_prefill_time_seconds_count": 92.0,
+        "vllm:request_prefill_time_seconds_sum": 25.48540748099981
+      }
+    },
+    {
+      "t": 1932.922333248,
+      "metrics": {
+        "vllm:num_requests_running": 4.0,
+        "vllm:num_requests_waiting": 0.0,
+        "vllm:kv_cache_usage_perc": 0.3786479497598818,
+        "vllm:prefix_cache_queries_total": 361856.0,
+        "vllm:prefix_cache_hits_total": 160048.0,
+        "vllm:external_prefix_cache_queries_total": 0.0,
+        "vllm:external_prefix_cache_hits_total": 0.0,
+        "vllm:num_preemptions_total": 0.0,
+        "vllm:prompt_tokens_total": 357338.0,
+        "vllm:prompt_tokens_cached_total": 160048.0,
+        "vllm:request_prefill_time_seconds_count": 92.0,
+        "vllm:request_prefill_time_seconds_sum": 25.48540748099981
+      }
+    },
+    {
+      "t": 1933.127113735,
+      "metrics": {
+        "vllm:num_requests_running": 4.0,
+        "vllm:num_requests_waiting": 0.0,
+        "vllm:kv_cache_usage_perc": 0.41854451422238637,
+        "vllm:prefix_cache_queries_total": 361856.0,
+        "vllm:prefix_cache_hits_total": 160048.0,
+        "vllm:external_prefix_cache_queries_total": 0.0,
+        "vllm:external_prefix_cache_hits_total": 0.0,
+        "vllm:num_preemptions_total": 0.0,
+        "vllm:prompt_tokens_total": 361856.0,
+        "vllm:prompt_tokens_cached_total": 160048.0,
+        "vllm:request_prefill_time_seconds_count": 92.0,
+        "vllm:request_prefill_time_seconds_sum": 25.48540748099981
+      }
+    },
+    {
+      "t": 1933.332683872,
+      "metrics": {
+        "vllm:num_requests_running": 4.0,
+        "vllm:num_requests_waiting": 0.0,
+        "vllm:kv_cache_usage_perc": 0.4196527521241227,
+        "vllm:prefix_cache_queries_total": 361856.0,
+        "vllm:prefix_cache_hits_total": 160048.0,
+        "vllm:external_prefix_cache_queries_total": 0.0,
+        "vllm:external_prefix_cache_hits_total": 0.0,
+        "vllm:num_preemptions_total": 0.0,
+        "vllm:prompt_tokens_total": 361856.0,
+        "vllm:prompt_tokens_cached_total": 160048.0,
+        "vllm:request_prefill_time_seconds_count": 92.0,
+        "vllm:request_prefill_time_seconds_sum": 25.48540748099981
+      }
+    },
+    {
+      "t": 1933.536765308,
+      "metrics": {
+        "vllm:num_requests_running": 4.0,
+        "vllm:num_requests_waiting": 0.0,
+        "vllm:kv_cache_usage_perc": 0.421130402659771,
+        "vllm:prefix_cache_queries_total": 361856.0,
+        "vllm:prefix_cache_hits_total": 160048.0,
+        "vllm:external_prefix_cache_queries_total": 0.0,
+        "vllm:external_prefix_cache_hits_total": 0.0,
+        "vllm:num_preemptions_total": 0.0,
+        "vllm:prompt_tokens_total": 361856.0,
+        "vllm:prompt_tokens_cached_total": 160048.0,
+        "vllm:request_prefill_time_seconds_count": 92.0,
+        "vllm:request_prefill_time_seconds_sum": 25.48540748099981
+      }
+    },
+    {
+      "t": 1933.741694229,
+      "metrics": {
+        "vllm:num_requests_running": 4.0,
+        "vllm:num_requests_waiting": 0.0,
+        "vllm:kv_cache_usage_perc": 0.4226080531954193,
+        "vllm:prefix_cache_queries_total": 361856.0,
+        "vllm:prefix_cache_hits_total": 160048.0,
+        "vllm:external_prefix_cache_queries_total": 0.0,
+        "vllm:external_prefix_cache_hits_total": 0.0,
+        "vllm:num_preemptions_total": 0.0,
+        "vllm:prompt_tokens_total": 361856.0,
+        "vllm:prompt_tokens_cached_total": 160048.0,
+        "vllm:request_prefill_time_seconds_count": 92.0,
+        "vllm:request_prefill_time_seconds_sum": 25.48540748099981
+      }
+    },
+    {
+      "t": 1933.946827045,
+      "metrics": {
+        "vllm:num_requests_running": 4.0,
+        "vllm:num_requests_waiting": 0.0,
+        "vllm:kv_cache_usage_perc": 0.4240857037310676,
+        "vllm:prefix_cache_queries_total": 361856.0,
+        "vllm:prefix_cache_hits_total": 160048.0,
+        "vllm:external_prefix_cache_queries_total": 0.0,
+        "vllm:external_prefix_cache_hits_total": 0.0,
+        "vllm:num_preemptions_total": 0.0,
+        "vllm:prompt_tokens_total": 361856.0,
+        "vllm:prompt_tokens_cached_total": 160048.0,
+        "vllm:request_prefill_time_seconds_count": 92.0,
+        "vllm:request_prefill_time_seconds_sum": 25.48540748099981
+      }
+    },
+    {
+      "t": 1934.152264134,
+      "metrics": {
+        "vllm:num_requests_running": 4.0,
+        "vllm:num_requests_waiting": 0.0,
+        "vllm:kv_cache_usage_perc": 0.4251939416328039,
+        "vllm:prefix_cache_queries_total": 361856.0,
+        "vllm:prefix_cache_hits_total": 160048.0,
+        "vllm:external_prefix_cache_queries_total": 0.0,
+        "vllm:external_prefix_cache_hits_total": 0.0,
+        "vllm:num_preemptions_total": 0.0,
+        "vllm:prompt_tokens_total": 361856.0,
+        "vllm:prompt_tokens_cached_total": 160048.0,
+        "vllm:request_prefill_time_seconds_count": 92.0,
+        "vllm:request_prefill_time_seconds_sum": 25.48540748099981
+      }
+    },
+    {
+      "t": 1934.35704098,
+      "metrics": {
+        "vllm:num_requests_running": 4.0,
+        "vllm:num_requests_waiting": 0.0,
+        "vllm:kv_cache_usage_perc": 0.4263021795345401,
+        "vllm:prefix_cache_queries_total": 361856.0,
+        "vllm:prefix_cache_hits_total": 160048.0,
+        "vllm:external_prefix_cache_queries_total": 0.0,
+        "vllm:external_prefix_cache_hits_total": 0.0,
+        "vllm:num_preemptions_total": 0.0,
+        "vllm:prompt_tokens_total": 361856.0,
+        "vllm:prompt_tokens_cached_total": 160048.0,
+        "vllm:request_prefill_time_seconds_count": 92.0,
+        "vllm:request_prefill_time_seconds_sum": 25.48540748099981
+      }
+    },
+    {
+      "t": 1934.633802291,
+      "metrics": {
+        "vllm:num_requests_running": 4.0,
+        "vllm:num_requests_waiting": 0.0,
+        "vllm:kv_cache_usage_perc": 0.4285186553380126,
+        "vllm:prefix_cache_queries_total": 361856.0,
+        "vllm:prefix_cache_hits_total": 160048.0,
+        "vllm:external_prefix_cache_queries_total": 0.0,
+        "vllm:external_prefix_cache_hits_total": 0.0,
+        "vllm:num_preemptions_total": 0.0,
+        "vllm:prompt_tokens_total": 361856.0,
+        "vllm:prompt_tokens_cached_total": 160048.0,
+        "vllm:request_prefill_time_seconds_count": 92.0,
+        "vllm:request_prefill_time_seconds_sum": 25.48540748099981
+      }
+    },
+    {
+      "t": 1934.838664224,
+      "metrics": {
+        "vllm:num_requests_running": 4.0,
+        "vllm:num_requests_waiting": 0.0,
+        "vllm:kv_cache_usage_perc": 0.4296268932397488,
+        "vllm:prefix_cache_queries_total": 361856.0,
+        "vllm:prefix_cache_hits_total": 160048.0,
+        "vllm:external_prefix_cache_queries_total": 0.0,
+        "vllm:external_prefix_cache_hits_total": 0.0,
+        "vllm:num_preemptions_total": 0.0,
+        "vllm:prompt_tokens_total": 361856.0,
+        "vllm:prompt_tokens_cached_total": 160048.0,
+        "vllm:request_prefill_time_seconds_count": 92.0,
+        "vllm:request_prefill_time_seconds_sum": 25.48540748099981
+      }
+    },
+    {
+      "t": 1935.0428564,
+      "metrics": {
+        "vllm:num_requests_running": 3.0,
+        "vllm:num_requests_waiting": 0.0,
+        "vllm:kv_cache_usage_perc": 0.2622829700775766,
+        "vllm:prefix_cache_queries_total": 366552.0,
+        "vllm:prefix_cache_hits_total": 160048.0,
+        "vllm:external_prefix_cache_queries_total": 0.0,
+        "vllm:external_prefix_cache_hits_total": 0.0,
+        "vllm:num_preemptions_total": 0.0,
+        "vllm:prompt_tokens_total": 361856.0,
+        "vllm:prompt_tokens_cached_total": 160048.0,
+        "vllm:request_prefill_time_seconds_count": 94.0,
+        "vllm:request_prefill_time_seconds_sum": 26.678429943999845
+      }
+    },
+    {
+      "t": 1935.247325958,
+      "metrics": {
+        "vllm:num_requests_running": 3.0,
+        "vllm:num_requests_waiting": 0.0,
+        "vllm:kv_cache_usage_perc": 0.2497229405245659,
+        "vllm:prefix_cache_queries_total": 371248.0,
+        "vllm:prefix_cache_hits_total": 160048.0,
+        "vllm:external_prefix_cache_queries_total": 0.0,
+        "vllm:external_prefix_cache_hits_total": 0.0,
+        "vllm:num_preemptions_total": 0.0,
+        "vllm:prompt_tokens_total": 361856.0,
+        "vllm:prompt_tokens_cached_total": 160048.0,
+        "vllm:request_prefill_time_seconds_count": 95.0,
+        "vllm:request_prefill_time_seconds_sum": 27.35777250699971
+      }
+    },
+    {
+      "t": 1935.45206997,
+      "metrics": {
+        "vllm:num_requests_running": 3.0,
+        "vllm:num_requests_waiting": 0.0,
+        "vllm:kv_cache_usage_perc": 0.2970077576653122,
+        "vllm:prefix_cache_queries_total": 371248.0,
+        "vllm:prefix_cache_hits_total": 160048.0,
+        "vllm:external_prefix_cache_queries_total": 0.0,
+        "vllm:external_prefix_cache_hits_total": 0.0,
+        "vllm:num_preemptions_total": 0.0,
+        "vllm:prompt_tokens_total": 366552.0,
+        "vllm:prompt_tokens_cached_total": 160048.0,
+        "vllm:request_prefill_time_seconds_count": 95.0,
+        "vllm:request_prefill_time_seconds_sum": 27.35777250699971
+      }
+    },
+    {
+      "t": 1935.656766336,
+      "metrics": {
+        "vllm:num_requests_running": 3.0,
+        "vllm:num_requests_waiting": 0.0,
+        "vllm:kv_cache_usage_perc": 0.23679349833764318,
+        "vllm:prefix_cache_queries_total": 375944.0,
+        "vllm:prefix_cache_hits_total": 160048.0,
+        "vllm:external_prefix_cache_queries_total": 0.0,
+        "vllm:external_prefix_cache_hits_total": 0.0,
+        "vllm:num_preemptions_total": 0.0,
+        "vllm:prompt_tokens_total": 366552.0,
+        "vllm:prompt_tokens_cached_total": 160048.0,
+        "vllm:request_prefill_time_seconds_count": 96.0,
+        "vllm:request_prefill_time_seconds_sum": 27.995512863999693
+      }
+    },
+    {
+      "t": 1935.861849362,
+      "metrics": {
+        "vllm:num_requests_running": 3.0,
+        "vllm:num_requests_waiting": 0.0,
+        "vllm:kv_cache_usage_perc": 0.28407831547838935,
+        "vllm:prefix_cache_queries_total": 375944.0,
+        "vllm:prefix_cache_hits_total": 160048.0,
+        "vllm:external_prefix_cache_queries_total": 0.0,
+        "vllm:external_prefix_cache_hits_total": 0.0,
+        "vllm:num_preemptions_total": 0.0,
+        "vllm:prompt_tokens_total": 371248.0,
+        "vllm:prompt_tokens_cached_total": 160048.0,
+        "vllm:request_prefill_time_seconds_count": 96.0,
+        "vllm:request_prefill_time_seconds_sum": 27.995512863999693
+      }
+    },
+    {
+      "t": 1936.066311485,
+      "metrics": {
+        "vllm:num_requests_running": 4.0,
+        "vllm:num_requests_waiting": 0.0,
+        "vllm:kv_cache_usage_perc": 0.3786479497598818,
+        "vllm:prefix_cache_queries_total": 380640.0,
+        "vllm:prefix_cache_hits_total": 160048.0,
+        "vllm:external_prefix_cache_queries_total": 0.0,
+        "vllm:external_prefix_cache_hits_total": 0.0,
+        "vllm:num_preemptions_total": 0.0,
+        "vllm:prompt_tokens_total": 375944.0,
+        "vllm:prompt_tokens_cached_total": 160048.0,
+        "vllm:request_prefill_time_seconds_count": 96.0,
+        "vllm:request_prefill_time_seconds_sum": 27.995512863999693
+      }
+    },
+    {
+      "t": 1936.270895739,
+      "metrics": {
+        "vllm:num_requests_running": 4.0,
+        "vllm:num_requests_waiting": 0.0,
+        "vllm:kv_cache_usage_perc": 0.425932766900628,
+        "vllm:prefix_cache_queries_total": 380640.0,
+        "vllm:prefix_cache_hits_total": 160048.0,
+        "vllm:external_prefix_cache_queries_total": 0.0,
+        "vllm:external_prefix_cache_hits_total": 0.0,
+        "vllm:num_preemptions_total": 0.0,
+        "vllm:prompt_tokens_total": 375944.0,
+        "vllm:prompt_tokens_cached_total": 160048.0,
+        "vllm:request_prefill_time_seconds_count": 96.0,
+        "vllm:request_prefill_time_seconds_sum": 27.995512863999693
+      }
+    },
+    {
+      "t": 1936.475155826,
+      "metrics": {
+        "vllm:num_requests_running": 4.0,
+        "vllm:num_requests_waiting": 0.0,
+        "vllm:kv_cache_usage_perc": 0.43516808274843,
+        "vllm:prefix_cache_queries_total": 380640.0,
+        "vllm:prefix_cache_hits_total": 160048.0,
+        "vllm:external_prefix_cache_queries_total": 0.0,
+        "vllm:external_prefix_cache_hits_total": 0.0,
+        "vllm:num_preemptions_total": 0.0,
+        "vllm:prompt_tokens_total": 380640.0,
+        "vllm:prompt_tokens_cached_total": 160048.0,
+        "vllm:request_prefill_time_seconds_count": 96.0,
+        "vllm:request_prefill_time_seconds_sum": 27.995512863999693
+      }
+    },
+    {
+      "t": 1936.754334215,
+      "metrics": {
+        "vllm:num_requests_running": 4.0,
+        "vllm:num_requests_waiting": 0.0,
+        "vllm:kv_cache_usage_perc": 0.4370151459179904,
+        "vllm:prefix_cache_queries_total": 380640.0,
+        "vllm:prefix_cache_hits_total": 160048.0,
+        "vllm:external_prefix_cache_queries_total": 0.0,
+        "vllm:external_prefix_cache_hits_total": 0.0,
+        "vllm:num_preemptions_total": 0.0,
+        "vllm:prompt_tokens_total": 380640.0,
+        "vllm:prompt_tokens_cached_total": 160048.0,
+        "vllm:request_prefill_time_seconds_count": 96.0,
+        "vllm:request_prefill_time_seconds_sum": 27.995512863999693
+      }
+    },
+    {
+      "t": 1936.958729353,
+      "metrics": {
+        "vllm:num_requests_running": 4.0,
+        "vllm:num_requests_waiting": 0.0,
+        "vllm:kv_cache_usage_perc": 0.4384927964536387,
+        "vllm:prefix_cache_queries_total": 380640.0,
+        "vllm:prefix_cache_hits_total": 160048.0,
+        "vllm:external_prefix_cache_queries_total": 0.0,
+        "vllm:external_prefix_cache_hits_total": 0.0,
+        "vllm:num_preemptions_total": 0.0,
+        "vllm:prompt_tokens_total": 380640.0,
+        "vllm:prompt_tokens_cached_total": 160048.0,
+        "vllm:request_prefill_time_seconds_count": 96.0,
+        "vllm:request_prefill_time_seconds_sum": 27.995512863999693
+      }
+    },
+    {
+      "t": 1937.163351839,
+      "metrics": {
+        "vllm:num_requests_running": 4.0,
+        "vllm:num_requests_waiting": 0.0,
+        "vllm:kv_cache_usage_perc": 0.439601034355375,
+        "vllm:prefix_cache_queries_total": 380640.0,
+        "vllm:prefix_cache_hits_total": 160048.0,
+        "vllm:external_prefix_cache_queries_total": 0.0,
+        "vllm:external_prefix_cache_hits_total": 0.0,
+        "vllm:num_preemptions_total": 0.0,
+        "vllm:prompt_tokens_total": 380640.0,
+        "vllm:prompt_tokens_cached_total": 160048.0,
+        "vllm:request_prefill_time_seconds_count": 96.0,
+        "vllm:request_prefill_time_seconds_sum": 27.995512863999693
+      }
+    },
+    {
+      "t": 1937.367814918,
+      "metrics": {
+        "vllm:num_requests_running": 4.0,
+        "vllm:num_requests_waiting": 0.0,
+        "vllm:kv_cache_usage_perc": 0.4407092722571112,
+        "vllm:prefix_cache_queries_total": 380640.0,
+        "vllm:prefix_cache_hits_total": 160048.0,
+        "vllm:external_prefix_cache_queries_total": 0.0,
+        "vllm:external_prefix_cache_hits_total": 0.0,
+        "vllm:num_preemptions_total": 0.0,
+        "vllm:prompt_tokens_total": 380640.0,
+        "vllm:prompt_tokens_cached_total": 160048.0,
+        "vllm:request_prefill_time_seconds_count": 96.0,
+        "vllm:request_prefill_time_seconds_sum": 27.995512863999693
+      }
+    },
+    {
+      "t": 1937.571889999,
+      "metrics": {
+        "vllm:num_requests_running": 4.0,
+        "vllm:num_requests_waiting": 0.0,
+        "vllm:kv_cache_usage_perc": 0.4418175101588474,
+        "vllm:prefix_cache_queries_total": 380640.0,
+        "vllm:prefix_cache_hits_total": 160048.0,
+        "vllm:external_prefix_cache_queries_total": 0.0,
+        "vllm:external_prefix_cache_hits_total": 0.0,
+        "vllm:num_preemptions_total": 0.0,
+        "vllm:prompt_tokens_total": 380640.0,
+        "vllm:prompt_tokens_cached_total": 160048.0,
+        "vllm:request_prefill_time_seconds_count": 96.0,
+        "vllm:request_prefill_time_seconds_sum": 27.995512863999693
+      }
+    },
+    {
+      "t": 1937.77695215,
+      "metrics": {
+        "vllm:num_requests_running": 4.0,
+        "vllm:num_requests_waiting": 0.0,
+        "vllm:kv_cache_usage_perc": 0.4432951606944957,
+        "vllm:prefix_cache_queries_total": 380640.0,
+        "vllm:prefix_cache_hits_total": 160048.0,
+        "vllm:external_prefix_cache_queries_total": 0.0,
+        "vllm:external_prefix_cache_hits_total": 0.0,
+        "vllm:num_preemptions_total": 0.0,
+        "vllm:prompt_tokens_total": 380640.0,
+        "vllm:prompt_tokens_cached_total": 160048.0,
+        "vllm:request_prefill_time_seconds_count": 96.0,
+        "vllm:request_prefill_time_seconds_sum": 27.995512863999693
+      }
+    },
+    {
+      "t": 1937.981382489,
+      "metrics": {
+        "vllm:num_requests_running": 4.0,
+        "vllm:num_requests_waiting": 0.0,
+        "vllm:kv_cache_usage_perc": 0.4447728112301441,
+        "vllm:prefix_cache_queries_total": 380640.0,
+        "vllm:prefix_cache_hits_total": 160048.0,
+        "vllm:external_prefix_cache_queries_total": 0.0,
+        "vllm:external_prefix_cache_hits_total": 0.0,
+        "vllm:num_preemptions_total": 0.0,
+        "vllm:prompt_tokens_total": 380640.0,
+        "vllm:prompt_tokens_cached_total": 160048.0,
+        "vllm:request_prefill_time_seconds_count": 96.0,
+        "vllm:request_prefill_time_seconds_sum": 27.995512863999693
+      }
+    },
+    {
+      "t": 1938.186144432,
+      "metrics": {
+        "vllm:num_requests_running": 2.0,
+        "vllm:num_requests_waiting": 0.0,
+        "vllm:kv_cache_usage_perc": 0.22312523088289615,
+        "vllm:prefix_cache_queries_total": 380640.0,
+        "vllm:prefix_cache_hits_total": 160048.0,
+        "vllm:external_prefix_cache_queries_total": 0.0,
+        "vllm:external_prefix_cache_hits_total": 0.0,
+        "vllm:num_preemptions_total": 0.0,
+        "vllm:prompt_tokens_total": 380640.0,
+        "vllm:prompt_tokens_cached_total": 160048.0,
+        "vllm:request_prefill_time_seconds_count": 98.0,
+        "vllm:request_prefill_time_seconds_sum": 29.189616663999914
+      }
+    }
+  ],
+  "gpu_samples": [
+    {
+      "wall_unix": 1791049462.796811,
+      "devices": [
+        {
+          "index": 0,
+          "uuid": "GPU-a8487f93-e6a1-4e30-8203-704305e62336",
+          "utilization_percent": 9.0,
+          "memory_mib": 27416.0,
+          "name": "NVIDIA GeForce RTX 5090 D"
+        }
+      ],
+      "processes": [],
+      "windows_guard": {
+        "path": "/mnt/e/r260401-brjd-20261003/control/windows_guard.json",
+        "record": {
+          "schema_version": 1,
+          "queue_id": "r260401_brjd_20261003",
+          "unix_time": 1791049461.936829,
+          "status": "running",
+          "active_job": "r260401_brjd_20261003_r4",
+          "machine": "DESKTOP-BRJD313",
+          "proxy_url": "http://172.28.48.1:27890",
+          "foreign_processes": [],
+          "background_python_checks": [
+            {
+              "pid": 174456,
+              "kind": "existing_non_gpu_proxy_relay",
+              "command": "C:\\Users\\admin\\.workbuddy\\binaries\\python\\versions\\3.13.12\\python.exe proxy_relay_7891.py"
+            }
+          ],
+          "process_count": 711,
+          "python_candidates": 2,
+          "gpu_total_mib": 32607.0,
+          "gpu_used_mib": 27416.0,
+          "gpu_utilization_percent": 87.0,
+          "cpu_percent": 22.5,
+          "available_ram_bytes": 296030220288
+        },
+        "observed_unix": 1791049462.799174
+      }
+    },
+    {
+      "wall_unix": 1791049464.9212558,
+      "devices": [
+        {
+          "index": 0,
+          "uuid": "GPU-a8487f93-e6a1-4e30-8203-704305e62336",
+          "utilization_percent": 90.0,
+          "memory_mib": 27419.0,
+          "name": "NVIDIA GeForce RTX 5090 D"
+        }
+      ],
+      "processes": [],
+      "windows_guard": {
+        "path": "/mnt/e/r260401-brjd-20261003/control/windows_guard.json",
+        "record": {
+          "schema_version": 1,
+          "queue_id": "r260401_brjd_20261003",
+          "unix_time": 1791049461.936829,
+          "status": "running",
+          "active_job": "r260401_brjd_20261003_r4",
+          "machine": "DESKTOP-BRJD313",
+          "proxy_url": "http://172.28.48.1:27890",
+          "foreign_processes": [],
+          "background_python_checks": [
+            {
+              "pid": 174456,
+              "kind": "existing_non_gpu_proxy_relay",
+              "command": "C:\\Users\\admin\\.workbuddy\\binaries\\python\\versions\\3.13.12\\python.exe proxy_relay_7891.py"
+            }
+          ],
+          "process_count": 711,
+          "python_candidates": 2,
+          "gpu_total_mib": 32607.0,
+          "gpu_used_mib": 27416.0,
+          "gpu_utilization_percent": 87.0,
+          "cpu_percent": 22.5,
+          "available_ram_bytes": 296030220288
+        },
+        "observed_unix": 1791049464.923883
+      }
+    },
+    {
+      "wall_unix": 1791049467.0458434,
+      "devices": [
+        {
+          "index": 0,
+          "uuid": "GPU-a8487f93-e6a1-4e30-8203-704305e62336",
+          "utilization_percent": 92.0,
+          "memory_mib": 27420.0,
+          "name": "NVIDIA GeForce RTX 5090 D"
+        }
+      ],
+      "processes": [],
+      "windows_guard": {
+        "path": "/mnt/e/r260401-brjd-20261003/control/windows_guard.json",
+        "record": {
+          "schema_version": 1,
+          "queue_id": "r260401_brjd_20261003",
+          "unix_time": 1791049461.936829,
+          "status": "running",
+          "active_job": "r260401_brjd_20261003_r4",
+          "machine": "DESKTOP-BRJD313",
+          "proxy_url": "http://172.28.48.1:27890",
+          "foreign_processes": [],
+          "background_python_checks": [
+            {
+              "pid": 174456,
+              "kind": "existing_non_gpu_proxy_relay",
+              "command": "C:\\Users\\admin\\.workbuddy\\binaries\\python\\versions\\3.13.12\\python.exe proxy_relay_7891.py"
+            }
+          ],
+          "process_count": 711,
+          "python_candidates": 2,
+          "gpu_total_mib": 32607.0,
+          "gpu_used_mib": 27416.0,
+          "gpu_utilization_percent": 87.0,
+          "cpu_percent": 22.5,
+          "available_ram_bytes": 296030220288
+        },
+        "observed_unix": 1791049467.0482836
+      }
+    },
+    {
+      "wall_unix": 1791049469.1623971,
+      "devices": [
+        {
+          "index": 0,
+          "uuid": "GPU-a8487f93-e6a1-4e30-8203-704305e62336",
+          "utilization_percent": 98.0,
+          "memory_mib": 27420.0,
+          "name": "NVIDIA GeForce RTX 5090 D"
+        }
+      ],
+      "processes": [],
+      "windows_guard": {
+        "path": "/mnt/e/r260401-brjd-20261003/control/windows_guard.json",
+        "record": {
+          "schema_version": 1,
+          "queue_id": "r260401_brjd_20261003",
+          "unix_time": 1791049467.6106944,
+          "status": "running",
+          "active_job": "r260401_brjd_20261003_r4",
+          "machine": "DESKTOP-BRJD313",
+          "proxy_url": "http://172.28.48.1:27890",
+          "foreign_processes": [],
+          "background_python_checks": [
+            {
+              "pid": 174456,
+              "kind": "existing_non_gpu_proxy_relay",
+              "command": "C:\\Users\\admin\\.workbuddy\\binaries\\python\\versions\\3.13.12\\python.exe proxy_relay_7891.py"
+            }
+          ],
+          "process_count": 710,
+          "python_candidates": 2,
+          "gpu_total_mib": 32607.0,
+          "gpu_used_mib": 27420.0,
+          "gpu_utilization_percent": 88.0,
+          "cpu_percent": 19.6,
+          "available_ram_bytes": 296175042560
+        },
+        "observed_unix": 1791049469.16429
+      }
+    },
+    {
+      "wall_unix": 1791049471.28923,
+      "devices": [
+        {
+          "index": 0,
+          "uuid": "GPU-a8487f93-e6a1-4e30-8203-704305e62336",
+          "utilization_percent": 88.0,
+          "memory_mib": 27419.0,
+          "name": "NVIDIA GeForce RTX 5090 D"
+        }
+      ],
+      "processes": [],
+      "windows_guard": {
+        "path": "/mnt/e/r260401-brjd-20261003/control/windows_guard.json",
+        "record": {
+          "schema_version": 1,
+          "queue_id": "r260401_brjd_20261003",
+          "unix_time": 1791049467.6106944,
+          "status": "running",
+          "active_job": "r260401_brjd_20261003_r4",
+          "machine": "DESKTOP-BRJD313",
+          "proxy_url": "http://172.28.48.1:27890",
+          "foreign_processes": [],
+          "background_python_checks": [
+            {
+              "pid": 174456,
+              "kind": "existing_non_gpu_proxy_relay",
+              "command": "C:\\Users\\admin\\.workbuddy\\binaries\\python\\versions\\3.13.12\\python.exe proxy_relay_7891.py"
+            }
+          ],
+          "process_count": 710,
+          "python_candidates": 2,
+          "gpu_total_mib": 32607.0,
+          "gpu_used_mib": 27420.0,
+          "gpu_utilization_percent": 88.0,
+          "cpu_percent": 19.6,
+          "available_ram_bytes": 296175042560
+        },
+        "observed_unix": 1791049471.291787
+      }
+    },
+    {
+      "wall_unix": 1791049473.4206505,
+      "devices": [
+        {
+          "index": 0,
+          "uuid": "GPU-a8487f93-e6a1-4e30-8203-704305e62336",
+          "utilization_percent": 89.0,
+          "memory_mib": 27424.0,
+          "name": "NVIDIA GeForce RTX 5090 D"
+        }
+      ],
+      "processes": [],
+      "windows_guard": {
+        "path": "/mnt/e/r260401-brjd-20261003/control/windows_guard.json",
+        "record": {
+          "schema_version": 1,
+          "queue_id": "r260401_brjd_20261003",
+          "unix_time": 1791049467.6106944,
+          "status": "running",
+          "active_job": "r260401_brjd_20261003_r4",
+          "machine": "DESKTOP-BRJD313",
+          "proxy_url": "http://172.28.48.1:27890",
+          "foreign_processes": [],
+          "background_python_checks": [
+            {
+              "pid": 174456,
+              "kind": "existing_non_gpu_proxy_relay",
+              "command": "C:\\Users\\admin\\.workbuddy\\binaries\\python\\versions\\3.13.12\\python.exe proxy_relay_7891.py"
+            }
+          ],
+          "process_count": 710,
+          "python_candidates": 2,
+          "gpu_total_mib": 32607.0,
+          "gpu_used_mib": 27420.0,
+          "gpu_utilization_percent": 88.0,
+          "cpu_percent": 19.6,
+          "available_ram_bytes": 296175042560
+        },
+        "observed_unix": 1791049473.4233456
+      }
+    },
+    {
+      "wall_unix": 1791049475.5450296,
+      "devices": [
+        {
+          "index": 0,
+          "uuid": "GPU-a8487f93-e6a1-4e30-8203-704305e62336",
+          "utilization_percent": 98.0,
+          "memory_mib": 28046.0,
+          "name": "NVIDIA GeForce RTX 5090 D"
+        }
+      ],
+      "processes": [],
+      "windows_guard": {
+        "path": "/mnt/e/r260401-brjd-20261003/control/windows_guard.json",
+        "record": {
+          "schema_version": 1,
+          "queue_id": "r260401_brjd_20261003",
+          "unix_time": 1791049473.8443515,
+          "status": "running",
+          "active_job": "r260401_brjd_20261003_r4",
+          "machine": "DESKTOP-BRJD313",
+          "proxy_url": "http://172.28.48.1:27890",
+          "foreign_processes": [],
+          "background_python_checks": [
+            {
+              "pid": 174456,
+              "kind": "existing_non_gpu_proxy_relay",
+              "command": "C:\\Users\\admin\\.workbuddy\\binaries\\python\\versions\\3.13.12\\python.exe proxy_relay_7891.py"
+            }
+          ],
+          "process_count": 710,
+          "python_candidates": 2,
+          "gpu_total_mib": 32607.0,
+          "gpu_used_mib": 27959.0,
+          "gpu_utilization_percent": 87.0,
+          "cpu_percent": 23.1,
+          "available_ram_bytes": 296058028032
+        },
+        "observed_unix": 1791049475.547125
+      }
+    },
+    {
+      "wall_unix": 1791049477.6648064,
+      "devices": [
+        {
+          "index": 0,
+          "uuid": "GPU-a8487f93-e6a1-4e30-8203-704305e62336",
+          "utilization_percent": 91.0,
+          "memory_mib": 28052.0,
+          "name": "NVIDIA GeForce RTX 5090 D"
+        }
+      ],
+      "processes": [],
+      "windows_guard": {
+        "path": "/mnt/e/r260401-brjd-20261003/control/windows_guard.json",
+        "record": {
+          "schema_version": 1,
+          "queue_id": "r260401_brjd_20261003",
+          "unix_time": 1791049473.8443515,
+          "status": "running",
+          "active_job": "r260401_brjd_20261003_r4",
+          "machine": "DESKTOP-BRJD313",
+          "proxy_url": "http://172.28.48.1:27890",
+          "foreign_processes": [],
+          "background_python_checks": [
+            {
+              "pid": 174456,
+              "kind": "existing_non_gpu_proxy_relay",
+              "command": "C:\\Users\\admin\\.workbuddy\\binaries\\python\\versions\\3.13.12\\python.exe proxy_relay_7891.py"
+            }
+          ],
+          "process_count": 710,
+          "python_candidates": 2,
+          "gpu_total_mib": 32607.0,
+          "gpu_used_mib": 27959.0,
+          "gpu_utilization_percent": 87.0,
+          "cpu_percent": 23.1,
+          "available_ram_bytes": 296058028032
+        },
+        "observed_unix": 1791049477.66664
+      }
+    },
+    {
+      "wall_unix": 1791049479.785105,
+      "devices": [
+        {
+          "index": 0,
+          "uuid": "GPU-a8487f93-e6a1-4e30-8203-704305e62336",
+          "utilization_percent": 91.0,
+          "memory_mib": 27520.0,
+          "name": "NVIDIA GeForce RTX 5090 D"
+        }
+      ],
+      "processes": [],
+      "windows_guard": {
+        "path": "/mnt/e/r260401-brjd-20261003/control/windows_guard.json",
+        "record": {
+          "schema_version": 1,
+          "queue_id": "r260401_brjd_20261003",
+          "unix_time": 1791049479.369975,
+          "status": "running",
+          "active_job": "r260401_brjd_20261003_r4",
+          "machine": "DESKTOP-BRJD313",
+          "proxy_url": "http://172.28.48.1:27890",
+          "foreign_processes": [],
+          "background_python_checks": [
+            {
+              "pid": 174456,
+              "kind": "existing_non_gpu_proxy_relay",
+              "command": "C:\\Users\\admin\\.workbuddy\\binaries\\python\\versions\\3.13.12\\python.exe proxy_relay_7891.py"
+            }
+          ],
+          "process_count": 708,
+          "python_candidates": 2,
+          "gpu_total_mib": 32607.0,
+          "gpu_used_mib": 27520.0,
+          "gpu_utilization_percent": 96.0,
+          "cpu_percent": 17.2,
+          "available_ram_bytes": 296393928704
+        },
+        "observed_unix": 1791049479.7951388
+      }
+    },
+    {
+      "wall_unix": 1791049481.913572,
+      "devices": [
+        {
+          "index": 0,
+          "uuid": "GPU-a8487f93-e6a1-4e30-8203-704305e62336",
+          "utilization_percent": 98.0,
+          "memory_mib": 27506.0,
+          "name": "NVIDIA GeForce RTX 5090 D"
+        }
+      ],
+      "processes": [],
+      "windows_guard": {
+        "path": "/mnt/e/r260401-brjd-20261003/control/windows_guard.json",
+        "record": {
+          "schema_version": 1,
+          "queue_id": "r260401_brjd_20261003",
+          "unix_time": 1791049479.369975,
+          "status": "running",
+          "active_job": "r260401_brjd_20261003_r4",
+          "machine": "DESKTOP-BRJD313",
+          "proxy_url": "http://172.28.48.1:27890",
+          "foreign_processes": [],
+          "background_python_checks": [
+            {
+              "pid": 174456,
+              "kind": "existing_non_gpu_proxy_relay",
+              "command": "C:\\Users\\admin\\.workbuddy\\binaries\\python\\versions\\3.13.12\\python.exe proxy_relay_7891.py"
+            }
+          ],
+          "process_count": 708,
+          "python_candidates": 2,
+          "gpu_total_mib": 32607.0,
+          "gpu_used_mib": 27520.0,
+          "gpu_utilization_percent": 96.0,
+          "cpu_percent": 17.2,
+          "available_ram_bytes": 296393928704
+        },
+        "observed_unix": 1791049481.9155242
+      }
+    },
+    {
+      "wall_unix": 1791049484.0337214,
+      "devices": [
+        {
+          "index": 0,
+          "uuid": "GPU-a8487f93-e6a1-4e30-8203-704305e62336",
+          "utilization_percent": 91.0,
+          "memory_mib": 27668.0,
+          "name": "NVIDIA GeForce RTX 5090 D"
+        }
+      ],
+      "processes": [],
+      "windows_guard": {
+        "path": "/mnt/e/r260401-brjd-20261003/control/windows_guard.json",
+        "record": {
+          "schema_version": 1,
+          "queue_id": "r260401_brjd_20261003",
+          "unix_time": 1791049479.369975,
+          "status": "running",
+          "active_job": "r260401_brjd_20261003_r4",
+          "machine": "DESKTOP-BRJD313",
+          "proxy_url": "http://172.28.48.1:27890",
+          "foreign_processes": [],
+          "background_python_checks": [
+            {
+              "pid": 174456,
+              "kind": "existing_non_gpu_proxy_relay",
+              "command": "C:\\Users\\admin\\.workbuddy\\binaries\\python\\versions\\3.13.12\\python.exe proxy_relay_7891.py"
+            }
+          ],
+          "process_count": 708,
+          "python_candidates": 2,
+          "gpu_total_mib": 32607.0,
+          "gpu_used_mib": 27520.0,
+          "gpu_utilization_percent": 96.0,
+          "cpu_percent": 17.2,
+          "available_ram_bytes": 296393928704
+        },
+        "observed_unix": 1791049484.0364363
+      }
+    },
+    {
+      "wall_unix": 1791049486.1498916,
+      "devices": [
+        {
+          "index": 0,
+          "uuid": "GPU-a8487f93-e6a1-4e30-8203-704305e62336",
+          "utilization_percent": 98.0,
+          "memory_mib": 27664.0,
+          "name": "NVIDIA GeForce RTX 5090 D"
+        }
+      ],
+      "processes": [],
+      "windows_guard": {
+        "path": "/mnt/e/r260401-brjd-20261003/control/windows_guard.json",
+        "record": {
+          "schema_version": 1,
+          "queue_id": "r260401_brjd_20261003",
+          "unix_time": 1791049484.9410393,
+          "status": "running",
+          "active_job": "r260401_brjd_20261003_r4",
+          "machine": "DESKTOP-BRJD313",
+          "proxy_url": "http://172.28.48.1:27890",
+          "foreign_processes": [],
+          "background_python_checks": [
+            {
+              "pid": 174456,
+              "kind": "existing_non_gpu_proxy_relay",
+              "command": "C:\\Users\\admin\\.workbuddy\\binaries\\python\\versions\\3.13.12\\python.exe proxy_relay_7891.py"
+            }
+          ],
+          "process_count": 708,
+          "python_candidates": 2,
+          "gpu_total_mib": 32607.0,
+          "gpu_used_mib": 27667.0,
+          "gpu_utilization_percent": 91.0,
+          "cpu_percent": 15.3,
+          "available_ram_bytes": 296605822976
+        },
+        "observed_unix": 1791049486.1573765
+      }
+    }
+  ],
+  "monitor_errors": [],
+  "KV_pool_sampled_peak_fraction": 0.4447728112301441,
+  "KV_pool_sampled_peak_bytes_estimate": 2841641734.714444,
+  "KV_byte_estimate_basis": "config-derived KV tensor size because block override leaves part of available memory unused",
+  "application_byte_scope": "serialized canonical context text and metadata, not observed edge DB allocation",
+  "machine_label": "DESKTOP-BRJD313 / WSL2 / RTX 5090 D",
+  "gpus": "0",
+  "observed_KV_capacity_tokens": 43328,
+  "capacity_control": "client rejection before execution; server remains automatic prefix cache/LRU",
+  "peak_budget_basis": "allocator-derived B/token times token-path maximum, not per-session measured peak"
+}

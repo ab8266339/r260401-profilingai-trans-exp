@@ -1,0 +1,22 @@
+{
+  "task": "r260401_20261003_external",
+  "machine": "host (4GPU)",
+  "schedule": "X whole-host exclusive after native R1-R4",
+  "engines": {
+    "lmcache": "0.5.5 +vllm0.30.0 +torch2.13.0",
+    "sglang": "0.5.20 +torch2.13.0"
+  },
+  "environment_policy": "separate task-specific envs; unchanged shared vllm env/models",
+  "workflow": "install binary wheels fixed versions, import check, actual API/cache semantics/128ID gate,10paired repetitions per2grids",
+  "LMCache_arm": "LocalCPUBackend pin-versus-LRU after equal fixed churn; no GPU pin claim",
+  "SGLang_arm": "radix-versus-own stage-barrier zero-hit replay; independent stack",
+  "statistics": "unadjusted exploratory marginal paired-t intervals; no automatic reviewer gate or author claim decision",
+  "failure_policy": "UNMEASURED preserves installer/runtime/raw logs; task termination is not performance success",
+  "dependencies": {
+    "scripts/external_setup.sh": "58ba64d598e520f61071c80ee7bd3287f50354e3fed77f7dbf8fe0618f15d914",
+    "scripts/external_probe.py": "9af133fe43b2447b13095ddfa4269fbe42e285bc1f7ae2f40c087da1a00adc46",
+    "scripts/external_rplus.py": "2e4bab2785cddff33d9c94bbda3f166111f68e1b80fdeeebc39fa543f07eadc9",
+    "scripts/external_run.sh": "c276fd51ccb9e27243d78c78a252d6d0295141e045cab6b6ddf0cd8250c1b7d5",
+    "scripts/kvbench.py": "45745354a655134fd98f396cdfe163f913fea2fc59f68cbb27d07f0cdf096688"
+  }
+}

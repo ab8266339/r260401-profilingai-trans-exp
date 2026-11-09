@@ -1,0 +1,26 @@
+{
+  "created_for": "2026-10-03 user authorized queue execution",
+  "machine": "host / four RTX 5090",
+  "gpu_policy": "X whole-machine exclusive FIFO",
+  "local_control_machine": "DESKTOP-BRJD313",
+  "dependencies": {
+    "scripts/kvbench.py": "45745354a655134fd98f396cdfe163f913fea2fc59f68cbb27d07f0cdf096688",
+    "scripts/rplus_95d81299.py": "95d812990a140f078a6edcb8185a2b359301c7fe9864ccd844948fdae1e85b66",
+    "scripts/m2_67bf3945.py": "67bf3945c4301e98218b16e32a5ce8ba81a97a1c04f9d0d65bf8e0882f925aff",
+    "scripts/setup_runner.sh": "ba49cf579edbaf6e500f906666dc7a4dbe0da95ded1c54f9d1ddee01a54e1e81",
+    "rd_r0_baseline.json": "fb701dbe2e7f5066f6ce51d04707e2015c237556c66e5d6fcd32075983e7c607",
+    "RD_RPLUS_PROTOCOL.md": "f49872cadab8c517aee8c855f2038f1a68661954230d40623b8907da565f1a8c",
+    "M2_PROTOCOL.md": "9345bb44acbf24522ead45741ea2eb1bbb931de4420b40879ec6fa588da45556"
+  },
+  "runner_environment": "/home/host/venvs/r260401_runner_20261003",
+  "runner_statistics": "scipy1.16.2; imports unchanged vllm environment through own .pth",
+  "R1_capacity_tokens": 71840,
+  "R1_reps": 10,
+  "R2_natural_eos": true,
+  "R3_common_backend": "TRITON_ATTN",
+  "R3_capacity": "measured bf16 budget; identical FP8 blocks",
+  "R4_scope": "low-pressure native four-arm baseline; default max_num_seqs observed256",
+  "M2": "matched-capacity supplemental pipeline; calibration then54 pilotcells then predeclared precision freeze then independent formal10..20reps",
+  "M2_claim_limit": "no original no-think M1/M2 pass or physical GPU pin claim",
+  "M2_max_wall_s": 172800
+}

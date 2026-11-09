@@ -1,0 +1,61 @@
+{
+  "project_id": "R260401",
+  "version": 3,
+  "status": "PASS",
+  "checked_utc": "2026-10-02T23:19:07.608461+00:00",
+  "new_source_sha256": "ea00369a2e24df43268d802930f8f09c69470ceee03a5634fd3cdf47b6fe00d1",
+  "old_source_sha256": "2f4cce85279842f1136aa03ba0a444aacec188c2329d7afbf147e2894b940b06",
+  "old_frozen_source_preserved": true,
+  "only_two_literal_budget_changes": true,
+  "diff": [
+    "--- m2_brjd_2f4cce85.py\n",
+    "+++ m2_brjd_ea00369a.py\n",
+    "@@ -393,7 +393,7 @@\n",
+    "     if getattr(args, \"pool_blocks\", None) is not None:",
+    "         extra += [\"--num-gpu-blocks-override\", str(args.pool_blocks)]",
+    "     return SimpleNamespace(model_path=args.model_path, port=args.port, max_model_len=12288,",
+    "-                           gpu_util=0.90, kv_dtype=\"auto\", tp=1, offload_gib=0,",
+    "+                           gpu_util=0.80, kv_dtype=\"auto\", tp=1, offload_gib=0,",
+    "                            enforce_eager=False, gpus=args.gpus, extra=extra)",
+    " ",
+    " ",
+    "@@ -402,7 +402,7 @@\n",
+    "     code = r\"\"\"import hashlib,inspect,json,sys",
+    " from vllm.engine.arg_utils import EngineArgs",
+    " from vllm.usage.usage_lib import UsageContext",
+    "-kw=dict(model=sys.argv[1],served_model_name=\"m\",max_model_len=12288,gpu_memory_utilization=0.90,",
+    "+kw=dict(model=sys.argv[1],served_model_name=\"m\",max_model_len=12288,gpu_memory_utilization=0.80,",
+    "         kv_cache_dtype=\"auto\",tensor_parallel_size=1,enable_prefix_caching=True,seed=0,enforce_eager=False)",
+    " if sys.argv[2]!=\"A0\": kw[\"max_num_seqs\"]=int(sys.argv[3])",
+    " cfg=EngineArgs(**kw).create_engine_config(usage_context=UsageContext.OPENAI_API_SERVER)"
+  ],
+  "cpu_selfcheck": {
+    "status": "PASS",
+    "cpu_only": true,
+    "gpu_launched": false,
+    "source_sha256": "ea00369a2e24df43268d802930f8f09c69470ceee03a5634fd3cdf47b6fe00d1",
+    "checks": [
+      "original reservation/arrival/hold/cohort selftest",
+      "real calibration freezes local median 11 seconds, deadlines 16.5/22/33, holds 11/33/66, drain66",
+      "direct recalibration cannot overwrite prior freeze",
+      "four-GPU prior deadline rejected",
+      "hardware identity reuse gate",
+      "real pipeline writes pre-pilot plan without NameError, selects10 independent repeats and9-member family",
+      "pipeline resume preserves calibration/baseline/formal freezes byte-for-byte"
+    ]
+  },
+  "py_compile": {
+    "exit_code": 0,
+    "files": [
+      "m2_brjd_ea00369a.py",
+      "cpu_selfcheck_v3.py"
+    ]
+  },
+  "bash_n": {
+    "exit_code": 0,
+    "file": "run_m2_brjd_v3.sh",
+    "executor": "wsl.exe --exec bash -n; syntax only"
+  },
+  "gpu_executed": false,
+  "linux_deployed": false
+}

@@ -1,0 +1,75 @@
+{
+  "project_id": "R260401",
+  "time": "2026-10-03T08:18:08.028422+08:00",
+  "state": "waiting_for_R260306_complete",
+  "controller_pid": 194660,
+  "controller_create_time": 1790986530.0580876,
+  "predecessor": {
+    "state": "stopped_by_request",
+    "utc": "2026-10-03T00:15:29Z"
+  },
+  "guard": {
+    "schema_version": 1,
+    "queue_id": "r260401_brjd_20261003",
+    "unix_time": 1790986687.5558674,
+    "status": "blocked",
+    "active_job": "r260401_brjd_20261003_preflight",
+    "machine": "DESKTOP-BRJD313",
+    "proxy_url": null,
+    "foreign_processes": [
+      {
+        "pid": 132336,
+        "kind": "model_server",
+        "name": "llama-server.exe"
+      },
+      {
+        "pid": 198900,
+        "kind": "python_job",
+        "command": "C:\\Python313\\python.exe R260309-fsb/experiments/revision_20261003/finality_campaign.py"
+      },
+      {
+        "pid": 59528,
+        "kind": "python_job",
+        "command": "C:\\Python313\\python.exe D:\\CodeBase-708a\\061-working-paper\\R260309-fsb\\experiments\\revision_20261003\\run_isolated_model.py D:\\CodeBase-708a\\061-working-paper\\R260309-fsb\\experiments\\revision_20261003\\finality_campaign.py model"
+      },
+      {
+        "pid": 64908,
+        "kind": "python_job",
+        "command": "C:\\Python313\\python.exe D:\\CodeBase-708a\\061-working-paper\\R260309-fsb\\experiments\\revision_20261003\\finality_campaign.py model"
+      },
+      {
+        "pid": 181252,
+        "kind": "python_job",
+        "command": "C:\\Python313\\python.exe D:\\CodeBase-708a\\061-working-paper\\R260309-fsb\\experiments\\revision_20261003\\run_finality_experiment.py D:\\CodeBase-708a\\061-working-paper\\R260309-fsb\\experiments\\revision_20261003\\memory_pipeline.py --queries 100 --out C:\\Users\\admin\\AppData\\Local\\Temp\\fsb-finality-campaign-s8f2l4v_\\memory_finality"
+      },
+      {
+        "pid": 203092,
+        "kind": "model_server",
+        "name": "llama-server.exe"
+      },
+      {
+        "pid": 199984,
+        "kind": "python_job",
+        "command": "C:\\Python313\\python.exe R260309-fsb/experiments/revision_20261003/finality_accounting.py"
+      }
+    ],
+    "background_python_checks": [
+      {
+        "pid": 174456,
+        "kind": "existing_non_gpu_proxy_relay",
+        "command": "C:\\Users\\admin\\.workbuddy\\binaries\\python\\versions\\3.13.12\\python.exe proxy_relay_7891.py"
+      }
+    ],
+    "process_count": 675,
+    "python_candidates": 7,
+    "gpu_total_mib": 32607.0,
+    "gpu_used_mib": 13916.0,
+    "gpu_utilization_percent": 0.0,
+    "cpu_percent": 13.5,
+    "available_ram_bytes": 304627007488
+  },
+  "history_exists": false,
+  "remote_R3_audit": "W:\\ML\\ml-work\\R260401-profilingai-trans\\vllm_4gpu_20261003\\control_records\\completed_r3_audit_20261003_081006.json",
+  "remote_R3_complete": true,
+  "maintenance": "Host inventory 59s -> 3.34s; scientific payloads unchanged and old versions retained."
+}

@@ -1,0 +1,34 @@
+{
+  "project_id": "R260401",
+  "control_version": 4,
+  "machine": "DESKTOP-BRJD313",
+  "gpu": "RTX 5090 D / 32607 MiB / WSL2 Ubuntu-22.04",
+  "memory_policy": {
+    "vllm_gpu_memory_utilization": 0.8,
+    "idle_gpu_used_limit_mib": 6000,
+    "idle_gpu_util_percent_max": 5,
+    "idle_stable_seconds": 30,
+    "reason": "Leave memory for Windows desktop graphics. Local allocator capacity is measured again and paired within BRJD."
+  },
+  "predecessor": {
+    "project": "R260306",
+    "required_state": "complete",
+    "no_preemption": true
+  },
+  "measurement_boundary": "R1/R2 already ended rc0 on four-GPU host; R3 already running there. Only pending R4/external/M2 migrate to BRJD. Absolute timings are never mixed across machines.",
+  "isolation": "Windows guard excludes all foreign llama-server and conservative unknown Python jobs; WSL guard also fails closed. GUI background is recorded and cannot be fully eliminated on a desktop.",
+  "integrity": "E and Linux frozen manifests and payloads verified before each job; pinned raw model weights verified before owned readiness alias.",
+  "restart": "Interrupted/running/needs_review state requires review; completed clean history is skipped; no automatic blind duplicate.",
+  "external": "Wrapper success is not measurement success: per-engine MEASURED/UNMEASURED must be read.",
+  "scientific_limits": "R4/M2 matched-capacity supplemental studies do not resolve author contribution choices, physical GPU pin claims, or original no-think M1/M2 gates.",
+  "source_lineage": "Immutable v1/v2/v3 retained. No experimental code/parameters changed in v4; controller background-process classification and manifest routing only.",
+  "maintenance": "Resolve false-positive Python job: only verified read-only SQLite chat monitor admitted by exact executable, argv and SHA256.",
+  "monitor": {
+    "path": "C:\\Users\\admin\\Documents\\Codex\\2026-10-03\\task\\watch_codex_thread.py",
+    "sha256": "2805568814b3c1697edafbae320ff8223c4e0781dcdce26f5cfc46521b43d5e2",
+    "read_only": true,
+    "cpu_seconds_at_audit": 0.234375,
+    "elapsed_minutes_at_audit": 28,
+    "cuda_or_children": false
+  }
+}

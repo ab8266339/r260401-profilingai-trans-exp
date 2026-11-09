@@ -1,0 +1,1681 @@
+{
+  "project_id": "R260401",
+  "task": "R3",
+  "checked_epoch": 1790986388.4568634,
+  "archive_path": "W:\\ML\\ml-work\\R260401-profilingai-trans\\vllm_4gpu_20261003\\results\\completed_r3_20261003_081006",
+  "measurement_gate_pass": true,
+  "errors": [],
+  "runner_lines": [
+    "10-03 07:17:34 START [X] r260401_20261003_r3 gpus=[0, 1, 2, 3] pid=621086",
+    "10-03 08:06:35 END rc=0 [X] r260401_20261003_r3 gpus=[0, 1, 2, 3]"
+  ],
+  "raw_file_count": 65,
+  "raw_bytes": 18689809,
+  "all_raw_SHA256_verified": true,
+  "precision_pair": {
+    "status": "measured",
+    "auto_tokens": 71856,
+    "fp8_tokens": 71856,
+    "same_backend_requested": "TRITON_ATTN",
+    "same_token_capacity_verified": true,
+    "fp8_num_gpu_blocks_override": 4491,
+    "claim_limit": "output hashes must match for identical-token-trace timing attribution"
+  },
+  "capacity_freeze": {
+    "token_capacity": 71856,
+    "num_gpu_blocks": 4491,
+    "block_size": 16,
+    "backend": "TRITON_ATTN",
+    "source": "actual bf16 startup under common backend",
+    "bf16_server_info_sha256": "cb250b94c0d827c54269de9bc2e32f0b90e9b9d5a694d971d04da14ff77203e2"
+  },
+  "configurations": {
+    "auto": {
+      "measurement_gate_pass": true,
+      "errors": [],
+      "cells": 20,
+      "sessions": 80,
+      "stages": 2560,
+      "actual_capacity_tokens": 71856,
+      "api_probe": {
+        "first_cached_tokens": 0,
+        "same_salt_cached_tokens": 240,
+        "other_salt_cached_tokens": 0,
+        "natural_eos_actual_tokens": 16,
+        "natural_eos_finish_reason": "length",
+        "token_ids_returned": true,
+        "salt_isolates": true
+      },
+      "actual_backend_evidence": [
+        "(EngineCore pid=621131) INFO 10-03 07:18:06 [cuda.py:478] Using AttentionBackendEnum.TRITON_ATTN backend."
+      ],
+      "protocol_sha256": "721668ec3e1ed6969f0d072f2a762c064615387ad432f8b758daa7a2ad16abca",
+      "DONE": {
+        "status": "measured",
+        "protocol_sha256": "721668ec3e1ed6969f0d072f2a762c064615387ad432f8b758daa7a2ad16abca",
+        "finished_utc": "2026-10-02T23:43:04.269+00:00"
+      },
+      "invalid_attempts": [],
+      "failed_artifacts": [],
+      "first_shutdown_line_1based": 8413,
+      "server_pre_shutdown_errors": [],
+      "server_post_shutdown_errors": [],
+      "shutdown_error_interpretation": "no pre-shutdown ERROR observed",
+      "within_precision_A0_vs_R_trajectory_audit": [
+        {
+          "rep": 0,
+          "common_stages": 128,
+          "mismatch_stages": 62,
+          "identical_full_paths": false,
+          "first5_mismatch_examples": [
+            {
+              "session": 1,
+              "stage": 31,
+              "prompt_changed": true,
+              "output_changed": false
+            },
+            {
+              "session": 0,
+              "stage": 5,
+              "prompt_changed": true,
+              "output_changed": false
+            },
+            {
+              "session": 0,
+              "stage": 14,
+              "prompt_changed": true,
+              "output_changed": false
+            },
+            {
+              "session": 0,
+              "stage": 23,
+              "prompt_changed": true,
+              "output_changed": false
+            },
+            {
+              "session": 1,
+              "stage": 15,
+              "prompt_changed": true,
+              "output_changed": false
+            }
+          ]
+        },
+        {
+          "rep": 1,
+          "common_stages": 128,
+          "mismatch_stages": 9,
+          "identical_full_paths": false,
+          "first5_mismatch_examples": [
+            {
+              "session": 3,
+              "stage": 31,
+              "prompt_changed": true,
+              "output_changed": false
+            },
+            {
+              "session": 3,
+              "stage": 24,
+              "prompt_changed": false,
+              "output_changed": true
+            },
+            {
+              "session": 3,
+              "stage": 26,
+              "prompt_changed": true,
+              "output_changed": false
+            },
+            {
+              "session": 3,
+              "stage": 28,
+              "prompt_changed": true,
+              "output_changed": false
+            },
+            {
+              "session": 3,
+              "stage": 30,
+              "prompt_changed": true,
+              "output_changed": false
+            }
+          ]
+        },
+        {
+          "rep": 2,
+          "common_stages": 128,
+          "mismatch_stages": 12,
+          "identical_full_paths": false,
+          "first5_mismatch_examples": [
+            {
+              "session": 2,
+              "stage": 32,
+              "prompt_changed": true,
+              "output_changed": false
+            },
+            {
+              "session": 2,
+              "stage": 25,
+              "prompt_changed": true,
+              "output_changed": false
+            },
+            {
+              "session": 2,
+              "stage": 27,
+              "prompt_changed": true,
+              "output_changed": false
+            },
+            {
+              "session": 2,
+              "stage": 29,
+              "prompt_changed": true,
+              "output_changed": false
+            },
+            {
+              "session": 2,
+              "stage": 22,
+              "prompt_changed": true,
+              "output_changed": true
+            }
+          ]
+        },
+        {
+          "rep": 3,
+          "common_stages": 128,
+          "mismatch_stages": 49,
+          "identical_full_paths": false,
+          "first5_mismatch_examples": [
+            {
+              "session": 1,
+              "stage": 31,
+              "prompt_changed": true,
+              "output_changed": true
+            },
+            {
+              "session": 0,
+              "stage": 14,
+              "prompt_changed": true,
+              "output_changed": false
+            },
+            {
+              "session": 0,
+              "stage": 23,
+              "prompt_changed": true,
+              "output_changed": false
+            },
+            {
+              "session": 1,
+              "stage": 15,
+              "prompt_changed": true,
+              "output_changed": true
+            },
+            {
+              "session": 1,
+              "stage": 24,
+              "prompt_changed": true,
+              "output_changed": true
+            }
+          ]
+        },
+        {
+          "rep": 4,
+          "common_stages": 128,
+          "mismatch_stages": 0,
+          "identical_full_paths": true,
+          "first5_mismatch_examples": []
+        },
+        {
+          "rep": 5,
+          "common_stages": 128,
+          "mismatch_stages": 24,
+          "identical_full_paths": false,
+          "first5_mismatch_examples": [
+            {
+              "session": 2,
+              "stage": 11,
+              "prompt_changed": true,
+              "output_changed": false
+            },
+            {
+              "session": 2,
+              "stage": 32,
+              "prompt_changed": true,
+              "output_changed": false
+            },
+            {
+              "session": 2,
+              "stage": 25,
+              "prompt_changed": true,
+              "output_changed": false
+            },
+            {
+              "session": 2,
+              "stage": 27,
+              "prompt_changed": true,
+              "output_changed": false
+            },
+            {
+              "session": 2,
+              "stage": 20,
+              "prompt_changed": true,
+              "output_changed": false
+            }
+          ]
+        },
+        {
+          "rep": 6,
+          "common_stages": 128,
+          "mismatch_stages": 0,
+          "identical_full_paths": true,
+          "first5_mismatch_examples": []
+        },
+        {
+          "rep": 7,
+          "common_stages": 128,
+          "mismatch_stages": 27,
+          "identical_full_paths": false,
+          "first5_mismatch_examples": [
+            {
+              "session": 1,
+              "stage": 31,
+              "prompt_changed": true,
+              "output_changed": false
+            },
+            {
+              "session": 1,
+              "stage": 15,
+              "prompt_changed": true,
+              "output_changed": false
+            },
+            {
+              "session": 1,
+              "stage": 24,
+              "prompt_changed": true,
+              "output_changed": false
+            },
+            {
+              "session": 1,
+              "stage": 8,
+              "prompt_changed": true,
+              "output_changed": false
+            },
+            {
+              "session": 1,
+              "stage": 17,
+              "prompt_changed": true,
+              "output_changed": false
+            }
+          ]
+        },
+        {
+          "rep": 8,
+          "common_stages": 128,
+          "mismatch_stages": 30,
+          "identical_full_paths": false,
+          "first5_mismatch_examples": [
+            {
+              "session": 3,
+              "stage": 13,
+              "prompt_changed": true,
+              "output_changed": false
+            },
+            {
+              "session": 3,
+              "stage": 22,
+              "prompt_changed": true,
+              "output_changed": false
+            },
+            {
+              "session": 3,
+              "stage": 31,
+              "prompt_changed": true,
+              "output_changed": false
+            },
+            {
+              "session": 3,
+              "stage": 6,
+              "prompt_changed": true,
+              "output_changed": false
+            },
+            {
+              "session": 3,
+              "stage": 15,
+              "prompt_changed": true,
+              "output_changed": false
+            }
+          ]
+        },
+        {
+          "rep": 9,
+          "common_stages": 128,
+          "mismatch_stages": 0,
+          "identical_full_paths": true,
+          "first5_mismatch_examples": []
+        }
+      ],
+      "means": {
+        "A0": 50.79642527092583,
+        "R": 87.56837479850438
+      },
+      "available_KV_memory_gib": 9.87,
+      "configured_KV_pool_bytes_estimate": 10597831802.88,
+      "KV_byte_estimate_basis": "allocator-derived natural capacity; available memory rounded in startup log"
+    },
+    "fp8": {
+      "measurement_gate_pass": true,
+      "errors": [],
+      "cells": 20,
+      "sessions": 80,
+      "stages": 2560,
+      "actual_capacity_tokens": 71856,
+      "api_probe": {
+        "first_cached_tokens": 0,
+        "same_salt_cached_tokens": 240,
+        "other_salt_cached_tokens": 0,
+        "natural_eos_actual_tokens": 16,
+        "natural_eos_finish_reason": "length",
+        "token_ids_returned": true,
+        "salt_isolates": true
+      },
+      "actual_backend_evidence": [
+        "(EngineCore pid=625293) INFO 10-03 07:43:30 [cuda.py:478] Using AttentionBackendEnum.TRITON_ATTN backend."
+      ],
+      "protocol_sha256": "760707fefbe8609c30d4f240679e0480f2ed2a85e639168708ec0570112501d3",
+      "DONE": {
+        "status": "measured",
+        "protocol_sha256": "760707fefbe8609c30d4f240679e0480f2ed2a85e639168708ec0570112501d3",
+        "finished_utc": "2026-10-03T00:06:23.544+00:00"
+      },
+      "invalid_attempts": [],
+      "failed_artifacts": [],
+      "first_shutdown_line_1based": 8171,
+      "server_pre_shutdown_errors": [],
+      "server_post_shutdown_errors": [
+        {
+          "line": 8185,
+          "text": "(APIServer pid=625274) ERROR 10-03 08:06:23 [async_llm.py:843] AsyncLLM output_handler failed."
+        },
+        {
+          "line": 8186,
+          "text": "(APIServer pid=625274) ERROR 10-03 08:06:23 [async_llm.py:843] Traceback (most recent call last):"
+        },
+        {
+          "line": 8187,
+          "text": "(APIServer pid=625274) ERROR 10-03 08:06:23 [async_llm.py:843]   File \"/home/host/venvs/vllm/lib/python3.12/site-packages/vllm/v1/engine/async_llm.py\", line 789, in output_handler"
+        },
+        {
+          "line": 8188,
+          "text": "(APIServer pid=625274) ERROR 10-03 08:06:23 [async_llm.py:843]     outputs = await engine_core.get_output_async()"
+        },
+        {
+          "line": 8189,
+          "text": "(APIServer pid=625274) ERROR 10-03 08:06:23 [async_llm.py:843]               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^"
+        },
+        {
+          "line": 8190,
+          "text": "(APIServer pid=625274) ERROR 10-03 08:06:23 [async_llm.py:843]   File \"/home/host/venvs/vllm/lib/python3.12/site-packages/vllm/v1/engine/core_client.py\", line 1175, in get_output_async"
+        },
+        {
+          "line": 8191,
+          "text": "(APIServer pid=625274) ERROR 10-03 08:06:23 [async_llm.py:843]     raise self._format_exception(outputs) from None"
+        },
+        {
+          "line": 8192,
+          "text": "(APIServer pid=625274) ERROR 10-03 08:06:23 [async_llm.py:843] vllm.v1.engine.exceptions.EngineDeadError: EngineCore encountered an issue. See stack trace (above) for the root cause."
+        }
+      ],
+      "shutdown_error_interpretation": "ERROR traces after explicit API shutdown/SIGINT are cleanup events; no incomplete cell, failed artifact, monitor or request error observed",
+      "within_precision_A0_vs_R_trajectory_audit": [
+        {
+          "rep": 0,
+          "common_stages": 128,
+          "mismatch_stages": 31,
+          "identical_full_paths": false,
+          "first5_mismatch_examples": [
+            {
+              "session": 0,
+              "stage": 5,
+              "prompt_changed": true,
+              "output_changed": true
+            },
+            {
+              "session": 0,
+              "stage": 14,
+              "prompt_changed": true,
+              "output_changed": true
+            },
+            {
+              "session": 0,
+              "stage": 23,
+              "prompt_changed": true,
+              "output_changed": true
+            },
+            {
+              "session": 0,
+              "stage": 7,
+              "prompt_changed": true,
+              "output_changed": true
+            },
+            {
+              "session": 0,
+              "stage": 16,
+              "prompt_changed": true,
+              "output_changed": true
+            }
+          ]
+        },
+        {
+          "rep": 1,
+          "common_stages": 128,
+          "mismatch_stages": 30,
+          "identical_full_paths": false,
+          "first5_mismatch_examples": [
+            {
+              "session": 2,
+              "stage": 11,
+              "prompt_changed": true,
+              "output_changed": true
+            },
+            {
+              "session": 2,
+              "stage": 32,
+              "prompt_changed": true,
+              "output_changed": true
+            },
+            {
+              "session": 2,
+              "stage": 4,
+              "prompt_changed": true,
+              "output_changed": true
+            },
+            {
+              "session": 2,
+              "stage": 25,
+              "prompt_changed": true,
+              "output_changed": true
+            },
+            {
+              "session": 2,
+              "stage": 27,
+              "prompt_changed": true,
+              "output_changed": true
+            }
+          ]
+        },
+        {
+          "rep": 2,
+          "common_stages": 128,
+          "mismatch_stages": 65,
+          "identical_full_paths": false,
+          "first5_mismatch_examples": [
+            {
+              "session": 1,
+              "stage": 31,
+              "prompt_changed": true,
+              "output_changed": true
+            },
+            {
+              "session": 3,
+              "stage": 13,
+              "prompt_changed": true,
+              "output_changed": false
+            },
+            {
+              "session": 3,
+              "stage": 22,
+              "prompt_changed": true,
+              "output_changed": false
+            },
+            {
+              "session": 3,
+              "stage": 31,
+              "prompt_changed": true,
+              "output_changed": false
+            },
+            {
+              "session": 0,
+              "stage": 23,
+              "prompt_changed": true,
+              "output_changed": false
+            }
+          ]
+        },
+        {
+          "rep": 3,
+          "common_stages": 128,
+          "mismatch_stages": 98,
+          "identical_full_paths": false,
+          "first5_mismatch_examples": [
+            {
+              "session": 1,
+              "stage": 31,
+              "prompt_changed": true,
+              "output_changed": false
+            },
+            {
+              "session": 2,
+              "stage": 2,
+              "prompt_changed": false,
+              "output_changed": true
+            },
+            {
+              "session": 3,
+              "stage": 22,
+              "prompt_changed": true,
+              "output_changed": false
+            },
+            {
+              "session": 0,
+              "stage": 14,
+              "prompt_changed": true,
+              "output_changed": false
+            },
+            {
+              "session": 2,
+              "stage": 11,
+              "prompt_changed": true,
+              "output_changed": false
+            }
+          ]
+        },
+        {
+          "rep": 4,
+          "common_stages": 128,
+          "mismatch_stages": 52,
+          "identical_full_paths": false,
+          "first5_mismatch_examples": [
+            {
+              "session": 3,
+              "stage": 13,
+              "prompt_changed": true,
+              "output_changed": false
+            },
+            {
+              "session": 2,
+              "stage": 2,
+              "prompt_changed": false,
+              "output_changed": true
+            },
+            {
+              "session": 3,
+              "stage": 22,
+              "prompt_changed": true,
+              "output_changed": false
+            },
+            {
+              "session": 2,
+              "stage": 11,
+              "prompt_changed": true,
+              "output_changed": false
+            },
+            {
+              "session": 3,
+              "stage": 31,
+              "prompt_changed": true,
+              "output_changed": false
+            }
+          ]
+        },
+        {
+          "rep": 5,
+          "common_stages": 128,
+          "mismatch_stages": 95,
+          "identical_full_paths": false,
+          "first5_mismatch_examples": [
+            {
+              "session": 1,
+              "stage": 31,
+              "prompt_changed": true,
+              "output_changed": true
+            },
+            {
+              "session": 3,
+              "stage": 13,
+              "prompt_changed": true,
+              "output_changed": true
+            },
+            {
+              "session": 2,
+              "stage": 2,
+              "prompt_changed": false,
+              "output_changed": true
+            },
+            {
+              "session": 3,
+              "stage": 22,
+              "prompt_changed": true,
+              "output_changed": true
+            },
+            {
+              "session": 2,
+              "stage": 11,
+              "prompt_changed": true,
+              "output_changed": false
+            }
+          ]
+        },
+        {
+          "rep": 6,
+          "common_stages": 128,
+          "mismatch_stages": 73,
+          "identical_full_paths": false,
+          "first5_mismatch_examples": [
+            {
+              "session": 1,
+              "stage": 31,
+              "prompt_changed": true,
+              "output_changed": false
+            },
+            {
+              "session": 3,
+              "stage": 13,
+              "prompt_changed": true,
+              "output_changed": false
+            },
+            {
+              "session": 3,
+              "stage": 22,
+              "prompt_changed": true,
+              "output_changed": false
+            },
+            {
+              "session": 3,
+              "stage": 31,
+              "prompt_changed": true,
+              "output_changed": false
+            },
+            {
+              "session": 0,
+              "stage": 23,
+              "prompt_changed": true,
+              "output_changed": false
+            }
+          ]
+        },
+        {
+          "rep": 7,
+          "common_stages": 128,
+          "mismatch_stages": 31,
+          "identical_full_paths": false,
+          "first5_mismatch_examples": [
+            {
+              "session": 0,
+              "stage": 5,
+              "prompt_changed": true,
+              "output_changed": true
+            },
+            {
+              "session": 0,
+              "stage": 14,
+              "prompt_changed": true,
+              "output_changed": true
+            },
+            {
+              "session": 0,
+              "stage": 23,
+              "prompt_changed": true,
+              "output_changed": true
+            },
+            {
+              "session": 0,
+              "stage": 7,
+              "prompt_changed": true,
+              "output_changed": true
+            },
+            {
+              "session": 0,
+              "stage": 16,
+              "prompt_changed": true,
+              "output_changed": true
+            }
+          ]
+        },
+        {
+          "rep": 8,
+          "common_stages": 128,
+          "mismatch_stages": 60,
+          "identical_full_paths": false,
+          "first5_mismatch_examples": [
+            {
+              "session": 3,
+              "stage": 13,
+              "prompt_changed": true,
+              "output_changed": true
+            },
+            {
+              "session": 0,
+              "stage": 5,
+              "prompt_changed": true,
+              "output_changed": true
+            },
+            {
+              "session": 3,
+              "stage": 22,
+              "prompt_changed": true,
+              "output_changed": true
+            },
+            {
+              "session": 0,
+              "stage": 14,
+              "prompt_changed": true,
+              "output_changed": true
+            },
+            {
+              "session": 3,
+              "stage": 31,
+              "prompt_changed": true,
+              "output_changed": true
+            }
+          ]
+        },
+        {
+          "rep": 9,
+          "common_stages": 128,
+          "mismatch_stages": 91,
+          "identical_full_paths": false,
+          "first5_mismatch_examples": [
+            {
+              "session": 3,
+              "stage": 13,
+              "prompt_changed": true,
+              "output_changed": true
+            },
+            {
+              "session": 0,
+              "stage": 5,
+              "prompt_changed": true,
+              "output_changed": true
+            },
+            {
+              "session": 2,
+              "stage": 2,
+              "prompt_changed": false,
+              "output_changed": true
+            },
+            {
+              "session": 3,
+              "stage": 22,
+              "prompt_changed": true,
+              "output_changed": true
+            },
+            {
+              "session": 0,
+              "stage": 14,
+              "prompt_changed": true,
+              "output_changed": true
+            }
+          ]
+        }
+      ],
+      "means": {
+        "A0": 48.699139134126746,
+        "R": 83.53967531107556
+      },
+      "available_KV_memory_gib": 11.97,
+      "configured_KV_pool_bytes_estimate": 5297799168,
+      "KV_byte_estimate_basis": "config-derived KV tensor size because block override leaves part of available memory unused"
+    }
+  },
+  "cross_precision_trajectory_audit": [
+    {
+      "arm": "A0",
+      "rep": 0,
+      "common_stage_count": 128,
+      "mismatch_stage_count": 93,
+      "identical_generated_paths": false,
+      "first5_mismatch_examples": [
+        {
+          "session": 1,
+          "stage": 31,
+          "prompt_changed": true,
+          "output_changed": false
+        },
+        {
+          "session": 0,
+          "stage": 5,
+          "prompt_changed": true,
+          "output_changed": true
+        },
+        {
+          "session": 2,
+          "stage": 2,
+          "prompt_changed": true,
+          "output_changed": true
+        },
+        {
+          "session": 0,
+          "stage": 14,
+          "prompt_changed": true,
+          "output_changed": true
+        },
+        {
+          "session": 2,
+          "stage": 11,
+          "prompt_changed": true,
+          "output_changed": true
+        }
+      ]
+    },
+    {
+      "arm": "A0",
+      "rep": 1,
+      "common_stage_count": 128,
+      "mismatch_stage_count": 94,
+      "identical_generated_paths": false,
+      "first5_mismatch_examples": [
+        {
+          "session": 1,
+          "stage": 31,
+          "prompt_changed": true,
+          "output_changed": true
+        },
+        {
+          "session": 0,
+          "stage": 5,
+          "prompt_changed": true,
+          "output_changed": false
+        },
+        {
+          "session": 0,
+          "stage": 14,
+          "prompt_changed": true,
+          "output_changed": false
+        },
+        {
+          "session": 2,
+          "stage": 11,
+          "prompt_changed": true,
+          "output_changed": true
+        },
+        {
+          "session": 0,
+          "stage": 23,
+          "prompt_changed": true,
+          "output_changed": false
+        }
+      ]
+    },
+    {
+      "arm": "A0",
+      "rep": 2,
+      "common_stage_count": 128,
+      "mismatch_stage_count": 117,
+      "identical_generated_paths": false,
+      "first5_mismatch_examples": [
+        {
+          "session": 1,
+          "stage": 31,
+          "prompt_changed": true,
+          "output_changed": true
+        },
+        {
+          "session": 3,
+          "stage": 13,
+          "prompt_changed": true,
+          "output_changed": false
+        },
+        {
+          "session": 0,
+          "stage": 5,
+          "prompt_changed": true,
+          "output_changed": true
+        },
+        {
+          "session": 2,
+          "stage": 2,
+          "prompt_changed": true,
+          "output_changed": true
+        },
+        {
+          "session": 3,
+          "stage": 22,
+          "prompt_changed": true,
+          "output_changed": false
+        }
+      ]
+    },
+    {
+      "arm": "A0",
+      "rep": 3,
+      "common_stage_count": 128,
+      "mismatch_stage_count": 122,
+      "identical_generated_paths": false,
+      "first5_mismatch_examples": [
+        {
+          "session": 1,
+          "stage": 31,
+          "prompt_changed": true,
+          "output_changed": true
+        },
+        {
+          "session": 3,
+          "stage": 13,
+          "prompt_changed": true,
+          "output_changed": true
+        },
+        {
+          "session": 0,
+          "stage": 5,
+          "prompt_changed": true,
+          "output_changed": true
+        },
+        {
+          "session": 2,
+          "stage": 2,
+          "prompt_changed": false,
+          "output_changed": true
+        },
+        {
+          "session": 3,
+          "stage": 22,
+          "prompt_changed": true,
+          "output_changed": true
+        }
+      ]
+    },
+    {
+      "arm": "A0",
+      "rep": 4,
+      "common_stage_count": 128,
+      "mismatch_stage_count": 128,
+      "identical_generated_paths": false,
+      "first5_mismatch_examples": [
+        {
+          "session": 1,
+          "stage": 31,
+          "prompt_changed": true,
+          "output_changed": true
+        },
+        {
+          "session": 3,
+          "stage": 13,
+          "prompt_changed": true,
+          "output_changed": true
+        },
+        {
+          "session": 0,
+          "stage": 5,
+          "prompt_changed": true,
+          "output_changed": true
+        },
+        {
+          "session": 2,
+          "stage": 2,
+          "prompt_changed": true,
+          "output_changed": true
+        },
+        {
+          "session": 3,
+          "stage": 22,
+          "prompt_changed": true,
+          "output_changed": true
+        }
+      ]
+    },
+    {
+      "arm": "A0",
+      "rep": 5,
+      "common_stage_count": 128,
+      "mismatch_stage_count": 95,
+      "identical_generated_paths": false,
+      "first5_mismatch_examples": [
+        {
+          "session": 1,
+          "stage": 31,
+          "prompt_changed": true,
+          "output_changed": true
+        },
+        {
+          "session": 3,
+          "stage": 13,
+          "prompt_changed": true,
+          "output_changed": true
+        },
+        {
+          "session": 2,
+          "stage": 2,
+          "prompt_changed": true,
+          "output_changed": true
+        },
+        {
+          "session": 3,
+          "stage": 22,
+          "prompt_changed": true,
+          "output_changed": true
+        },
+        {
+          "session": 2,
+          "stage": 11,
+          "prompt_changed": true,
+          "output_changed": true
+        }
+      ]
+    },
+    {
+      "arm": "A0",
+      "rep": 6,
+      "common_stage_count": 128,
+      "mismatch_stage_count": 95,
+      "identical_generated_paths": false,
+      "first5_mismatch_examples": [
+        {
+          "session": 1,
+          "stage": 31,
+          "prompt_changed": true,
+          "output_changed": true
+        },
+        {
+          "session": 0,
+          "stage": 5,
+          "prompt_changed": true,
+          "output_changed": true
+        },
+        {
+          "session": 2,
+          "stage": 2,
+          "prompt_changed": false,
+          "output_changed": true
+        },
+        {
+          "session": 0,
+          "stage": 14,
+          "prompt_changed": true,
+          "output_changed": true
+        },
+        {
+          "session": 2,
+          "stage": 11,
+          "prompt_changed": true,
+          "output_changed": false
+        }
+      ]
+    },
+    {
+      "arm": "A0",
+      "rep": 7,
+      "common_stage_count": 128,
+      "mismatch_stage_count": 95,
+      "identical_generated_paths": false,
+      "first5_mismatch_examples": [
+        {
+          "session": 1,
+          "stage": 31,
+          "prompt_changed": true,
+          "output_changed": true
+        },
+        {
+          "session": 0,
+          "stage": 5,
+          "prompt_changed": true,
+          "output_changed": true
+        },
+        {
+          "session": 2,
+          "stage": 2,
+          "prompt_changed": true,
+          "output_changed": true
+        },
+        {
+          "session": 0,
+          "stage": 14,
+          "prompt_changed": true,
+          "output_changed": true
+        },
+        {
+          "session": 2,
+          "stage": 11,
+          "prompt_changed": true,
+          "output_changed": true
+        }
+      ]
+    },
+    {
+      "arm": "A0",
+      "rep": 8,
+      "common_stage_count": 128,
+      "mismatch_stage_count": 127,
+      "identical_generated_paths": false,
+      "first5_mismatch_examples": [
+        {
+          "session": 1,
+          "stage": 31,
+          "prompt_changed": true,
+          "output_changed": true
+        },
+        {
+          "session": 3,
+          "stage": 13,
+          "prompt_changed": true,
+          "output_changed": true
+        },
+        {
+          "session": 0,
+          "stage": 5,
+          "prompt_changed": true,
+          "output_changed": true
+        },
+        {
+          "session": 2,
+          "stage": 2,
+          "prompt_changed": true,
+          "output_changed": true
+        },
+        {
+          "session": 3,
+          "stage": 22,
+          "prompt_changed": true,
+          "output_changed": true
+        }
+      ]
+    },
+    {
+      "arm": "A0",
+      "rep": 9,
+      "common_stage_count": 128,
+      "mismatch_stage_count": 128,
+      "identical_generated_paths": false,
+      "first5_mismatch_examples": [
+        {
+          "session": 1,
+          "stage": 31,
+          "prompt_changed": true,
+          "output_changed": true
+        },
+        {
+          "session": 3,
+          "stage": 13,
+          "prompt_changed": true,
+          "output_changed": true
+        },
+        {
+          "session": 0,
+          "stage": 5,
+          "prompt_changed": true,
+          "output_changed": true
+        },
+        {
+          "session": 2,
+          "stage": 2,
+          "prompt_changed": true,
+          "output_changed": true
+        },
+        {
+          "session": 3,
+          "stage": 22,
+          "prompt_changed": true,
+          "output_changed": true
+        }
+      ]
+    },
+    {
+      "arm": "R",
+      "rep": 0,
+      "common_stage_count": 128,
+      "mismatch_stage_count": 94,
+      "identical_generated_paths": false,
+      "first5_mismatch_examples": [
+        {
+          "session": 1,
+          "stage": 31,
+          "prompt_changed": true,
+          "output_changed": false
+        },
+        {
+          "session": 0,
+          "stage": 5,
+          "prompt_changed": true,
+          "output_changed": false
+        },
+        {
+          "session": 2,
+          "stage": 2,
+          "prompt_changed": true,
+          "output_changed": true
+        },
+        {
+          "session": 0,
+          "stage": 14,
+          "prompt_changed": true,
+          "output_changed": false
+        },
+        {
+          "session": 2,
+          "stage": 11,
+          "prompt_changed": true,
+          "output_changed": true
+        }
+      ]
+    },
+    {
+      "arm": "R",
+      "rep": 1,
+      "common_stage_count": 128,
+      "mismatch_stage_count": 103,
+      "identical_generated_paths": false,
+      "first5_mismatch_examples": [
+        {
+          "session": 1,
+          "stage": 31,
+          "prompt_changed": true,
+          "output_changed": true
+        },
+        {
+          "session": 0,
+          "stage": 5,
+          "prompt_changed": true,
+          "output_changed": false
+        },
+        {
+          "session": 0,
+          "stage": 14,
+          "prompt_changed": true,
+          "output_changed": false
+        },
+        {
+          "session": 2,
+          "stage": 11,
+          "prompt_changed": true,
+          "output_changed": true
+        },
+        {
+          "session": 3,
+          "stage": 31,
+          "prompt_changed": true,
+          "output_changed": false
+        }
+      ]
+    },
+    {
+      "arm": "R",
+      "rep": 2,
+      "common_stage_count": 128,
+      "mismatch_stage_count": 96,
+      "identical_generated_paths": false,
+      "first5_mismatch_examples": [
+        {
+          "session": 1,
+          "stage": 31,
+          "prompt_changed": true,
+          "output_changed": true
+        },
+        {
+          "session": 0,
+          "stage": 5,
+          "prompt_changed": true,
+          "output_changed": true
+        },
+        {
+          "session": 2,
+          "stage": 2,
+          "prompt_changed": true,
+          "output_changed": true
+        },
+        {
+          "session": 0,
+          "stage": 14,
+          "prompt_changed": true,
+          "output_changed": true
+        },
+        {
+          "session": 2,
+          "stage": 11,
+          "prompt_changed": true,
+          "output_changed": true
+        }
+      ]
+    },
+    {
+      "arm": "R",
+      "rep": 3,
+      "common_stage_count": 128,
+      "mismatch_stage_count": 91,
+      "identical_generated_paths": false,
+      "first5_mismatch_examples": [
+        {
+          "session": 1,
+          "stage": 31,
+          "prompt_changed": true,
+          "output_changed": false
+        },
+        {
+          "session": 3,
+          "stage": 13,
+          "prompt_changed": true,
+          "output_changed": true
+        },
+        {
+          "session": 0,
+          "stage": 5,
+          "prompt_changed": true,
+          "output_changed": true
+        },
+        {
+          "session": 3,
+          "stage": 22,
+          "prompt_changed": true,
+          "output_changed": true
+        },
+        {
+          "session": 0,
+          "stage": 14,
+          "prompt_changed": true,
+          "output_changed": true
+        }
+      ]
+    },
+    {
+      "arm": "R",
+      "rep": 4,
+      "common_stage_count": 128,
+      "mismatch_stage_count": 128,
+      "identical_generated_paths": false,
+      "first5_mismatch_examples": [
+        {
+          "session": 1,
+          "stage": 31,
+          "prompt_changed": true,
+          "output_changed": true
+        },
+        {
+          "session": 3,
+          "stage": 13,
+          "prompt_changed": true,
+          "output_changed": true
+        },
+        {
+          "session": 0,
+          "stage": 5,
+          "prompt_changed": true,
+          "output_changed": true
+        },
+        {
+          "session": 2,
+          "stage": 2,
+          "prompt_changed": true,
+          "output_changed": true
+        },
+        {
+          "session": 3,
+          "stage": 22,
+          "prompt_changed": true,
+          "output_changed": true
+        }
+      ]
+    },
+    {
+      "arm": "R",
+      "rep": 5,
+      "common_stage_count": 128,
+      "mismatch_stage_count": 79,
+      "identical_generated_paths": false,
+      "first5_mismatch_examples": [
+        {
+          "session": 1,
+          "stage": 31,
+          "prompt_changed": true,
+          "output_changed": false
+        },
+        {
+          "session": 3,
+          "stage": 13,
+          "prompt_changed": true,
+          "output_changed": true
+        },
+        {
+          "session": 2,
+          "stage": 2,
+          "prompt_changed": true,
+          "output_changed": true
+        },
+        {
+          "session": 3,
+          "stage": 22,
+          "prompt_changed": true,
+          "output_changed": true
+        },
+        {
+          "session": 2,
+          "stage": 11,
+          "prompt_changed": true,
+          "output_changed": true
+        }
+      ]
+    },
+    {
+      "arm": "R",
+      "rep": 6,
+      "common_stage_count": 128,
+      "mismatch_stage_count": 121,
+      "identical_generated_paths": false,
+      "first5_mismatch_examples": [
+        {
+          "session": 1,
+          "stage": 31,
+          "prompt_changed": true,
+          "output_changed": true
+        },
+        {
+          "session": 3,
+          "stage": 13,
+          "prompt_changed": true,
+          "output_changed": false
+        },
+        {
+          "session": 0,
+          "stage": 5,
+          "prompt_changed": true,
+          "output_changed": true
+        },
+        {
+          "session": 2,
+          "stage": 2,
+          "prompt_changed": false,
+          "output_changed": true
+        },
+        {
+          "session": 3,
+          "stage": 22,
+          "prompt_changed": true,
+          "output_changed": false
+        }
+      ]
+    },
+    {
+      "arm": "R",
+      "rep": 7,
+      "common_stage_count": 128,
+      "mismatch_stage_count": 94,
+      "identical_generated_paths": false,
+      "first5_mismatch_examples": [
+        {
+          "session": 1,
+          "stage": 31,
+          "prompt_changed": true,
+          "output_changed": true
+        },
+        {
+          "session": 0,
+          "stage": 5,
+          "prompt_changed": true,
+          "output_changed": true
+        },
+        {
+          "session": 2,
+          "stage": 2,
+          "prompt_changed": true,
+          "output_changed": true
+        },
+        {
+          "session": 0,
+          "stage": 14,
+          "prompt_changed": true,
+          "output_changed": false
+        },
+        {
+          "session": 2,
+          "stage": 11,
+          "prompt_changed": true,
+          "output_changed": true
+        }
+      ]
+    },
+    {
+      "arm": "R",
+      "rep": 8,
+      "common_stage_count": 128,
+      "mismatch_stage_count": 127,
+      "identical_generated_paths": false,
+      "first5_mismatch_examples": [
+        {
+          "session": 1,
+          "stage": 31,
+          "prompt_changed": true,
+          "output_changed": true
+        },
+        {
+          "session": 3,
+          "stage": 13,
+          "prompt_changed": true,
+          "output_changed": true
+        },
+        {
+          "session": 0,
+          "stage": 5,
+          "prompt_changed": true,
+          "output_changed": true
+        },
+        {
+          "session": 2,
+          "stage": 2,
+          "prompt_changed": true,
+          "output_changed": true
+        },
+        {
+          "session": 3,
+          "stage": 22,
+          "prompt_changed": true,
+          "output_changed": true
+        }
+      ]
+    },
+    {
+      "arm": "R",
+      "rep": 9,
+      "common_stage_count": 128,
+      "mismatch_stage_count": 128,
+      "identical_generated_paths": false,
+      "first5_mismatch_examples": [
+        {
+          "session": 1,
+          "stage": 31,
+          "prompt_changed": true,
+          "output_changed": true
+        },
+        {
+          "session": 3,
+          "stage": 13,
+          "prompt_changed": true,
+          "output_changed": true
+        },
+        {
+          "session": 0,
+          "stage": 5,
+          "prompt_changed": true,
+          "output_changed": true
+        },
+        {
+          "session": 2,
+          "stage": 2,
+          "prompt_changed": true,
+          "output_changed": true
+        },
+        {
+          "session": 3,
+          "stage": 22,
+          "prompt_changed": true,
+          "output_changed": true
+        }
+      ]
+    }
+  ],
+  "cross_precision_any_drift": true,
+  "cross_precision_mismatched_pairs": 20,
+  "precision_summary": {
+    "status": "measured_paired_precision",
+    "comparisons": {
+      "A0": {
+        "pipeline_mean_seconds": {
+          "n": 10,
+          "mean": -2.0972861367990845,
+          "ci95": [
+            -2.1403204764468056,
+            -2.0542517971513634
+          ],
+          "status": "resolved_difference",
+          "wilcoxon_two_sided_p": 0.001953125,
+          "claim_limit": "A CI containing zero is unresolved, not proof of equivalence or mechanism identity."
+        },
+        "ttft_mean_seconds": {
+          "n": 10,
+          "mean": 0.0036270352733936305,
+          "ci95": [
+            0.0026406790296507653,
+            0.004613391517136496
+          ],
+          "status": "resolved_difference",
+          "wilcoxon_two_sided_p": 0.001953125,
+          "claim_limit": "A CI containing zero is unresolved, not proof of equivalence or mechanism identity."
+        },
+        "decode_mean_seconds": {
+          "n": 10,
+          "mean": -0.06880446096702145,
+          "ci95": [
+            -0.06975015951160246,
+            -0.06785876242244043
+          ],
+          "status": "resolved_difference",
+          "wilcoxon_two_sided_p": 0.001953125,
+          "claim_limit": "A CI containing zero is unresolved, not proof of equivalence or mechanism identity."
+        },
+        "identical_generated_token_paths": false,
+        "interpretation": "FP8-minus-bf16; same capacity/backend configuration; output drift prevents identical-trace latency attribution"
+      },
+      "R": {
+        "pipeline_mean_seconds": {
+          "n": 10,
+          "mean": -4.028699487428821,
+          "ci95": [
+            -4.066482203879602,
+            -3.9909167709780413
+          ],
+          "status": "resolved_difference",
+          "wilcoxon_two_sided_p": 0.001953125,
+          "claim_limit": "A CI containing zero is unresolved, not proof of equivalence or mechanism identity."
+        },
+        "ttft_mean_seconds": {
+          "n": 10,
+          "mean": -0.032164008608560835,
+          "ci95": [
+            -0.03424475597364624,
+            -0.030083261243475424
+          ],
+          "status": "resolved_difference",
+          "wilcoxon_two_sided_p": 0.001953125,
+          "claim_limit": "A CI containing zero is unresolved, not proof of equivalence or mechanism identity."
+        },
+        "decode_mean_seconds": {
+          "n": 10,
+          "mean": -0.09371713922321305,
+          "ci95": [
+            -0.09591419398799485,
+            -0.09152008445843125
+          ],
+          "status": "resolved_difference",
+          "wilcoxon_two_sided_p": 0.001953125,
+          "claim_limit": "A CI containing zero is unresolved, not proof of equivalence or mechanism identity."
+        },
+        "identical_generated_token_paths": false,
+        "interpretation": "FP8-minus-bf16; same capacity/backend configuration; output drift prevents identical-trace latency attribution"
+      }
+    }
+  },
+  "identical_trace_pure_latency_attribution_permitted": false,
+  "interpretation": "Measured paired end-to-end precision differences at equal actual token capacity and common TRITON backend. Generated trajectories drift; do not claim identical-prompt pure KV-precision causality or mechanism equivalence."
+}

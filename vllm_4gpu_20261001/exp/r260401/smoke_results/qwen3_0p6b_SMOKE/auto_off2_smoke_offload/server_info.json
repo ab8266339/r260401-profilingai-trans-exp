@@ -1,0 +1,143 @@
+{
+ "machine": "host",
+ "machine_label": "4\u5361\u673a (host, 192.168.5.11)",
+ "started_utc": "2026-09-30T20:08:16.294+00:00",
+ "python": "3.12.14",
+ "vllm": "0.30.0",
+ "torch": "2.13.0",
+ "transformers": "5.18.0",
+ "aiohttp": "3.14.3",
+ "numpy": "2.3.5",
+ "driver": "580.178.04",
+ "gpu_names": "0, NVIDIA GeForce RTX 5090, 32607 MiB\n1, NVIDIA GeForce RTX 5090, 32607 MiB\n2, NVIDIA GeForce RTX 5090, 32607 MiB\n3, NVIDIA GeForce RTX 5090, 32607 MiB",
+ "cpu": "Model name:                           INTEL(R) XEON(R) GOLD 6530",
+ "kernel": "5.15.0-119-generic",
+ "model_key": "qwen3_0p6b_SMOKE",
+ "model_path": "/home/host/models/Qwen/Qwen3-0.6B",
+ "model_fingerprint": {
+  "files": {
+   ".complete_r260401": 39,
+   ".gitattributes": 2127,
+   "LICENSE": 11343,
+   "README.md": 13965,
+   "config.json": 726,
+   "configuration.json": 73,
+   "generation_config.json": 239,
+   "merges.txt": 1671853,
+   "model.safetensors": 1503300328,
+   "tokenizer.json": 11422654,
+   "tokenizer_config.json": 9732,
+   "vocab.json": 2776833
+  },
+  "config_sha256": null,
+  "config_json_sha256": "660db3b73d788119c04535e48cf9be5f55bc3100841a718637ae695b442f27dd",
+  "tokenizer_json_sha256": "aeb13307a71acd8fe81861d94ad54ab689df773318809eed3cbe794b4492dae4",
+  "generation_config_json_sha256": "2325da0f15bb848e018c5ae071b7943332e9f871d6b60e2ed22ca97d4cb993d2",
+  "download_marker": "2026-09-30T19:55:24Z source=modelscope"
+ },
+ "kv_dtype": "auto",
+ "tp": 1,
+ "gpus": "3",
+ "gpu_util": 0.12,
+ "max_model_len": 4096,
+ "offload_gib": 2.0,
+ "grid": "smoke_offload",
+ "grid_def": [
+  [
+   300,
+   1,
+   4,
+   [
+    "pinned",
+    "restore",
+    "replay"
+   ]
+  ]
+ ],
+ "reps": 2,
+ "workload_seed": 20261001,
+ "instr_tok": 50,
+ "out_tok": 16,
+ "server_seed": 0,
+ "theoretical_kv": {
+  "layers": 28,
+  "kv_heads": 8,
+  "head_dim": 128,
+  "elem_bytes": 2,
+  "bytes_per_token": 114688,
+  "torch_dtype": "bfloat16",
+  "quantization_config": null
+ },
+ "gpu_snapshot_before_launch": "0, 99 %, 13516 MiB, 71, 436.56 W, 2872 MHz\n1, 89 %, 13516 MiB, 69, 418.69 W, 2835 MHz\n2, 86 %, 13516 MiB, 64, 418.04 W, 2835 MHz\n3, 87 %, 13516 MiB, 67, 418.49 W, 2835 MHz",
+ "loadavg_before": [
+  5.3486328125,
+  20.05078125,
+  45.671875
+ ],
+ "serve_cmd": [
+  "/home/host/venvs/vllm/bin/vllm",
+  "serve",
+  "/home/host/models/Qwen/Qwen3-0.6B",
+  "--served-model-name",
+  "m",
+  "--host",
+  "127.0.0.1",
+  "--port",
+  "8190",
+  "--max-model-len",
+  "4096",
+  "--gpu-memory-utilization",
+  "0.12",
+  "--kv-cache-dtype",
+  "auto",
+  "--seed",
+  "0",
+  "--enable-prompt-tokens-details",
+  "--tensor-parallel-size",
+  "1",
+  "--enable-prefix-caching",
+  "--kv-offloading-size",
+  "2.0",
+  "--kv-offloading-backend",
+  "native",
+  "--enforce-eager"
+ ],
+ "ready_seconds": 39.05866599082947,
+ "server_log": {
+  "kv_cache_tokens": 20080,
+  "kv_cache_gib": 2.15,
+  "max_concurrency": "4.90",
+  "model_load_gib": 1.12,
+  "relevant_log_lines": [
+   "==== 2026-09-30T20:08:16.822+00:00 /home/host/venvs/vllm/bin/vllm serve /home/host/models/Qwen/Qwen3-0.6B --served-model-name m --host 127.0.0.1 --port 8190 --max-model-len 4096 --gpu-memory-utilization 0.12 --kv-cache-dtype auto --seed 0 --enable-prompt-tokens-details --tensor-parallel-size 1 --enable-prefix-caching --kv-offloading-size 2.0 --kv-offloading-backend native --enforce-eager",
+   "(APIServer pid=161553) INFO 09-30 20:08:27 [api_utils.py:286] non-default args: {'model_tag': '/home/host/models/Qwen/Qwen3-0.6B', 'enable_prompt_tokens_details': True, 'host': '127.0.0.1', 'port': 8190, 'model': '/home/host/models/Qwen/Qwen3-0.6B', 'max_model_len': 4096, 'enforce_eager': True, 'served_model_name': ['m'], 'gpu_memory_utilization': 0.12, 'enable_prefix_caching': True, 'kv_offloading_size': 2.0}",
+   "(EngineCore pid=161870) INFO 09-30 20:08:40 [core.py:123] Initializing a V1 LLM engine (v0.30.0) with config: model='/home/host/models/Qwen/Qwen3-0.6B', speculative_config=None, tokenizer='/home/host/models/Qwen/Qwen3-0.6B', skip_tokenizer_init=False, tokenizer_mode=auto, revision=None, tokenizer_revision=None, trust_remote_code=False, dtype=torch.bfloat16, max_seq_len=4096, download_dir=None, load_format=auto, tensor_parallel_size=1, pipeline_parallel_size=1, data_parallel_size=1, decode_context_parallel_size=1, dcp_comm_backend=ag_rs, disable_custom_all_reduce=False, quantization=None, quantization_config=None, enforce_eager=True, enable_return_routed_experts=False, kv_cache_dtype=auto, device_config=cuda, structured_outputs_config=StructuredOutputsConfig(backend='auto', disable_any_whitespace=False, disable_additional_properties=False, reasoning_parser='', reasoning_parser_plugin='', enable_in_reasoning=False), observability_config=ObservabilityConfig(show_hidden_metrics_for_version=None, otlp_traces_endpoint=None, collect_detailed_traces=None, per_request_spec_decode_metrics='none', kv_cache_metrics=False, kv_cache_metrics_sample=0.01, cudagraph_metrics=False, enable_layerwise_nvtx_tracing=False, enable_mfu_metrics=False, enable_mm_processor_stats=False, enable_logging_iteration_details=False, jit_monitor_mode='warn', jit_monitor_verbose=False), seed=0, served_model_name=m, enable_prefix_caching=True, enable_chunked_prefill=True, pooler_config=None, compilation_config={'mode': <CompilationMode.NONE: 0>, 'debug_dump_path': None, 'cache_dir': '', 'compile_cache_save_format': 'binary', 'backend': 'inductor', 'custom_ops': ['all'], 'ir_enable_torch_wrap': False, 'splitting_ops': [], 'compile_mm_encoder': False, 'cudagraph_mm_encoder': False, 'encoder_cudagraph_token_budgets': [], 'encoder_cudagraph_max_vision_items_per_batch': 0, 'encoder_cudagraph_max_frames_per_batch': None, 'compile_sizes': [], 'compile_ranges_endpoints': [2048], 'inductor_compile_config': {'enable_auto_functionalized_v2': False, 'combo_kernels': True, 'benchmark_combo_kernel': True}, 'inductor_passes': {}, 'cudagraph_mode': <CUDAGraphMode.NONE: 0>, 'cudagraph_num_of_warmups': 0, 'cudagraph_capture_sizes': [], 'cudagraph_copy_inputs': False, 'cudagraph_specialize_lora': True, 'use_inductor_graph_partition': False, 'pass_config': {'fuse_norm_quant': True, 'fuse_act_quant': True, 'fuse_attn_quant': False, 'enable_sp': False, 'fuse_gemm_comms': False, 'fuse_allreduce_rms': False, 'enable_qk_norm_rope_fusion': False, 'fuse_rope_kvcache_cat_mla': False, 'fuse_act_padding': False, 'fuse_qk_norm_rope_kvcache': False}, 'max_cudagraph_capture_size': 0, 'dynamic_shapes_config': {'type': <DynamicShapesType.BACKED: 'backed'>, 'evaluate_guards': False, 'assume_32_bit_indexing': False}, 'local_cache_dir': None, 'fast_moe_cold_start': False, 'static_all_moe_layers': []}, kernel_config=KernelConfig(ir_op_priority=IrOpPriorityConfig(rms_norm=['vllm_c', 'native'], fused_add_rms_norm=['vllm_c', 'native'], gelu_and_mul_sparse=['triton', 'native']), enable_flashinfer_autotune=True, enable_cutedsl_warmup=True, enable_jit_warmup=True, moe_backend='auto', sparse_indexer_topk_backend='auto', linear_backend='auto', linear_backend_per_quant=None)",
+   "(EngineCore pid=161870) INFO 09-30 20:08:47 [utils.py:320] Using LBHNC KV cache layout.",
+   "(EngineCore pid=161870) INFO 09-30 20:08:49 [gpu_worker.py:640] Available KV cache memory: 2.15 GiB",
+   "(EngineCore pid=161870) INFO 09-30 20:08:49 [kv_cache_utils.py:2395] GPU KV cache size: 20,080 tokens, Maximum concurrency for 4,096 tokens per request: 4.90x",
+   "(EngineCore pid=161870) INFO 09-30 20:08:49 [factory.py:62] Creating v1 connector with name: OffloadingConnector and engine_id: 94e1955d-667d-4e42-857b-aa97fe237c44",
+   "(EngineCore pid=161870) INFO 09-30 20:08:49 [factory.py:57] Creating offloading spec with name: CPUOffloadingSpec",
+   "(EngineCore pid=161870) INFO 09-30 20:08:49 [shared_offload_region.py:140] Created mmap file /dev/shm/vllm_offload_94e1955d-667d-4e42-857b-aa97fe237c44.mmap (2.15 GB)",
+   "(EngineCore pid=161870) INFO 09-30 20:08:49 [shared_offload_region.py:200] Unlinked mmap file /dev/shm/vllm_offload_94e1955d-667d-4e42-857b-aa97fe237c44.mmap",
+   "(EngineCore pid=161870) INFO 09-30 20:08:52 [gpu_worker.py:888] Free memory on device (17.67/31.36 GiB) on startup. Desired GPU memory utilization is (0.12, 3.76 GiB). Actual usage is 1.54 GiB for consumed memory (weights + non-torch), 0.08 GiB for peak activation, and 0.0 GiB for CUDAGraph memory. Replace gpu_memory_utilization config with `--kv-cache-memory=2147424687` (2.0 GiB) to fit into requested memory, or `--kv-cache-memory=17076376064` (15.9 GiB) to fully utilize gpu memory. Current kv cache memory in use is 2.15 GiB.",
+   "(EngineCore pid=161870) INFO 09-30 20:08:53 [core.py:379] init engine (profile, create kv cache, warmup model) took 6.06 s",
+   "(EngineCore pid=161870) INFO 09-30 20:08:53 [factory.py:62] Creating v1 connector with name: OffloadingConnector and engine_id: 94e1955d-667d-4e42-857b-aa97fe237c44",
+   "(EngineCore pid=161870) INFO 09-30 20:08:53 [factory.py:57] Creating offloading spec with name: CPUOffloadingSpec"
+  ]
+ },
+ "word_pool_size": 22349,
+ "api_probe": {
+  "token_ids_returned": true,
+  "completion_tokens": 16,
+  "cached_same_salt": 256,
+  "cached_other_salt": 0,
+  "cached_field_present": true,
+  "salt_isolates": true
+ },
+ "offload_probe": {
+  "reset_tries": 1,
+  "cached_after_gpu_reset": 512,
+  "restore_works": true
+ },
+ "finished_utc": "2026-09-30T20:09:19.159+00:00"
+}

@@ -1,0 +1,21 @@
+{
+  "time_beijing": "2026-10-03T06:12:57.095220+08:00",
+  "external_protocol_sha256": "3d350eeb398d32aee142137b8f225bf885c7e83eb50dd7c92f209954818d7fbc",
+  "m2_protocol_sha256": "06b9994b7f036a1406cd7ebd829426a9712a05a73b3edcdf837342b11cfd26b4",
+  "previous_queue": "X\tr260401_20261003_r1\ttimeout --signal=TERM --kill-after=90s 7200s bash /home/host/exp/r260401_20261003/scripts/run_r1_v2.sh\nX\tr260401_20261003_r2\ttimeout --signal=TERM --kill-after=90s 7200s bash /home/host/exp/r260401_20261003/scripts/run_r2_v2.sh\nX\tr260401_20261003_r3\ttimeout --signal=TERM --kill-after=90s 21600s bash /home/host/exp/r260401_20261003/scripts/run_r3_v2.sh\nX\tr260401_20261003_r4\ttimeout --signal=TERM --kill-after=90s 21600s bash /home/host/exp/r260401_20261003/scripts/run_r4_v2.sh\n",
+  "tasks": [
+    {
+      "tag": "r260401_20261003_external",
+      "kind": "X",
+      "action": "appended at tail",
+      "command": "X\tr260401_20261003_external\ttimeout --signal=TERM --kill-after=90s 43200s bash /home/host/exp/r260401_20261003/scripts/run_external_frozen.sh"
+    },
+    {
+      "tag": "r260401_20261003_m2_pipeline",
+      "kind": "X",
+      "action": "appended at tail",
+      "command": "X\tr260401_20261003_m2_pipeline\ttimeout --signal=TERM --kill-after=90s 172800s bash /home/host/exp/r260401_20261003/scripts/run_m2_v3.sh"
+    }
+  ],
+  "queue_after": "X\tr260401_20261003_r1\ttimeout --signal=TERM --kill-after=90s 7200s bash /home/host/exp/r260401_20261003/scripts/run_r1_v2.sh\nX\tr260401_20261003_r2\ttimeout --signal=TERM --kill-after=90s 7200s bash /home/host/exp/r260401_20261003/scripts/run_r2_v2.sh\nX\tr260401_20261003_r3\ttimeout --signal=TERM --kill-after=90s 21600s bash /home/host/exp/r260401_20261003/scripts/run_r3_v2.sh\nX\tr260401_20261003_r4\ttimeout --signal=TERM --kill-after=90s 21600s bash /home/host/exp/r260401_20261003/scripts/run_r4_v2.sh\nX\tr260401_20261003_external\ttimeout --signal=TERM --kill-after=90s 43200s bash /home/host/exp/r260401_20261003/scripts/run_external_frozen.sh\nX\tr260401_20261003_m2_pipeline\ttimeout --signal=TERM --kill-after=90s 172800s bash /home/host/exp/r260401_20261003/scripts/run_m2_v3.sh\n"
+}

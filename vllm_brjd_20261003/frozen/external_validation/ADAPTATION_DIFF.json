@@ -1,0 +1,110 @@
+{
+  "external_setup.sh": [
+    {
+      "old": "BASE_PY=\"$HOME/venvs/vllm/bin/python\"",
+      "new": "BASE_PY=\"/home/hxu/venvs/r260401_brjd_20261003/bin/python\"",
+      "count": 1
+    },
+    {
+      "old": "HERE=\"$(cd \"$(dirname \"$0\")\" && pwd)\"",
+      "new": "HERE=\"$(cd \"$(dirname \"$0\")\" && pwd)\"\nROOT=\"/home/hxu/exp/r260401_brjd_20261003\"\nexport R260401_CACHE_DIR=\"$ROOT/cache\" PYTHONIOENCODING=utf-8",
+      "count": 1
+    },
+    {
+      "old": "env_path=\"$HOME/venvs/r260401_${1}_20261003\"",
+      "new": "env_path=\"/home/hxu/venvs/r260401_${1}_brjd_20261003\"",
+      "count": 1
+    }
+  ],
+  "external_probe.py": [
+    {
+      "old": "default=os.path.expanduser(\"~/models/Qwen/Qwen3-8B\")",
+      "new": "default=\"/mnt/e/CodeBase-708a/061-working-paper/R260306-fractal-moe/.runtime-qwen-scale/8B\"",
+      "count": 1
+    },
+    {
+      "old": "from __future__ import annotations",
+      "new": "from __future__ import annotations\nBRJD_TASK_ROOT = \"/home/hxu/exp/r260401_brjd_20261003\"\nBRJD_MACHINE_LABEL = \"DESKTOP-BRJD313\"",
+      "count": 1
+    },
+    {
+      "old": "result={\"python\":sys.version,\"executable\":sys.executable,\"packages\":{}}",
+      "new": "result={\"python\":sys.version,\"executable\":sys.executable,\"packages\":{},\n        \"machine\":socket.gethostname(),\"machine_label\":BRJD_MACHINE_LABEL,\"task_root\":BRJD_TASK_ROOT}",
+      "count": 1
+    },
+    {
+      "old": "evidence={\"engine\":args.engine,\"status\":\"UNMEASURED\",\"kind\":\"compatibility_and_semantics_gate\",",
+      "new": "evidence={\"engine\":args.engine,\"status\":\"UNMEASURED\",\"kind\":\"compatibility_and_semantics_gate\",\n        \"machine\":socket.gethostname(),\"machine_label\":BRJD_MACHINE_LABEL,\"task_root\":BRJD_TASK_ROOT,",
+      "count": 1
+    }
+  ],
+  "external_rplus.py": [
+    {
+      "old": "default=os.path.expanduser(\"~/models/Qwen/Qwen3-8B\")",
+      "new": "default=\"/mnt/e/CodeBase-708a/061-working-paper/R260306-fractal-moe/.runtime-qwen-scale/8B\"",
+      "count": 1
+    },
+    {
+      "old": "from __future__ import annotations",
+      "new": "from __future__ import annotations\nBRJD_TASK_ROOT = \"/home/hxu/exp/r260401_brjd_20261003\"\nBRJD_MACHINE_LABEL = \"DESKTOP-BRJD313\"",
+      "count": 1
+    },
+    {
+      "old": "pathlib, signal, statistics, sys, time",
+      "new": "pathlib, signal, socket, statistics, sys, time",
+      "count": 1
+    },
+    {
+      "old": "return {\"engine\":client.engine,\"arm\":arm,\"tau0\":tau0,\"concurrency\":concurrency,\"depth\":depth,\"rep\":rep,",
+      "new": "return {\"engine\":client.engine,\"arm\":arm,\"tau0\":tau0,\"concurrency\":concurrency,\"depth\":depth,\"rep\":rep,\n        \"machine\":socket.gethostname(),\"machine_label\":BRJD_MACHINE_LABEL,\"task_root\":BRJD_TASK_ROOT,",
+      "count": 1
+    },
+    {
+      "old": "manifest={\"schema\":\"r260401-external-rplus-v2\",\"engine\":args.engine,\"arms\":arms,\"grids\":GRIDS,",
+      "new": "manifest={\"schema\":\"r260401-external-rplus-v2\",\"engine\":args.engine,\"arms\":arms,\"grids\":GRIDS,\n        \"machine\":socket.gethostname(),\"machine_label\":BRJD_MACHINE_LABEL,\"task_root\":BRJD_TASK_ROOT,",
+      "count": 1
+    },
+    {
+      "old": "evidence={\"engine\":args.engine,\"status\":\"UNMEASURED\",\"within_engine_only\":True,",
+      "new": "evidence={\"engine\":args.engine,\"status\":\"UNMEASURED\",\"within_engine_only\":True,\n        \"machine\":socket.gethostname(),\"machine_label\":BRJD_MACHINE_LABEL,\"task_root\":BRJD_TASK_ROOT,",
+      "count": 1
+    },
+    {
+      "old": "        evidence[\"gate_path\"]=args.gate; evidence[\"environment\"]=inspected_environment(args.engine)",
+      "new": "        if gate.get(\"machine\")!=socket.gethostname() or gate.get(\"machine_label\")!=BRJD_MACHINE_LABEL or gate.get(\"task_root\")!=BRJD_TASK_ROOT:\n            raise RuntimeError(\"BRJD requires a fresh compatibility gate on this machine and task root; archived host gates are not valid\")\n        evidence[\"gate_path\"]=args.gate; evidence[\"environment\"]=inspected_environment(args.engine)",
+      "count": 1
+    }
+  ],
+  "external_run.sh": [
+    {
+      "old": "BASE_PY=\"$HOME/venvs/vllm/bin/python\"",
+      "new": "BASE_PY=\"/home/hxu/venvs/r260401_brjd_20261003/bin/python\"",
+      "count": 1
+    },
+    {
+      "old": "HERE=\"$(cd \"$(dirname \"$0\")\" && pwd)\"",
+      "new": "HERE=\"$(cd \"$(dirname \"$0\")\" && pwd)\"\nROOT=\"/home/hxu/exp/r260401_brjd_20261003\"\nexport R260401_CACHE_DIR=\"$ROOT/cache\" PYTHONIOENCODING=utf-8",
+      "count": 1
+    },
+    {
+      "old": "MODEL=\"${3:-$HOME/models/Qwen/Qwen3-8B}\"",
+      "new": "MODEL=\"${3:-/mnt/e/CodeBase-708a/061-working-paper/R260306-fractal-moe/.runtime-qwen-scale/8B}\"",
+      "count": 1
+    },
+    {
+      "old": "ENV_PATH=\"$HOME/venvs/r260401_${ENGINE}_20261003\"",
+      "new": "ENV_PATH=\"/home/hxu/venvs/r260401_${ENGINE}_brjd_20261003\"",
+      "count": 1
+    },
+    {
+      "old": "import json,pathlib,sys",
+      "new": "import json,pathlib,socket,sys",
+      "count": 3
+    },
+    {
+      "old": "result={'status':'EXTERNAL_TASK_FINISHED'",
+      "new": "result={'machine':socket.gethostname(),'machine_label':'DESKTOP-BRJD313','task_root':'/home/hxu/exp/r260401_brjd_20261003','status':'EXTERNAL_TASK_FINISHED'",
+      "count": 1
+    }
+  ]
+}

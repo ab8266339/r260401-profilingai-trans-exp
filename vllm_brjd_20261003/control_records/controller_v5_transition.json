@@ -1,0 +1,70 @@
+{
+  "project_id": "R260401",
+  "time": "2026-10-03T08:15:29.990389+08:00",
+  "old_pid": 164028,
+  "old_create_time": 1790984179.492761,
+  "old_status": {
+    "schema_version": 1,
+    "queue_id": "r260401_brjd_20261003",
+    "machine": "DESKTOP-BRJD313",
+    "state": "waiting_for_R260306_complete",
+    "time": "2026-10-03T07:36:53.059941+08:00",
+    "controller_pid": 164028,
+    "active_job": "r260401_brjd_20261003_preflight",
+    "predecessor": {
+      "state": "running",
+      "size": "32B",
+      "command": [
+        "paged_worker.py",
+        "--size",
+        "32B",
+        "--arm",
+        "hsfn75",
+        "--cache-mib",
+        "1024",
+        "--gpu-limit-mib",
+        "16128",
+        "--fit-if-missing",
+        "--fit-batch",
+        "8"
+      ],
+      "log": "E:\\CodeBase-708a\\061-working-paper\\R260306-fractal-moe\\notes\\qwen_scale_20261003\\paged_results\\32B\\hsfn75_1024MiB_lru\\worker.log",
+      "utc": "2026-10-02T23:25:56Z"
+    },
+    "inventory": {
+      "foreign_processes": [
+        {
+          "pid": 204772,
+          "kind": "python_job",
+          "command": "C:\\Python313\\python.exe -u E:\\CodeBase-708a\\061-working-paper\\R260306-fractal-moe\\notes\\qwen_scale_20261003\\coordinator.py"
+        }
+      ],
+      "background_python_checks": [
+        {
+          "pid": 174456,
+          "kind": "existing_non_gpu_proxy_relay",
+          "command": "C:\\Users\\admin\\.workbuddy\\binaries\\python\\versions\\3.13.12\\python.exe proxy_relay_7891.py"
+        },
+        {
+          "pid": 195452,
+          "kind": "pinned_readonly_codex_thread_monitor",
+          "command": "C:\\Python313\\python.exe -u C:\\Users\\admin\\Documents\\Codex\\2026-10-03\\task\\watch_codex_thread.py --watch --interval 30"
+        }
+      ],
+      "gpu_total_mib": 32607.0,
+      "gpu_used_mib": 3151.0,
+      "gpu_utilization_percent": 7.0,
+      "cpu_percent": 12.9,
+      "available_ram_bytes": 322718511104
+    }
+  },
+  "stopped_status": {
+    "schema_version": 1,
+    "queue_id": "r260401_brjd_20261003",
+    "machine": "DESKTOP-BRJD313",
+    "state": "stopped_by_request",
+    "time": "2026-10-03T08:15:29.871613+08:00",
+    "controller_pid": 164028
+  },
+  "reason": "Reduce host-guard inventory cost below heartbeat lifetime; no measurement attempted."
+}

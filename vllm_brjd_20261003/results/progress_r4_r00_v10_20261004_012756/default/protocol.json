@@ -1,0 +1,82 @@
+{
+  "sha256": "28c57d38dec5cdbfaea4dacffab43e1793b17250676d2b0e7228f9903d5506e0",
+  "protocol": {
+    "schema": "r260401-brjd-native-v1",
+    "script_sha256": "6cef46f487768a0f9ddec351d9fe70beba9d289e1d7045611e77ecfb4ef5be4d",
+    "kvbench_sha256": "b97d57903229e5602f7a4e4bae367a5c0c9937144608cd7bc3e8cebce9194448",
+    "arguments": {
+      "task": "r4",
+      "model_key": "8B",
+      "model_path": "/mnt/e/CodeBase-708a/061-working-paper/R260306-fractal-moe/.runtime-qwen-scale/8B",
+      "gpus": "0",
+      "out_root": "/home/hxu/exp/r260401_brjd_20261003/results",
+      "port": 8180,
+      "tp": 1,
+      "kv_dtype": "auto",
+      "gpu_util": 0.8,
+      "max_model_len": 12288,
+      "kvbench_path": "/home/hxu/exp/r260401_brjd_20261003/scripts/kvbench.py",
+      "tau0": 3400,
+      "depth": 8,
+      "concurrency": 4,
+      "reps": 1,
+      "rep_start": 0,
+      "out_tokens": 128,
+      "block_size": 16,
+      "safety_margin": 0.05,
+      "attention_backend": "",
+      "token_capacity": "auto",
+      "uncap_limit": 2048,
+      "ready_timeout": 1800,
+      "idle_limit": 5,
+      "allow_shared": false,
+      "max_cell_attempts": 3,
+      "grids": [
+        [
+          3400,
+          4,
+          8
+        ],
+        [
+          900,
+          16,
+          8
+        ]
+      ],
+      "natural": false,
+      "exclusive": true,
+      "expected_capacity": 43328,
+      "group_rotation_order": [
+        "default",
+        "uncapped"
+      ],
+      "group_rotation_position": 0,
+      "offload_gib": 0,
+      "enforce_eager": false,
+      "extra": [
+        "--block-size",
+        "16",
+        "--num-gpu-blocks-override",
+        "2708"
+      ],
+      "run_tag": "rplus|8B|r4-default"
+    },
+    "arms": [
+      "R",
+      "A0"
+    ],
+    "grids": [
+      [
+        3400,
+        4,
+        8
+      ],
+      [
+        900,
+        16,
+        8
+      ]
+    ],
+    "reps": 1
+  }
+}

@@ -1,0 +1,137 @@
+{
+  "project_id": "R260401",
+  "task": "R3",
+  "archive_path": "W:\\ML\\ml-work\\R260401-profilingai-trans\\vllm_4gpu_20261003\\results\\completed_r3_20261003_081006",
+  "measurement_gate_pass": true,
+  "errors": [],
+  "runner_lines": [
+    "10-03 07:17:34 START [X] r260401_20261003_r3 gpus=[0, 1, 2, 3] pid=621086",
+    "10-03 08:06:35 END rc=0 [X] r260401_20261003_r3 gpus=[0, 1, 2, 3]"
+  ],
+  "raw_file_count": 65,
+  "raw_bytes": 18689809,
+  "all_raw_SHA256_verified": true,
+  "cross_precision_any_drift": true,
+  "cross_precision_mismatched_pairs": 20,
+  "identical_trace_pure_latency_attribution_permitted": false,
+  "interpretation": "Measured paired end-to-end precision differences at equal actual token capacity and common TRITON backend. Generated trajectories drift; do not claim identical-prompt pure KV-precision causality or mechanism equivalence.",
+  "actual_capacity_tokens": 71856,
+  "configurations": {
+    "auto": {
+      "cells": 20,
+      "sessions": 80,
+      "stages": 2560,
+      "actual_capacity_tokens": 71856,
+      "invalid_attempts": [],
+      "failed_artifacts": [],
+      "means": {
+        "A0": 50.79642527092583,
+        "R": 87.56837479850438
+      },
+      "first_shutdown_line_1based": 8413
+    },
+    "fp8": {
+      "cells": 20,
+      "sessions": 80,
+      "stages": 2560,
+      "actual_capacity_tokens": 71856,
+      "invalid_attempts": [],
+      "failed_artifacts": [],
+      "means": {
+        "A0": 48.699139134126746,
+        "R": 83.53967531107556
+      },
+      "first_shutdown_line_1based": 8171
+    }
+  },
+  "shutdown_errors": {
+    "auto": {
+      "pre": 0,
+      "post": 0
+    },
+    "fp8": {
+      "pre": 0,
+      "post": 8
+    }
+  },
+  "audit_sha256": "01559e37bab5677d0b39f01f1a8db6272ae1811e384fbd2fdf7f9b0bb337fdf5",
+  "precision_summary": {
+    "status": "measured_paired_precision",
+    "comparisons": {
+      "A0": {
+        "pipeline_mean_seconds": {
+          "n": 10,
+          "mean": -2.0972861367990845,
+          "ci95": [
+            -2.1403204764468056,
+            -2.0542517971513634
+          ],
+          "status": "resolved_difference",
+          "wilcoxon_two_sided_p": 0.001953125,
+          "claim_limit": "A CI containing zero is unresolved, not proof of equivalence or mechanism identity."
+        },
+        "ttft_mean_seconds": {
+          "n": 10,
+          "mean": 0.0036270352733936305,
+          "ci95": [
+            0.0026406790296507653,
+            0.004613391517136496
+          ],
+          "status": "resolved_difference",
+          "wilcoxon_two_sided_p": 0.001953125,
+          "claim_limit": "A CI containing zero is unresolved, not proof of equivalence or mechanism identity."
+        },
+        "decode_mean_seconds": {
+          "n": 10,
+          "mean": -0.06880446096702145,
+          "ci95": [
+            -0.06975015951160246,
+            -0.06785876242244043
+          ],
+          "status": "resolved_difference",
+          "wilcoxon_two_sided_p": 0.001953125,
+          "claim_limit": "A CI containing zero is unresolved, not proof of equivalence or mechanism identity."
+        },
+        "identical_generated_token_paths": false,
+        "interpretation": "FP8-minus-bf16; same capacity/backend configuration; output drift prevents identical-trace latency attribution"
+      },
+      "R": {
+        "pipeline_mean_seconds": {
+          "n": 10,
+          "mean": -4.028699487428821,
+          "ci95": [
+            -4.066482203879602,
+            -3.9909167709780413
+          ],
+          "status": "resolved_difference",
+          "wilcoxon_two_sided_p": 0.001953125,
+          "claim_limit": "A CI containing zero is unresolved, not proof of equivalence or mechanism identity."
+        },
+        "ttft_mean_seconds": {
+          "n": 10,
+          "mean": -0.032164008608560835,
+          "ci95": [
+            -0.03424475597364624,
+            -0.030083261243475424
+          ],
+          "status": "resolved_difference",
+          "wilcoxon_two_sided_p": 0.001953125,
+          "claim_limit": "A CI containing zero is unresolved, not proof of equivalence or mechanism identity."
+        },
+        "decode_mean_seconds": {
+          "n": 10,
+          "mean": -0.09371713922321305,
+          "ci95": [
+            -0.09591419398799485,
+            -0.09152008445843125
+          ],
+          "status": "resolved_difference",
+          "wilcoxon_two_sided_p": 0.001953125,
+          "claim_limit": "A CI containing zero is unresolved, not proof of equivalence or mechanism identity."
+        },
+        "identical_generated_token_paths": false,
+        "interpretation": "FP8-minus-bf16; same capacity/backend configuration; output drift prevents identical-trace latency attribution"
+      }
+    }
+  }
+}

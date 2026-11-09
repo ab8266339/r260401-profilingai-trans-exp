@@ -1,0 +1,90 @@
+{
+  "project_id": "R260401",
+  "time": "2026-10-03T20:09:33.453107+08:00",
+  "old_pid": 194660,
+  "old_create_time": 1790986530.0580876,
+  "old_status": {
+    "schema_version": 1,
+    "queue_id": "r260401_brjd_20261003",
+    "machine": "DESKTOP-BRJD313",
+    "state": "waiting_for_R260306_complete",
+    "time": "2026-10-03T08:15:32.620166+08:00",
+    "controller_pid": 194660,
+    "active_job": "r260401_brjd_20261003_preflight",
+    "predecessor": {
+      "state": "stopped_by_request",
+      "utc": "2026-10-03T00:15:29Z"
+    },
+    "inventory": {
+      "foreign_processes": [
+        {
+          "pid": 132336,
+          "kind": "model_server",
+          "name": "llama-server.exe"
+        },
+        {
+          "pid": 198900,
+          "kind": "python_job",
+          "command": "C:\\Python313\\python.exe R260309-fsb/experiments/revision_20261003/finality_campaign.py"
+        },
+        {
+          "pid": 59528,
+          "kind": "python_job",
+          "command": "C:\\Python313\\python.exe D:\\CodeBase-708a\\061-working-paper\\R260309-fsb\\experiments\\revision_20261003\\run_isolated_model.py D:\\CodeBase-708a\\061-working-paper\\R260309-fsb\\experiments\\revision_20261003\\finality_campaign.py model"
+        },
+        {
+          "pid": 64908,
+          "kind": "python_job",
+          "command": "C:\\Python313\\python.exe D:\\CodeBase-708a\\061-working-paper\\R260309-fsb\\experiments\\revision_20261003\\finality_campaign.py model"
+        },
+        {
+          "pid": 181252,
+          "kind": "python_job",
+          "command": "C:\\Python313\\python.exe D:\\CodeBase-708a\\061-working-paper\\R260309-fsb\\experiments\\revision_20261003\\run_finality_experiment.py D:\\CodeBase-708a\\061-working-paper\\R260309-fsb\\experiments\\revision_20261003\\memory_pipeline.py --queries 100 --out C:\\Users\\admin\\AppData\\Local\\Temp\\fsb-finality-campaign-s8f2l4v_\\memory_finality"
+        },
+        {
+          "pid": 57960,
+          "kind": "python_job",
+          "command": "C:\\Python313\\python.exe D:\\CodeBase-708a\\061-working-paper\\R260309-fsb\\experiments\\revision_20261003\\memory_pipeline.py --queries 100 --out C:\\Users\\admin\\AppData\\Local\\Temp\\fsb-finality-campaign-s8f2l4v_\\memory_finality"
+        },
+        {
+          "pid": 203092,
+          "kind": "model_server",
+          "name": "llama-server.exe"
+        },
+        {
+          "pid": 199984,
+          "kind": "python_job",
+          "command": "C:\\Python313\\python.exe R260309-fsb/experiments/revision_20261003/finality_accounting.py"
+        },
+        {
+          "pid": 179564,
+          "kind": "python_job",
+          "command": "C:\\Python313\\python.exe R260309-fsb/experiments/revision_20261003/verify_finality_client.py"
+        }
+      ],
+      "background_python_checks": [
+        {
+          "pid": 174456,
+          "kind": "existing_non_gpu_proxy_relay",
+          "command": "C:\\Users\\admin\\.workbuddy\\binaries\\python\\versions\\3.13.12\\python.exe proxy_relay_7891.py"
+        }
+      ],
+      "process_count": 695,
+      "python_candidates": 9,
+      "gpu_total_mib": 32607.0,
+      "gpu_used_mib": 13916.0,
+      "gpu_utilization_percent": 0.0,
+      "cpu_percent": 15.9,
+      "available_ram_bytes": 298340007936
+    }
+  },
+  "active": {
+    "controller": "controller_v7.py",
+    "queue": "queue_v7.json",
+    "manifest": "FILE_MANIFEST_v7.json",
+    "manifest_sha256": "70242a08c0a3bce39302d291d3647d7f68bcdde523e83d84931a21ed515823ac"
+  },
+  "user_instruction": "优先做你的这个",
+  "local_measurement_attempts": 0
+}

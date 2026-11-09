@@ -1,0 +1,68 @@
+{
+  "sha256": "cc3cc70773a390275acce594db5b93abf5ec26a6f8f93ffdccb51ccf5399a4a9",
+  "protocol": {
+    "schema": "r260401-rplus-v1",
+    "script_sha256": "95d812990a140f078a6edcb8185a2b359301c7fe9864ccd844948fdae1e85b66",
+    "kvbench_sha256": "45745354a655134fd98f396cdfe163f913fea2fc59f68cbb27d07f0cdf096688",
+    "arguments": {
+      "task": "r2",
+      "model_key": "qwen3_8b",
+      "model_path": "/home/host/models/Qwen/Qwen3-8B",
+      "gpus": "0",
+      "out_root": "/home/host/exp/r260401_20261003/results/rplus_v2",
+      "port": 18212,
+      "tp": 1,
+      "kv_dtype": "auto",
+      "gpu_util": 0.9,
+      "max_model_len": 12288,
+      "kvbench_path": "/home/host/exp/r260401_20261003/scripts/kvbench.py",
+      "tau0": 3400,
+      "depth": 8,
+      "concurrency": 4,
+      "reps": 10,
+      "rep_start": 0,
+      "out_tokens": 128,
+      "block_size": 16,
+      "safety_margin": 0.05,
+      "attention_backend": "",
+      "token_capacity": "71840",
+      "uncap_limit": 0,
+      "ready_timeout": 1800,
+      "idle_limit": 5,
+      "allow_shared": false,
+      "max_cell_attempts": 3,
+      "parallel_reference": "/home/host/exp/r260401_20261003/rd_r0_baseline.json",
+      "grids": [
+        [
+          3400,
+          4,
+          8
+        ]
+      ],
+      "natural": true,
+      "exclusive": true,
+      "expected_capacity": 71840,
+      "offload_gib": 0,
+      "enforce_eager": false,
+      "extra": [
+        "--block-size",
+        "16",
+        "--num-gpu-blocks-override",
+        "4490"
+      ],
+      "run_tag": "rplus|qwen3_8b|r2"
+    },
+    "arms": [
+      "A0",
+      "R"
+    ],
+    "grids": [
+      [
+        3400,
+        4,
+        8
+      ]
+    ],
+    "reps": 10
+  }
+}

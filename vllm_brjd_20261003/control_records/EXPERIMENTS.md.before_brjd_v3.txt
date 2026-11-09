@@ -1,0 +1,18 @@
+# R260401 实验仓库
+
+本项目的实验代码、配置、运行日志和结果已从 Synology Drive 工作树迁出。请勿在本目录重新创建 `simulation/` 或运行实验。
+
+| 项 | 位置 |
+|---|---|
+| 实验工作区 | `W:\ML\ml-work\R260401-profilingai-trans\`（NAS，经 `DESKTOP-BRJD313` 访问；2026-09-16 已从 E 盘迁移） |
+| NAS Git | `ssh://nas-git/volume1/Git/r260401-profilingai-trans-exp.git` |
+| 初始迁移提交 | `a69d69406f8143b4dd27d3246719b944ecf31fa1` |
+| 原目录可恢复备份 | NAS `CodeBase/#recycle/R260401-profilingai-trans-simulation-migrated-20260825/` |
+
+2026-08-25 迁移时核验 506 个源文件、359,079,826 字节，D/E 两端逐文件 SHA-256 一致；远端仓库通过 `git fsck --full`。Python `__pycache__`、Synology `@eaDir` 和其他管理规范明确排除的缓存未入库。
+
+论文需要引用实验版本时，记录仓库名和 commit 哈希。只把论文直接消费的小型汇总文件显式回灌到论文树，不在 Synology Drive 下运行批处理、仿真、编译或依赖安装。
+
+## 2026-10-03 四卡机追加实验
+
+用户已授权直接排任务。冻结包及预检/队列证据保存在NAS `vllm_4gpu_20261003/`，远端新根 `/home/host/exp/r260401_20261003`（四卡机）。六项正式任务均按X整机独占入队，当前状态及科学解释边界见 [排队记录](notes/design_review_20261001/FOUR_GPU_QUEUE_20261003.md)。论文同步树只保存小型状态摘要，源码和完整结果保留在实验工作区。

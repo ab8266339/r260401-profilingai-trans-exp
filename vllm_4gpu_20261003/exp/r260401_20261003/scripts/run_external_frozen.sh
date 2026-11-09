@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+set -euo pipefail
+ROOT=/home/host/exp/r260401_20261003
+cd "$ROOT"
+export PATH="$HOME/.local/bin:$PATH" PYTHONIOENCODING=utf-8 R260401_CACHE_DIR="$ROOT/cache" OPENBLAS_NUM_THREADS=1
+GPU="${CUDA_VISIBLE_DEVICES%%,*}"
+/home/host/venvs/vllm/bin/python - "$ROOT/EXTERNAL_EXECUTION_PROTOCOL.json" <<'VERIFY'
+import hashlib,json,pathlib,sys
+root=pathlib.Path('/home/host/exp/r260401_20261003');p=json.loads(pathlib.Path(sys.argv[1]).read_text(encoding='utf-8'))
+for name,expected in p['dependencies'].items():assert hashlib.sha256((root/name).read_bytes()).hexdigest()==expected,name
+assert (root/'results/preflight/qwen3_8b/auto_capacity/DONE').exists()
+VERIFY
+exec bash "$ROOT/scripts/external_run.sh" "$GPU" "$ROOT/results/external" /home/host/models/Qwen/Qwen3-8B 1200 10

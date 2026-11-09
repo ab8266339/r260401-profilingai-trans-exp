@@ -1,0 +1,33 @@
+{
+  "time_beijing": "2026-10-03T06:02:43.203192+08:00",
+  "protocol_sha256": "a83b12a2b68578e4dff6783da97bf16ee0e7aff9802a39bdaee3ce0a9b89f300",
+  "previous_queue": "X\tr260401_20261003_r1\ttimeout --signal=TERM --kill-after=90s 7200s bash /home/host/exp/r260401_20261003/scripts/run_r1.sh\nX\tr260401_20261003_r2\ttimeout --signal=TERM --kill-after=90s 7200s bash /home/host/exp/r260401_20261003/scripts/run_r2.sh\n",
+  "tasks": [
+    {
+      "tag": "r260401_20261003_r1",
+      "action": "updated own pending command in same FIFO position",
+      "previous_command": "X\tr260401_20261003_r1\ttimeout --signal=TERM --kill-after=90s 7200s bash /home/host/exp/r260401_20261003/scripts/run_r1.sh\n",
+      "command": "X\tr260401_20261003_r1\ttimeout --signal=TERM --kill-after=90s 7200s bash /home/host/exp/r260401_20261003/scripts/run_r1_v2.sh"
+    },
+    {
+      "tag": "r260401_20261003_r2",
+      "action": "updated own pending command in same FIFO position",
+      "previous_command": "X\tr260401_20261003_r2\ttimeout --signal=TERM --kill-after=90s 7200s bash /home/host/exp/r260401_20261003/scripts/run_r2.sh\n",
+      "command": "X\tr260401_20261003_r2\ttimeout --signal=TERM --kill-after=90s 7200s bash /home/host/exp/r260401_20261003/scripts/run_r2_v2.sh"
+    },
+    {
+      "tag": "r260401_20261003_r3",
+      "action": "appended at queue tail",
+      "previous_command": null,
+      "command": "X\tr260401_20261003_r3\ttimeout --signal=TERM --kill-after=90s 21600s bash /home/host/exp/r260401_20261003/scripts/run_r3_v2.sh"
+    },
+    {
+      "tag": "r260401_20261003_r4",
+      "action": "appended at queue tail",
+      "previous_command": null,
+      "command": "X\tr260401_20261003_r4\ttimeout --signal=TERM --kill-after=90s 21600s bash /home/host/exp/r260401_20261003/scripts/run_r4_v2.sh"
+    }
+  ],
+  "queue_after": "X\tr260401_20261003_r1\ttimeout --signal=TERM --kill-after=90s 7200s bash /home/host/exp/r260401_20261003/scripts/run_r1_v2.sh\nX\tr260401_20261003_r2\ttimeout --signal=TERM --kill-after=90s 7200s bash /home/host/exp/r260401_20261003/scripts/run_r2_v2.sh\nX\tr260401_20261003_r3\ttimeout --signal=TERM --kill-after=90s 21600s bash /home/host/exp/r260401_20261003/scripts/run_r3_v2.sh\nX\tr260401_20261003_r4\ttimeout --signal=TERM --kill-after=90s 21600s bash /home/host/exp/r260401_20261003/scripts/run_r4_v2.sh\n",
+  "M2_status": "uploaded; append after external compatibility/bench task"
+}

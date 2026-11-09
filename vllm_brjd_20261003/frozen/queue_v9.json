@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "queue_id": "r260401_brjd_20261003",
+  "machine": "DESKTOP-BRJD313",
+  "created_beijing": "2026-10-03T07:23:59.451122+08:00",
+  "predecessor_project": "R260306",
+  "predecessor_status_file": "E:\\CodeBase-708a\\061-working-paper\\R260306-fractal-moe\\notes\\qwen_scale_20261003\\results\\queue_status.json",
+  "predecessor_required_state": "paused_or_complete_by_user_priority",
+  "idle_stability_s": 30,
+  "gpu_used_limit_mib": 6000,
+  "windows_cpu_experiment_policy": "no other Python experiment or llama-server process",
+  "gpu_policy": "one exclusive BRJD GPU; preflight then three pending formal jobs serial",
+  "jobs": [
+    {
+      "project_id": "R260401",
+      "tag": "r260401_brjd_20261003_preflight",
+      "script": "scripts/setup_brjd_v3.sh",
+      "timeout_s": 4200
+    },
+    {
+      "project_id": "R260401",
+      "tag": "r260401_brjd_20261003_r4",
+      "script": "scripts/run_r4_brjd_v3.sh",
+      "timeout_s": 22000
+    },
+    {
+      "project_id": "R260401",
+      "tag": "r260401_brjd_20261003_external",
+      "script": "scripts/run_external_brjd.sh",
+      "timeout_s": 43200
+    },
+    {
+      "project_id": "R260401",
+      "tag": "r260401_brjd_20261003_m2_pipeline",
+      "script": "scripts/run_m2_brjd_v3.sh",
+      "timeout_s": 172800
+    }
+  ],
+  "R1_machine": "host / four-GPU server; unchanged same-machine replication",
+  "results_root_linux": "/home/hxu/exp/r260401_brjd_20261003/results",
+  "nas_archive": "W:\\ML\\ml-work\\R260401-profilingai-trans\\vllm_brjd_20261003",
+  "control_version": 9,
+  "remote_retained_jobs": {
+    "r1": "remote rc0 at 07:09:34 Beijing",
+    "r2": "remote rc0 at 07:17:34 Beijing",
+    "r3": "remote started 07:17:34 Beijing; do not duplicate locally"
+  },
+  "gpu_memory_utilization": 0.8,
+  "protocol": "BRJD_EXECUTION_PROTOCOL_v9.json",
+  "maintenance": "Human user prioritizes R260401; complete gate replaced by paused-or-complete gate; all science unchanged.",
+  "priority_authorization": "USER_PRIORITY_20261003.json"
+}

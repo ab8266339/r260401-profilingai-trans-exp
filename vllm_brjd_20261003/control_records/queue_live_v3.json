@@ -1,0 +1,99 @@
+{
+  "project_id": "R260401",
+  "time": "2026-10-03T07:27:51.451099+08:00",
+  "controller_pid": 59220,
+  "controller_create_time": 1790983483.3653016,
+  "state": {
+    "schema_version": 1,
+    "queue_id": "r260401_brjd_20261003",
+    "machine": "DESKTOP-BRJD313",
+    "state": "waiting_for_R260306_complete",
+    "time": "2026-10-03T07:25:19.331817+08:00",
+    "controller_pid": 59220,
+    "active_job": "r260401_brjd_20261003_preflight",
+    "predecessor": {
+      "state": "checking_idle_stability",
+      "size": "4B",
+      "utilization_percent": 5.0,
+      "utc": "2026-10-02T23:24:38Z"
+    },
+    "inventory": {
+      "foreign_processes": [
+        {
+          "pid": 195452,
+          "kind": "python_job",
+          "command": "C:\\Python313\\python.exe -u C:\\Users\\admin\\Documents\\Codex\\2026-10-03\\task\\watch_codex_thread.py --watch --interval 30"
+        },
+        {
+          "pid": 199752,
+          "kind": "python_job",
+          "command": "C:\\Python313\\python.exe -u E:\\CodeBase-708a\\061-working-paper\\R260306-fractal-moe\\notes\\qwen_scale_20261003\\coordinator.py"
+        }
+      ],
+      "background_python_checks": [
+        {
+          "pid": 174456,
+          "kind": "existing_non_gpu_proxy_relay",
+          "command": "C:\\Users\\admin\\.workbuddy\\binaries\\python\\versions\\3.13.12\\python.exe proxy_relay_7891.py"
+        }
+      ],
+      "gpu_total_mib": 32607.0,
+      "gpu_used_mib": 3154.0,
+      "gpu_utilization_percent": 5.0,
+      "cpu_percent": 13.8,
+      "available_ram_bytes": 317809881088
+    }
+  },
+  "guard": {
+    "schema_version": 1,
+    "queue_id": "r260401_brjd_20261003",
+    "unix_time": 1790983654.5739627,
+    "status": "blocked",
+    "active_job": "r260401_brjd_20261003_preflight",
+    "machine": "DESKTOP-BRJD313",
+    "proxy_url": null,
+    "foreign_processes": [
+      {
+        "pid": 195452,
+        "kind": "python_job",
+        "command": "C:\\Python313\\python.exe -u C:\\Users\\admin\\Documents\\Codex\\2026-10-03\\task\\watch_codex_thread.py --watch --interval 30"
+      },
+      {
+        "pid": 204772,
+        "kind": "python_job",
+        "command": "C:\\Python313\\python.exe -u E:\\CodeBase-708a\\061-working-paper\\R260306-fractal-moe\\notes\\qwen_scale_20261003\\coordinator.py"
+      },
+      {
+        "pid": 207128,
+        "kind": "python_job",
+        "command": "C:\\Python313\\python.exe E:\\CodeBase-708a\\061-working-paper\\R260306-fractal-moe\\notes\\qwen_scale_20261003\\paged_worker.py --size 32B --arm hsfn75 --cache-mib 1024 --gpu-limit-mib 16128 --fit-if-missing --fit-batch 8 --allow-busy"
+      }
+    ],
+    "background_python_checks": [
+      {
+        "pid": 174456,
+        "kind": "existing_non_gpu_proxy_relay",
+        "command": "C:\\Users\\admin\\.workbuddy\\binaries\\python\\versions\\3.13.12\\python.exe proxy_relay_7891.py"
+      }
+    ],
+    "gpu_total_mib": 32607.0,
+    "gpu_used_mib": 20490.0,
+    "gpu_utilization_percent": 47.0,
+    "cpu_percent": 30.2,
+    "available_ram_bytes": 253682933760
+  },
+  "local_jobs": [
+    "preflight",
+    "R4",
+    "external",
+    "M2"
+  ],
+  "remote_jobs": {
+    "R1": "END rc0 07:09:34 Beijing",
+    "R2": "END rc0 07:17:34 Beijing",
+    "R3": "START 07:17:34 Beijing; still running at transfer"
+  },
+  "automation_id": "r260401-brjd",
+  "automation_interval_minutes": 30,
+  "history_exists": false
+}

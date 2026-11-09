@@ -1,0 +1,67 @@
+{
+  "project_id": "R260401",
+  "time": "2026-10-03T07:37:54.017691+08:00",
+  "state": "waiting_for_R260306_complete",
+  "controller_pid": 164028,
+  "controller_create_time": 1790984179.492761,
+  "predecessor": {
+    "state": "running",
+    "size": "32B",
+    "command": [
+      "paged_worker.py",
+      "--size",
+      "32B",
+      "--arm",
+      "hsfn75",
+      "--cache-mib",
+      "1024",
+      "--gpu-limit-mib",
+      "16128",
+      "--fit-if-missing",
+      "--fit-batch",
+      "8"
+    ],
+    "log": "E:\\CodeBase-708a\\061-working-paper\\R260306-fractal-moe\\notes\\qwen_scale_20261003\\paged_results\\32B\\hsfn75_1024MiB_lru\\worker.log",
+    "utc": "2026-10-02T23:36:44Z"
+  },
+  "guard": {
+    "schema_version": 1,
+    "queue_id": "r260401_brjd_20261003",
+    "unix_time": 1790984244.6233404,
+    "status": "blocked",
+    "active_job": "r260401_brjd_20261003_preflight",
+    "machine": "DESKTOP-BRJD313",
+    "proxy_url": null,
+    "foreign_processes": [
+      {
+        "pid": 126268,
+        "kind": "python_job",
+        "command": "C:\\Python313\\python.exe E:\\CodeBase-708a\\061-working-paper\\R260306-fractal-moe\\notes\\qwen_scale_20261003\\paged_worker.py --size 32B --arm hsfn75 --cache-mib 1024 --gpu-limit-mib 16128 --fit-if-missing --fit-batch 8 --allow-busy"
+      },
+      {
+        "pid": 204772,
+        "kind": "python_job",
+        "command": "C:\\Python313\\python.exe -u E:\\CodeBase-708a\\061-working-paper\\R260306-fractal-moe\\notes\\qwen_scale_20261003\\coordinator.py"
+      }
+    ],
+    "background_python_checks": [
+      {
+        "pid": 174456,
+        "kind": "existing_non_gpu_proxy_relay",
+        "command": "C:\\Users\\admin\\.workbuddy\\binaries\\python\\versions\\3.13.12\\python.exe proxy_relay_7891.py"
+      },
+      {
+        "pid": 195452,
+        "kind": "pinned_readonly_codex_thread_monitor",
+        "command": "C:\\Python313\\python.exe -u C:\\Users\\admin\\Documents\\Codex\\2026-10-03\\task\\watch_codex_thread.py --watch --interval 30"
+      }
+    ],
+    "gpu_total_mib": 32607.0,
+    "gpu_used_mib": 18228.0,
+    "gpu_utilization_percent": 8.0,
+    "cpu_percent": 17.6,
+    "available_ram_bytes": 285711835136
+  },
+  "history_exists": false,
+  "maintenance": "Read-only watcher false-positive corrected; no experimental code or parameter changed."
+}

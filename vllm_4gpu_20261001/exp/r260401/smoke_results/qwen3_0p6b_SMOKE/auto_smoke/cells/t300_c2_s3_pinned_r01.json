@@ -1,0 +1,225 @@
+{
+ "cell": "t300_c2_s3_pinned_r01",
+ "model_key": "qwen3_0p6b_SMOKE",
+ "kv_dtype": "auto",
+ "grid": "smoke",
+ "offload_gib": 0,
+ "tp": 1,
+ "gpus": "3",
+ "tau0": 300,
+ "conc": 2,
+ "stages": 3,
+ "arm": "pinned",
+ "rep": 1,
+ "arm_position": 1,
+ "workload_seed": 20261001,
+ "instr_tok": 50,
+ "out_tok": 16,
+ "t_wall_start_utc": "2026-09-30T20:06:32.124+00:00",
+ "t_wall_end_utc": "2026-09-30T20:06:33.201+00:00",
+ "pre_reset_tries": 1,
+ "gpu_snapshot_start": "0, 93 %, 13516 MiB, 67, 452.30 W, 2865 MHz\n1, 95 %, 13516 MiB, 68, 436.10 W, 2835 MHz\n2, 100 %, 13516 MiB, 69, 431.29 W, 2835 MHz\n3, 95 %, 18207 MiB, 69, 411.12 W, 2827 MHz",
+ "loadavg_start": [
+  7.341796875,
+  26.4521484375,
+  50.564453125
+ ],
+ "gpu_snapshot_end": "0, 92 %, 13516 MiB, 69, 451.64 W, 2865 MHz\n1, 100 %, 13516 MiB, 71, 436.18 W, 2842 MHz\n2, 92 %, 13516 MiB, 69, 424.13 W, 2835 MHz\n3, 93 %, 18207 MiB, 68, 395.22 W, 2842 MHz",
+ "loadavg_end": [
+  7.341796875,
+  26.4521484375,
+  50.564453125
+ ],
+ "sessions": [
+  {
+   "sess": 0,
+   "stages": [
+    {
+     "t_start": 25399.313531633,
+     "t_end": 25399.654405425,
+     "ttft": 0.07382037299976218,
+     "e2e": 0.3408737919999112,
+     "prompt_tokens": 350,
+     "completion_tokens": 16,
+     "cached_tokens": 0,
+     "n_out_ids": 16,
+     "n_chunks": 16,
+     "stage": 1,
+     "sent_prompt_len": 350,
+     "restore_reset_tries": null,
+     "out_sha1": "c5ed156f0d5d"
+    },
+    {
+     "t_start": 25399.654929124,
+     "t_end": 25399.953750343,
+     "ttft": 0.06639701799940667,
+     "e2e": 0.29882121899936465,
+     "prompt_tokens": 416,
+     "completion_tokens": 16,
+     "cached_tokens": 352,
+     "n_out_ids": 16,
+     "n_chunks": 15,
+     "stage": 2,
+     "sent_prompt_len": 416,
+     "restore_reset_tries": null,
+     "out_sha1": "9e1bac1d044b"
+    },
+    {
+     "t_start": 25399.95432532,
+     "t_end": 25400.252545337,
+     "ttft": 0.06594970500009367,
+     "e2e": 0.2982200170008582,
+     "prompt_tokens": 482,
+     "completion_tokens": 16,
+     "cached_tokens": 416,
+     "n_out_ids": 16,
+     "n_chunks": 16,
+     "stage": 3,
+     "sent_prompt_len": 482,
+     "restore_reset_tries": null,
+     "out_sha1": "10794a897782"
+    }
+   ],
+   "ctx_bytes": {
+    "1": {
+     "tokens": 366,
+     "utf8_bytes": 2618
+    },
+    "2": {
+     "tokens": 432,
+     "utf8_bytes": 3005
+    },
+    "3": {
+     "tokens": 498,
+     "utf8_bytes": 3417
+    }
+   }
+  },
+  {
+   "sess": 1,
+   "stages": [
+    {
+     "t_start": 25399.314376894,
+     "t_end": 25399.65311135,
+     "ttft": 0.09747587700258009,
+     "e2e": 0.33873445599965635,
+     "prompt_tokens": 350,
+     "completion_tokens": 16,
+     "cached_tokens": 0,
+     "n_out_ids": 16,
+     "n_chunks": 15,
+     "stage": 1,
+     "sent_prompt_len": 350,
+     "restore_reset_tries": null,
+     "out_sha1": "1439cfcb2217"
+    },
+    {
+     "t_start": 25399.653697384,
+     "t_end": 25399.952454196,
+     "ttft": 0.0483103199985635,
+     "e2e": 0.2987568120006472,
+     "prompt_tokens": 416,
+     "completion_tokens": 16,
+     "cached_tokens": 352,
+     "n_out_ids": 16,
+     "n_chunks": 16,
+     "stage": 2,
+     "sent_prompt_len": 416,
+     "restore_reset_tries": null,
+     "out_sha1": "78b292603227"
+    },
+    {
+     "t_start": 25399.953075664,
+     "t_end": 25400.250776559,
+     "ttft": 0.0483687479973014,
+     "e2e": 0.29770089500016184,
+     "prompt_tokens": 482,
+     "completion_tokens": 16,
+     "cached_tokens": 416,
+     "n_out_ids": 16,
+     "n_chunks": 16,
+     "stage": 3,
+     "sent_prompt_len": 482,
+     "restore_reset_tries": null,
+     "out_sha1": "51abf965ee7e"
+    }
+   ],
+   "ctx_bytes": {
+    "1": {
+     "tokens": 366,
+     "utf8_bytes": 2655
+    },
+    "2": {
+     "tokens": 432,
+     "utf8_bytes": 3060
+    },
+    "3": {
+     "tokens": 498,
+     "utf8_bytes": 3512
+    }
+   }
+  }
+ ],
+ "poll_keys": [
+  "vllm:kv_cache_usage_perc",
+  "vllm:num_requests_running",
+  "vllm:num_requests_waiting",
+  "vllm:prefix_cache_queries_total",
+  "vllm:prefix_cache_hits_total",
+  "vllm:external_prefix_cache_hits_total",
+  "vllm:num_preemptions_total"
+ ],
+ "poll": [
+  [
+   25399.312737452,
+   0.0,
+   0.0,
+   0.0,
+   24024.0,
+   7104.0,
+   0.0,
+   0.0
+  ],
+  [
+   25399.533538741,
+   0.036682615629984094,
+   2.0,
+   0.0,
+   24724.0,
+   7104.0,
+   0.0,
+   0.0
+  ],
+  [
+   25399.747987654,
+   0.0430622009569378,
+   2.0,
+   0.0,
+   25556.0,
+   7808.0,
+   0.0,
+   0.0
+  ],
+  [
+   25399.962603367,
+   0.0,
+   0.0,
+   0.0,
+   25556.0,
+   7808.0,
+   0.0,
+   0.0
+  ],
+  [
+   25400.176399942,
+   0.04944178628389151,
+   2.0,
+   0.0,
+   26520.0,
+   8640.0,
+   0.0,
+   0.0
+  ]
+ ],
+ "machine": "host"
+}

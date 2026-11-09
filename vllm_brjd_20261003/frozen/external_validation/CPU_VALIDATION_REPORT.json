@@ -1,0 +1,52 @@
+{
+  "status": "CPU_SYNTAX_AND_ADAPTATION_VERIFIED_NOT_RUNTIME_TESTED",
+  "target_machine": "DESKTOP-BRJD313",
+  "python_compile": [
+    "external_probe.py",
+    "external_rplus.py"
+  ],
+  "bash_syntax": [
+    "external_setup.sh",
+    "external_run.sh"
+  ],
+  "bash_binary": "C:\\Program Files\\Git\\bin\\bash.exe",
+  "probe_cli_help": "PASS; does not inspect/install Torch or initialize CUDA",
+  "embedded_shell_python_ast": [
+    "external_setup.sh:embedded_python_1",
+    "external_setup.sh:embedded_python_2",
+    "external_run.sh:embedded_python_1",
+    "external_run.sh:embedded_python_2",
+    "external_run.sh:embedded_python_3"
+  ],
+  "protected_algorithm_ast": {
+    "external_probe.py:ExternalClient": "identical AST after removal of added machine/task metadata",
+    "external_probe.py:LocalServer": "identical AST after removal of added machine/task metadata",
+    "external_probe.py:perform_gate": "identical AST after removal of added machine/task metadata",
+    "external_probe.py:prefix_trace": "identical AST after removal of added machine/task metadata",
+    "external_probe.py:inspected_environment": "identical AST after removal of added machine/task metadata",
+    "external_rplus.py:require_final_external_hit": "identical AST after removal of added machine/task metadata",
+    "external_rplus.py:request_stage": "identical AST after removal of added machine/task metadata",
+    "external_rplus.py:cell": "identical AST after removal of added machine/task metadata",
+    "external_rplus.py:statistical_summary": "identical AST after removal of added machine/task metadata",
+    "external_rplus.py:run_cells": "identical AST after removal of added machine/task metadata"
+  },
+  "protocol_dependency_hashes": "PASS",
+  "frozen_NAS_source_hashes_unchanged": "PASS",
+  "old_host_executable_paths_absent": "PASS",
+  "fresh_gate_binding": "runtime hostname + DESKTOP-BRJD313 label + BRJD task root + environment/model/probe hash/GPU checks",
+  "commands_not_run": [
+    "installation",
+    "GPU allocation",
+    "compatibility semantics gate",
+    "benchmark",
+    "remote queue mutation"
+  ],
+  "shared_kvbench_required": "Parent migration bundle supplies scripts/kvbench.py and binds its actual hash; external manifest records it at runtime",
+  "files_sha256": {
+    "external_setup.sh": "416044b52e0e6342162832db7f566341ae5e154acdf8d45bf96bf80bc6bc4dae",
+    "external_probe.py": "21aea23ecdc9d8fe5afa63e6927501d68c5e6f5bd25b104535dfe68790f8128b",
+    "external_rplus.py": "0e090b2078e9266ef5f9a7df99070c7ad38810f57735b26bd5ffb2f0daeab140",
+    "external_run.sh": "96cad5b8c4eef981bc0f3d80f6197128e21d81e9c15055a2968280dc39fa1724",
+    "EXTERNAL_EXECUTION_PROTOCOL.json": "98f28ec30d492598e4321391435a2306712f5111d3f63e1257848f123e6b6a4e"
+  }
+}

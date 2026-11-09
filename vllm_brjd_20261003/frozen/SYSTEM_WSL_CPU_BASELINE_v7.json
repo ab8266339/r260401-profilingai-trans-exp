@@ -1,0 +1,21 @@
+{
+  "machine": "DESKTOP-BRJD313",
+  "kind": "WSL OS non-GPU maintenance services",
+  "scripts": {
+    "/usr/bin/networkd-dispatcher": "72d276e06565baf94c5d1d7ba52083524386eeba733d671a868487b0e03abaee",
+    "/usr/share/unattended-upgrades/unattended-upgrade-shutdown": "8fbf4e278c4ad457e82cc05586631b1a0550dd9d10892a70487ef74c623066e0"
+  },
+  "argv": [
+    [
+      "/usr/bin/python3",
+      "/usr/bin/networkd-dispatcher",
+      "--run-startup-triggers"
+    ],
+    [
+      "/usr/bin/python3",
+      "/usr/share/unattended-upgrades/unattended-upgrade-shutdown",
+      "--wait-for-signal"
+    ]
+  ],
+  "policy": "Exact interpreter/script/argv plus script SHA required each inventory; no path-only permission"
+}

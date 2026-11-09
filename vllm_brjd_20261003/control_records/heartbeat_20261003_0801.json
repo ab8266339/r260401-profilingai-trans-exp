@@ -1,0 +1,82 @@
+{
+  "Project": "R260401",
+  "Checked": "2026-10-03T08:02:42.6488857+08:00",
+  "ControllerPID": 164028,
+  "State": "waiting_for_R260306_complete",
+  "Predecessor": {
+    "state": "stopped_by_request",
+    "utc": "2026-10-03T00:02:25Z"
+  },
+  "Guard": {
+    "schema_version": 1,
+    "queue_id": "r260401_brjd_20261003",
+    "unix_time": 1790985730.5382087,
+    "status": "blocked",
+    "active_job": "r260401_brjd_20261003_preflight",
+    "machine": "DESKTOP-BRJD313",
+    "proxy_url": null,
+    "foreign_processes": [
+      {
+        "pid": 57960,
+        "kind": "python_job",
+        "command": "C:\\Python313\\python.exe D:\\CodeBase-708a\\061-working-paper\\R260309-fsb\\experiments\\revision_20261003\\memory_pipeline.py --queries 100 --out C:\\Users\\admin\\AppData\\Local\\Temp\\fsb-finality-campaign-s8f2l4v_\\memory_finality"
+      },
+      {
+        "pid": 59528,
+        "kind": "python_job",
+        "command": "C:\\Python313\\python.exe D:\\CodeBase-708a\\061-working-paper\\R260309-fsb\\experiments\\revision_20261003\\run_isolated_model.py D:\\CodeBase-708a\\061-working-paper\\R260309-fsb\\experiments\\revision_20261003\\finality_campaign.py model"
+      },
+      {
+        "pid": 64908,
+        "kind": "python_job",
+        "command": "C:\\Python313\\python.exe D:\\CodeBase-708a\\061-working-paper\\R260309-fsb\\experiments\\revision_20261003\\finality_campaign.py model"
+      },
+      {
+        "pid": 132336,
+        "kind": "model_server",
+        "name": "llama-server.exe"
+      },
+      {
+        "pid": 181252,
+        "kind": "python_job",
+        "command": "C:\\Python313\\python.exe D:\\CodeBase-708a\\061-working-paper\\R260309-fsb\\experiments\\revision_20261003\\run_finality_experiment.py D:\\CodeBase-708a\\061-working-paper\\R260309-fsb\\experiments\\revision_20261003\\memory_pipeline.py --queries 100 --out C:\\Users\\admin\\AppData\\Local\\Temp\\fsb-finality-campaign-s8f2l4v_\\memory_finality"
+      },
+      {
+        "pid": 186508,
+        "kind": "python_job",
+        "command": "C:\\Python313\\python.exe E:\\CodeBase-708a\\061-working-paper\\R260306-fractal-moe\\notes\\qwen_scale_20261003\\paged_worker.py --size 14B --arm dense --cache-mib 1024 --gpu-limit-mib 9472 --fit-if-missing --allow-busy"
+      },
+      {
+        "pid": 198900,
+        "kind": "python_job",
+        "command": "C:\\Python313\\python.exe R260309-fsb/experiments/revision_20261003/finality_campaign.py"
+      },
+      {
+        "pid": 203092,
+        "kind": "model_server",
+        "name": "llama-server.exe"
+      },
+      {
+        "pid": 204772,
+        "kind": "python_job",
+        "command": "C:\\Python313\\python.exe -u E:\\CodeBase-708a\\061-working-paper\\R260306-fractal-moe\\notes\\qwen_scale_20261003\\coordinator.py"
+      }
+    ],
+    "background_python_checks": [
+      {
+        "pid": 174456,
+        "kind": "existing_non_gpu_proxy_relay",
+        "command": "C:\\Users\\admin\\.workbuddy\\binaries\\python\\versions\\3.13.12\\python.exe proxy_relay_7891.py"
+      }
+    ],
+    "gpu_total_mib": 32607.0,
+    "gpu_used_mib": 23604.0,
+    "gpu_utilization_percent": 34.0,
+    "cpu_percent": 25.5,
+    "available_ram_bytes": 277056462848
+  },
+  "ManifestVerifiedFiles": 54,
+  "ManifestMismatches": [],
+  "HistoryExists": false,
+  "Action": "Continue waiting; no other experiment or model service changed"
+}

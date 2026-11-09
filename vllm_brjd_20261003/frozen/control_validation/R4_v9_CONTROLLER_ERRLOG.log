@@ -1,0 +1,46 @@
+Traceback (most recent call last):
+  File "E:\r260401-brjd-20261003\controller_v9.py", line 485, in main
+    heartbeat('blocked' if violation else 'running',job['tag'],inv)
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\r260401-brjd-20261003\controller_v9.py", line 169, in heartbeat
+    atomic_json(CONTROL/'windows_guard.json', {
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        'schema_version':1,'queue_id':QUEUE_ID,'unix_time':time.time(),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        'status':status,'active_job':active_job, 'machine':os.environ.get('COMPUTERNAME'),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        'proxy_url':PROXY_URL,**inv})
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\r260401-brjd-20261003\controller_v9.py", line 94, in atomic_json
+    tmp.replace(p)
+    ~~~~~~~~~~~^^^
+  File "C:\Python313\Lib\pathlib\_local.py", line 780, in replace
+    os.replace(self, target)
+    ~~~~~~~~~~^^^^^^^^^^^^^^
+PermissionError: [WinError 5] ¾Ü¾ø·ÃÎÊ¡£: 'E:\\r260401-brjd-20261003\\control\\windows_guard.json.tmp' -> 'E:\\r260401-brjd-20261003\\control\\windows_guard.json'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\r260401-brjd-20261003\controller_v9.py", line 518, in <module>
+    try: main()
+         ~~~~^^
+  File "E:\r260401-brjd-20261003\controller_v9.py", line 488, in main
+    heartbeat('blocked',job['tag'],{'foreign_processes':[{'kind':'guard_error'}]})
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\r260401-brjd-20261003\controller_v9.py", line 169, in heartbeat
+    atomic_json(CONTROL/'windows_guard.json', {
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        'schema_version':1,'queue_id':QUEUE_ID,'unix_time':time.time(),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        'status':status,'active_job':active_job, 'machine':os.environ.get('COMPUTERNAME'),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        'proxy_url':PROXY_URL,**inv})
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\r260401-brjd-20261003\controller_v9.py", line 94, in atomic_json
+    tmp.replace(p)
+    ~~~~~~~~~~~^^^
+  File "C:\Python313\Lib\pathlib\_local.py", line 780, in replace
+    os.replace(self, target)
+    ~~~~~~~~~~^^^^^^^^^^^^^^
+PermissionError: [WinError 5] ¾Ü¾ø·ÃÎÊ¡£: 'E:\\r260401-brjd-20261003\\control\\windows_guard.json.tmp' -> 'E:\\r260401-brjd-20261003\\control\\windows_guard.json'
